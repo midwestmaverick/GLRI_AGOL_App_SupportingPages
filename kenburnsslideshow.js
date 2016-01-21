@@ -15,7 +15,7 @@
   
 // this calls the kenBurns function every 4 seconds
 // you can increase or decrease this value to get different effects
-  window.setInterval(kenBurns, 10000);		
+  window.setInterval(kenBurns, 5000);		
   
 // the third variable is to keep track of where we are in the loop
 // if it is set to 1 (instead of 0) it is because the first image is styled when the page loads
@@ -38,3 +38,4 @@
 
   }
 })();
+

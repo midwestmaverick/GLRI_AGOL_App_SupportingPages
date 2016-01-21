@@ -9,17 +9,19 @@
  * position is used to make this box a containing block (it becomes a reference for its absolutely positioned children). overflow will hide part of the images moving outside of the box.
  */
 
-body {
+body, html {
 	margin: 0px;
+	height: 100%;
 } 
  
 #slideshow {
-    position:relative;
+    position:absolute;
+	top: 0px;
+	left: 0px;
     width:100%;
-	height:1000px;
+	height:100%;
     overflow:hidden;
 	margin: 0px;
-	
 }
 /**
  * See: http://www.css-101.org/articles/ken-burns_effect/css-transition.php
@@ -35,11 +37,11 @@ body {
 
 #slideshow img {
     position:absolute;
-    height:100%;
-    top:50%;
-    left:50%;
-    margin-left:-50%;
-    margin-top:-500px;
+    height:110%;
+    top:0px;
+    left:0px;
+    margin-left:0px;
+    margin-top:0px;
     opacity:0;
     -webkit-transition-property: opacity, -webkit-transform;
     -webkit-transition-duration: 3s, 10s;
@@ -58,7 +60,15 @@ body {
  * This technique allows us to create various paths while applying the same translate() values to all images (see the 'fx' class further below).
  */
 
-#slideshow img  {
+#slideshow #tl  {
+    -webkit-transform-origin: top left;
+       -moz-transform-origin: top left;
+        -ms-transform-origin: top left;
+         -o-transform-origin: top left;
+            transform-origin: top left;
+}
+
+#slideshow #tr {
     -webkit-transform-origin: top right;
        -moz-transform-origin: top right;
         -ms-transform-origin: top right;
@@ -66,27 +76,19 @@ body {
             transform-origin: top right;
 }
 
-#slideshow :nth-child(2n+1) {
-    -webkit-transform-origin: bottom left;
-       -moz-transform-origin: bottom left;
-        -ms-transform-origin: bottom left;
-         -o-transform-origin: bottom left;
-            transform-origin: bottom left;
+#slideshow #bl {
+  -webkit-transform-origin: bottom left;
+     -moz-transform-origin: bottom left;
+      -ms-transform-origin: bottom left;
+       -o-transform-origin: bottom left;
+          transform-origin: bottom left;
 }
-
-#slideshow :nth-child(3n+1) {
-    -webkit-transform-origin: top left;
-       -moz-transform-origin: top left;
-        -ms-transform-origin: top left;
-         -o-transform-origin: top left;
-            transform-origin: top left;
-}
-#slideshow :nth-child(4n+1) {
-  -webkit-transform-origin: bottom right;
-     -moz-transform-origin: bottom right;
-      -ms-transform-origin: bottom right;
-       -o-transform-origin: bottom right;
-          transform-origin: bottom right;
+#slideshow #br {
+    -webkit-transform-origin: bottom right;
+       -moz-transform-origin: bottom right;
+        -ms-transform-origin: bottom right;
+         -o-transform-origin: bottom right;
+            transform-origin: bottom right;
 }
 
 /**
@@ -116,10 +118,20 @@ body {
 <body>
 
 <div id="slideshow">
-<img src="ForestDisturbance/Images/Fire-Forest.jpg">
-<img src="ForestDisturbance/Images/538810505_1d4ca999bf_o.jpg">
-<img src="ForestDisturbance/Images/JackPine.jpg">
-<img src="ForestDisturbance/Images/kirtlandsWarbler.jpg">
+<img src="ForestDisturbance/Images/Bull_Moose.jpg" id="tr"><!--moose-->
+<img src="ForestDisturbance/Images/Fire-Forest.jpg" id="br"><!--forest fire-->
+<img src="ForestDisturbance/Images/kirtlandsWarbler.jpg" id="tr"><!--kw-->
+<img src="ForestDisturbance/Images/6588358285_293d1b406e_o.jpg" id="br"><!--logging-->
+<img src="ForestDisturbance/Images/17105744418_4d08a7f54a_o.jpg" id="bl"><!--woodcock-->
+<img src="ForestDisturbance/Images/538810505_1d4ca999bf_o.jpg" id="bl"><!--burnt stream-->
+<img src="ForestDisturbance/Images/DSK250-58.jpg" id="tl"><!--tree planting-->
+<img src="ForestDisturbance/Images/15488643468_4fa48b4cb8_o.jpg" id="bl"><!--cottontail-->
+<img src="ForestDisturbance/Images/5927054645_de59f8af5d_o.jpg" id="br"><!--cottontail hab-->
+<img src="ForestDisturbance/Images/8551122735_5535c74455_o.jpg" id="bl"><!--fish-->
+<img src="ForestDisturbance/Images/16785196115_8e97b620e1_o.jpg" id="tl"><!--sunrise-->
+<img src="ForestDisturbance/Images/DSK161-26.jpg" id="bl"><!--regrowth-->
+<img src="ForestDisturbance/Images/3447982213_c4c7414f2c_o.jpg" id="tl"><!--grouse-->
+
 </div>
 <script type="text/javascript" src="kenburnsslideshow.js"></script>
 </body>
