@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-<style>
 /**
  * Styling the container (the wrapper)
  * 
@@ -107,16 +102,3 @@
          -o-transform: scale(1.1);
             transform: scale(1.1);
 }
-</style>
-</head>
-<body>
-
-<div id="slideshow">
-<img src="ForestDisturbance/Images/Fire-Forest.jpg">
-<img src="ForestDisturbance/Images/538810505_1d4ca999bf_o.jpg">
-<img src="ForestDisturbance/Images/JackPine.jpg">
-<img src="ForestDisturbance/Images/kirtlandsWarbler.jpg">
-</div>
-<script type="text/javascript" src="kenburnsslideshow.js"></script>
-</body>
-</html>
