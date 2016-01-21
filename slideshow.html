@@ -9,12 +9,17 @@
  * position is used to make this box a containing block (it becomes a reference for its absolutely positioned children). overflow will hide part of the images moving outside of the box.
  */
 
+body {
+	margin: 0px;
+} 
+ 
 #slideshow {
-    position:absolute;
-    width:2000px;
+    position:relative;
+    width:100%;
 	height:1000px;
     overflow:hidden;
-    border:1px solid white;
+	margin: 0px;
+	
 }
 /**
  * See: http://www.css-101.org/articles/ken-burns_effect/css-transition.php
@@ -30,11 +35,10 @@
 
 #slideshow img {
     position:absolute;
-    width:2000px;
-    height:1000px;
+    height:100%;
     top:50%;
     left:50%;
-    margin-left:-1000px;
+    margin-left:-50%;
     margin-top:-500px;
     opacity:0;
     -webkit-transition-property: opacity, -webkit-transform;
@@ -55,19 +59,19 @@
  */
 
 #slideshow img  {
-    -webkit-transform-origin: bottom left;
-       -moz-transform-origin: bottom left;
-        -ms-transform-origin: bottom left;
-         -o-transform-origin: bottom left;
-            transform-origin: bottom left;
-}
-
-#slideshow :nth-child(2n+1) {
     -webkit-transform-origin: top right;
        -moz-transform-origin: top right;
         -ms-transform-origin: top right;
          -o-transform-origin: top right;
             transform-origin: top right;
+}
+
+#slideshow :nth-child(2n+1) {
+    -webkit-transform-origin: bottom left;
+       -moz-transform-origin: bottom left;
+        -ms-transform-origin: bottom left;
+         -o-transform-origin: bottom left;
+            transform-origin: bottom left;
 }
 
 #slideshow :nth-child(3n+1) {
