@@ -14,7 +14,7 @@ body, html {
 	height: 100%;
 	width: 100%;
 } 
- 
+
 #slideshow {
     position:absolute;
 	top: 0px;
@@ -23,6 +23,10 @@ body, html {
 	height:100%;
     overflow:hidden;
 	margin: 0px;
+	display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden
 }
 /**
  * See: http://www.css-101.org/articles/ken-burns_effect/css-transition.php
@@ -44,6 +48,9 @@ body, html {
     margin-left:0px;
     margin-top:0px;
     opacity:0;
+	flex-shrink:0;
+    min-width:100%;
+    min-height:100%;
     -webkit-transition-property: opacity, -webkit-transform;
     -webkit-transition-duration: 3s, 10s;
        -moz-transition-property: opacity, -moz-transform;
