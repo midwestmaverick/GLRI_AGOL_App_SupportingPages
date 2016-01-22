@@ -21,7 +21,6 @@ var resizeSlideshow = function() {
 	}
 	document.getElementById('slideshow').style.height = height;
 	document.getElementById('slideshow').style.width = width;
-	console.log(document.getElementById('slideshow').style.height);
 };
 /**
  * See: http://www.css-101.org/articles/ken-burns_effect/css-transition.php
@@ -63,4 +62,4 @@ var resizeSlideshow = function() {
   }
 })();
 
-addEvent(window, "resize", resizeSlideshow());
+//addEvent(window, "resize", resizeSlideshow);

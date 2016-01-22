@@ -9,21 +9,12 @@
  * position is used to make this box a containing block (it becomes a reference for its absolutely positioned children). overflow will hide part of the images moving outside of the box.
  */
 
-body, html {
-	margin: 0px;
-	height: 100%;
-	width: 100%;
-} 
-
 #slideshow {
     position:absolute;
-	top: 0px;
-	left: 0px;
-    min-width:100%;
-	min-height:100%;
     overflow:hidden;
-	margin: 0px;
-	display:flex;
+	height:100%;
+	width:100%;
+	vertical-align: center;
 }
 /**
  * See: http://www.css-101.org/articles/ken-burns_effect/css-transition.php
@@ -39,19 +30,14 @@ body, html {
 
 #slideshow img {
     position:absolute;
-<<<<<<< HEAD
-    min-width:100%;
-	max-width:100%;
-=======
-    min-height:100%;
-    max-height:100%;
->>>>>>> origin/gh-pages
-    top:0px;
-    left:0px;
+    zoom:2;
+	display: block;
+	height:auto;
+	max-height:100%;
+	width: auto;
     margin-left:0px;
     margin-top:0px;
     opacity:0;
-	flex-shrink:0;
     -webkit-transition-property: opacity, -webkit-transform;
     -webkit-transition-duration: 3s, 10s;
        -moz-transition-property: opacity, -moz-transform;
@@ -126,7 +112,7 @@ body, html {
 </head>
 <body>
 
-<div id="slideshow">
+<div id="slideshow" style="min-height: 100%; min-width: 100%;">
 <img src="ForestDisturbance/Images/Bull_Moose.jpg" id="tr"><!--moose-->
 <img src="ForestDisturbance/Images/Fire-Forest.jpg" id="br"><!--forest fire-->
 <img src="ForestDisturbance/Images/kirtlandsWarbler.jpg" id="tr"><!--kw-->
