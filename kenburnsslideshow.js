@@ -1,27 +1,3 @@
-var addEvent = function(object, type, callback) {
-    if (object == null || typeof(object) == 'undefined') return;
-    if (object.addEventListener) {
-        object.addEventListener(type, callback, false);
-    } else if (object.attachEvent) {
-        object.attachEvent("on" + type, callback);
-    } else {
-        object["on"+type] = callback;
-    }
-};
-
-var resizeSlideshow = function() {
-	var width = document.body.clientWidth;
-	var height = document.body.clientHeight;
-	if(width <= height*1.5){
-		var newWidth = width;
-		var newHeight = width*(2/3);
-	}else{
-		var newWidth = height*1.5;
-		var newHeight = height;
-	}
-	document.getElementById('slideshow').style.height = height;
-	document.getElementById('slideshow').style.width = width;
-};
 /**
  * See: http://www.css-101.org/articles/ken-burns_effect/css-transition.php
  */
@@ -62,4 +38,3 @@ var resizeSlideshow = function() {
   }
 })();
 
-//addEvent(window, "resize", resizeSlideshow);
