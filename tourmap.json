@@ -1,0 +1,16 @@
+var stories = [
+	{
+		"id":"moose",
+		"ext":[-10261662.184794366,5876210.897939676,-9966003.759387448,6148938.214861054],
+		"img":"Bull_Moose.jpg",
+		"media":"<div class='embed-youtube-container'><iframe width:'560' height:'349' src='https://www.youtube.com/embed/OoR1tZDL4-o' allowfullscreen></iframe></div>"
+	},
+	{
+		"id":"cottontail",
+		"ext":[-8150997.290034163,5114313.897338178,-8149842.374310014,5115379.238419812],
+		"img":"15488643468_4fa48b4cb8_o.jpg",
+		"media":"<div class='embed-youtube-container'><iframe width="1280" height="720" src="https://www.youtube.com/embed/kb8KPPo0LJY" allowfullscreen></iframe></div>"
+	}	
+]
+	
+

@@ -1,33 +1,54 @@
 <!DOCTYPE html>
 <html>
+<!-- 
+1: D:
+2: cd D:\Libraries\Documents\GitHub\forestdisturbance
+3: python -m SimpleHTTPServer 8080 &.
+4: http://199.131.112.233:8080/tourmap2.html
+-->
 <head>
-  <title>Create a Map</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
-  <link rel="stylesheet" href="https://js.arcgis.com/3.15/dijit/themes/claro/claro.css">
-  <link rel="stylesheet" href="https://js.arcgis.com/3.15/esri/css/esri.css">
-  <style>
-    html, body, #mapDiv{
-      padding: 0;
-      margin: 0;
-      height: 100%;
-    }
-  </style>
-  
-  <script src="https://js.arcgis.com/3.15/"></script>
-  <script>
-    var map;
-    require(["esri/map", "dojo/domReady!"], function(Map) {
-      map = new Map("mapDiv", {
-        center: [-56.049, 38.485],
-        zoom: 3,
-        basemap: "streets"
-      });
-    });
-  </script>
+	<title>Forest Disturbance Stories</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
 
+	<link rel="stylesheet" href="https://js.arcgis.com/3.15/esri/css/esri.css">
+	<link rel="stylesheet" href="tourmap2.css">
+
+	<script src="https://js.arcgis.com/3.15/"></script>
+	<script type="application/javascript" src="resources/lib/iscroll-4/src/iscroll.js"></script>
+	<script src="tourmapStories.js"></script>
+	<script src="tourmap2.js"></script>
+	
+	
 </head>
-<body class="claro">
-  <div id="mapDiv"></div>
+<body>
+	<div id="header">
+		<div id="logo">
+			<img id="comboLogo" src="Images/USDA-FS_white on black.jpg" />
+			<div id="logoCaptions">
+				<span class="usda_text">United States Department of Agriculture</span><br>Forest Service
+			</div>
+		</div>
+		<div id="headerTitle">
+			<h1>Forest Disturbance Stories</h1>
+		</div>
+	</div>
+	<div id="upper">
+		<div id="mapDiv"></div>
+		<div id="vSpace"></div>
+		<div id="contentWrapper">
+			<div id="picture">
+				<img id="imgMedia" src="Images/15488643468_4fa48b4cb8_o.jpg" />
+			</div>
+			<div id="content">
+				<div class="embed-youtube-container">
+					<iframe width:"560" height:"349" src="https://www.youtube.com/embed/OoR1tZDL4-o" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="wrapper"></div>
+
 </body>
 </html>
