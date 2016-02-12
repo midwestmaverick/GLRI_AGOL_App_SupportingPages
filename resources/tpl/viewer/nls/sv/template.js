@@ -5,9 +5,13 @@
 				close: "Stäng"
 			},
 			loading: {
-				long: "Berättelsen initieras",
+				step1: "Läser in berättelsen",
+				step2: "Läser in data",
+				step3: "Initierar",
+				loadBuilder: "Växlar till byggverktyget",
+				long: "Kartjournalen initieras",
 				long2: "Tack för att du väntar",
-				failButton: "Uppdatera berättelsen"
+				failButton: "Läs in berättelsen igen"
 			},
 			signin: {
 				title: "Autentisering krävs",
@@ -20,7 +24,7 @@
 				invalidConfigNoApp: "Webbkartapplikationens identifierare anges inte i index.html.",
 				unspecifiedConfigOwner: "Ingen auktoriserad ägare har konfigurerats.",
 				invalidConfigOwner: "Berättelsens ägare är inte auktoriserad.",
-				createMap: "Det går inte att skapa kartan",
+				createMap: "Det gick inte att skapa kartan",
 				invalidApp: "%TPL_NAME% finns inte eller går inte att komma åt.",
 				appLoadingFail: "Något gick fel, %TPL_NAME% lästes inte in korrekt.",
 				notConfiguredDesktop: "Berättelsen har inte konfigurerats ännu.",
@@ -32,16 +36,21 @@
 				mapLoadingFail: "Något gick fel, kartan lästes inte in på rätt sätt.",
 				signOut: "Logga ut"
 			},
-			mobileInfo: {
-				legend: "Teckenförklaring",
-				description: "Beskrivning",
-				lblLegendMobileError: "Teckenförklaringen är inte tillgänglig. Läs in berättelsen igen.",
-				lblLegendMobileErrorExplain: "Teckenförklaringen är inte tillgänglig när enheten roteras till liggande läge efter att berättelsen har startats."
+			mobileView: {
+				tapForDetails: "Peka för information",
+				clickForDetails: "Läs mer",
+				swipeToExplore: "Svep för att utforska",
+				tapForMap: "Peka för att återgå till kartan",
+				clickForMap: "TILLBAKA TILL KARTAN"
 			},
-			mobileFooter: {
-				swipeInvite: "Svep när du vill navigera i berättelsen",
-				lblNext: "Nästa",
-				lblEnd: "Du har nått slutet av berättelsen"
+			floatLayout: {
+				scroll: "Bläddra"
+			},
+			sideLayout: {
+				scroll: "Bläddra nedåt för att visa mer"
+			},
+			mainStage: {
+				back: "Bakåt"
 			},
 			headerFromCommon: {
 				storymapsText: "En berättelsekarta",
@@ -67,11 +76,8 @@
 				copied: "Kopierad",
 				open: "Öppna",
 				embed: "Bädda in på webbplats",
-				embedExplain: "Använd följande HTML-kod om du vill bädda in berättelsen på en webbsida.",
+				embedExplain: "Använd följande HTML-kod om du vill bädda in journalen på en webbplats.",
 				size: "Storlek (bredd/höjd):"
-			},
-			locatorFromCommon: {
-				error: "Ingen plats finns tillgänglig"
 			}
         }
     })

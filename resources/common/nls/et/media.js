@@ -8,7 +8,7 @@
 				lblImage: "Pilt",
 				lblVideo: "Video",
 				lblExternal: "Veebileht",
-				disabled: "Administraator on selle võimaluse keelanud",
+				disabled: "See funktsioon on administraatori poolt välja lülitatud",
 				url: "Pildi veebiaadressi käsitsi sisestamiseks",
 				userLookup: "Laadi albumid",
 				notImplemented: "Pole veel kasutusele võetud.",
@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "Facebooki kasutajanimi",
 				rightHeader: "Facebooki leht",
-				pageExplain: "Facebooki leht on avalik kaubamärk/toode nagu <b>esrigis</b>. Lehe nime leiate lehe URL-ist pärast '/'.",
+				pageExplain: "Facebooki leht on avalik kaubamärk/toode nagu <b>esrigis</b>. Saad lehe nime pärast esimest \'/\' lehekülje URL-il.",
 				pageInputLbl: "Lehe nimi",
 				lookupMsgError: "Lehte ei leitud"
 			},
@@ -38,7 +38,7 @@
 				userInputLbl: "e-post või Picasa/Google+ ID",
 				signInMsg2: "Kontot ei leitud",
 				howToFind: "Kuidas leida Picasa või Google+ konto ID-d",
-				howToFind2: "Kopeerige mis tahes Picasa või G+ lehe esimese ja teise kaldkriipsu vahel asuvad numbrikohad"
+				howToFind2: "Kopeeri numbrikohad esimese ja teise \'/\' vahelt Picasa või G+ lehelt"
 			},
 			videoSelectorCommon: {
 				check: "Kontrolli",

@@ -2,113 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				tabTitle: "Med flikar",
-				tabDescr: "Presentera kartor och annat innehåll med hjälp av flikar och en valfri panel för beskrivande text.",
-				tabItem: "Flik",
-				tabItems: "Flikar",
-				sideTitle: "Sidodragspel",
-				sideDescr: "Presentera kartor och annat innehåll med en expanderbar kontroll som innehåller en beskrivande text.",
-				sideItem: "Post",
-				sideItems: "Poster",
-				bulletTitle: "Punktlista",
-				bulletDescr: "Presentera kartor och annat innehåll med punktlistor och en valfri panel för beskrivande text.",
-				bulletItem: "Punkt",
-				bulletItems: "Punkter"
+				mainStage: "Huvudscen",
+				sideTitle: "Sidopanel",
+				sideDescr: "En layout för en textintensiv berättelse som passar utmärkt när du vill kombinera bilder, videoklipp och kartor till ett tydligt fokuserat meddelande.",
+				floatTitle: "Flytande panel",
+				floatDescr: "En layout som sätter kartografin i fokus och samtidigt ger utrymme för en kort transparent textpanel som hjälper till att berätta historien."
 			},
 			common: {
 				lblStatus1: "Publicerad",
+				lblStatus2: "Utkast",
 				lblStatus3: "Dold"
 			},
 			settingsLayoutOptions: {
 				title: "Layoutalternativ",
-				lblDescription: "Beskrivning",
-				lblLegend: "Placering av teckenförklaring",
-				tooltipLegend: "Välj var du vill att kartans teckenförklaring ska visas. Du kan aktivera teckenförklaringen för alla kartor när du lägger till eller konfigurerar den.",
-				lblDropdown: "Listmeny",
-				lblBelowDesc: "Under beskrivningen",
-				lblOnPanel: "Som en panel",
-				lblPanelDescAndLegend: "Panel för beskrivningar och teckenförklaringar",
-				lblPanelDescAndOrLegend: "Panel för beskrivningar och/eller teckenförklaringar",
-				lblPanelDesc: "Panelen Beskrivning",
-				lblPanelLegend: "Panelen Teckenförklaring",
-				lblPanelAccordion: "Dragspelspanel",
 				cfgLeft: "Vänster",
 				cfgRight: "Höger",
 				cfgSmall: "Liten",
 				cfgMedium: "Medium",
 				cfgLarge: "Stor",
-				lblNumbering: "Visa siffror",
-				lblReverse: "Omvänd numrering",
-				canOverlapMap: "kan överlappa kartplatsen"
+				socialLinksLabel: "Visa delningslänkar längst ned i varje avsnitt",
+				socialLinksDescr: "Detta gör att användaren kan referera till och framhålla specifika avsnitt av din %TPL_NAME%. Om du till exempel använder en ikon för avsnittsdelning kommer användaren till det specifika %TPL_NAME%-avsnittet i stället för till början av berättelsen. Användarna kan använda länken till sociala media i rubrikavsnittet för att framhålla hela din %TPL_NAME% (rubrikfliken) och komma till början av %TPL_NAME%."
 			},
-			settingsMapOptions: {
-				title: "Kartalternativ",
-				lblOverview: "Översiktskarta",
-				tooltipOverview: "Visa en liten översiktskarta tillsammans med huvudkartan.",
-				lblLocate: "Sökknapp",
-				tooltipLocate: "Den här funktionen kan användas i de flesta webbläsare för mobila enheter och datorer (Internet Explorer 9).",
-				lblGeocoder: "Adress- eller platssökning",
-				tooltipGeocoder: "Gör att användarna kan söka efter adresser och platser på kartan.",
-				lblSync: "Synkronisera platser på kartan",
-				tooltipSync: "Vid aktivering tillämpas ursprungsplatsen för den första kartan i din serie på alla kartor, och användarnas navigering i en karta reflekteras i alla kartor. Inaktivera alternativet om du vill att varje kartas plats ska vara oberoende."
+			settingsLayoutFonts: {
+				title: "Teckensnitt",
+				defaultLbl: "Standard",
+				sectionTitleLbl: "Avsnittets rubrik",
+				sectionContentLbl: "Avsnittets innehåll"
 			},
 			initPopup: {
 				title: "Välkommen till"
 			},
 			addEditPopup: {
-				lblAdd: "Lägg till",
-				lblEdit: "Redigera",
-				disabled: "Lägg till är inaktiverat eftersom det maximala antalet tillåtna %LBL_LAYOUT% har uppnåtts.",
-				titleAdd: "Lägg till",
-				titleEdit: "Redigera",
-				stepMainStageNextTooltip: "Ange titel och innehåll för %LBL_LAYOUT%",
-				titlePlaceholder: "Titel för %LBL_LAYOUT%..."
+				disabled: "Lägg till avsnitt är inaktiverat eftersom det maximala antalet avsnitt har uppnåtts.",
+				titleAdd: "Lägg till avsnitt",
+				titleAddHome: "Lägg till startavsnitt",
+				titleEdit: "Redigera avsnitt",
+				step: "Steg",
+				stepMainStageExplain: "Innehåll på huvudscenen",
+				stepPanelExplain: "Innehåll",
+				stepMainStageNextTooltip: "Ange avsnittets rubrik och välj innehåll för huvudscenen",
+				stepMainStageNextTooltip2: "Välj innehåll på huvudscenen",
+				step2NextTooltip: "Ange avsnittets rubrik och %LAYOUT-TYPE%-innehåll",
+				stepNextTooltipNext: "för att gå till nästa steg",
+				stepNextTooltipAdd: "för att lägga till avsnittet",
+				firstAddExplain: "Det första avsnittet är startavsnittet. Det kan du tänka dig som försättsbladet till berättelsen. Den titel du just har definierat visas med stora tecken.",
+				firstAddLeanMore: "Lär dig mer",
+				titlePlaceholder: "Avsnittets rubrik ..."
 			},
-			textEditor: {
-				placeholder1: "Lägg till texter, länkar och små bilder här.",
-				placeholder2: "Om du låter panelen vara vara tom blir den dold."
+			addEditViewText: {
+				editorPlaceholder: "Lägg till texter, länkar och små bilder här.",
+				editorActionsTitle: "Åtgärder på huvudscenen",
+				editorActionsHelpDescr: "Använd dessa kontroller för att skapa länkar som förändrar huvudscenen. Om användaren till exempel klickar på en länk kan du låta kartan zoomas in till en viss plats, visa en annan webbkarta eller visa en bild.",
+				mainStageDisabled: "Åtgärder på huvudscenen är inaktiverade när redigeraren är maximerad"
 			},
 			organizePopup: {
 				title: "Organisera",
-				lblHeader: "Organisera berättelsen genom att dra och släppa %LBL_LAYOUT%.",
+				lblHeader: "Organisera berättelsen genom att dra och släppa avsnitt.",
 				lblColTitle: "Titel",
+				lblColPubDate: "Publiceringsdatum",
 				lblColStatus: "Status",
-				btnApplyWarning: "Bekräfta borttagning av %NB% %LBL_LAYOUT%",
+				checkDisplayReverse: "Visa avsnitten i omvänd ordning",
+				btnApplyWarning: "Bekräfta borttagning av %NB%-avsnitt",
 				deleteTooltip: "Ta bort",
-				firstSectionExplain: "(Startasvsnittet går inte att flytta)"
+				firstSectionExplain: "(Startasvsnittet går inte att flytta)",
+				exportMainStage: "Innehåll på huvudscenen",
+				exportPanel: "Panelinnehåll",
+				exportActions: "Åtgärder på huvudscenen"
+			},
+			exportData: {
+				btn: "Exportera innehåll",
+				tooltip: "Om du exporterar ditt innehåll kan du visa och skapa en säkerhetskopia av innehållet om du skulle råka ta bort det av misstag. Kopiera innehållet från sidan och klistra in det i valfritt ordbehandlingsprogram."
 			},
 			help: {
 				lblHelp: "Hjälp",
-				lblAdd: "Lägg till",
+				lblAdd: "Lägg till avsnitt",
 				lblSettings: "Inställningar",
-				lblOrga: "Organisera",
+				lblOrga: "Ordna innehåll",
 				lblEdit: "Ändringar",
 				lblPublish: "Dela",
 				lblTips: "Tips",
 				lblMore: "Vill du ha mer?",
 				lblLink: "Besök webbplatsen för Esris berättelsekartor.",
-				content1Div1: "När du ska skapa din %TPL_NAME% använder du knappen Lägg till och lägger till varje karta eller annat innehåll i layouten. Sådant innehåll kan utgöras av bilder, videoklipp eller inbäddade kartsidor eller kod. Du kanske till exempel vill att dina läsare ska få se en introduktionsbild eller en introduktionsvideo när de startar din %TPL_NAME% för första gången, innan de går vidare och utforskar dina övriga mappar.",
-				content1Div2: "När du klickar på knappen Lägg till visas en dialogruta där du kan välja och konfigurera kartan eller något annat innehåll som du vill lägga till. Du kan till exempel ange vilken plats kartan ska visa, aktivera dess teckenförklaring osv.",
-				content2Div1: "I dialogrutan Inställningar kan du ändra utseende för din %TPL_NAME%. Du kan ändra layout, välja ett annat färgschema, välja var teckenförklaringen ska visas osv.",
-				content2Div2: "Du kan även byta ut Esri-logotypen mot din egen logotyp i rubriken för din %TPL_NAME% för att visa ditt varumärke. Du kan också ange vilken webbplats som ska öppnas när läsarna klickar på logotypen så att de kan få mer information.",
-				content3Div1: "I dialogrutan Organisera kan du hantera dina %TPL_NAME%. Du kan bland annat ändra ordning i serierna genom att dra och släppa.",
-				content3Div2: "Du kan också ta bort innehåll eller dölja det. Att dölja innehållet kan vara praktiskt om du arbetar med nytt innehåll som inte är klart att ta med i din berättelsekarta än.",
+				content1Div1: "Du kan integrera flera olika stilar när du skapar din berättelse. <strong>%LAYOUT_TITLE%</strong> innehåller text, bilder och videoklipp medan kartorna oftast hamnar i <strong>huvudscenen</strong>. Med %TPL_NAME% kan du dock ta med bilder, tabeller och videoklipp även i huvudscenen.",
+				content1Div2: "Genom att lägga till avsnitt kan du anpassa berättelseupplevelsen. När användarna bläddrar igenom %LAYOUT_TITLE%-texten kan en karta i huvudscenen panorera eller zooma till viktiga punkter, eller så kan nya kartor och bilder växlas automatiskt för att understryka ditt budskap.",
+				content2Div1: "I dialogrutan Inställningar kan du ändra utseendet för %TPL_NAME%. Du kan ändra layout, välja ett annat färgschema, ändra teckensnitt o.s.v.",
+				content2Div2: "Du kan även byta ut Esri-logotypen mot din egen logotyp för att visa ditt varumärke. Du kan också ange vilken webbplats som ska öppnas när läsarna klickar på logotypen så att de kan få mer information.",
+				content3Div1: "Ditt innehåll är ordnat i avsnitt. Du kan ha så många avsnitt du vill (tänk dig dem som minikapitel). Flödet för kapitlen är viktigt. Med Organisera kan du ändra ordning på eller ta bort avsnitt som du vill.",
 				content4Div1: "Har du hittat ett fel eller vill du ändra ditt material? Inga problem. Titta efter redigeringsikonen i appen om du vill göra ändringar i innehållet. Du kommer att använda redigeringsfunktionerna många gånger medan du utvecklar din %TPL_NAME%!",
 				content5Div1: "När du sparar din %TPL_NAME% är den privat i början. Använd knappen Dela om du vill dela den med andra. Du kan dela din %TPL_NAME% offentligt så alla kan komma åt den.",
 				content5Div2: "Beroende på konto kanske du också kan dela din %TPL_NAME% enbart med personer inom din organisation så att andra inte kommer åt den.",
-				content6Div1: "Som standard synkroniseras kartorna i en serie så att de visar samma plats. Detta innebär att den plats som visas i den första kartan automatiskt visas i alla övriga kartor, och om en läsare zoomar in eller panorerar till en annan plats i den karta de tittar på, används även den i alla övriga kartor.",
-				content6Div2: "Om din serie till exempel visar olika tematiska data för en stad, kan läsaren zooma in till sina egna kvarter och sedan enkelt växla mellan flikarna för att se kartorna för det området.",
-				content6Div3: "Om du vill inaktivera platssynkronisering går du till dialogrutan Inställningar och avmarkerar den inställningen på fliken Kartalternativ.",
-				content6AltDiv1: "Som standard synkroniseras platserna på kartan. Om du inaktiverar synkronisering kan varje karta visa olika platser.",
-				content6AltDiv2: "Synkronisering PÅ",
-				content6AltDiv3: "Synkronisering AV",
-				content6AltDiv4: "Om du vill inaktivera synkronisering, går du till Inställningar > Kartalternativ och avmarkerar \"Synkronisera platser på kartan\"."
+				content6Div1: "Titeln på startavsnittet är också titeln på din journal. Du kan tänka dig startavsnittet som försättsbladet för din berättelse. Titeln på startavsnittet fortsätter att visas när läsarna navigerar i journalen.",
+				content6Div2: "Din %LAYOUT_TITLE% behöver inte bara bestå av text, du kan även ta med foton och videoklipp för att göra berättelsen mer levande och dela upp långa stycken text!"
 			},
 			landing: {
-				lblAdd: "Vad vill du kalla din kartserie %LAYOUT_TITLE%?",
+				lblAdd: "Vad vill du kalla kartjournalen?",
 				phAdd: "Ange en titel ...",
 				lblOR: "Or",
 				lblHelp: "Ta en rundtur"
+			},
+			firstAddSplash: {
+				thisis: "Det här är",
+				lblMain: "Det här är %BR% huvudscenen"
 			}
         }
     })

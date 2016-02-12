@@ -2,13 +2,13 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Datu nesējs",
+				lblSelect1: "Medijs",
 				lblSelect2: "Saturs",
 				lblMap: "Karte",
 				lblImage: "Attēls",
 				lblVideo: "Video",
 				lblExternal: "Web lapa",
-				disabled: "Šo elementu ir atspējojis administrators",
+				disabled: "Šo funkciju administrators ir atspējojis",
 				url: "Lai manuālie ievadītu attēla web adresi",
 				userLookup: "Ielādēt albumus",
 				notImplemented: "Vēl nav ieviests.",
@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "Facebook Lietotājs",
 				rightHeader: "Facebook Lapa",
-				pageExplain: "Facebook lapa ir publisks zīmols/produkts vai slavenība, piemēram, <b>esrigis</b>. Lapas nosaukumu var iegūt aiz pirmā / lapas vietrādī URL.",
+				pageExplain: "Facebook lapa ir publisks zīmols/produkts vai slavenība, piem., <b>esrigis</b>. Jūs varat saņemt lapas nosaukumu, pēc pirmās \'/\' lapas URL.",
 				pageInputLbl: "Lapas nosaukums",
 				lookupMsgError: "Lapa nav atrasta"
 			},
@@ -38,7 +38,7 @@
 				userInputLbl: "E-pasta adrese vai Picasa/Google+ ID",
 				signInMsg2: "Konts nav atrasts",
 				howToFind: "Kā atrast Picasa vai Google+ konta ID",
-				howToFind2: "Kopējiet jebkuras Picasa vai G+ lapas ciparus starp pirmo un otro /"
+				howToFind2: "Kopēt ciparus starp pirmo un otro \'/\' no jebkura Picasa vai G+ lapa"
 			},
 			videoSelectorCommon: {
 				check: "Pārbaudīt",
@@ -47,7 +47,7 @@
 				select: "Atlasīt šo video"
 			},
 			videoSelectorHome: {
-				other: "Citi"
+				other: "Cits"
 			},
 			videoSelectorYoutube: {
 				url: "Youtube video URL",
@@ -95,7 +95,7 @@
 				lblPosition3: "Ietilpināt",
 				lblPosition4: "Izstiept",
 				lblPosition5: "Pielāgots",
-				tooltipDimension: "Vērtība var būt norādīta kā px vai %",
+				tooltipDimension: "Vērtību var norādīt \'px\' vai \'%\'",
 				tooltipDimension2: "Vērtība ir jānorāda pikseļos",
 				lblPosition2Explain: "(var apgriezt)",
 				lblPosition3Explain: "(netiks apgriezts)",

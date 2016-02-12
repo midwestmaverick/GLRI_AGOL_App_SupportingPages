@@ -4,7 +4,7 @@
 			selector: {
 				lblWebMap: "Mapa",
 				lblLocation: "Lokalizacja",
-				lblContent: "Zasoby",
+				lblContent: "Zawartość",
 				lblPopup: "Okno podręczne",
 				lblControls: "Dodatki",
 				lblOverview: "Mapa przeglądowa",

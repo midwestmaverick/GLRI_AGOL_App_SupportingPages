@@ -71,7 +71,7 @@
 				statusNoErrPrivate: "Hãy chia sẻ câu chuyện của bạn khi bạn đã sẵn sàng!",
 				mystoriesinvite: "Quản lý tất cả các câu chuyện của bạn",
 				notavailable1: "Xin lỗi, chia sẻ câu chuyện của bạn từ Bộ thiết lập không được hỗ trợ do ứng dụng story map không được lưu trữ trong %PRODUCT%.",
-				notavailable2: "Xin lỗi, chia sẻ câu chuyện của bạn từ Bộ thiết lập không được hỗ trợ do trên phiên bản Portal for ArcGIS này (yêu cầu phiên bản 10.4 trở lên).",
+				notavailable2: "Xin lỗi, chia sẻ câu chuyện của bạn từ Bộ thiết lập không được hỗ trợ trên phiên bản Portal for ArcGIS này (yêu cầu phiên bản 10.4 trở lên).",
 				notavailable3: "Bạn có thể chia sẻ câu chuyện từ %LINK%.",
 				notavailable4: "Câu chuyện của Tôi",
 				notavailable5: "Nó là trang mục",

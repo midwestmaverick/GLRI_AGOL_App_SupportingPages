@@ -5,7 +5,11 @@
 				close: "Chiudi"
 			},
 			loading: {
-				long: "Inizializzazione della storia in corso",
+				step1: "Caricamento storia",
+				step2: "Caricamento dati",
+				step3: "Inizializzazione in corso",
+				loadBuilder: "Passaggio al generatore",
+				long: "Inizializzazione del Diario mappa in corso...",
 				long2: "Grazie per l\'attesa",
 				failButton: "Ricarica la storia"
 			},
@@ -32,16 +36,21 @@
 				mapLoadingFail: "Si è verificato un errore. La mappa non è stata caricata correttamente.",
 				signOut: "Disconnetti"
 			},
-			mobileInfo: {
-				legend: "Legenda",
-				description: "Descrizione",
-				lblLegendMobileError: "Legenda non disponibile. Ricaricare la storia.",
-				lblLegendMobileErrorExplain: "La legenda non è disponibile se il dispositivo è ruotato in modalità verticale dopo il caricamento della storia."
+			mobileView: {
+				tapForDetails: "Toccare per i dettagli",
+				clickForDetails: "Ulteriori informazioni",
+				swipeToExplore: "Scorrere con un dito per esplorare",
+				tapForMap: "Toccare per tornare alla mappa",
+				clickForMap: "TORNA ALLA MAPPA"
 			},
-			mobileFooter: {
-				swipeInvite: "Scorri per passare alla storia",
-				lblNext: "Avanti",
-				lblEnd: "È stata raggiunta la fine della storia"
+			floatLayout: {
+				scroll: "Scorrimento"
+			},
+			sideLayout: {
+				scroll: "Scorrere verso il basso per altre informazioni"
+			},
+			mainStage: {
+				back: "Indietro"
 			},
 			headerFromCommon: {
 				storymapsText: "Mappa collegata a una storia",
@@ -67,11 +76,8 @@
 				copied: "Copiato",
 				open: "Apri",
 				embed: "Incorpora nella pagina Web",
-				embedExplain: "Utilizzare il codice HTML seguente per incorporare la storia in una pagina Web.",
+				embedExplain: "Utilizzare il codice HTML seguente per incorporare il diario in una pagina Web.",
 				size: "Dimensioni (larghezza/altezza):"
-			},
-			locatorFromCommon: {
-				error: "Posizione non disponibile"
 			}
         }
     })

@@ -75,7 +75,7 @@
 				notavailable3: "È possibile condividere questa storia da %LINK%.",
 				notavailable4: "My Stories",
 				notavailable5: "la sua pagina degli elementi",
-				notavailable6: "Spiacenti, questa feature non è completamente supportata nella modalità di sviluppo. In base allo scenario di sviluppo, questa feature può essere sviluppata quando viene distribuita.",
+				notavailable6: "Spiacenti, questa feature non è completamente supportata in modalità di sviluppo. In base allo scenario di sviluppo, essa potrebbe essere sviluppata quando viene distribuita.",
 				notavailable7: "Accertarsi di visitare %MYCONTENT% per confermare che anche le mappe e i layer utilizzati nella storia siano condivisi.",
 				notavailable8: "Contenuto personale"
 			},

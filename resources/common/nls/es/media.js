@@ -2,13 +2,13 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Multimedia",
+				lblSelect1: "Medios",
 				lblSelect2: "Contenido",
 				lblMap: "Mapa",
 				lblImage: "Imagen",
 				lblVideo: "Vídeo",
 				lblExternal: "Página web",
-				disabled: "El administrador ha deshabilitado esta característica",
+				disabled: "El administrador ha deshabilitado esta entidad",
 				url: "Para introducir manualmente la dirección web de una imagen",
 				userLookup: "Cargar álbumes",
 				notImplemented: "No se ha implementado aún.",
@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "Usuario de Facebook",
 				rightHeader: "Página de Facebook",
-				pageExplain: "Una página de Facebook es una marca/producto público o famoso como <b>esrigis</b>. Puedes obtener el nombre de la página después de la  primera «/» de la URL de la página.",
+				pageExplain: "Una página de Facebook es una marca/producto público o famoso como <b>esrigis</b>. Puedes obtener el nombre de la página después de la  primera \'/\' de la URL de la página.",
 				pageInputLbl: "Nombre de la página",
 				lookupMsgError: "No se encontró la página"
 			},
@@ -38,7 +38,7 @@
 				userInputLbl: "Dirección de correo electrónico o Id. de Picasa/Google+",
 				signInMsg2: "Cuenta no encontrada",
 				howToFind: "Cómo encontrar el ID de una cuenta Picasa or Google+",
-				howToFind2: "Copia los dígitos que hay entre la primera y la segunda «/» de cualquier página de Picasa o G+"
+				howToFind2: "Copia los dígitos que hay entre la primera y la segunda \'/\' de cualquier página de Picasa o G+"
 			},
 			videoSelectorCommon: {
 				check: "Comprobar",
@@ -94,9 +94,9 @@
 				lblPosition2: "Relleno",
 				lblPosition3: "Ajustar",
 				lblPosition4: "Estirar",
-				lblPosition5: "Personalizado",
+				lblPosition5: "Personalizada",
 				tooltipDimension: "El valor se puede especificar en \'px\' o en \'%\'",
-				tooltipDimension2: "El valor se debe especificar en «px»",
+				tooltipDimension2: "El valor se debe especificar en \'px\'",
 				lblPosition2Explain: "(puede recortarse)",
 				lblPosition3Explain: "(no se recortará)",
 				lblPosition3Explain2: "(el ancho siempre se ajusta al panel)",

@@ -5,7 +5,11 @@
 				close: "Sulje"
 			},
 			loading: {
-				long: "Tarinaa alustetaan",
+				step1: "Ladataan tarinaa",
+				step2: "Ladataan aineistoa",
+				step3: "Käynnistetään",
+				loadBuilder: "Vaihdetaan luontitoimintoon",
+				long: "Karttapäiväkirjaa alustetaan",
 				long2: "Odota hetki",
 				failButton: "Lataa tarina uudelleen"
 			},
@@ -32,16 +36,21 @@
 				mapLoadingFail: "Tapahtui virhe, eikä kartta latautunut oikein.",
 				signOut: "Kirjaudu ulos"
 			},
-			mobileInfo: {
-				legend: "Selite",
-				description: "Kuvaus",
-				lblLegendMobileError: "Selite ei ole käytettävissä. Lataa tarina uudelleen.",
-				lblLegendMobileErrorExplain: "Selite ei ole käytettävissä, kun laitetta kierretään pystysuuntaan tarinan latauksen jälkeen."
+			mobileView: {
+				tapForDetails: "Saat tiedot näkyviin napauttamalla",
+				clickForDetails: "Lisätietoja",
+				swipeToExplore: "Tutki pyyhkäisemällä",
+				tapForMap: "Siirry takaisin karttaan napauttamalla",
+				clickForMap: "TAKAISIN KARTTAAN"
 			},
-			mobileFooter: {
-				swipeInvite: "Siirry tarinassa pyyhkäisemällä",
-				lblNext: "Seuraava",
-				lblEnd: "Olet saavuttanut tarinan lopun"
+			floatLayout: {
+				scroll: "Vieritä"
+			},
+			sideLayout: {
+				scroll: "Saat lisää tietoja näkyviin vierittämällä alaspäin."
+			},
+			mainStage: {
+				back: "Takaisin"
 			},
 			headerFromCommon: {
 				storymapsText: "Tarinakartta",
@@ -67,11 +76,8 @@
 				copied: "Kopioitu",
 				open: "Avaa",
 				embed: "Upota Web-sivulle",
-				embedExplain: "Käytä seuraavaa HTML-koodia tarinan upottamiseen Web-sivulle.",
+				embedExplain: "Käytä seuraavaa HTML-koodia päiväkirjan upottamiseen Web-sivulle.",
 				size: "Koko (leveys/korkeus):"
-			},
-			locatorFromCommon: {
-				error: "Sijainti ei ole käytettävissä"
 			}
         }
     })

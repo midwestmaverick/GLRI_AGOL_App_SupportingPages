@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "משתמש פייסבוק",
 				rightHeader: "עמוד פייסבוק",
-				pageExplain: "דף Facebook הוא מותג/מוצר ציבורי או סלבריטי כגון <b>esrigis</b>. תוכל להשיג את שם הדף לאחר ה-\'\/' הראשון ב-URL של הדף.",
+				pageExplain: "A Facebook page is a public brand/product or celebrity like <b>esrigis</b>. You can get the page name after the firstq'\/'\ in the page URL.",
 				pageInputLbl: "שם דף",
 				lookupMsgError: "עמוד לא נמצא"
 			},
@@ -38,7 +38,7 @@
 				userInputLbl: "אמייל או Picasa/Google+ ID",
 				signInMsg2: "חשבון לא נמצא",
 				howToFind: "כיצד למצוא את ה- ID של חשבון ה- Picasa או Google+",
-				howToFind2: "העתק את הספרות בין ה-'\/'\ הראשון לשני בדף של Picasa או G+‎"
+				howToFind2: "העתק תווים בין ה \'/\'  הראשון לשני של כל עמוד Picasa או G+"
 			},
 			videoSelectorCommon: {
 				check: "בדיקה",
@@ -83,7 +83,7 @@
 				lblURLError: "תמונה זו אינה נראית חוקית. ציין קישור ישיר לקובץ תמונה (ה-URL שלך יסתיים בדרך כלל ב-‎.jpg או ‎.png). קישורים לדף אינטרנט שמכיל תמונה לא יפעלו.",
 				lblURLCheck: "בודק תמונה...",
 				lblLabel: "תאור תמונה",
-				lblLabel1: "תיאור",
+				lblLabel1: "כותרת",
 				lblLabel2: "טקסט מוצג בריחוף",
 				lblLabel3: "ללא",
 				lblLabelPH: "הכנס טקסט כלשהו...",
@@ -94,7 +94,7 @@
 				lblPosition2: "מלא",
 				lblPosition3: "מותאם",
 				lblPosition4: "מתוח",
-				lblPosition5: "מותאם אישית",
+				lblPosition5: "גודל מותאם",
 				tooltipDimension: "הערך יכול להיות מוגדר בתוך  \'px\' או \'%\'",
 				tooltipDimension2: "יש לציין את הערך ב-'px'",
 				lblPosition2Explain: "(יכול להחתך)",

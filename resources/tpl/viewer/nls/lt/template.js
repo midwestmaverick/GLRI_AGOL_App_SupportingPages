@@ -5,12 +5,16 @@
 				close: "Užverti"
 			},
 			loading: {
-				long: "Pasakojimas paleidžiamas",
+				step1: "Įkeliamas pasakojimas",
+				step2: "Įkeliami duomenys",
+				step3: "Inicijuojama",
+				loadBuilder: "Perjungiama į kūrimo priemonę",
+				long: "Žemėlapių žurnalas inicijuojamas",
 				long2: "Ačiū, kad palaukėte.",
 				failButton: "Įkelti pasakojimą iš naujo"
 			},
 			signin: {
-				title: "Autentifikacija būtina",
+				title: "Autentikacija būtina",
 				explainViewer: "Norėdami pasiekti pasakojimą, prisijunkite prie paskyros, esančios %PORTAL_LINK%.",
 				explainBuilder: "Norėdami konfigūruoti pasakojimą, prisijunkite prie paskyros, esančios %PORTAL_LINK%."
 			},
@@ -26,31 +30,36 @@
 				notConfiguredDesktop: "Pasakojimas dar nesukonfigūruotas.",
 				notConfiguredMobile: "%TPL_NAME% kūrimo priemonė nepalaiko šio ekrano dydžio.",
 				notAuthorized: "Neturite teisių pasiekti šį pasakojimą",
-				noBuilderIE: "Kūrimo priemonė neveikia „Internet Explorer“, jei jo versija mažesnė nei %VERSION%. %UPGRADE%",
+				noBuilderIE: "Kūrimo priemonė neveikia „Internet Explorer“ versijose ankstesnėse nei %VERSION%. %UPGRADE%",
 				noViewerIE: "Pasakojimas neveikia Internet Explorer, jei jo versija senesnė nei %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atnaujinkite naršyklę</a>.",
 				mapLoadingFail: "Įvyko klaida ir žemėlapio nepavyko tinkamai įkelti.",
 				signOut: "Atsijungti"
 			},
-			mobileInfo: {
-				legend: "Legenda",
-				description: "Aprašas",
-				lblLegendMobileError: "Deja, legenda negalima. Įkelkite pasakojimą iš naujo.",
-				lblLegendMobileErrorExplain: "Legenda negalima, kai įrenginys pasukamas į statųjį režimą po to, kai pasakojimas įkeltas."
+			mobileView: {
+				tapForDetails: "Išsamiai informacijai bakstelėkite",
+				clickForDetails: "Sužinokite daugiau",
+				swipeToExplore: "Perbraukite norėdami naršyti",
+				tapForMap: "Bakstelėkite norėdami grįžti į žemėlapį",
+				clickForMap: "GRĮŽTI Į ŽEMĖLAPĮ"
 			},
-			mobileFooter: {
-				swipeInvite: "Perbraukite, kad pereitumėte prie kito pasakojimo",
-				lblNext: "Kitas",
-				lblEnd: "Pasiekėte pasakojimo pabaigą"
+			floatLayout: {
+				scroll: "Slinkti"
+			},
+			sideLayout: {
+				scroll: "Slinkite žemyn ir peržiūrėkite daugiau!"
+			},
+			mainStage: {
+				back: "Atgal"
 			},
 			headerFromCommon: {
-				storymapsText: "Žemėlapis su pasakojimu",
+				storymapsText: "Pristatomasis žemėlapis",
 				builderButton: "Redaguoti",
 				facebookTooltip: "Dalintis Facebook",
 				twitterTooltip: "Dalintis Twitter",
 				bitlyTooltip: "Gauti trumpą nuorodą",
-				templateTitle: "Nustatyti šablono antraštę",
-				templateSubtitle: "Nustatyti šablono paantraštę",
+				templateTitle: "Nustatyti šablono pavadinimą",
+				templateSubtitle: "Nustatyti šablono antraštę",
 				share: "Bendrinti",
 				checking: "Tikrinamas pasakojimo turinys",
 				fix: "Taisyti pasakojimo nesklandumus",
@@ -67,11 +76,8 @@
 				copied: "Nukopijuota",
 				open: "Atverti",
 				embed: "Įterpti į tinklalapį",
-				embedExplain: "Jei į pasakojimą norite įterpti žurnalą, naudokite šį HTML kodą.",
+				embedExplain: "Jei į tinklalapį norite įterpti žurnalą, naudokite šį HTML kodą.",
 				size: "Dydis (plotis / aukštis):"
-			},
-			locatorFromCommon: {
-				error: "Vietovė neprieinama"
 			}
         }
     })

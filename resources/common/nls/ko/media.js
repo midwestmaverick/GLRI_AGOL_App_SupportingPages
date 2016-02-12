@@ -10,7 +10,7 @@
 				lblExternal: "웹 페이지",
 				disabled: "이 기능은 관리자가 사용하지 않도록 설정했습니다.",
 				url: "이미지의 웹 주소를 수동으로 입력하려면",
-				userLookup: "앨범 로드",
+				userLookup: "앨범 불러오기",
 				notImplemented: "아직 구현되지 않았습니다.",
 				noData: "공개 앨범을 찾을 수 없음"
 			},

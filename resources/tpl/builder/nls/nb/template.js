@@ -2,113 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				tabTitle: "Fanebasert",
-				tabDescr: "Viser kart og annet innhold ved hjelp av faner med et valgfritt panel med beskrivende tekst.",
-				tabItem: "Fane",
-				tabItems: "Faner",
-				sideTitle: "Trekkspill på siden",
-				sideDescr: "Viser kart og annet innhold ved hjelp av en utvidbar kontroll som inneholder beskrivende tekst.",
-				sideItem: "Oppføring",
-				sideItems: "Oppføringer",
-				bulletTitle: "Punktmerket",
-				bulletDescr: "Viser kart og annet innhold ved hjelp av punkter med et valgfritt panel med beskrivende tekst.",
-				bulletItem: "Punkt",
-				bulletItems: "Punktmerking"
+				mainStage: "Hovedstadium",
+				sideTitle: "Sidepanel",
+				sideDescr: "Et oppsett for en tekstintensiv historie som på en fremragende måte kombinerer bildene, videoene og kartene dine i en klar og fokusert melding.",
+				floatTitle: "Flytende panel",
+				floatDescr: "Et oppsett som setter kartografien din i fokus, samtidig som et gjennomsiktig panel med en kort tekst bidrar til å fortelle historien."
 			},
 			common: {
 				lblStatus1: "Publisert",
+				lblStatus2: "Utkast",
 				lblStatus3: "Skjult"
 			},
 			settingsLayoutOptions: {
 				title: "Oppsettalternativer",
-				lblDescription: "Beskrivelse",
-				lblLegend: "Plassering av tegnforklaring",
-				tooltipLegend: "Velg hvor du vil at tegnforklaringen for kartet skal vises. Du kan aktivere tegnforklaringen for et kart når du legger til eller konfigurerer kartet.",
-				lblDropdown: "Rullegardinliste",
-				lblBelowDesc: "Under beskrivelsen",
-				lblOnPanel: "Som et panel",
-				lblPanelDescAndLegend: "Beskrivelse og tegnforkaringspanel",
-				lblPanelDescAndOrLegend: "Beskrivelse og/eller tegnforklaringspanel",
-				lblPanelDesc: "Beskrivelsespanel",
-				lblPanelLegend: "Tegnforklaringspanel",
-				lblPanelAccordion: "Trekkspillpanel",
 				cfgLeft: "Venstre",
 				cfgRight: "Høyre",
 				cfgSmall: "Liten",
 				cfgMedium: "Middels",
 				cfgLarge: "Stor",
-				lblNumbering: "Vis numre",
-				lblReverse: "Omvendt nummerering",
-				canOverlapMap: "kan overlappe kartlokasjon"
+				socialLinksLabel: "Vis delingskoblinger nederst i hver seksjon",
+				socialLinksDescr: "Dette gjør at leserne kan referere til og promotere bestemte seksjoner av %TPL_NAME%. Hvis du for eksempel bruker et delingsikon for seksjoner, lander leserne på den bestemte %TPL_NAME%-seksjonen i stedet for på begynnelsen av historien. Leserne kan bruke koblingen for sosiale medier i tittelseksjonen for å fremme hele %TPL_NAME% (overskriftskategorien) og få dem til å lande på starten av %TPL_NAME%."
 			},
-			settingsMapOptions: {
-				title: "Kartalternativer",
-				lblOverview: "Oversiktskart",
-				tooltipOverview: "Vis et lite oversiktskart sammen med hovedkartet.",
-				lblLocate: "Finn-knapp",
-				tooltipLocate: "Denne funksjonaliteten støttes av webleserne på de fleste mobile enheter og stasjonære datamaskiner (Internet Explorer 9).",
-				lblGeocoder: "Adresse- eller stedssøk",
-				tooltipGeocoder: "Brukes til å finne adresser og steder i kartene dine.",
-				lblSync: "Synkronisert kartlokasjoner",
-				tooltipSync: "Når dette er aktivert, brukes den opprinnelige lokasjonen i det første kartet i serien på alle kartene. Når brukerne navigerer i et kart, vises dette i alle kartene. Deaktiver alternativet for lokasjonen i hvert kart som skal være uavhengig."
+			settingsLayoutFonts: {
+				title: "Skrifter",
+				defaultLbl: "Standard",
+				sectionTitleLbl: "Seksjonstittel",
+				sectionContentLbl: "Seksjonsinnhold"
 			},
 			initPopup: {
 				title: "Velkommen til"
 			},
 			addEditPopup: {
-				lblAdd: "Legg til",
-				lblEdit: "Rediger",
-				disabled: "Legg til er deaktivert fordi det maksimale antallet tillatte %LBL_LAYOUT% er nådd.",
-				titleAdd: "Legg til",
-				titleEdit: "Rediger",
-				stepMainStageNextTooltip: "Skriv inn tittel og innhold for %LBL_LAYOUT%",
-				titlePlaceholder: "%LBL_LAYOUT%-tittel..."
+				disabled: "Legg til seksjon er deaktivert fordi det maksimale antallet tillatte seksjoner er nådd.",
+				titleAdd: "Legg til seksjon",
+				titleAddHome: "Legg til Hjem-seksjon",
+				titleEdit: "Rediger seksjon",
+				step: "Trinn",
+				stepMainStageExplain: "Hovedinnhold",
+				stepPanelExplain: "Innhold",
+				stepMainStageNextTooltip: "Angi seksjonstittelen, og velg innholdet i hovedstadiet",
+				stepMainStageNextTooltip2: "Velg innholdet på hovedstadiet",
+				step2NextTooltip: "Angi seksjonstittelen og %LAYOUT-TYPE%-innholdet",
+				stepNextTooltipNext: "for å gå til neste trinn",
+				stepNextTooltipAdd: "for å legge til seksjonen",
+				firstAddExplain: "Den første seksjonen er Hjem-seksjonen. Tenk på den seksjonen som forsiden i fortellingen. Tittelen du nettopp definerte, vises med store skrifttyper.",
+				firstAddLeanMore: "Finn ut mer",
+				titlePlaceholder: "Seksjonstittel..."
 			},
-			textEditor: {
-				placeholder1: "Legg til tekst, koblinger og små grafikkelementer her.",
-				placeholder2: "Hvis denne er tom, skjules panelet."
+			addEditViewText: {
+				editorPlaceholder: "Legg til tekst, koblinger og små grafikkelementer her.",
+				editorActionsTitle: "Handlinger på hovedstadiet",
+				editorActionsHelpDescr: "Bruk disse kontrollene til å opprette koblinger som vil endre hovedstadiet. Når for eksempel leseren klikker på en kobling, kan det være lurt å zoome inn kartet til en bestemt lokasjon, vise et annet webkart eller vise et bilde.",
+				mainStageDisabled: "Handlinger på hovedstadiet deaktiveres når redigeringsverktøyet maksimeres"
 			},
 			organizePopup: {
 				title: "Organiser",
-				lblHeader: "Dra og slipp %LBL_LAYOUT% for å organisere historien.",
+				lblHeader: "Dra og slipp avsnitt for å organisere historien.",
 				lblColTitle: "Tittel",
+				lblColPubDate: "Publiseringsdato",
 				lblColStatus: "Status",
-				btnApplyWarning: "Bekreft at %NB% %LBL_LAYOUT% skal slettes",
+				checkDisplayReverse: "Vis seksjoner i omvendt rekkefølge",
+				btnApplyWarning: "Bekreft sletting av %NB% seksjon(er)",
 				deleteTooltip: "Slett",
-				firstSectionExplain: "(Startseksjonen kan ikke flyttes)"
+				firstSectionExplain: "(Startseksjonen kan ikke flyttes)",
+				exportMainStage: "Innhold på hovedstadiet",
+				exportPanel: "Panelinnhold",
+				exportActions: "Handlinger på hovedstadiet"
+			},
+			exportData: {
+				btn: "Eksporter innhold",
+				tooltip: "Hvis du eksporterer innholdet, kan du se på og lage en sikkerhetskopi av innholdet hvis du skulle komme til å slette det. Bare kopier og lim inn innholdet fra siden inn i en tekstbehandler."
 			},
 			help: {
 				lblHelp: "Hjelp",
-				lblAdd: "Legg til",
+				lblAdd: "Legg til seksjon",
 				lblSettings: "Innstillinger",
-				lblOrga: "Organiser",
+				lblOrga: "Organiser innhold",
 				lblEdit: "Redigeringer",
 				lblPublish: "Del",
 				lblTips: "Tips",
 				lblMore: "Vil du ha mer?",
 				lblLink: "Gå til Esri-webområdet for historiekart.",
-				content1Div1: "Du oppretter %TPL_NAME% ved å bruke Legg til-knappen til å legge til hvert kart og annet innhold i oppsettet. Annet innhold kan være bilder, videoer eller innebygde websider eller kode. Det kan for eksempel være du vil at brukerne skal se et introduksjonsbilde eller en introduksjonsvideo første gang de starter %TPL_NAME%, før de går videre og utforsker kartene.",
-				content1Div2: "Når du klikker på Legg til-knappen, vises en dialogboks der du kan velge og konfigurere kartet og annet innhold du vil legge til. Du kan for eksempel angi lokasjonen kartet skal vise, aktivere tegnforklaringen for kartet osv.",
-				content2Div1: "I dialogboksen Innstillinger kan du endre utseendet på %TPL_NAME%. Du kan blant annet endre oppsettet, velge et annet fargeoppsett og angi hvor tegnforklaringen for kartet skal vises.",
-				content2Div2: "Du kan også bytte ut Esri-logoen i toppteksten i %TPL_NAME% med din egen logo for ditt varemerke. I tillegg kan du angi hvilken webside som skal åpnes når leserne klikker på logoen din, slik at de kan få mer informasjon.",
-				content3Div1: "I dialogboksen Organiser kan du administrere %TPL_NAME%. I denne dialogboksen kan du endre rekkefølgen på serien ved å dra og slippe.",
-				content3Div2: "Du kan også slette innhold eller skjule det. Muligheten til å skjule innhold er nyttig når du forbereder nytt innhold som ikke er klart til å tas med i fortellingskartet ennå.",
+				content1Div1: "Du kan integrere en lang rekke ulike stiler når du bygger opp historien din. <strong>%LAYOUT_TITLE%</strong> inneholder vanligvis teksten din, bildene og videoene dine, mens kartene dine vanligvis havner på <strong>hovedstadiet</strong>. %TPL_NAME% gjør imidlertid at du kan ta med bilder, diagrammer og videoklipp på hovedstadiet, også.",
+				content1Div2: "Ved å legge til seksjoner kan du virkelig tilpasse historieopplevelsen. Etter hvert som leserne ruller gjennom %LAYOUT_TITLE%-teksten din, kan du gjøre slik at de ser et kart på hovedstadiet der det panoreres eller zoomes inn til viktige punkter, eller det kan lastes inn nye kart og bilder automatisk for å underbygge budskapet ditt.",
+				content2Div1: "I dialogboksen Innstillinger kan du endre utseendet på din %TPL_NAME%. Du kan endre oppsett, velge et annet fargeoppsett, endre skrifter, osv.",
+				content2Div2: "Du kan også bytte ut Esri-logoen med din egen logo for å fremheve varemerket ditt. I tillegg kan du angi hvilken webside som skal åpnes hvis leserne klikker på logoen din, slik at de kan få mer informasjon.",
+				content3Div1: "Innholdet ditt er organisert i seksjoner. Du kan ha så mange seksjoner du vil (se på dem som minikapitler). Flyten til disse kapitlene er viktig. Derfor kan du ved å klikke på Organiser endre rekkefølgen på seksjoner eller slette seksjoner hvis du ønsker.",
 				content4Div1: "Har du funnet en feil eller ønsker å endre materialet? Ikke noe problem. Se etter redigeringsikonet i programmet for å gjøre endringer av innholdet. Du kommer til å bruke redigeringsfunksjonene mange ganger etter hvert som du utvikler %TPL_NAME%!",
 				content5Div1: "Når du lagrer din %TPL_NAME%, er den som standard privat. Du kan bruke delingsknappen for å dele den med andre. Du kan dele din %TPL_NAME% offentlig, slik at den er tilgjengelig for alle.",
 				content5Div2: "Avhengig av hvilken konto du har, kan det hende du også har muligheten til å dele din %TPL_NAME% bare med personer i organisasjonen din, slik at andre ikke har tilgang til den.",
-				content6Div1: "Kartene i en serie synkroniseres som standard til å vise samme lokasjon. Det betyr at lokasjonen som vises i det første kartet, automatisk brukes i alle de andre kartene, og hvis en bruker zoomer inn eller panorerer til en annen lokasjon i kartet han eller hun ser på, så brukes denne lokasjonen i de andre kartene også.",
-				content6Div2: "Hvis du for eksempel har en serie som viser forskjellige tematiske data for en by, kan brukerne zoom til sitt nabolag og deretter veksle mellom fanene for å se på kartene for det aktuelle området.",
-				content6Div3: "Hvis du vil deaktivere lokasjonssynkroniseringen, går du til dialogboksen Innstillinger og fjerner avmerkingen for innstillingen i kategorien Kartalternativer.",
-				content6AltDiv1: "Kartlokasjonen synkroniseres som standard. Når synkroniseringen er deaktivert, kan hvert enkelt kart vise ulike lokasjoner.",
-				content6AltDiv2: "Synkronisering PÅ",
-				content6AltDiv3: "Synkronisering AV",
-				content6AltDiv4: "Hvis du vil deaktivere synkronisering, velger du Innstilinger > Kartalternativer og fjerner avmerkingen for Synkroniser kartlokasjoner."
+				content6Div1: "Tittelen på startseksjonen er også tittelen på historien. Se på startseksjonen som fortellingens forside. Tittelen på startseksjonen forblir synlig når leserne navigerer i historiekartet.",
+				content6Div2: "Din %LAYOUT_TITLE% må ikke bare være tekst, så vurder å bruke bilder og videoer for å gjøre fortellingen levende, og å bryte opp store deler med tekst!"
 			},
 			landing: {
-				lblAdd: "Hva vil du kalle %LAYOUT_TITLE%-kartserien?",
+				lblAdd: "Hva vil du kalle historiekartet?",
 				phAdd: "Skriv inn tittelen...",
 				lblOR: "Eller",
 				lblHelp: "Få en omvisning"
+			},
+			firstAddSplash: {
+				thisis: "Dette er",
+				lblMain: "Dette er %BR%-hovedstadiet"
 			}
         }
     })

@@ -3,16 +3,21 @@ app.cfg = {
 	// General UI
 	//
 	
-	// Maximum number of entries
-	MAX_NB_ENTRIES: 30,
+	// Maximum number of sections
+	MAX_NB_SECTIONS: 101,
+	
+	// Side and Floating panel dot navigation group size
+	DOTNAV_GROUPSIZE: 15,
 	
 	TIMEOUT_VIEWER_LOAD: 5000,
 	TIMEOUT_VIEWER_REQUEST: 12000,
 	TIMEOUT_BUILDER_REQUEST: 20000,
 	
+	SECTION_ACTION_ZOOM_MAP_MARKER: "resources/tpl/viewer/icons/map-pin-circle-blue.png",
+	
 	// Control the social button configuration in builder
 	// If disabled author won't be able to activate them
-	// if disabled after the app has been created, this will override the settings
+	// if disabled after a journal has been created, this will override the settings
 	HEADER_SOCIAL: {
 		facebook: true,
 		twitter: true,
@@ -30,393 +35,61 @@ app.cfg = {
 	// Size and position of represent the value relative to the Map
 	LAYOUTS: [
 		{
-			id: "tab",
-			thumbnail: "resources/tpl/builder/icons/builder-layout-tab.png",
-			liveApp: "http://links.esri.com/storymaps/map_series_example_tabbed",
-			sizes: { small: '20%', medium: '30%', large: '40%' },
+			id: "side",
+			thumbnail: "resources/tpl/builder/icons/builder-layout-side.png",
+			liveApp: "http://links.esri.com/storymaps/map_journal_example_side_panel",
+			sizes: { small: '30%', medium: '40%', large: '50%' },
 			positions: ["left", "right"],
 			themes: [
-				{
-					name: "tab-default-1",
-					// Group of matching theme across layout
-					group: "default",
-					themeMajor: "white", 
-					// Header background
-					header: "#283239",
-					// Header title
-					headerTitle: "#FFFFFF", 
-					// Header link&sharing
-					headerText: "#D9D9D9", 
-					// Main Panel background
-					panel: "#DBD9DA", 
-					// Description text
-					text: "#000000", 
-					// Description link
-					textLink: "#555555", 
-					// Media background
-					media: "#FFFFFF", 
-					// Map Controls background
-					mapControls: "#DBD9DA",	
-					// Map Controls text
-					softText: "#444444", 
-					// Map Controls buttons
-					softBtn: "#444444", 
-					// Esri logo "white" or "black"
-					esriLogo: "white",
-					esriLogoMobile: "black",
-					tab: "#60788A",
-					tabActive: "#69B9D2",
-					tabHover: "#4B879D",
-					tabText: "#FFFFFF",
-					tabTextHover: "#FFFFFF",
-					tabTextActive: "#FFFFFF"
-				},
-				{
-					name: "tab-default-2", 
-					group: "antique",
-					themeMajor: "white", 
-					header: "#283239",
-					headerTitle: "#FFFFFF", 
-					headerText: "#D9D9D9", 
-					panel: "#FFF8E9", 
-					text: "#000000", 
-					textLink: "#555555", 
-					media: "#C9C1BA", 
-					mapControls: "#FFF8E9",	
-					softText: "#4D4D4D", 
-					softBtn: "#444444", 
-					esriLogo: "white",
-					esriLogoMobile: "black",
-					tab: "#7B7572",
-					tabActive: "#BEAB94",
-					tabHover: "#9E8772",
-					tabText: "#FFFFFF",
-					tabTextHover: "#FFFFFF",
-					tabTextActive: "#FFFFFF"
-				},
-				{
-					name: "tab-default-3", 
-					group: "bright",
-					themeMajor: "white", 
-					header: "#6396BC",
-					headerTitle: "#FFFFFF", 
-					headerText: "#FFFFFF", 
-					panel: "#FFFFFF", 
-					text: "#333333", 
-					textLink: "#555555", 
-					media: "#FFFFFF", 
-					mapControls: "#FFFFFF",	
-					softText: "#444444", 
-					softBtn: "#444444", 
-					esriLogo: "white",
-					esriLogoMobile: "black",
-					tab: "#4B7697",
-					tabActive: "#A5D1EC",
-					tabHover: "#6EA8D5",
-					tabText: "#000000",
-					tabTextHover: "#000000",
-					tabTextActive: "#000000"
-				},
-				{
-					name: "tab-default-4", 
-					group: "dark",
-					themeMajor: "black", 
-					header: "#283239",
-					headerTitle: "#FFFFFF", 
-					headerText: "#C5D5D5", 
-					panel: "#000000", 
-					text: "#D8D8D8", 
-					textLink: "#CCCCCC", 
-					media: "#B8B8B8", 
-					mapControls: "#404040",	
-					softText: "#C5D5D5", 
-					softBtn: "#C5D5D5", 
-					esriLogo: "white",
-					esriLogoMobile: "white",
-					tab: "#666666",
-					tabActive: "#B8B8B8",
-					tabHover: "#8D8F91",
-					tabText: "#FEE680",
-					tabTextHover: "#FEE680",
-					tabTextActive: "#FEE680"
-				},
-				{
-					name: "tab-default-5", 
-					group: "green",
-					themeMajor: "white", 
-                    header: "#3C4639",
-                    headerTitle: "#D4E6C3", 
-                    headerText: "#81997A", 
-                    panel: "#D4E6C3", 
-                    text: "#231F20", 
-                    textLink: "#555555", 
-                    media: "#FFFFFF", 
-                    mapControls: "#D4E6C3",    
-                    softText: "#444444", 
-                    softBtn: "#444444", 
-                    esriLogo: "white",
-                    esriLogoMobile: "black",
-                    tab: "#9BAD8A",
-                    tabActive: "#D4E6C3",
-                    tabHover: "#B5D798",
-                    tabText: "#5B754C",
-                    tabTextHover: "#5B754C",
-                    tabTextActive: "#5B754C"
-				}
+				{name: "side-default-1", themeMajor: "white", dotNav: "#777777", panel: "#FFFFFF", media: "#EEEEEE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black"},
+				{name: "side-default-2", themeMajor: "white", dotNav: "#726458", panel: "#FFF8E9", media: "#C9C1B9", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#444",    esriLogo: "black"},
+				{name: "side-default-3", themeMajor: "white", dotNav: "#676C7F", panel: "#F9F9EF", media: "#424D51", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#aaa",    esriLogo: "black"},
+				{name: "side-default-4", themeMajor: "black", dotNav: "#5A5A5A", panel: "#000000", media: "#EEEEEE", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA",    esriLogo: "white"},
+				{name: "side-default-5", themeMajor: "white", dotNav: "#68AAE1", panel: "#FFFFFF", media: "#E8E8DF", text: "#000000", textLink: "#555", softText: "#FFF",    softBtn: "#4D4D4D", esriLogo: "black"},
+				{name: "side-default-6", themeMajor: "white", dotNav: "#676C7E", panel: "#F9F9EF", media: "#C2E3EE", text: "#000000", textLink: "#555", softText: "#c0c0c0", softBtn: "#AAA",    esriLogo: "black"}
 			]
 		},
 		{
-			id: "accordion",
-			thumbnail: "resources/tpl/builder/icons/builder-layout-accordion.png",
-			liveApp: "http://links.esri.com/storymaps/map_series_example_side_accordion",
+			id: "float",
+			thumbnail: "resources/tpl/builder/icons/builder-layout-float.png",
+			liveApp: "http://links.esri.com/storymaps/map_journal_example_floating_panel",
 			sizes: { small: '25%', medium: '35%', large: '45%' },
-			positions: ["left", "right"],
+			positions: ["right", "left"],
 			themes: [
-				{
-					name: "accordion-default-1",
-					group: "default",
-					themeMajor: "white", 
-					header: "#283239",
-					headerTitle: "#FFFFFF", 
-					headerText: "#D9D9D9", 
-					panel: "#DBD9DA", 
-					text: "#000000", 
-					textLink: "#555555", 
-					media: "#FFFFFF", 
-					mapControls: "#DBD9DA",	
-					softText: "#444444", 
-					softBtn: "#444444", 
-					esriLogo: "white", 
-					esriLogoMobile: "black",
-					// Arrow and entries separator
-					accordionArrow: "#58ADCC",
-					accordionArrowActive: "#FFFFFF",
-					accordionArrowHover: "#9ACCDE",
-					accordionNumber: "#60788A",
-					accordionTitle: "#000000"
-				},
-				{
-					name: "accordion-default-2", 
-					group: "antique",
-					themeMajor: "white", 
-					header: "#283239",
-					headerTitle: "#FFFFFF", 
-					headerText: "#D9D9D9", 
-					panel: "#FFF8E9", 
-					text: "#000000", 
-					textLink: "#555555", 
-					media: "#C9C1BA", 
-					mapControls: "#FFF8E9",	
-					softText: "#4D4D4D", 
-					softBtn: "#444444", 
-					esriLogo: "white", 
-					esriLogoMobile: "black",
-					accordionArrow: "#7B7572",
-					accordionArrowActive: "#404040",
-					accordionArrowHover: "#747474",
-					accordionNumber: "#BCA594",
-					accordionTitle: "#000000"
-				},
-				{
-					name: "accordion-default-3", 
-					group: "bright",
-					themeMajor: "white", 
-					header: "#6396BC",
-					headerTitle: "#FFFFFF", 
-					headerText: "#FFFFFF", 
-					panel: "#FFFFFF", 
-					text: "#333333", 
-					textLink: "#555555", 
-					media: "#FFFFFF", 
-					mapControls: "#FFFFFF",	
-					softText: "#444444", 
-					softBtn: "#444444", 
-					esriLogo: "white", 
-					esriLogoMobile: "black",
-					accordionArrow: "#ACDAFF",
-					accordionArrowActive: "#4B7697",
-					accordionArrowHover: "#73A0C4",
-					accordionNumber: "#4E8DC1",
-					accordionTitle: "#333333"
-				},
-				{
-					name: "accordion-default-4", 
-					group: "dark",
-					themeMajor: "black", 
-					header: "#283239",
-					headerTitle: "#FFFFFF", 
-					headerText: "#C5D5D5", 
-					panel: "#181818", 
-					text: "#D8D8D8", 
-					textLink: "#CCCCCC", 
-					media: "#B8B8B8", 
-					mapControls: "#404040",	
-					softText: "#C5D5D5", 
-					softBtn: "#C5D5D5",
-					esriLogo: "white", 
-					esriLogoMobile: "white",
-					accordionArrow: "#B8B8B8",
-					accordionArrowActive: "#FFFFFF",
-					accordionArrowHover: "#C0C0C0",
-					accordionNumber: "#E5FA84",
-					accordionTitle: "#D8D8D8"
-				},
-				{
-					name: "accordion-default-5", 
-					group: "green",
-                    themeMajor: "white", 
-                    header: "#3C4639",
-                    headerTitle: "#D4E6C3", 
-                    headerText: "#81997A", 
-                    panel: "#D4E6C3", 
-                    text: "#231F20", 
-                    textLink: "#555555", 
-                    media: "#FFFFFF", 
-                    mapControls: "#D4E6C3",    
-                    softText: "#444444", 
-                    softBtn: "#444444", 
-                    esriLogo: "white",
-                    esriLogoMobile: "black",
-                	accordionArrow: "#231F20",
-					accordionArrowActive: "#99B87E",
-					accordionArrowHover: "#81997A",
-					accordionNumber: "#3C4639",
-					accordionTitle: "#5B754C"
-				}
-			]
-		},
-		{
-			id: "bullet",
-			thumbnail: "resources/tpl/builder/icons/builder-layout-bullet.png",
-			liveApp: "http://links.esri.com/storymaps/map_series_example_bullets",
-			sizes: { small: '20%', medium: '30%', large: '40%' },
-			positions: ["left", "right"],
-			themes: [
-				{
-					name: "bullet-default-1",
-					group: "default",
-					themeMajor: "white", 
-					header: "#283239",
-					headerTitle: "#FFFFFF", 
-					headerText: "#D9D9D9", 
-					panel: "#DBD9DA", 
-					text: "#000000", 
-					textLink: "#555555", 
-					media: "#FFFFFF", 
-					mapControls: "#DBD9DA",	
-					softText: "#444444", 
-					softBtn: "#444444", 
-					esriLogo: "white",
-					esriLogoMobile: "black",
-					tab: "#60788A",
-					tabActive: "#68B9D2",
-					tabHover: "#4B879D",
-					tabText: "#FFFFFF",
-					tabTextHover: "#FFFFFF",
-					tabTextActive: "#FFFFFF"
-				},
-				{
-					name: "bullet-default-2", 
-					group: "antique",
-					themeMajor: "white", 
-					header: "#5E5248",
-					headerTitle: "#FFFFFF", 
-					headerText: "#D9D9D9", 
-					panel: "#FFF8E9", 
-					text: "#000000", 
-					textLink: "#555555", 
-					media: "#C9C1BA", 
-					mapControls: "#FFF8E9",	
-					softText: "#4D4D4D", 
-					softBtn: "#444444", 
-					esriLogo: "white",
-					esriLogoMobile: "black",
-					tab: "#7B7572",
-					tabActive: "#BEAB94",
-					tabHover: "#9E8772",
-					tabText: "#FFFFFF",
-					tabTextHover: "#FFFFFF",
-					tabTextActive: "#FFFFFF"
-				},
-				{
-					name: "bullet-default-3", 
-					group: "bright",
-					themeMajor: "white", 
-					header: "#6396BC",
-					headerTitle: "#FFFFFF", 
-					headerText: "#FFFFFF", 
-					panel: "#FFFFFF", 
-					text: "#333333", 
-					textLink: "#555555", 
-					media: "#FFFFFF", 
-					mapControls: "#FFFFFF",	
-					softText: "#444444", 
-					softBtn: "#444444", 
-					esriLogo: "white",
-					esriLogoMobile: "black",
-					tab: "#4B7697",
-					tabActive: "#A5D1EC",
-					tabHover: "#6EA8D5",
-					tabText: "#000000",
-					tabTextHover: "#000000",
-					tabTextActive: "#000000"
-				},
-				{
-					name: "bullet-default-4", 
-					group: "dark",
-					themeMajor: "black", 
-					header: "#283239",
-					headerTitle: "#FFFFFF", 
-					headerText: "#C5D5D5", 
-					panel: "#000000", 
-					text: "#D8D8D8", 
-					textLink: "#CCCCCC", 
-					media: "#B8B8B8", 
-					mapControls: "#404040",	
-					softText: "#C5D5D5", 
-					softBtn: "#C5D5D5", 
-					esriLogo: "white",
-					esriLogoMobile: "white",
-					tab: "#666666",
-					tabActive: "#B8B8B8",
-					tabHover: "#8D8F91",
-					tabText: "#FEE680",
-					tabTextHover: "#FEE680",
-					tabTextActive: "#FEE680"
-				},
-				{
-					name: "bullet-default-5", 
-					group: "green",
-                    themeMajor: "white", 
-                    header: "#3C4639",
-                    headerTitle: "#D4E6C3", 
-                    headerText: "#81997A", 
-                    panel: "#D4E6C3", 
-                    text: "#231F20", 
-                    textLink: "#555555", 
-                    media: "#FFFFFF", 
-                    mapControls: "#D4E6C3",    
-                    softText: "#444444", 
-                    softBtn: "#444444", 
-                    esriLogo: "white",
-                    esriLogoMobile: "black",
-                    tab: "#9BAD8A",
-                    tabActive: "#D4E6C3",
-                    tabHover: "#B5D798",
-                    tabText: "#5B754C",
-                    tabTextHover: "#5B754C",
-                    tabTextActive: "#5B754C"
-				}
+				{name: "float-default-1", themeMajor: "black", dotNav: "#000000", panel: "#000000", media: "#FFFFFF", text: "#FFFFFF", textLink: "#DDD", softText: "#FFF",    softBtn: "#AAA", esriLogo: "white"}
 			]
 		}
 	],
+	
+	FONTS: {
+		sectionTitle: [
+			{ id: "default", 	lbl: "Open Sans", 				value: "font-family:'open_sansregular', sans-serif;" },
+			{ id: "arial", 		lbl: "Arial", 					value: "font-family:arial,helvetica,sans-serif;" },
+			{ id: "georgia", 	lbl: "Georgia", 				value: "font-family:georgia,serif;" },
+			{ id: "lucida", 	lbl: "Lucida Sans Unicode", 	value: "font-family:lucida sans unicode,lucida grande,sans-serif;" },
+			{ id: "tahoma", 	lbl: "Tahoma", 					value: "font-family:tahoma,geneva,sans-serif;" },
+			{ id: "times", 		lbl: "Times New Roman", 		value: "font-family:times new roman,times,serif;" },
+			{ id: "trebuchet", 	lbl: "Trebuchet MS", 			value: "font-family:trebuchet ms,helvetica,sans-serif;" },
+			{ id: "verdana", 	lbl: "Verdana", 				value: "font-family:verdana,geneva,sans-serif;" }
+		],
+		sectionContent: [
+			{ id: "default", 	lbl: "Open Sans", 				value: "font-family:'open_sansregular', sans-serif;" },
+			{ id: "arial", 		lbl: "Arial", 					value: "font-family:arial,helvetica,sans-serif;" },
+			{ id: "georgia", 	lbl: "Georgia", 				value: "font-family:georgia,serif;" },
+			{ id: "lucida", 	lbl: "Lucida Sans Unicode", 	value: "font-family:lucida sans unicode,lucida grande,sans-serif;" },
+			{ id: "tahoma", 	lbl: "Tahoma", 					value: "font-family:tahoma,geneva,sans-serif;" },
+			{ id: "times", 		lbl: "Times New Roman", 		value: "font-family:times new roman,times,serif;" },
+			{ id: "trebuchet", 	lbl: "Trebuchet MS", 			value: "font-family:trebuchet ms,helvetica,sans-serif;" },
+			{ id: "verdana", 	lbl: "Verdana", 				value: "font-family:verdana,geneva,sans-serif;" }     
+		]
+	},
 	
 	/*
 	 * Builder
 	 */
 	
-	HELP_URL: "http://links.esri.com/storymaps/map_series_app",
-	HELP_URL_PORTAL: "#/Story_Map_Series/0193000000vs000000/",
+	HELP_URL: "http://storymaps.arcgis.com/en/app-list/map-journal/",
+	HELP_URL_PORTAL: "#/Story_Map_Journal/0193000000v4000000/",
 	
 	// Control the authorized data source (for initialization and import screen)
 	AUTHORIZED_IMPORT_SOURCE: {
@@ -432,7 +105,7 @@ app.cfg = {
 	// If used on another domain, user will have an error in the Facebook popup after login
 	// To use Facebook import on Portal for ArcGIS, create your own ID at https://developers.facebook.com/ 
 	// or set AUTHORIZED_IMPORT_SOURCE.facebook to false
-	FACEBOOK_APP_ID: "1403302059961274",
+	FACEBOOK_APP_ID: "276669785846752",
 	// This Youtube key is valid for application running on arcgis.com and esri.com domains
 	// If the application is deployed on Portal for ArcGIS or your own server, the Youtube api call 
 	//  won't be perfomed until you set the following flag and provide your own key
@@ -444,11 +117,11 @@ app.cfg = {
 	//
 	
 	// Text to be used as the browser page title during app creation
-	TPL_NAME: "Map Series",
-	TPL_ID: "mapseries",
-	WEBAPP_TAG: ["Story Map", "Map Series"],
+	TPL_NAME: "Map Journal",
+	TPL_ID: "mapjournal",
+	WEBAPP_TAG: ["Story Map", "Map Journal"],
 	WEBAPP_KEYWORD_GENERIC: ["JavaScript", "Map", "Mapping Site", "Online Map", "Ready To Use", "selfConfigured", "Web Map"],
-	WEBAPP_KEYWORD_APP: ["Story Map", "Story Maps", "MapSeries"],
+	WEBAPP_KEYWORD_APP: ["Story Map", "Story Maps", "MapJournal"],
 
 	//
 	// Portal configuration

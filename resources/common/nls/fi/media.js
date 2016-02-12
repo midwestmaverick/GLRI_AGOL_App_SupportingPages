@@ -8,7 +8,7 @@
 				lblImage: "Kuva",
 				lblVideo: "Video",
 				lblExternal: "Web-sivu",
-				disabled: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä",
+				disabled: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä.",
 				url: "Kuvan verkko-osoitteen manuaalinen syöttäminen",
 				userLookup: "Lataa albumit",
 				notImplemented: "Ei ole vielä toteutettu.",
@@ -17,7 +17,7 @@
 			imageSelector: {
 				lblStep1: "Valitse palvelu",
 				lblStep2: "Valitse media",
-				lblStep3: "Määritä"
+				lblStep3: "Muokkaa"
 			},
 			imageSelectorHome: {
 				explain: "Lataa kuvat sosiaalisesta mediasta <br />tai suoraan URL-osoitteesta"

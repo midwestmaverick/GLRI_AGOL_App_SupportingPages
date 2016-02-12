@@ -5,7 +5,11 @@
 				close: "Fechar"
 			},
 			loading: {
-				long: "A história está a inicializar",
+				step1: "A carregar a história",
+				step2: "A carregar dados",
+				step3: "Inicializando",
+				loadBuilder: "Alternando para builder",
+				long: "O Jornal de Mapa está a inicializar",
 				long2: "Obrigado por aguardar",
 				failButton: "Recarregar a história"
 			},
@@ -17,47 +21,52 @@
 			errors: {
 				boxTitle: "Ocorreu um erro",
 				invalidConfig: "Configuração inválida",
-				invalidConfigNoApp: "Identificador de Aplicação de Cartografia Web não especificada em index.html.",
+				invalidConfigNoApp: "O identificador da Aplicação de Cartografia Web não se encontra especificado em index.html",
 				unspecifiedConfigOwner: "O proprietário autorizado não foi configurado.",
 				invalidConfigOwner: "O proprietário da história não está autorizado.",
-				createMap: "Não foi possível criar mapa",
+				createMap: "Não foi possível criar o mapa",
 				invalidApp: "O %TPL_NAME% não existe ou encontra-se inacessível.",
-				appLoadingFail: "Algo correu mal, o %TPL_NAME% não foi carregado corretamente.",
+				appLoadingFail: "Aolgo correu mal, o %TPL_NAME% não foi carregado corretamente.",
 				notConfiguredDesktop: "A história ainda não se encontra configurada.",
 				notConfiguredMobile: "O builder %TPL_NAME% não é suportado com este tamanho de ecrã.",
 				notAuthorized: "Não tem autorização para aceder a esta história",
-				noBuilderIE: "O builder não é suportado no Internet Explorer anterior à versão %VERSION%. %UPGRADE%",
+				noBuilderIE: "O construtor não é suportado em versões de Internet Explorer anteriores a %VERSION%. %UPGRADE%",
 				noViewerIE: "Esta história não é suportada pelo Internet Explorer abaixo da versão %VERSION%. %UPGRADE%",
-				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>.",
-				mapLoadingFail: "Algo correu mal, o mapa não foi carregado corretamente.",
-				signOut: "Terminar Sessão"
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Por favor atualize o seu browser</a>.",
+				mapLoadingFail: "Algo correu mal, o Mapa não foi carregado corretamente.",
+				signOut: "Terminar sessão"
 			},
-			mobileInfo: {
-				legend: "Legenda",
-				description: "Descrição",
-				lblLegendMobileError: "Lamentamos, a legenda está indisponível. Por favor, volte a carregar a história.",
-				lblLegendMobileErrorExplain: "A legenda não se encontra disponível quando o dispositivo é rodado para modo de paisagem após a história ter sido carregada."
+			mobileView: {
+				tapForDetails: "Toque para aceder a detalhes",
+				clickForDetails: "Obtenha mais informações",
+				swipeToExplore: "Deslize para explorar.",
+				tapForMap: "Toque para regressar ao mapa",
+				clickForMap: "VOLTAR AO MAPA"
 			},
-			mobileFooter: {
-				swipeInvite: "passe com o dedo para navegar pela história",
-				lblNext: "Seguinte",
-				lblEnd: "Chegou ao fim da história"
+			floatLayout: {
+				scroll: "Scroll"
+			},
+			sideLayout: {
+				scroll: "Faça scroll para ver mais!"
+			},
+			mainStage: {
+				back: "Retroceder"
 			},
 			headerFromCommon: {
-				storymapsText: "Um story map",
+				storymapsText: "Um mapa de história",
 				builderButton: "Editar",
 				facebookTooltip: "Partilhar no Facebook",
 				twitterTooltip: "Partilhar no Twitter",
 				bitlyTooltip: "Obter uma ligação curta",
-				templateTitle: "Definir o título do modelo",
-				templateSubtitle: "Definir o subtítulo do modelo",
+				templateTitle: "Definir título do modelo",
+				templateSubtitle: "Definir subtítulo do modelo",
 				share: "Partilhar",
 				checking: "A verificar o conteúdo da sua história",
 				fix: "Corrija problemas na sua história",
 				noerrors: "Não foram detetados problemas"
 			},
 			overviewFromCommon: {
-				title: "Mapa de Vista Geral"
+				title: "Vista Geral do Mapa"
 			},
 			legendFromCommon: {
 				title: "Legenda"
@@ -67,11 +76,8 @@
 				copied: "Copiado",
 				open: "Abrir",
 				embed: "Incorporar em página web",
-				embedExplain: "Utilize o seguinte código HTML para incorporar a história numa página web.",
+				embedExplain: "Utilize o seguinte código HTML para incorporar o jornal numa página web.",
 				size: "Tamanho (largura/altura):"
-			},
-			locatorFromCommon: {
-				error: "Localização indisponível"
 			}
         }
     })

@@ -5,7 +5,11 @@
 				close: "关闭"
 			},
 			loading: {
-				long: "故事正在初始化",
+				step1: "正在加载故事",
+				step2: "加载数据",
+				step3: "正在初始化",
+				loadBuilder: "切换到构建器",
+				long: "Map Journal 正在初始化",
 				long2: "谢谢等候",
 				failButton: "重新加载故事"
 			},
@@ -32,16 +36,21 @@
 				mapLoadingFail: "发生了一些错误，地图未正确加载。",
 				signOut: "登出"
 			},
-			mobileInfo: {
-				legend: "图例",
-				description: "描述",
-				lblLegendMobileError: "抱歉，图例不可用。请重新加载故事。",
-				lblLegendMobileErrorExplain: "如果设备在加载故事后旋转到纵向模式，则图例不可用。"
+			mobileView: {
+				tapForDetails: "点击查看详细信息",
+				clickForDetails: "了解详细信息",
+				swipeToExplore: "滑动以进行浏览",
+				tapForMap: "点击以返回地图",
+				clickForMap: "返回到地图"
 			},
-			mobileFooter: {
-				swipeInvite: "滑动浏览故事",
-				lblNext: "下一页",
-				lblEnd: "您已到达故事末尾"
+			floatLayout: {
+				scroll: "滚动"
+			},
+			sideLayout: {
+				scroll: "向下滚动以查看更多信息！"
+			},
+			mainStage: {
+				back: "返回"
 			},
 			headerFromCommon: {
 				storymapsText: "故事地图",
@@ -67,11 +76,8 @@
 				copied: "已复制",
 				open: "打开",
 				embed: "嵌入到网页",
-				embedExplain: "使用以下 HTML 代码将故事嵌入到 Web 页面中。",
+				embedExplain: "使用以下 HTML 代码将日志嵌入到网页。",
 				size: "大小(宽度/高度):"
-			},
-			locatorFromCommon: {
-				error: "位置不可用"
 			}
         }
     })

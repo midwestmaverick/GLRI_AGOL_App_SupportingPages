@@ -21,7 +21,7 @@
 				no: "否"
 			},
 			inlineFieldEdit: {
-				editMe: "编辑!"
+				editMe: "编辑！"
 			},
 			builderPanel: {
 				panelHeader: "%TPL_NAME% 构建器",

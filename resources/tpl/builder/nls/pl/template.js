@@ -2,113 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				tabTitle: "Przy użyciu kart",
-				tabDescr: "Prezentacja map i innych treści za pomocą kart z opcjonalnym panelem dla opisu.",
-				tabItem: "Karta:",
-				tabItems: "karta",
-				sideTitle: "Zakładki boczne (Akordeon)",
-				sideDescr: "Prezentacja map i innych treści za pomocą rozwijanego sterowania zawierającego opis.",
-				sideItem: "Wpis",
-				sideItems: "Wpisy",
-				bulletTitle: "Wyróżniki",
-				bulletDescr: "Prezentacja map i innych treści za pomocą wyróżników z opcjonalnym panelem dla opisu.",
-				bulletItem: "Wyróżniki",
-				bulletItems: "Wyróżniki"
+				mainStage: "Obszar główny",
+				sideTitle: "Panel boczny",
+				sideDescr: "Układ dla opowiadania z dużą ilością tekstu, doskonały do połączenia zdjęć, filmów wideo oraz map w przejrzystą prezentację.",
+				floatTitle: "Panel przestawny",
+				floatDescr: "Układ umożliwiający wyróżnienie map, którym towarzyszy przezroczysty panel z krótkimi informacjami tekstowymi pomagającymi w przedstawieniu opowiadania."
 			},
 			common: {
 				lblStatus1: "Opublikowane",
+				lblStatus2: "Wersja robocza",
 				lblStatus3: "Ukryte"
 			},
 			settingsLayoutOptions: {
 				title: "Opcje układu",
-				lblDescription: "Opis",
-				lblLegend: "Położenie legendy",
-				tooltipLegend: "Wybierz położenie, w którym ma być wyświetlana legenda mapy. Można włączyć legendę dla dowolnej mapy podczas jej dodawania lub konfigurowania.",
-				lblDropdown: "Menu rozwijane poziome",
-				lblBelowDesc: "Pod opisem",
-				lblOnPanel: "Jako panel",
-				lblPanelDescAndLegend: "Panel opisu i legendy",
-				lblPanelDescAndOrLegend: "Panel opisu i/lub legendy",
-				lblPanelDesc: "Panel opisu",
-				lblPanelLegend: "Panel Legenda",
-				lblPanelAccordion: "Panel zakładek bocznych typu akordeon",
 				cfgLeft: "Lewy",
 				cfgRight: "Prawy",
 				cfgSmall: "Mały",
 				cfgMedium: "Średni",
 				cfgLarge: "Duży",
-				lblNumbering: "Wyświetl liczby",
-				lblReverse: "Numeracja odwrotna",
-				canOverlapMap: "może pokrywać się z lokalizacją mapy"
+				socialLinksLabel: "Wyświetlaj łącza do udostępniania u dołu każdej sekcji",
+				socialLinksDescr: "Umożliwia to użytkownikom tworzenie odnośników do określonych sekcji aplikacji %TPL_NAME% i ich promowanie. Na przykład, jeżeli użyjesz ikony udostępniania sekcji, użytkownicy zostaną przekierowani do określonej sekcji aplikacji %TPL_NAME%, zamiast do początku opowiadania. Użytkownicy mogą skorzystać z łącza mediów społecznościowych w sekcji tytułu, aby promować całą aplikację %TPL_NAME% (karta nagłówka) — w tym przypadku użytkownicy są przekierowywani do początku aplikacji %TPL_NAME%."
 			},
-			settingsMapOptions: {
-				title: "Opcje mapy",
-				lblOverview: "Mapa przeglądowa",
-				tooltipOverview: "Wyświetl małą mapę przeglądową wraz z mapą główną.",
-				lblLocate: "Przycisk Zlokalizuj",
-				tooltipLocate: "Ta funkcjonalność jest obsługiwana przez większość przeglądarek na urządzeniach mobilnych i stacjonarnych (Internet Explorer 9).",
-				lblGeocoder: "Wyszukiwarka adresu lub miejsca",
-				tooltipGeocoder: "Pozwala użytkownikom znaleźć adresy i miejsca na Twoich mapach.",
-				lblSync: "Synchronizuj lokalizacje map",
-				tooltipSync: "Gdy opcja jest włączona, początkowa lokalizacja pierwszej mapy z serii zostanie zastosowana dla wszystkich map, a nawigacja użytkownika na dowolnej mapie zostanie pokazana na wszystkich mapach. Wyłącz tę opcję, jeśli chcesz, żeby lokalizacja każdej mapy pozostała niezależna od reszty."
+			settingsLayoutFonts: {
+				title: "Czcionki",
+				defaultLbl: "Domyślnie",
+				sectionTitleLbl: "Tytuł sekcji",
+				sectionContentLbl: "Treść sekcji"
 			},
 			initPopup: {
 				title: "Witamy w"
 			},
 			addEditPopup: {
-				lblAdd: "Dodaj",
-				lblEdit: "Edytuj",
-				disabled: "Opcja Dodaj jest wyłączona, ponieważ osiągnięto maksymalną liczbę dozwolonych %LBL_LAYOUT%.",
-				titleAdd: "Dodaj",
-				titleEdit: "Edytuj",
-				stepMainStageNextTooltip: "Wprowadź tytuł i treść dla %LBL_LAYOUT%",
-				titlePlaceholder: "Tytuł %LBL_LAYOUT%..."
+				disabled: "Opcja Dodaj sekcję jest wyłączona, ponieważ osiągnięto maksymalną liczbę dozwolonych sekcji.",
+				titleAdd: "Dodaj sekcję",
+				titleAddHome: "Dodaj sekcję Start",
+				titleEdit: "Edytuj sekcję",
+				step: "Etap",
+				stepMainStageExplain: "Zawartość obszaru głównego",
+				stepPanelExplain: "Zawartość",
+				stepMainStageNextTooltip: "Wpisz tytuł sekcji i wybierz zawartość, która znajdzie się w obszarze głównym",
+				stepMainStageNextTooltip2: "Wybierz zawartość, która znajdzie się w obszarze głównym",
+				step2NextTooltip: "Wpisz tytuł sekcji i zawartość, która będzie wyświetlana w układzie %LAYOUT-TYPE%",
+				stepNextTooltipNext: "aby przejść do kolejnego etapu",
+				stepNextTooltipAdd: "aby dodać sekcję",
+				firstAddExplain: "Pierwsza sekcja to sekcja Start, którą należy postrzegać jako „okładkę” swojej historii. Zdefiniowany tytuł będzie wyświetlony dużą czcionką.",
+				firstAddLeanMore: "Dowiedz się więcej",
+				titlePlaceholder: "Tytuł sekcji..."
 			},
-			textEditor: {
-				placeholder1: "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",
-				placeholder2: "W przypadku zostawienia pustego pola, panel pozostanie ukryty."
+			addEditViewText: {
+				editorPlaceholder: "Tutaj możesz dodać tekst, łącza oraz niewielkie elementy graficzne.",
+				editorActionsTitle: "Działania w obszarze głównym",
+				editorActionsHelpDescr: "Użyj tych kontrolek do utworzenia łączy, które zmienią obszar główny. Na przykład, gdy użytkownik kliknie łącze, może nastąpić powiększenie mapy do określonej lokalizacji, wyświetlenie innej mapy internetowej lub wyświetlenie obrazu.",
+				mainStageDisabled: "Działania w obszarze głównym są wyłączone, gdy okno edytora jest zmaksymalizowane."
 			},
 			organizePopup: {
 				title: "Organizuj",
-				lblHeader: "Przeciągaj i upuszczaj %LBL_LAYOUT%, aby zorganizować narrację.",
+				lblHeader: "Przeciągaj i upuszczaj sekcje, aby zorganizować narrację.",
 				lblColTitle: "Tytuł",
+				lblColPubDate: "Data publikacji",
 				lblColStatus: "Status",
-				btnApplyWarning: "Potwierdź usunięcie %NB% %LBL_LAYOUT%",
+				checkDisplayReverse: "Wyświetlaj sekcje w odwrotnej kolejności",
+				btnApplyWarning: "Potwierdź usunięcie %NB% sekcji",
 				deleteTooltip: "Usuń",
-				firstSectionExplain: "(Sekcji Start nie można przenieść)."
+				firstSectionExplain: "(Sekcji Start nie można przenieść).",
+				exportMainStage: "Zawartość obszaru głównego",
+				exportPanel: "Zawartość panelu",
+				exportActions: "Działania w obszarze głównym"
+			},
+			exportData: {
+				btn: "Eksportuj zasoby",
+				tooltip: "Dzięki eksportowaniu zawartości możesz przeglądać i utworzyć jej kopię zapasową na wypadek, gdyby została ona przez przypadek usunięta. Wystarczy skopiować zawartość strony i wkleić ją do dowolnego edytora tekstu."
 			},
 			help: {
 				lblHelp: "Pomoc",
-				lblAdd: "Dodaj",
+				lblAdd: "Dodaj sekcję",
 				lblSettings: "Ustawienia",
-				lblOrga: "Organizuj",
+				lblOrga: "Organizuj zawartość",
 				lblEdit: "Edycje",
 				lblPublish: "Udostępnij",
 				lblTips: "Wskazówki",
 				lblMore: "Chcesz mieć więcej możliwości?",
 				lblLink: "Odwiedź witrynę Esri Story Maps.",
-				content1Div1: "Aby utworzyć aplikację %TPL_NAME%, użyj przycisku Dodaj, który służy do dodawania map lub innych treści do układu. Inne treści mogą obejmować obrazy, wideo, osadzone strony lub kody, na przykład gdy chcemy, żeby użytkownicy obejrzeli obraz lub wideo wprowadzające przy pierwszym uruchomieniu %TPL_NAME%, zanim przejdą do przeglądania map.",
-				content1Div2: "Po kliknięciu przycisku Dodaj pojawi się okno dialogowe pozwalające wybrać i skonfigurować mapę lub inne treści, które chcemy dodać. Można na przykład podać lokalizację, którą ma pokazywać mapa, włączyć legendę mapy itp.",
-				content2Div1: "W Ustawieniach można dokonać zmiany wyglądu aplikacji %TPL_NAME%. Można zmienić układ, wybrać inną skalę barw, wybrać położenie legendy mapy itd.",
-				content2Div2: "Można również zmienić logo Esri na logo własnej marki. Można też podać witrynę internetową, która zostanie uruchomiona, jeśli czytelnicy klikną to logo, aby uzyskać więcej informacji.",
-				content3Div1: "Okno dialogowe Organizuj pozwala na zarządzanie aplikacją %TPL_NAME%. Można w nim zmienić kolejność w serii poprzez przeciąganie i upuszczanie.",
-				content3Div2: "Można również usunąć lub ukryć treści. Ukrywanie jest przydatne podczas przygotowywania nowej treści, która nie jest jeszcze gotowa na włączenie do mapy narracji (story map).",
-				content4Div1: "Nie ma problemu, jeśli w aplikacji wystąpił błąd, lub gdy chcesz zmienić materiały? Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
-				content5Div1: "Po zapisaniu aplikacja %TPL_NAME% pozostaje aplikacją prywatną. Aby udostępnić ją innym użytkownikom, należy kliknąć przycisk Udostępnij. Jeśli upublicznisz aplikację %TPL_NAME%, wszyscy będą mogli mieć do niej dostęp.",
+				content1Div1: "Podczas tworzenia opowiadania możesz łączyć różne style. W układzie <strong>%LAYOUT_TITLE%</strong> zwykle znajduje się tekst, obrazy oraz filmy wideo, mapy natomiast są na ogół widoczne w <strong>obszarze głównym</strong>. Jednak aplikacja %TPL_NAME% pozwala również na umieszczenie w obszarze głównym także obrazów obiektów, diagramów i filmów wideo.",
+				content1Div2: "Dodanie sekcji umożliwia personalizację korzystania z aplikacji opowiadania. Możliwe jest dostosowanie aplikacji tak, aby podczas przewijania tekstu w układzie %LAYOUT_TITLE% mapa znajdująca się w obszarze głównym była przesuwana i powiększana do najważniejszych punktów lub automatycznie przełączane były nowe mapy i obrazy, stanowiące kontekst dla przekazywanych treści.",
+				content2Div1: "W Ustawieniach można dokonać zmiany wyglądu aplikacji %TPL_NAME%. Możesz zmienić układ, wybrać inny schemat kolorów, zmienić czcionkę itd.",
+				content2Div2: "Możesz również zmienić logo Esri na logo własnej marki. Możesz też podać witrynę internetową, która zostanie uruchomiona, jeśli czytelnicy klikną Twoje logo, aby uzyskać więcej informacji.",
+				content3Div1: "Zawartość jest podzielona na sekcje. Liczba sekcji, które można dodać jest nieograniczona (sekcje są w postaci niewielkich rozdziałów). Sposób i kolejność prezentacji rozdziałów są bardzo ważne. Na ekranie Organizuj można zmieniać kolejność sekcji lub usuwać je wedle uznania.",
+				content4Div1: "Czy znaleziono błąd w aplikacji, czy chcesz zmienić materiały? Odszukaj ikonę edycji w odpowiednim miejscu w aplikacji i zmodyfikuj zawartość. Podczas tworzenia aplikacji %TPL_NAME% konieczne może być wielokrotne korzystanie z funkcji edycji!",
+				content5Div1: "Po zapisaniu aplikacja %TPL_NAME% pozostaje aplikacją prywatną. Aby udostępnić ją innym, należy kliknąć przycisk Udostępnij. Jeśli upublicznisz aplikację %TPL_NAME%, wszyscy będą mogli mieć do niej dostęp.",
 				content5Div2: "W zależności od rodzaju konta istnieje też możliwość udostępnienia aplikacji %TPL_NAME% jedynie osobom w danej instytucji tak, aby osoby trzecie nie miały do niej dostępu.",
-				content6Div1: "Mapy w serii są domyślnie synchronizowane, aby pokazywać tę samą lokalizację. Oznacza to, że lokalizacja pokazana na pierwszej mapie zostanie automatycznie zastosowana dla pozostałych map i jeśli użytkownik powiększa widok lub przesuwa obraz do innej lokalizacji na aktualnie oglądanej mapie, wówczas zostanie to również zastosowane dla innych map.",
-				content6Div2: "Na przykład, gdy seria pokazuje różne dane tematyczne dla miasta, użytkownik może powiększyć widok swojej dzielnicy, a następnie przełączać karty, żeby zobaczyć inne mapy dla tego obszaru.",
-				content6Div3: "Aby wyłączyć synchronizację lokalizacji, przejdź do Ustawień i wyłącz zaznaczenie tej opcji na karcie Opcje mapy",
-				content6AltDiv1: "Lokalizacja map jest domyślnie synchronizowana. Wyłączenie synchronizacji umożliwi wyświetlanie na każdej mapie innej lokalizacji.",
-				content6AltDiv2: "Synchronizacja WŁĄCZONA",
-				content6AltDiv3: "Synchronizacja WYŁĄCZONA",
-				content6AltDiv4: "Aby wyłączyć synchronizację, przejdź do Ustawienia > Opcje mapy i wyłącz zaznaczenie opcji \"Synchronizuj lokalizacje map\"."
+				content6Div1: "Tytuł sekcji Start jest także tytułem Twojego Dziennika; sekcję Start należy postrzegać jako „okładkę” swojego opowiadania. Tytuł sekcji Start będzie widoczny, gdy użytkownicy będą poruszali się po Dzienniku.",
+				content6Div2: "%LAYOUT_TITLE% nie musi mieć wyłącznie formy tekstowej, pomyśl o dodaniu zdjęć, dzięki którym ożywisz opowiadanie oraz o podzieleniu długiego tekstu!"
 			},
 			landing: {
-				lblAdd: "Jak chcesz nazwać serię map %LAYOUT_TITLE%?",
+				lblAdd: "Jak chcesz nazwać Dziennik mapy?",
 				phAdd: "Wpisz tytuł...",
 				lblOR: "Lub",
 				lblHelp: "Dowiedz się więcej"
+			},
+			firstAddSplash: {
+				thisis: "To jest",
+				lblMain: "To jest %BR% obszar główny"
 			}
         }
     })

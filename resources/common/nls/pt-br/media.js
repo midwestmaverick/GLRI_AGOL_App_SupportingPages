@@ -102,7 +102,7 @@
 				lblPosition3Explain2: "(a largura sempre se ajustará no painel)",
 				lblPosition4Explain: "(pode distorcer)",
 				unloadLbl: "Descarregar quando o leitor navegar",
-				unloadHelp: "Se a Página da Web tiver mídia de áudio ou de vídeo, mantenha esta opção marcada para interromper a execução do conteúdo quando o leitor navegar fora da página. Desmarque isto, por exemplo, para manter uma trilha sonora tocando quando o leitor avançar pela história.<br />Se as Página da Web for um aplicativo, desmarque esta opção de forma que a história não recarregue se o leitor retornar a ela."
+				unloadHelp: "Se a Página da Web tiver mídia de áudio ou de vídeo, mantenha esta opção marcada para interromper a execução do conteúdo quando o leitor navegar fora da página. Desmarque isto, por exemplo, para manter uma trilha sonora tocando quando o leitor avançar pela história.<br />Se a Página da Web for um aplicativo, desmarque esta opção de forma que a história não recarregue se o leitor retornar a ela."
 			},
 			editorActionGeocode: {
 				lblTitle: "Localizar um endereço ou lugar",

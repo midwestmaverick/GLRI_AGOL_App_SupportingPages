@@ -5,9 +5,9 @@
 				add: "Pridėti",
 				edit: "Redaguoti",
 				save: "Įrašyti",
-				next: "Sekantis",
+				next: "Kitas",
 				cancel: "Atšaukti",
-				back: "Grįžti",
+				back: "Atgal",
 				apply: "Taikyti",
 				close: "Užverti",
 				open: "Atverti",
@@ -21,7 +21,7 @@
 				no: "Ne"
 			},
 			inlineFieldEdit: {
-				editMe: "Redaguok!"
+				editMe: "Redaguoti mane!"
 			},
 			builderPanel: {
 				panelHeader: "%TPL_NAME% kūrimo priemonė",

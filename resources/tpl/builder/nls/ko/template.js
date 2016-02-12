@@ -2,113 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				tabTitle: "탭",
-				tabDescr: "설명 텍스트에 대한 옵션 패널과 함께 탭을 사용하여 맵과 다른 콘텐츠를 나타냅니다.",
-				tabItem: "탭",
-				tabItems: "탭",
-				sideTitle: "측면 아코디온",
-				sideDescr: "설명 텍스트를 포함하는 확장 가능한 컨트롤을 사용하여 맵과 다른 콘텐츠를 나타냅니다.",
-				sideItem: "항목",
-				sideItems: "항목",
-				bulletTitle: "글머리 기호",
-				bulletDescr: "설명 텍스트에 대한 옵션 패널과 함께 글머리 기호를 사용하여 맵과 다른 콘텐츠를 나타냅니다.",
-				bulletItem: "글머리 기호",
-				bulletItems: "글머리 기호"
+				mainStage: "기본 단계",
+				sideTitle: "사이드 패널",
+				sideDescr: "사진, 동영상 및 맵을 간결한 요약 메시지로 조합할 수 있는 텍스트가 많은 스토리의 레이아웃입니다.",
+				floatTitle: "부동 패널",
+				floatDescr: "지도에 포커스를 두고 간단한 양식의 투명한 텍스트 패널을 통해 스토리를 전달할 수 있는 레이아웃입니다."
 			},
 			common: {
 				lblStatus1: "발행됨",
+				lblStatus2: "드래프트",
 				lblStatus3: "숨김"
 			},
 			settingsLayoutOptions: {
 				title: "레이아웃 옵션",
-				lblDescription: "설명",
-				lblLegend: "범례 위치",
-				tooltipLegend: "맵 범례를 나타낼 곳을 선택합니다. 범례를 추가하거나 구성할 때 원하는 맵에서 범례를 켤 수 있습니다.",
-				lblDropdown: "드롭다운",
-				lblBelowDesc: "설명 아래",
-				lblOnPanel: "패널로",
-				lblPanelDescAndLegend: "설명 및 범례 패널",
-				lblPanelDescAndOrLegend: "설명 및/또는 범례 패널",
-				lblPanelDesc: "설명 패널",
-				lblPanelLegend: "범례 패널",
-				lblPanelAccordion: "아코디온 패널",
 				cfgLeft: "왼쪽",
 				cfgRight: "오른쪽",
-				cfgSmall: "작게",
-				cfgMedium: "보통",
-				cfgLarge: "크게",
-				lblNumbering: "숫자 보기",
-				lblReverse: "번호 매기기 반전",
-				canOverlapMap: "맵 위치 중첩 가능"
+				cfgSmall: "소",
+				cfgMedium: "중간",
+				cfgLarge: "대",
+				socialLinksLabel: "각 섹션의 하단에 공유 링크 표시",
+				socialLinksDescr: "사용자가 %TPL_NAME%의 특정 섹션을 참조하고 홍보할 수 있도록 합니다. 예를 들어 섹션 공유 아이콘을 사용하는 경우 사용자는 스토리 시작 부분 대신 특정 %TPL_NAME% 섹션으로 이동합니다. 사용자는 제목 섹션에 있는 소셜 미디어 링크를 사용하여 전체 %TPL_NAME%(머리글 탭)을(를) 홍보하고 %TPL_NAME% 시작 부분에 둘 수 있습니다."
 			},
-			settingsMapOptions: {
-				title: "맵 옵션",
-				lblOverview: "오버뷰 맵",
-				tooltipOverview: "베이스 맵과 함께 작은 오버뷰 맵을 보여줍니다.",
-				lblLocate: "버튼 위치",
-				tooltipLocate: "이 기능은 대부분의 모바일 기기와 데스크톱 브라우저(Internet Explorer 9)에서 지원됩니다.",
-				lblGeocoder: "주소 또는 장소 찾기",
-				tooltipGeocoder: "사용자가 맵에서 주소와 장소를 찾을 수 있도록 허용합니다.",
-				lblSync: "맵 위치 동기화",
-				tooltipSync: "활성화되면 시리즈의 첫 번째 맵의 초기 위치가 모든 맵에 적용되며 특정 맵에서 수행한 사용자의 탐색이 모든 맵에 반영됩니다. 각 맵의 위치를 독립적으로 유지하려면 비활성화합니다."
+			settingsLayoutFonts: {
+				title: "글꼴",
+				defaultLbl: "기본값",
+				sectionTitleLbl: "섹션 제목",
+				sectionContentLbl: "섹션 콘텐츠"
 			},
 			initPopup: {
 				title: "시작"
 			},
 			addEditPopup: {
-				lblAdd: "추가",
-				lblEdit: "편집",
-				disabled: "허용된 %LBL_LAYOUT%의 최대 개수에 도달하여 추가할 수 없습니다.",
-				titleAdd: "추가",
-				titleEdit: "편집",
-				stepMainStageNextTooltip: "%LBL_LAYOUT% 제목 및 콘텐츠 입력",
-				titlePlaceholder: "%LBL_LAYOUT% 제목..."
+				disabled: "허용된 섹션의 최대 개수에 도달했으므로 섹션 추가를 사용할 수 없습니다.",
+				titleAdd: "섹션 추가",
+				titleAddHome: "홈 섹션 추가",
+				titleEdit: "섹션 편집",
+				step: "단계",
+				stepMainStageExplain: "기본 단계 콘텐츠",
+				stepPanelExplain: "콘텐츠",
+				stepMainStageNextTooltip: "섹션 제목을 입력하고 기본 단계 콘텐츠를 선택합니다.",
+				stepMainStageNextTooltip2: "기본 단계 콘텐츠를 선택하세요.",
+				step2NextTooltip: "섹션 제목과 %LAYOUT-TYPE% 콘텐츠를 입력합니다.",
+				stepNextTooltipNext: "다음 단계로 이동하려면",
+				stepNextTooltipAdd: "섹션을 추가하려면",
+				firstAddExplain: "이 첫 번째 섹션은 홈 섹션으로 스토리의 '커버 페이지'에 해당됩니다. 방금 정의한 제목이 큰 글꼴로 표시됩니다.",
+				firstAddLeanMore: "자세히 보기",
+				titlePlaceholder: "섹션 제목..."
 			},
-			textEditor: {
-				placeholder1: "여기에 텍스트, 링크 및 작은 그래픽을 추가합니다.",
-				placeholder2: "비워 두면 패널이 숨겨집니다."
+			addEditViewText: {
+				editorPlaceholder: "여기에 텍스트, 링크 및 작은 그래픽을 추가합니다.",
+				editorActionsTitle: "기본 단계 작업",
+				editorActionsHelpDescr: "이 컨트롤을 사용하여 기본 단계를 변경할 링크를 생성합니다. 예를 들어, 사용자가 링크를 클릭하면 특정 위치로 맵이 확대되거나, 다른 웹 맵이 표시되거나, 이미지가 표시되도록 할 수 있습니다.",
+				mainStageDisabled: "편집기가 최대화되어 있는 경우 기본 단계 작업을 사용할 수 없습니다."
 			},
 			organizePopup: {
 				title: "구성",
-				lblHeader: "%LBL_LAYOUT%을(를) 드래그 앤 드롭하여 스토리를 구성합니다.",
+				lblHeader: "섹션을 드래그 앤 드롭하여 스토리를 구성합니다.",
 				lblColTitle: "제목",
+				lblColPubDate: "발행 날짜",
 				lblColStatus: "상태",
-				btnApplyWarning: "%NB% %LBL_LAYOUT% 삭제 확인",
+				checkDisplayReverse: "역순으로 섹션 표시",
+				btnApplyWarning: "%NB% 섹션 삭제 확인",
 				deleteTooltip: "삭제",
-				firstSectionExplain: "(홈 섹션은 이동할 수 없습니다.)"
+				firstSectionExplain: "(홈 섹션은 이동할 수 없음)",
+				exportMainStage: "기본 단계 콘텐츠",
+				exportPanel: "패널 콘텐츠",
+				exportActions: "기본 단계 작업"
+			},
+			exportData: {
+				btn: "콘텐츠 내보내기",
+				tooltip: "실수로 콘텐츠를 삭제한 경우 콘텐츠 내보내기를 통해 콘텐츠의 백업을 확인하고 생성할 수 있습니다. 페이지에서 콘텐츠를 복사하여 워드 프로세서에 붙여넣기만 하면 됩니다."
 			},
 			help: {
 				lblHelp: "도움말",
-				lblAdd: "추가",
+				lblAdd: "섹션 추가",
 				lblSettings: "설정",
-				lblOrga: "구성",
+				lblOrga: "콘텐츠 구성",
 				lblEdit: "편집",
 				lblPublish: "공유",
 				lblTips: "팁",
 				lblMore: "자세히 알아보시겠습니까?",
 				lblLink: "Esri 스토리 맵 웹 사이트를 방문하세요.",
-				content1Div1: "%TPL_NAME%을(를) 생성하려면 추가 버튼을 사용하여 각 맵이나 다른 콘텐츠를 레이아웃에 추가합니다. 다른 콘텐츠는 이미지, 비디오, 임베드된 웹 페이지 또는 코드일 수 있습니다. 예를 들어 사람들이 %TPL_NAME%을(를) 처음 실행할 때 맵을 탐색하려고 이동하기 전에 소개 이미지나 비디오를 보여줄 수 있습니다.",
-				content1Div2: "추가 버튼을 클릭하면 대화 상자가 나타나 추가하려는 맵이나 다른 콘텐츠를 선택하고 구성할 수 있습니다. 예를 들어 맵이 보일 위치, 범례 사용 등을 지정할 수 있습니다.",
-				content2Div1: "설정 대화 상자에서 %TPL_NAME% 모양을 변경할 수 있습니다. 레이아웃을 변경하고, 다른 색 구성표를 선택하고, 맵 범례가 나타날 위치 등을 선택합니다.",
-				content2Div2: "또한 %TPL_NAME% 머리글에 있는 Esri 로고를 사용자의 브랜드를 반영한 로고로 바꿀 수 있습니다. 보는 사람이 로고를 클릭했을 때 실행되는 웹 사이트를 지정하여 더 많은 정보를 얻을 수도 있습니다.",
-				content3Div1: "구성 대화 상자에서 %TPL_NAME%을(를) 관리할 수 있습니다. 이 대화 상자에서 끌어서 놓기로 시리즈의 순서를 변경할 수 있습니다.",
-				content3Div2: "콘텐츠를 삭제하거나 숨길 수도 있습니다. 숨김 기능은 아직 스토리 맵에 포함시킬 준비가 되지 않은 새 콘텐츠를 준비하는 데 유용합니다.",
-				content4Div1: "실수한 부분이 있거나 자료를 변경하시겠습니까? 걱정하지 마십시오. 응용프로그램에서 편집 아이콘을 찾아 콘텐츠를 변경하세요. %TPL_NAME%을(를) 개발할 때 편집 기능을 자주 사용하게 될 것입니다.",
-				content5Div1: "%TPL_NAME%은(는) 처음에 비공개로 저장됩니다. 다른 사용자와 공유하려면 공유 버튼을 사용합니다. 다른 사용자가 액세스할 수 있도록 %TPL_NAME%을(를) 공개적으로 공유할 수 있습니다.",
-				content5Div2: "계정에 따라 조직 내의 사람들만 %TPL_NAME%을(를) 공유하여 다른 사용자들이 액세스할 수 없는 옵션을 사용할 수도 있습니다.",
-				content6Div1: "기본 설정에 따라 시리즈의 맵은 동일한 위치를 나타내도록 동기화됩니다. 이는 첫 번째 맵에 나타난 위치가 자동으로 다른 모든 맵에 적용되며, 보는 사람이 현재 보고 있는 맵에서 다른 위치로 확대/축소 또는 회전시킬 때 다른 맵에도 적용된다는 것을 의미합니다.",
-				content6Div2: "예를 들어 시리즈가 도시에 대한 다른 주제 데이터를 나타내는 경우 보는 사람이 네이버후드를 확대/축소한 다음 간단히 탭 사이를 전환하기만 하면 폴리곤에 대한 맵을 볼 수 있습니다.",
-				content6Div3: "위치 동기화를 비활성화하려면 설정 대화 상자로 이동하여 맵 옵션 탭에서 해당 설정을 선택 해제합니다.",
-				content6AltDiv1: "기본 설정에 따라 맵 위치가 동기화됩니다. 동기화를 비활성화하면 각 맵에서 다른 위치를 나타낼 수 있습니다.",
-				content6AltDiv2: "동기화 켜기",
-				content6AltDiv3: "동기화 끄기",
-				content6AltDiv4: "동기화를 비활성화하려면 설정 > 맵 옵션으로 이동하여 \"맵 위치 동기화\" 설정을 선택 해제합니다."
+				content1Div1: "스토리를 작성할 때 다양한 스타일을 통합할 수 있습니다. <strong>%LAYOUT_TITLE%</strong>에는 일반적으로 텍스트, 이미지 및 동영상이 포함되고, 맵은 <strong>기본 단계</strong>로 이동합니다. 그러나 %TPL_NAME%을(를) 통해 이미지, 차트 및 동영상도 기본 단계에 포함할 수 있습니다.",
+				content1Div2: "섹션을 추가하면 스토리텔링 환경을 사용자 정의할 수 있습니다. 사용자가 %LAYOUT_TITLE% 텍스트를 스크롤하면 기본 단계의 맵이 주요 포인트로 이동 또는 확대/축소되거나, 새 맵 및 이미지가 자동으로 전환되어 메시지를 보완합니다.",
+				content2Div1: "설정 대화상자에서는 %TPL_NAME%의 모양을 조정할 수 있습니다. 레이아웃을 변경하고, 다른 색상 스키마를 선택하고, 텍스트 폰트를 변경하는 등의 작업을 수행할 수 있습니다.",
+				content2Div2: "또한 Esri 로고를 사용자의 로고로 바꿔 사용자의 브랜드를 나타낼 수 있으며, 독자가 로고를 클릭할 경우 표시될 웹 사이트를 지정하여 독자에게 자세한 정보가 표시되도록 할 수도 있습니다.",
+				content3Div1: "콘텐츠는 섹션으로 구성됩니다. 원하는 수의 섹션(일종의 작은 챕터)을 만들 수 있습니다. 이러한 챕터의 흐름이 중요하며, 구성에서 원하는 대로 섹션을 삭제하거나 재정렬할 수 있습니다.",
+				content4Div1: "실수를 발견했거나 자료를 변경하고 싶으십니까? 걱정하지 마세요. 앱 전체에서 편집 아이콘을 찾아 콘텐츠를 변경할 수 있습니다. %TPL_NAME%을(를) 개발할 때 원하는 만큼 편집 기능을 사용할 수 있습니다.",
+				content5Div1: "%TPL_NAME%은(는) 저장된 초기에는 비공개 상태입니다. 다른 사용자와 공유하려면 '공유' 버튼을 사용합니다. 모든 사용자가 %TPL_NAME%에 접근할 수 있도록 공개적으로 공유할 수 있습니다.",
+				content5Div2: "계정에 따라, %TPL_NAME%을(를) 기관 구성원과만 공유하고 다른 사용자는 접근할 수 없도록 하는 옵션이 있을 수도 있습니다.",
+				content6Div1: "홈 섹션의 제목은 저널의 제목이 됩니다. 홈 섹션은 스토리의 '커버 페이지'에 해당합니다. 홈 섹션 제목은 사용자가 저널을 탐색할 때 계속 표시됩니다.",
+				content6Div2: "%LAYOUT_TITLE%은(는) 꼭 텍스트만이어야 할 필요는 없습니다. 사진과 비디오를 포함하여 스토리를 생동감 있게 표현하고 긴 텍스트 섹션을 나눠보세요!"
 			},
 			landing: {
-				lblAdd: "%LAYOUT_TITLE% 맵 시리즈를 호출하시겠습니까?",
-				phAdd: "제목 입력...",
+				lblAdd: "맵 저널을 어떻게 부르고 싶으신가요?",
+				phAdd: "제목을 입력하세요...",
 				lblOR: "또는",
 				lblHelp: "둘러보기"
+			},
+			firstAddSplash: {
+				thisis: "이것은",
+				lblMain: "이는 %BR% 기본 단계입니다."
 			}
         }
     })

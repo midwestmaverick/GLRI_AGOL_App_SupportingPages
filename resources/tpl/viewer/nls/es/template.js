@@ -5,7 +5,11 @@
 				close: "Cerrar"
 			},
 			loading: {
-				long: "La historia se está inicializando",
+				step1: "Cargando historia",
+				step2: "Cargando datos",
+				step3: "Inicializando",
+				loadBuilder: "Cambiando a Builder",
+				long: "Map Journal se está inicializando",
 				long2: "Gracias por esperar",
 				failButton: "Volver a cargar la historia"
 			},
@@ -17,7 +21,7 @@
 			errors: {
 				boxTitle: "Se ha producido un error",
 				invalidConfig: "Configuración no válida",
-				invalidConfigNoApp: "No se ha especificado el identificador de la aplicación de representación cartográfica en la red en index.html.",
+				invalidConfigNoApp: "No se ha especificado el identificador de la aplicación en index.html.",
 				unspecifiedConfigOwner: "El propietario autorizado no se ha configurado.",
 				invalidConfigOwner: "El propietario de la historia no está autorizado.",
 				createMap: "No se puede crear el mapa",
@@ -32,19 +36,24 @@
 				mapLoadingFail: "Se ha producido un error, el mapa no se cargó correctamente.",
 				signOut: "Cerrar sesión"
 			},
-			mobileInfo: {
-				legend: "Leyenda",
-				description: "Descripción",
-				lblLegendMobileError: "Lo sentimos, la leyenda no está disponible. Vuelve a cargar la historia.",
-				lblLegendMobileErrorExplain: "La leyenda no está disponible cuando el dispositivo se rota a modo vertical una vez cargada la historia."
+			mobileView: {
+				tapForDetails: "Tocar para ver detalles",
+				clickForDetails: "Más información",
+				swipeToExplore: "Barrer para explorar",
+				tapForMap: "Tocar para volver al mapa",
+				clickForMap: "VOLVER AL MAPA"
 			},
-			mobileFooter: {
-				swipeInvite: "Desliza para navegar por la historia",
-				lblNext: "Siguiente",
-				lblEnd: "Has llegado al final de la historia"
+			floatLayout: {
+				scroll: "Desplazar"
+			},
+			sideLayout: {
+				scroll: "Desplázate hacia abajo para obtener más información"
+			},
+			mainStage: {
+				back: "Atrás"
 			},
 			headerFromCommon: {
-				storymapsText: "Un story map",
+				storymapsText: "Un mapa de historias",
 				builderButton: "Editar",
 				facebookTooltip: "Compartir en Facebook",
 				twitterTooltip: "Compartir en Twitter",
@@ -67,11 +76,8 @@
 				copied: "Copiado",
 				open: "Abrir",
 				embed: "Integrar en página web",
-				embedExplain: "Usa el siguiente código HTML para integrar la historia en una página web.",
+				embedExplain: "Usa el siguiente código HTML para integrar el diario en una página web.",
 				size: "Tamaño (ancho/alto):"
-			},
-			locatorFromCommon: {
-				error: "Ubicación no disponible"
 			}
         }
     })

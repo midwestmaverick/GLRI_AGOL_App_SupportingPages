@@ -2,7 +2,7 @@
 	 ({
 		commonMedia: {
 			mediaSelector: {
-				lblSelect1: "Medya",
+				lblSelect1: "Ortam",
 				lblSelect2: "İçerik",
 				lblMap: "Harita",
 				lblImage: "Görüntü",
@@ -80,7 +80,7 @@
 			mediaConfigure: {
 				lblURL: "URL",
 				lblURLPH: "Bir görüntü URL\'si http:// ile başlamalı ve .jpg ya da .png ile bitmelidir",
-				lblURLError: "Bu görüntü geçerli gibi görünmüyor. Bir görüntü dosyasına bir doğrudan bağlantı belirtin (URL\'niz genelde .jpg ya da .png ile biter). Web sayfasının bağlantıları çalışmayan bir görüntü içeriyor.",
+				lblURLError: "Bu görüntü geçerli gibi görünmüyor. Bir görüntü dosyasına bir doğrudan bağlantı belirtin (URL\'niz genelde .jpg ya da .png ile biter). Bir web sayfasının bağlantıları çalışmayan bir görüntü içeriyor.",
 				lblURLCheck: "Görüntü denetleniyor...",
 				lblLabel: "Görüntü Alt Yazısı",
 				lblLabel1: "Altyazı",

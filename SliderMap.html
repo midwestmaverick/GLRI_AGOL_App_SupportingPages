@@ -40,6 +40,7 @@
       #maxLabel { display: inline-block; margin: 0 0 0 -30px;}
       #minLabel { display: inline-block; margin: 0 0 0 30px;}
       #breakInfo { padding: 20px 0 0 0; }
+	  
     </style>
 
     <script>var dojoConfig = { parseOnLoad: true };</script>
@@ -68,7 +69,8 @@
           zoom: 5,
           slider: false
         });
-        dojo.connect(app.map, "onClick", queryCounties);
+		
+		dojo.connect(app.map, "onClick", queryCounties);
         dojo.connect(app.map, "onKeyDown", escClosesPopup);
 
         // set up a layer to show counties as a dynamic map service
@@ -88,6 +90,7 @@
         dojo.connect(dijit.byId("appSlider"), "onChange", updateCounties);
       }
 
+	  //modify here with local variables
       function getMaxAvgHH() {
         var countiesUrl, outFields, queryTask, query, statDef;
         // query to get max value
@@ -256,7 +259,7 @@
               </div>
               <div id="appSlider" 
                 data-dojo-type="dojox.form.HorizontalRangeSlider" 
-                data-dojo-props="value:[3,4], minimum:2, maximum:4.4, intermediateChanges:false, showButtons:false">
+                data-dojo-props="value:[3,4], minimum:2, maximum:4.4, intermediateChanges:false, showButtons:true">
                 
                 
                 <ol id="sliderLabels"

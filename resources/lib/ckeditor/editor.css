@@ -41,6 +41,10 @@ body
 	margin: 20px;
 }
 
+body.first-section {
+	font-size: 18px;
+}
+
 /*
 body.error-no-content {
 	color: #F00 !important;	
@@ -149,7 +153,7 @@ figure
 	margin: 15px 0;
 	display: block; /* For IE8 */
 	/* Storymaps */
-	/*display: inline-block;*/
+	display: inline-block;
 	max-width: 100%; 
 }
 
@@ -192,7 +196,7 @@ a[data-storymaps] {
 /*
  * Iframe style
  */
- 
+
 iframe {
 	border: none;
 }

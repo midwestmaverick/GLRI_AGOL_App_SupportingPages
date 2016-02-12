@@ -5,7 +5,11 @@ define({
 				close: "Close"
 			},
 			loading: {
-				long: "Story is initializing",
+				step1: "Loading story",
+				step2: "Loading data",
+				step3: "Initializing",
+				loadBuilder: "Switching to builder",
+				long: "Map Journal is initializing",
 				long2: "Thanks for waiting",
 				failButton: "Reload the story"
 			},
@@ -29,19 +33,24 @@ define({
 				noBuilderIE: "The builder is not supported on Internet Explorer before version %VERSION%. %UPGRADE%",
 				noViewerIE: "This story is not supported in Internet Explorer before version %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Please update your browser</a>.",
-				mapLoadingFail: "Something went wrong, the map did not load correctly.",
+				mapLoadingFail: "Something went wrong, the Map did not load correctly.",
 				signOut: "Sign Out"
 			},
-			mobileInfo: {
-				legend: "Legend",
-				description: "Description",
-				lblLegendMobileError: "Sorry, the legend is unavailable. Please reload the story.",
-				lblLegendMobileErrorExplain: "The legend is not available when the device is rotated to portrait mode after the story is loaded."
+			mobileView: {
+				tapForDetails: "Tap for details",
+				clickForDetails: "Learn more",
+				swipeToExplore: "Swipe to explore",
+				tapForMap: "Tap to get back to the Map",
+				clickForMap: "BACK TO MAP"
 			},
-			mobileFooter: {
-				swipeInvite: "Swipe to navigate the story",
-				lblNext: "Next",
-				lblEnd: "You have reached the end of the story"
+			floatLayout: {
+				scroll: "Scroll"
+			},
+			sideLayout: {
+				scroll: "Scroll down for more!"
+			},
+			mainStage: {
+				back: "Back"
 			},
 			headerFromCommon: {
 				storymapsText: "A story map",
@@ -67,11 +76,8 @@ define({
 				copied: "Copied",
 				open: "Open",
 				embed: "Embed in web page",
-				embedExplain: "Use the following HTML code to embed the story in a web page.",
+				embedExplain: "Use the following HTML code to embed the journal in a web page.",
 				size: "Size (width/height):"
-			},
-			locatorFromCommon: {
-				error: "Location not available"
 			}
         }
     }),

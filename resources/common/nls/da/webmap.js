@@ -3,7 +3,7 @@
 		commonWebmap: {
 			selector: {
 				lblWebMap: "Kort",
-				lblLocation: "Placering",
+				lblLocation: "Position",
 				lblContent: "Indhold",
 				lblPopup: "Pop-up",
 				lblControls: "Ekstra",
@@ -29,7 +29,7 @@
 				tooltipLocation: "Definér den position, som kortet skal vise.",
 				tooltipContent: "Definér synlige lag.",
 				tooltipPopup: "Vælg en pop-up, der skal åbnes, når kortet bliver vist.",
-				tooltipOverview: "Vis et lille oversigtskort langs med hovedkortet.",
+				tooltipOverview: "Få vist et lille oversigtskort sammen med hovedkortet.",
 				tooltipLegend: "Få vist signaturforklaringen på kortet. Dette er nyttigt, når kortet har mange lag og symboler.",
 				mapCfgInvite: "Brug disse knapper til at konfigurere kortet",
 				lblLocationAlt: "Arvet fra det første kort",

@@ -2,113 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				tabTitle: "Kortelėse",
-				tabDescr: "Pateikite žemėlapius ir kitą turinį naudodami korteles su pasirinktiniu skydeliu aprašomajam tekstui.",
-				tabItem: "Kortelė",
-				tabItems: "Kortelės",
-				sideTitle: "Šoninis akordeonas",
-				sideDescr: "Pateikite žemėlapius ir kitą turinį naudodami išplečiamą valdiklį, kuris apimtų aprašomąjį tekstą.",
-				sideItem: "Įrašas",
-				sideItems: "Įrašai",
-				bulletTitle: "Su ženkleliais",
-				bulletDescr: "Pateikite žemėlapius ir kitą turinį naudodami ženklelius su pasirinktiniu skydeliu aprašomajam tekstui.",
-				bulletItem: "Ženklelis",
-				bulletItems: "Ženkleliai"
+				mainStage: "Pagrindinė sritis",
+				sideTitle: "Šoninis skydelis",
+				sideDescr: "Maketas, skirtas pasakojimui, kuriame daug teksto, iliustruoto nuotraukų, vaizdų ir žemėlapių deriniu, skirtu žiniai perteikti.",
+				floatTitle: "Slankusis skydelis",
+				floatDescr: "Maketas, kuriame akcentuojama kartografija, o skaidrus trumpo teksto skydelis padeda perteikti pasakojimą."
 			},
 			common: {
 				lblStatus1: "Publikuota",
-				lblStatus3: "Paslėpta"
+				lblStatus2: "Juodraštis",
+				lblStatus3: "Paslėptas"
 			},
 			settingsLayoutOptions: {
 				title: "Maketo parinktys",
-				lblDescription: "Aprašas",
-				lblLegend: "Legendos vieta",
-				tooltipLegend: "Pasirinkite vietą, kurioje norite rodyti žemėlapio legendą. Galite įjungti legendą bet kuriam žemėlapiui, kai jį pridedate ir konfigūruojate.",
-				lblDropdown: "Išskleidimas",
-				lblBelowDesc: "Po aprašu",
-				lblOnPanel: "Kaip skydelis",
-				lblPanelDescAndLegend: "Aprašo ir legendos skydelis",
-				lblPanelDescAndOrLegend: "Aprašo ir (arba) legendos kydelis",
-				lblPanelDesc: "Aprašo skydelis",
-				lblPanelLegend: "Legendos skydelis",
-				lblPanelAccordion: "Akordeono skydelis",
 				cfgLeft: "Kairė",
 				cfgRight: "Dešinė",
 				cfgSmall: "Mažas",
 				cfgMedium: "Vidutinis",
 				cfgLarge: "Didelis",
-				lblNumbering: "Rodyti skaičius",
-				lblReverse: "Apversti skaičių seką",
-				canOverlapMap: "gali perdengti žemėlapio vietą"
+				socialLinksLabel: "Kiekvienos skilties apačioje rodomos bendrinimo nuorodos",
+				socialLinksDescr: "Skaitytojai gali nurodyti ir reklamuoti konkrečias jūsų %TPL_NAME% skiltis. Pvz., jei naudojate skilties bendrinimo piktogramą, skaitytojai bus nukreipti į konkrečią %TPL_NAME% skiltį, o ne į pasakojimo pradžią. Be to, skaitytojai gali naudoti pavadinimo skiltyje pateiktą socialinių tinklų nuorodą ir reklamuoti visą %TPL_NAME% (antraštės skirtukas), tada jie bus nukreipti į %TPL_NAME% pradžią."
 			},
-			settingsMapOptions: {
-				title: "Žemėlapio parinktys",
-				lblOverview: "Apžvalga",
-				tooltipOverview: "Kartu su pagrindiniu žemėlapiu rodyti mažą apžvalgos žemėlapį.",
-				lblLocate: "Vietos nustatymo mygtukas",
-				tooltipLocate: "Šis funkcija palaikoma daugelyje mobilių prietaisų ir asmeninių kompiuterių naršyklėse (Internet Explorer 9).",
-				lblGeocoder: "Adreso arba vietos radimo priemonė",
-				tooltipGeocoder: "Leisti vartotojams rasti adresus ir vietas žemėlapiuose.",
-				lblSync: "Sinchronizuoti žemėlapio vietas",
-				tooltipSync: "Kai įgalinta, pradinė pirmojo žemėlapio vieta jūsų serijoje bus taikoma visiems žemėlapiams, o vartotojų navigacija bet kuriame žemėlapyje bus atvaizduota visuose žemėlapiuose. Išjunkite kiekvieną žemėlapio vietą, kad liktumėte nepriklausomi."
+			settingsLayoutFonts: {
+				title: "Šriftai",
+				defaultLbl: "Numatytasis",
+				sectionTitleLbl: "Skilties pavadinimas",
+				sectionContentLbl: "Skilties turinys"
 			},
 			initPopup: {
-				title: "Sveiki atvykę į"
+				title: "Sveiki atvykę"
 			},
 			addEditPopup: {
-				lblAdd: "Pridėti",
-				lblEdit: "Redaguoti",
-				disabled: "Parinktis Pridėti išjungta, nes pasiektas maksimalus leistinų %LBL_LAYOUT% skaičius.",
-				titleAdd: "Pridėti",
-				titleEdit: "Redaguoti",
-				stepMainStageNextTooltip: "Įveskite %LBL_LAYOUT% pavadinimą ir turinį",
-				titlePlaceholder: "%LBL_LAYOUT% pavadinimas..."
+				disabled: "Parinktis Pridėti skiltį išjungta, nes pasiektas maksimalus leistinų skilčių skaičius.",
+				titleAdd: "Pridėti skiltį",
+				titleAddHome: "Pagrindinės skilties pridėjimas",
+				titleEdit: "Redaguoti skiltį",
+				step: "Žingsnis",
+				stepMainStageExplain: "Pagrindinės srities turinys",
+				stepPanelExplain: "Turinys",
+				stepMainStageNextTooltip: "Redaguokite skilties pavadinimą ir pasirinkite pagrindinės srities turinį",
+				stepMainStageNextTooltip2: "Pasirinkti pagrindinės srities turinį",
+				step2NextTooltip: "Įveskite skilties pavadinimą ir %LAYOUT-TYPE% turinį",
+				stepNextTooltipNext: "pereiti į kitą žingsnį",
+				stepNextTooltipAdd: "pridėti skiltį",
+				firstAddExplain: "Ši pirma skiltis yra jūsų pagrindinė skiltis, galvokite apie ją kaip apie istorijos antraštinį puslapį. Pavadinimas, kurį ką tik nustatėte, bus rodomas dideliais šriftais.",
+				firstAddLeanMore: "Sužinokite daugiau",
+				titlePlaceholder: "Skilties pavadinimas..."
 			},
-			textEditor: {
-				placeholder1: "Čia pridėkite tekstą, nuorodas ir mažus grafinius elementus.",
-				placeholder2: "Jei paliksite tuščią, skydelis bus paslėptas."
+			addEditViewText: {
+				editorPlaceholder: "Čia pridėkite teksto, nuorodų ir mažų grafinių elementų.",
+				editorActionsTitle: "Pagrindinės srities veiksmai",
+				editorActionsHelpDescr: "Naudodami šiuos valdiklius kurkite nuorodas, pakeisiančias pagrindinę sritį. Pvz., galbūt norėsite, kad kai skaitytojas paspaus nuorodą, pasikeistų žemėlapio mastelis ir būtų rodoma konkreti vieta, kitas interneto žemėlapis ar vaizdas.",
+				mainStageDisabled: "Redaktorių padidinus, pagrindinės srities veiksmai išjungiami"
 			},
 			organizePopup: {
 				title: "Tvarkyti",
-				lblHeader: "Nuvilkite %LBL_LAYOUT% ir tvarkykite pasakojimą.",
+				lblHeader: "Nuvilkite skiltis į norimas vietas ir sutvarkykite pasakojimą.",
 				lblColTitle: "Pavadinimas",
+				lblColPubDate: "Publikavimo data",
 				lblColStatus: "Būsena",
-				btnApplyWarning: "Patvirtinkite %NB% %LBL_LAYOUT% pašalinimą",
+				checkDisplayReverse: "Rodyti skiltis atvirkštine tvarka",
+				btnApplyWarning: "Patvirtinkite %NB% skilčių panaikinimą",
 				deleteTooltip: "Pašalinti",
-				firstSectionExplain: "(Pagrindinės skilties perkelti negalima)"
+				firstSectionExplain: "(Pagrindinės skilties perkelti negalima)",
+				exportMainStage: "Pagrindinės srities turinys",
+				exportPanel: "Skydelio turinys",
+				exportActions: "Pagrindinės srities veiksmai"
+			},
+			exportData: {
+				btn: "Eksportuoti turinį",
+				tooltip: "Eksportavę turinį galėsite peržiūrėti turinį ir sukurti jo atsarginę kopiją, jei turinį netyčia ištrintumėte. Tiesiog puslapio turinį nukopijuokite ir įklijuokite į bet kurią teksto apdorojimo programą."
 			},
 			help: {
 				lblHelp: "Pagalba",
-				lblAdd: "Pridėti",
+				lblAdd: "Pridėti skiltį",
 				lblSettings: "Nuostatos",
-				lblOrga: "Tvarkyti",
+				lblOrga: "Tvarkyti turinį",
 				lblEdit: "Pakeitimai",
 				lblPublish: "Bendrinti",
 				lblTips: "Patarimai",
 				lblMore: "Norite daugiau?",
-				lblLink: "Aplankykite Esri žemėlapių su pasakojimais svetainę.",
-				content1Div1: "Norėdami sukurti %TPL_NAME%, naudokite mygtuką Pridėti ir pridėkite visus žemėlapius ar kitą turinį į žemėlapius. Kitą turinį gali sudaryti vaizdai, vaizdo įrašai arba įdėtosios svetainės arba kodas. Pavyzdžiui, galite pasirinkti, kad jūsų skaitytojai matytų įžanginį atvaizdą arba vaizdo įrašą pirmą kartą paleidžiant %TPL_NAME% prieš jiems pereinant peržiūrėti jūsų žemėlapių.",
-				content1Div2: "Spustelėjus mygtuką Pridėti bus parodytas dialogo langas, kuris leis pasirinkti ir konfigūruoti žemėlapį arba kitą turinį, kurį norite pridėti. Pavyzdžiui, galite nurodyti vietą, kurią norite rodyti žemėlapyje, įgalinti jo legendą ir kt.",
-				content2Div1: "Nuostatų dialogo lange galite pakeisti savo %TPL_NAME% išvaizdą. Galite pakeisti maketą, pasirinkti kitą spalvų schemą, pasirinkti, kurioje žemėlapio vietoje rodyti legendą ir kt.",
-				content2Div2: "Taip pat galite Esri logotipą, esantį %TPL_NAME% antraštėje, pakeisti savo logotipu, kuris atvaizduotų jūsų prekės ženklą. Taip pat galite nurodyti svetainę, kuri bus paleista skaitytojams paspaudus jūsų logotipą, kad jie galėtų gauti daugiau informacijos.",
-				content3Div1: "Tvarkymo dialogo langas les jums tvarkyti %TPL_NAME%. Šiame dialogo lange galite pakeisti serijų tvarką jas nuvilkdami.",
-				content3Div2: "Taip pat galite pašalinti turinį arba jį paslėpti. Paslėpti naudinga, kai rengiate naują turinį, kuris dar neparengtas įtraukti į jūsų žemėlapį su pasakojimu.",
+				lblLink: "Apsilankykite Esri pristatomųjų žemėlapių svetainėje.",
+				content1Div1: "Kurdami pasakojimą galite integruoti įvairius stilius. Paprastai <strong>%LAYOUT_TITLE%</strong> pateikiami tekstas, vaizdai ir vaizdo įrašai, o žemėlapiai dažniausiai būna <strong>pagrindinėje srityje</strong>. Tačiau, naudodami %TPL_NAME%, ir pagrindinėje srityje galite pridėti vaizdų, diagramų ir video.",
+				content1Div2: "Pridėdami skilčių galite labai įvairiai adaptuoti savo pasakojimą. Kai skaitytojai slinks %LAYOUT_TITLE% tekstu, gali būti prastumiamas pagrindinėje srityje esantis žemėlapis ir keičiamas jo mastelis, kad būtų rodomi pagrindiniai taškai arba gali būti automatiškai perjungiami nauji žemėlapiai ir vaizdai, sustiprinantys jūsų pasakojimo įspūdį.",
+				content2Div1: "Nustatymų dialogo lange galite pakeisti savo %TPL_NAME% išvaizdą. Galite pakeisti maketą, pasirinkti kitą spalvų schemą, pakeisti teksto šriftą ir t. t.",
+				content2Div2: "Esri logotipą galite pakeisti savo logotipu. Taip pat galite nurodyti svetainę, kuri bus paleista skaitytojams paspaudus jūsų logotipą, kad jie galėtų gauti daugiau informacijos.",
+				content3Div1: "Turinys tvarkomas dalijant į skiltis. Gali būti kiek tik norite skilčių (galvokite apie jas, kaip apie mažus skyrius). Svarbi šių skyrių seka; dalyje Tvarkymas galite keisti skilčių išdėstymo tvarką arba jas panaikinti, kaip norite.",
 				content4Div1: "Radote klaidą ar norite pakeisti duomenis? Nesirūpinkite. Norėdami pakeisti turinį, ieškokite aplikacijos redagavimo piktogramos. Kurdami %TPL_NAME% daug kartų naudosite redagavimo funkcijas!",
-				content5Div1: "Kai išsaugote savo %TPL_NAME%, ir pradžių jis yra privatus. Norėdami bendrinti su kitais, naudokite bendrinimo mygtuką. Galite %TPL_NAME% bendrinti viešai, kad galėtų pasiekti visi.",
-				content5Div2: "Priklausomai nuo paskyros tipo, galite %TPL_NAME% bendrinti tik su savo organizacijos nariais, kad jo negalėtų pasiekti kiti.",
-				content6Div1: "Pagal numatytuosius nustatymus serijų žemėlapiai sinchronizuojami, kad atvaizduotų tą pačią vietovę. Vadinasi, vieta, rodoma pirmajame žemėlapyje, bus automatiškai taikoma visiems kitiems žemėlapiams, o jei skaitytojas pritrauks arba perstums į kitą žemėlapio, kurį dabar peržiūri, vietą, taip taip pat bus taikoma kitiems žemėlapiams.",
-				content6Div2: "Pavyzdžiui, jei jūsų serijoje rodomi skirtingų temų duomenys apie miestą, skaitytojas gali priartinti vietą kaimynystėje, tada tiesiog perjungti korteles ir peržiūrėti tos srities žemėlapius.",
-				content6Div3: "Norėdami išjungti vietų sinchronizavimą, eikite į nuostatų dialogo langą ir panaikinkite šios nuostatos žymėjimą kortelėje Žamėlapio parinktys.",
-				content6AltDiv1: "Pagal numatytuosius nustatymus žemėlapių vieta yra sinchronizuojama. Išjungus sinchronizavimą kiekviename žemėlapyje galima rodyti skirtingas vietoves.",
-				content6AltDiv2: "Sinchronizavimas įjungtas",
-				content6AltDiv3: "Sinchronizavimas išjungtas",
-				content6AltDiv4: "Jei norite išjungti sinchronizavimą, eikite į Nuostatos > Žemėlapių parinktys panaikinkite parinkties \"Sinchronizuoti  žemėlapių vietas\"."
+				content5Div1: "Kai išsaugote savo %TPL_NAME%, ir pradžių ji yra privati. Norėdami bendrinti su kitais, naudokite bendrinimo mygtuką. Galite %TPL_NAME% bendrinti viešai, kad galėtų pasiekti visi.",
+				content5Div2: "Priklausomai nuo paskyros tipo, galite %TPL_NAME% bendrinti tik su savo organizacijos nariais, kad negalėtų pasiekti kiti.",
+				content6Div1: "Pagrindinės skilties pavadinimas yra ir žurnalo pavadinimas; galvokite apie pagrindinę skiltį kaip apie istorijos antraštinį puslapį. Kai skaitytojai naršys žurnalą, pagrindinės skilties pavadinimas išliks matomas.",
+				content6Div2: "%LAYOUT_TITLE% nebūtinai turi būti tik tekstas. Galbūt verta pridėti nuotraukų ir vaizdo įrašų, kad istorija taptų gyvesnė ir suskaidytų ilgas teksto skiltis!"
 			},
 			landing: {
-				lblAdd: "Kaip norite pavadinti savo %LAYOUT_TITLE% žemėlapių serijas?",
+				lblAdd: "Kaip norite pavadinti žemėlapių žurnalą?",
 				phAdd: "Įveskite pavadinimą...",
 				lblOR: "Arba",
 				lblHelp: "Susipažinkite"
+			},
+			firstAddSplash: {
+				thisis: "Tai yra",
+				lblMain: "Tai yra %BR% pagrindinė sritis"
 			}
         }
     })

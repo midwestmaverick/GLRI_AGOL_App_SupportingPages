@@ -13,7 +13,7 @@
 				open: "Abrir",
 				start: "Inicio",
 				loading: "Cargando",
-				disabledAdmin: "El administrador ha deshabilitado esta característica",
+				disabledAdmin: "El administrador ha deshabilitado esta entidad",
 				width: "Ancho",
 				height: "Altura",
 				create: "Crear",
@@ -21,7 +21,7 @@
 				no: "No"
 			},
 			inlineFieldEdit: {
-				editMe: "¡Modifícame!"
+				editMe: "¡Edítame!"
 			},
 			builderPanel: {
 				panelHeader: "Builder de %TPL_NAME%",

@@ -2,113 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				tabTitle: "Se záložkami",
-				tabDescr: "Prezentujte mapy a další obsah pomocí záložek a volitelného panelu s popisným textem.",
-				tabItem: "Záložka",
-				tabItems: "Záložky",
-				sideTitle: "Postranní rozbalovací panel",
-				sideDescr: "Prezentujte mapy a další obsah pomocí rozbalovacího ovládacího prvku, který zahrnuje popisný text.",
-				sideItem: "Záznam",
-				sideItems: "Záznamy",
-				bulletTitle: "S odrážkami",
-				bulletDescr: "Prezentujte mapy a další obsah pomocí odrážek a volitelného panelu s popisným textem.",
-				bulletItem: "Odrážka",
-				bulletItems: "Odrážky"
+				mainStage: "Hlavní úroveň",
+				sideTitle: "Postranní panel",
+				sideDescr: "Rozvržení pro příběh s velkým množstvím textu, které umožňuje snadno zkombinovat fotografie, videa a mapy do jasně zaměřeného sdělení.",
+				floatTitle: "Plovoucí panel",
+				floatDescr: "Rozvržení, které soustředí pozornost na vaše mapy a zároveň díky krátkému, průhlednému textovému panelu pomáhá porozumět obsahu mapy."
 			},
 			common: {
-				lblStatus1: "Publikováno",
-				lblStatus3: "Skryto"
+				lblStatus1: "Publikované",
+				lblStatus2: "Návrh",
+				lblStatus3: "Skryté"
 			},
 			settingsLayoutOptions: {
 				title: "Možnosti rozvržení",
-				lblDescription: "Popis",
-				lblLegend: "Umístění legendy",
-				tooltipLegend: "Zvolte, kde se má legenda mapy zobrazovat. Při přidání nebo konfiguraci mapy můžete zvolit, zda chcete, aby se u ní zobrazovala legenda.",
-				lblDropdown: "Rozbalovací seznam",
-				lblBelowDesc: "Pod popisem",
-				lblOnPanel: "Jako panel",
-				lblPanelDescAndLegend: "Panel popisu a legendy",
-				lblPanelDescAndOrLegend: "Panel popisu a/nebo panel legendy",
-				lblPanelDesc: "Panel popisu",
-				lblPanelLegend: "Panel legendy",
-				lblPanelAccordion: "Rozbalovací panel",
 				cfgLeft: "Vlevo",
 				cfgRight: "Vpravo",
-				cfgSmall: "Malá",
+				cfgSmall: "Malé",
 				cfgMedium: "Střední",
-				cfgLarge: "Velká",
-				lblNumbering: "Zobrazovat čísla",
-				lblReverse: "Obrátit číslování",
-				canOverlapMap: "může překrývat umístění mapy"
+				cfgLarge: "Velké",
+				socialLinksLabel: "Zobrazit na konci každé části odkazy pro sdílení",
+				socialLinksDescr: "Tato možnost čtenářům umožňuje se odkazovat na konkrétní části %TPL_NAME% a šířit je. Pokud například použijete ikonu pro sdílení částí, čtenáři se dostanou přímo na danou část %TPL_NAME% a nikoli na začátek příběhu. K šíření celého %TPL_NAME% mohou čtenáři použít odkaz na sociální média v titulní části (karta záhlaví), který vede na začátek %TPL_NAME%."
 			},
-			settingsMapOptions: {
-				title: "Možnosti mapy",
-				lblOverview: "Mapa přehledu",
-				tooltipOverview: "Zobrazí spolu s hlavní mapou malou přehledovou mapu.",
-				lblLocate: "Tlačítko Lokalizovat",
-				tooltipLocate: "Tato funkce je podporována většinou mobilních zařízení a desktopových prohlížečů (Internet Explorer 9).",
-				lblGeocoder: "Vyhledávání adresy nebo místa",
-				tooltipGeocoder: "Umožňuje uživatelům vyhledávat adresy a místa ve vašich mapách.",
-				lblSync: "Synchronizovat umístění mapy",
-				tooltipSync: "Po aktivaci této možnosti se počáteční umístění první mapy v sérii použije i u všech ostatních map. Veškerá navigace ve kterékoliv z těchto map se projeví v ostatních mapách. Chcete-li, aby bylo umístění všech map nezávislé, tuto možnost deaktivujte."
+			settingsLayoutFonts: {
+				title: "Písma",
+				defaultLbl: "Výchozí",
+				sectionTitleLbl: "Nadpis části",
+				sectionContentLbl: "Obsah části"
 			},
 			initPopup: {
 				title: "Vítejte v"
 			},
 			addEditPopup: {
-				lblAdd: "Přidat",
-				lblEdit: "Upravit",
-				disabled: "Funkce Přidat je vypnuta, protože bylo dosaženo maximálního počtu povolených %LBL_LAYOUT%.",
-				titleAdd: "Přidat",
-				titleEdit: "Upravit",
-				stepMainStageNextTooltip: "Zadejte název a obsah %LBL_LAYOUT%",
-				titlePlaceholder: "Název %LBL_LAYOUT%…"
+				disabled: "Funkce Přidat Část je vypnuta, protože bylo dosaženo maximálního počtu povolených částí.",
+				titleAdd: "Přidat část",
+				titleAddHome: "Přidat domovskou část",
+				titleEdit: "Upravit část",
+				step: "Krok",
+				stepMainStageExplain: "Obsah hlavní úrovně",
+				stepPanelExplain: "Obsah",
+				stepMainStageNextTooltip: "Zadejte nadpis části a vyberte obsah hlavní úrovně.",
+				stepMainStageNextTooltip2: "Zvolte obsah hlavní úrovně.",
+				step2NextTooltip: "Zadejte nadpis části a obsah %LAYOUT-TYPE%.",
+				stepNextTooltipNext: "chcete-li přejít na další krok",
+				stepNextTooltipAdd: "chcete-li přidat část",
+				firstAddExplain: "První část je vaše domovská část. Berte ji jako „obálku“ svého příběhu. Nadpis, který jste právě zadali, se zde zobrazí velkým písmem.",
+				firstAddLeanMore: "Další informace",
+				titlePlaceholder: "Nadpis části..."
 			},
-			textEditor: {
-				placeholder1: "Sem přidejte text, odkazy a malé obrázky.",
-				placeholder2: "Pokud pole nevyplníte, panel bude skrytý."
+			addEditViewText: {
+				editorPlaceholder: "Sem přidejte text, odkazy a malé obrázky.",
+				editorActionsTitle: "Akce hlavní úrovně",
+				editorActionsHelpDescr: "Pomocí těchto ovládacích prvků můžete vytvářet odkazy, které změní hlavní úroveň. Když například čtenář klikne na odkaz, můžete přiblížit mapu na konkrétní umístění, zobrazit jinou webovou mapu nebo obrázek.",
+				mainStageDisabled: "Když je editor maximalizován, akce hlavní úrovně jsou zakázány."
 			},
 			organizePopup: {
 				title: "Organizovat",
-				lblHeader: "Zorganizujte svůj příběh kliknutím a přetažením %LBL_LAYOUT%.",
-				lblColTitle: "Název",
+				lblHeader: "Zorganizujte svůj příběh kliknutím a přetažením jeho částí.",
+				lblColTitle: "Nadpis",
+				lblColPubDate: "Datum zveřejnění",
 				lblColStatus: "Stav",
-				btnApplyWarning: "Potvrďte odstranění %NB% %LBL_LAYOUT%",
-				deleteTooltip: "Odstranit",
-				firstSectionExplain: "(Domovskou část nelze přemístit.)"
+				checkDisplayReverse: "Zobrazit části v opačném pořadí",
+				btnApplyWarning: "Potvrdit smazání %NB% částí",
+				deleteTooltip: "Smazat",
+				firstSectionExplain: "(Domovskou část nelze přemístit)",
+				exportMainStage: "Obsah hlavní úrovně",
+				exportPanel: "Obsah panelu",
+				exportActions: "Akce hlavní úrovně"
+			},
+			exportData: {
+				btn: "Exportovat obsah",
+				tooltip: "Exportování obsahu vám umožní prohlížet a vytvářet zálohu obsahu pro případ, že ho omylem smažete. Obsah stránky jednoduše zkopírujte a vložte do jakéhokoli textového editoru."
 			},
 			help: {
 				lblHelp: "Nápověda",
-				lblAdd: "Přidat",
+				lblAdd: "Přidat část",
 				lblSettings: "Nastavení",
-				lblOrga: "Organizovat",
+				lblOrga: "Zorganizovat obsah",
 				lblEdit: "Úpravy",
-				lblPublish: "Sdílení",
+				lblPublish: "Sdílet",
 				lblTips: "Tipy",
 				lblMore: "Chcete více?",
 				lblLink: "Navštivte web Esri věnovaný mapám s příběhem.",
-				content1Div1: "Chcete-li vytvořit šablonu %TPL_NAME%, klikněte na tlačítko Přidat a přidejte do mapy výkresy a další obsah. Další obsah může zahrnovat obrázky, video, vložené stránky a kód. Můžete například nastavit, aby vaši čtenáři viděli po prvním spuštění %TPL_NAME% úvodní obrázek nebo video.",
-				content1Div2: "Po kliknutí na tlačítko Přidat se zobrazí dialogové okno umožňující zvolit a nastavit mapu nebo další obsah, který chcete přidat. Můžete například určit oblast, kterou bude mapa zobrazovat, povolit legendu a další.",
-				content2Div1: "V dialogovém okně Nastavení můžete měnit vzhled %TPL_NAME%. Můžete měnit rozvržení, barevné schéma, polohu legendy mapy a další.",
-				content2Div2: "Můžete také nahradit logo Esri v záhlaví %TPL_NAME% logem své vlastní značky. Dále můžete určit webové stránky s dalšími informacemi, na které bude čtenář přesměrován po kliknutí na logo.",
-				content3Div1: "Dialogové okno Organizovat umožňuje spravovat %TPL_NAME%. Můžete v něm přetahováním měnit pořadí sérií.",
-				content3Div2: "Můžete také odstraňovat a skrývat obsah. Skrytí obsahu je užitečné v případě, že připravujete nový obsah, který zatím není připraven pro použití v mapě s příběhem.",
+				content1Div1: "Při vytváření příběhu do něj můžete integrovat množství stylů. <strong>%LAYOUT_TITLE%</strong> většinou obsahuje text, obrázky a videa, zatímco mapy jsou zpravidla umístěny na <strong>hlavní úrovni</strong>. %TPL_NAME% vám nicméně umožňuje vkládat obrázky, grafy a videa i na hlavní úroveň.",
+				content1Div2: "Přidáváním částí si můžete obsah mapy přizpůsobit podle svých představ. Stejně jako čtenáři procházejí text %LAYOUT_TITLE%, mapa na hlavní úrovni se může posouvat nebo přibližovat na klíčové body, nebo se mohou automaticky aktivovat nové mapy a obrázky zdůrazňující vaši zprávu.",
+				content2Div1: "V dialogovém okně Nastavení můžete upravit vzhled %TPL_NAME%. Můžete zde měnit rozvržení, barevné schéma, písmo atd.",
+				content2Div2: "Můžete také nahradit logo Esri logem své vlastní značky. Dále můžete určit webové stránky s dalšími informacemi, na které bude čtenář přesměrován po kliknutí na logo.",
+				content3Div1: "Váš obsah je rozdělen do částí. Můžete jich mít libovolný počet (berte je jako malé kapitoly). Je důležité, jak kapitoly plynou za sebou, a proto je v části Organizovat můžete libovolně přeřazovat a odstraňovat.",
 				content4Div1: "Našli jste chybu nebo chcete změnit svůj materiál? Žádný problém. Hledejte v aplikaci ikonu úprav, která vám umožní změnit obsah. Funkce úprav použijete při vytváření %TPL_NAME% mnohokrát!",
 				content5Div1: "Šablona %TPL_NAME% se poprvé uloží v soukromém režimu. Chcete-li ji sdílet s ostatními, použijte tlačítko Sdílení. Šablonu %TPL_NAME% můžete sdílet s veřejností.",
 				content5Div2: "V závislosti na vašem účtu můžete mít k dispozici možnost sdílet šablonu %TPL_NAME% pouze se členy vaší organizace.",
-				content6Div1: "Ve výchozím nastavení jsou mapy v sériích synchronizovány tak, aby zobrazovaly stejnou oblast. To znamená, že oblast zobrazovaná první mapou bude automaticky použita i ve všech ostatních mapách. Pokud uživatel oddálí zobrazení nebo jej posune na jinou oblast v mapě, projeví se to i v ostatních mapách.",
-				content6Div2: "Pokud například vaše série zobrazuje různá tématická data města, může se uživatel přiblížit na požadovanou čtvrť a poté přepínáním mezi kartami zobrazovat mapy zvolené oblasti.",
-				content6Div3: "Chcete-li zakázat synchronizaci polohy, přejděte do dialogového okna Nastavení a v kartě Možnosti mapy zrušte označení příslušného nastavení.",
-				content6AltDiv1: "Polohy map budou ve výchozím nastavení synchronizovány. Po zakázání synchronizace bude možné zobrazovat ve všech mapách různé oblasti.",
-				content6AltDiv2: "Synchronizace zapnuta",
-				content6AltDiv3: "Synchronizace vypnuta",
-				content6AltDiv4: "Chcete-li zakázat synchronizaci, přejděte do nabídky Nastavení > Možnosti mapy a zrušte označení možnosti \"Synchronizovat umístění mapy\"."
+				content6Div1: "Nadpis domovské části je také nadpisem vašeho deníku. Domovská část je prakticky „obálkou“ vašeho příběhu. Nadpis domovské části zůstane viditelný, zatímco čtenáři budou procházet váš deník.",
+				content6Div2: "Vaše rozvržení %LAYOUT_TITLE% nemusí tvořit jen text. Můžete použít i fotografie a videa, abyste příběh oživili a rozdělili dlouhé bloky textu!"
 			},
 			landing: {
-				lblAdd: "Jak chcete pojmenovat svou sérii map %LAYOUT_TITLE%?",
-				phAdd: "Zadejte nadpis…",
+				lblAdd: "Jak chcete svůj Mapový deník nazvat?",
+				phAdd: "Zadejte nadpis...",
 				lblOR: "Nebo",
 				lblHelp: "Prohlídka"
+			},
+			firstAddSplash: {
+				thisis: "Toto je",
+				lblMain: "Toto je hlavní úroveň %BR%"
 			}
         }
     })

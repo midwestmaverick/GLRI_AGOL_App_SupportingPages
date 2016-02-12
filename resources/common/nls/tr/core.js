@@ -102,7 +102,7 @@
 				logoSocialExplain: "Başlık bağlantısını özelleştirin.",
 				logoSocialText: "Metin",
 				logoSocialLink: "Bağlantı",
-				lblSmallHeader: "Kısa başlık kullanın (alt başlıksız)"
+				lblSmallHeader: "Kompakt başlık kullanın (alt başlıksız)"
 			},
 			header: {
 				title: "%TPL_NAME% adınızın başlığını düzenleyin",

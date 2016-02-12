@@ -2,113 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				tabTitle: "Tabulado",
-				tabDescr: "Apresenta os mapas e outro conteúdo utilizando guias com um painel opcional para texto descritivo.",
-				tabItem: "Guia",
-				tabItems: "Guias",
-				sideTitle: "Lateral Expansível",
-				sideDescr: "Apresenta os mapas e outro conteúdo utilizando um controle expansível que inclui texto descritivo.",
-				sideItem: "Entrada",
-				sideItems: "Entradas",
-				bulletTitle: "Itens Listados",
-				bulletDescr: "Apresenta mapas e outro conteúdo utilizando itens listados com um painel opcional para texto descritivo.",
-				bulletItem: "Marcador",
-				bulletItems: "Pontos"
+				mainStage: "Nível Principal",
+				sideTitle: "Painel Lateral",
+				sideDescr: "Um layout para uma história de texto intensivo que se destaca na combinação de suas fotos, vídeos e mapas em uma mensagem clara focada.",
+				floatTitle: "Painel Flutuante",
+				floatDescr: "Um layout que coloca a sua cartografia em foco, permitindo que um painel de texto com pequeno formulário transparente ajude a contar uma história."
 			},
 			common: {
 				lblStatus1: "Publicado",
+				lblStatus2: "Rascunho",
 				lblStatus3: "Oculto"
 			},
 			settingsLayoutOptions: {
 				title: "Opções de Layout",
-				lblDescription: "Descrição",
-				lblLegend: "Posicionamento da Legenda",
-				tooltipLegend: "Escolha onde você deseja que a legenda do mapa seja exibida. Você pode ativar a legenda para qualquer mapa ao adicioná-lo ou configurá-lo.",
-				lblDropdown: "Suspensão",
-				lblBelowDesc: "Abaixo da descrição",
-				lblOnPanel: "Como um painel",
-				lblPanelDescAndLegend: "Painel de legenda e descrição",
-				lblPanelDescAndOrLegend: "Painel de legenda e/ou descrição",
-				lblPanelDesc: "Painel de descrição",
-				lblPanelLegend: "Painel de legenda",
-				lblPanelAccordion: "Painel Expansível",
 				cfgLeft: "Esquerda",
 				cfgRight: "Direita",
 				cfgSmall: "Pequeno",
 				cfgMedium: "Médio",
 				cfgLarge: "Grande",
-				lblNumbering: "Exibir números",
-				lblReverse: "Inverter numeração",
-				canOverlapMap: "pode sobrepor locais do mapa"
+				socialLinksLabel: "Exibir links de compartilhamento na parte inferior de cada seção",
+				socialLinksDescr: "Isto permite que os leitores façam referência e promovam seções específicas do seu %TPL_NAME%. Por exemplo, se você utilizar um ícone para compartilhar seções, os leitores verificarão a seção %TPL_NAME% específica, ao invés do começo da sua história. Seus leitores podem utilizar o link de mídia social na seção de título para promover o seu %TPL_NAME% inteiro (guia cabeçalho) e tê-lo no início do %TPL_NAME%."
 			},
-			settingsMapOptions: {
-				title: "Opções do mapa",
-				lblOverview: "Mapa de Visão Geral",
-				tooltipOverview: "Exibe um pequeno mapa de visão geral junto com o principal mapa.",
-				lblLocate: "Botão Localizar",
-				tooltipLocate: "Esta funcionalidade é suportada na maioria dos navegadores desktop (Internet Explorer 9) e dispositivos móveis.",
-				lblGeocoder: "Localizador de Endereços e Lugares",
-				tooltipGeocoder: "Permite aos seus usuários localizar endereços e lugares em seus mapas.",
-				lblSync: "Sincronizar locais do mapa",
-				tooltipSync: "Quando habilitado, o local inicial do primeiro mapa na sua série será aplicado para todos os mapas, e a navegação por usuários em qualquer mapa será refletida em todos os mapas. Desabilite para cada local do mapa para permanecer independente."
+			settingsLayoutFonts: {
+				title: "Fontes",
+				defaultLbl: "Padrão",
+				sectionTitleLbl: "Título da seção",
+				sectionContentLbl: "Conteúdo da seção"
 			},
 			initPopup: {
 				title: "Bem-Vindo ao"
 			},
 			addEditPopup: {
-				lblAdd: "Adicionar",
-				lblEdit: "Editar",
-				disabled: "Adicionar está desabilitado, pois o número máximo de %LBL_LAYOUT% permitido foi alcançado.",
-				titleAdd: "Adicionar",
-				titleEdit: "Editar",
-				stepMainStageNextTooltip: "Insira o título e conteúdo do %LBL_LAYOUT%",
-				titlePlaceholder: "Título do %LBL_LAYOUT%..."
+				disabled: "Adicionar Seção está desabilitada, pois o número máximo de seções permitidas foi alcançado.",
+				titleAdd: "Adicionar Seção",
+				titleAddHome: "Adicionar Seção Inicial",
+				titleEdit: "Editar Seção",
+				step: "Intervalo",
+				stepMainStageExplain: "Conteúdo do Nível Principal",
+				stepPanelExplain: "Conteúdo",
+				stepMainStageNextTooltip: "Insira o título da seção e selecione o conteúdo do Nível Principal",
+				stepMainStageNextTooltip2: "Selecione o conteúdo do Nível Principal",
+				step2NextTooltip: "Insira o título da seção e conteúdo do %LAYOUT-TYPE%",
+				stepNextTooltipNext: "para ir para a próxima etapa",
+				stepNextTooltipAdd: "para adicionar a seção",
+				firstAddExplain: "Esta primeira seção é a sua Seção Inicial, pense nisto como a \'página de capa\' para a sua história. O título que você acabou de definir será exibido com fontes grandes.",
+				firstAddLeanMore: "Mais Informações",
+				titlePlaceholder: "Título da seção..."
 			},
-			textEditor: {
-				placeholder1: "Adicione texto, links e pequenos gráficos aqui.",
-				placeholder2: "Se deixado em branco o painel será ocultado."
+			addEditViewText: {
+				editorPlaceholder: "Adicione texto, links e pequenos gráficos aqui.",
+				editorActionsTitle: "Ações do Nível Principal",
+				editorActionsHelpDescr: "Utilize estes controles para criar links que vão mudar o nível principal. Por exemplo, quando o leitor clicar em um link, você poderá desejar o zoom no mapa em local específico, exibir um outro mapa da web ou exibir uma imagem.",
+				mainStageDisabled: "As Ações do Nível Principal são desabilitadas quando o editor é maximizado"
 			},
 			organizePopup: {
 				title: "Organizar",
-				lblHeader: "Arraste e solte %LBL_LAYOUT% para organizar sua história.",
+				lblHeader: "Arraste e solte as seções para organizar sua história.",
 				lblColTitle: "Título",
+				lblColPubDate: "Data da publicação",
 				lblColStatus: "Status",
-				btnApplyWarning: "Confirmar exclusão de %NB% %LBL_LAYOUT%",
+				checkDisplayReverse: "Exibir seções em ordem inversa",
+				btnApplyWarning: "Confirmar exclusão das seções %NB%",
 				deleteTooltip: "Excluir",
-				firstSectionExplain: "(A seção local não pode ser movida)"
+				firstSectionExplain: "(A seção local não pode ser movida)",
+				exportMainStage: "Conteúdo do Nível Principal",
+				exportPanel: "Conteúdo do Painel",
+				exportActions: "Ações do Nível Principal"
+			},
+			exportData: {
+				btn: "Exportar conteúdo",
+				tooltip: "Exportar seu conteúdo permite a você visualizar e criar uma cópia de segurança do seu conteúdo se você acidentalmente excluí-lo. Basta copiar e colar o conteúdo da página em qualquer processador de texto."
 			},
 			help: {
 				lblHelp: "Ajuda",
-				lblAdd: "Adicionar",
+				lblAdd: "Adicionar Seção",
 				lblSettings: "Configurações",
-				lblOrga: "Organizar",
+				lblOrga: "Organizar conteúdo",
 				lblEdit: "Edições",
 				lblPublish: "Compartilhar",
 				lblTips: "Dicas",
 				lblMore: "Deseja mais?",
 				lblLink: "Visite o site da web de Mapas Históricos da Esri.",
-				content1Div1: "Para criar seu %TPL_NAME%, utilize o botão Adicionar para adicionar cada mapa ou outro conteúdo no layout. O outro conteúdo pode incluir imagens, vídeos ou páginas da web ou código embutido. Por exemplo, você pode desejar que seus leitores visualizem uma imagem ou vídeo de introdução quando abrirem pela primeira vez seu  %TPL_NAME%, antes deles partirem para explorar seus mapas.",
-				content1Div2: "Ao clicar no botão Adicionar, um diálogo aparecerá permitindo a você escolher e configurar o mapa ou outro conteúdo que você deseja adicionar. Por exemplo, você pode especificar o local que deseja mostrar o mapa, ativar sua legenda, etc.",
-				content2Div1: "O diálogo de Configurações é onde você pode alterar o visual do seu %TPL_NAME%. Você altera o layout, escolhe um esquema de cores diferente, escolhe onde aparecerá a legenda do mapa, etc.",
-				content2Div2: "Você também pode substituir o logo da Esri no cabeçalho do seu %TPL_NAME% com seu próprio logo para refletir sua marca. Você também pode especificar o site da web que será iniciado se leitores clicarem no seu logo, de forma que possam obter mais informações.",
-				content3Div1: "O diálogo Organizar permite a você gerenciar seu %TPL_NAME%. Neste diálogo você pode alterar a ordem da série arrastando e soltando.",
-				content3Div2: "Você também pode excluir o conteúdo ou ocultá-lo. É útil se você estiver preparando um novo conteúdo que não está pronto para ser incluído ainda no mapa histórico.",
+				content1Div1: "Você pode integrar uma variedade de estilos na construção da sua história. O <strong>% LAYOUT_TITLE% </ strong> normalmente tem o seu texto, imagens e vídeo enquanto seus mapas tendem a ir para o<strong> Nível Principal</ strong>. No entanto, o% TPL_NAME% também permite a você apresentar imagens, gráficos e vídeos dentro do nível principal.",
+				content1Div2: "Adicionar seções permite a você personalizar verdadeiramente a sua experiência de contar histórias. Conforme os leitores rolam pelo seu texto %LAYOUT_TITLE%, um mapa no Nível Principal pode mover ou ampliar nos pontos-chaves ou novos mapas e imagens podem alternar automaticamente para suporte da sua mensagem.",
+				content2Div1: "O diálogo Configurações é onde você pode alterar o visual do seu %TPL_NAME%. Você altera um layout, escolhae um esquema de cores diferente, altera a fonte de texto, etc.",
+				content2Div2: "Você também pode substituir o logo da Esri pelo seu próprio logo para refletir sua marca. Você também pode especificar o site da web que será iniciado se leitoras clicarem no seu logo, então poderão obter mais informações.",
+				content3Div1: "Seu conteúdo está organizado em seções. Você pode ter várias seções que desejar (pense nelas como mini capítulos). O fluxo destes capítulos é importante; dentro de Organizar você pode reordenar ou excluir seções como desejar.",
 				content4Div1: "Encontrou um erro ou deseja alterar o seu material? Não se preocupe. Procure o ícone de edição em todo o aplicativo para fazer alterações no seu conteúdo. Você utilizará as funções de edição várias vezes conforme desenvolver o seu %TPL_NAME%!",
 				content5Div1: "Ao salvar seu %TPL_NAME%, ele é inicialmente privado. Utilize o botão Compartilhar para compartilhá-lo com outros. Você pode compartilhar seu %TPL_NAME% publicamente, assim qualquer usuário poderá utilizá-lo.",
 				content5Div2: "Dependendo da sua conta, você pode também ter a opção para compartilhar seu %TPL_NAME% somente para pessoas dentro da sua organização, então outros não poderão acessá-lo.",
-				content6Div1: "Por padrão, os mapas em uma série são sincronizados para mostrar o mesmo local. Isto significa que o local mostrado no primeiro mapa será automaticamente aplicado para todos os outros mapas, e que se um leitor ampliar ou mover para um local diferente no mapa, ele será atualmente visualizado, isto também será aplicado aos outros mapas.",
-				content6Div2: "Por exemplo se a sua série mostrar diferentes dados temáticos para uma cidade, um leitor poderá ampliar no seu bairro e então simplesmente trocar entre as guias para visualizar os mapas desta área.",
-				content6Div3: "Para desativar a sincronização do local, vá até o diálogo Configurações e desmarque a configuração na guia Opções do Mapa.",
-				content6AltDiv1: "Por padrão, os locais dos mapas são sincronizados. Desativar a sincronização permite que cada mapa apareça em um local diferente.",
-				content6AltDiv2: "Sincronização ATIVADA",
-				content6AltDiv3: "Sincronização DESATIVADA",
-				content6AltDiv4: "Para desativar a sincronização, vá até Configurações > Opções do Mapa e desmarque \"Sincronizar locais do mapa\"."
+				content6Div1: "O título da sua seção Inicial é também o título do seu diário; pense na sua seção Inicial como a \'página da capa\' para a sua história. O título da Seção Inicial permanecerá visível quando os leitores navegarem no Diário.",
+				content6Div2: "Seu %LAYOUT_TITLE% Não tem que ser apenas texto, considere incluir fotos e vídeos para ajudar a trazer a história viva e quebrar longos trechos do texto!"
 			},
 			landing: {
-				lblAdd: "Como você deseja chamar sua Série de Mapa do %LAYOUT_TITLE%?",
+				lblAdd: "Como você deseja chamar seu Diário do Mapa?",
 				phAdd: "Insira seu título...",
 				lblOR: "Ou",
 				lblHelp: "Obter uma Apresentação"
+			},
+			firstAddSplash: {
+				thisis: "Esta é o",
+				lblMain: "Este é o Nível Principal %BR%"
 			}
         }
     })

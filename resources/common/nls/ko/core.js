@@ -30,7 +30,7 @@
 				buttonShare: "공유",
 				buttonSettings: "설정",
 				buttonHelp: "도움말",
-				buttonPreview: "라이브 보기",
+				buttonPreview: "실시간 보기",
 				tooltipFirstSave: "저장하기 전까지 사용할 수 없습니다.",
 				tooltipNotShared: "공유하기 전까지 사용할 수 없습니다.",
 				noPendingChange: "보류 중인 변경 사항 없음",
@@ -81,13 +81,13 @@
 			},
 			settings: {
 				header: "설정",
-				tabError: "모든 탭에서 오류를 확인하세요."
+				tabError: "오류가 있는지 모든 탭을 확인하세요."
 			},
 			settingsLayout: {
 				title: "레이아웃",
 				explain: "어떤 레이아웃을 사용하시겠습니까?",
 				explainInit: "언제든지 설정 대화상자에서 레이아웃을 변경할 수 있습니다.",
-				viewExample: "라이브 예 보기"
+				viewExample: "실시간 예 보기"
 			},
 			settingsTheme: {
 				title: "테마"

@@ -87,7 +87,7 @@
 				title: "Utforming",
 				explain: "Hva slags oppsett vil du bruke?",
 				explainInit: "Du kan når som helst endre oppsettet fra innstillingdialogen.",
-				viewExample: "Vis et eksempel i sanntid"
+				viewExample: "Vis et eksempel"
 			},
 			settingsTheme: {
 				title: "Tema"
@@ -105,8 +105,8 @@
 				lblSmallHeader: "Bruk kompakt overskrift (ingen undertittel)"
 			},
 			header: {
-				title: "Rediger tittelen på %TPL_NAME%",
-				subtitle: "Rediger undertittelen på %TPL_NAME%"
+				title: "Rediger tittelen på din %TPL_NAME%",
+				subtitle: "Rediger undertittelen på din %TPL_NAME%"
 			}
 		}
 	})

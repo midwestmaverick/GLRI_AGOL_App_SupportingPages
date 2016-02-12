@@ -3,7 +3,7 @@
 		commonWebmap: {
 			selector: {
 				lblWebMap: "Mapa",
-				lblLocation: "localização",
+				lblLocation: "Local",
 				lblContent: "Conteúdo",
 				lblPopup: "Janela Pop-up",
 				lblControls: "Extras",
@@ -29,7 +29,7 @@
 				tooltipLocation: "Defina a localização em que o mapa exibido.",
 				tooltipContent: "Definir as camadas visíveis.",
 				tooltipPopup: "Escolha uma janela popup a ser exibida quando este mapa é exibido.",
-				tooltipOverview: "Exibir uma vista geral pequena juntamente com o mapa.",
+				tooltipOverview: "Exiba um pequeno mapa de vista geral juntamente com o mapa principal.",
 				tooltipLegend: "Exiba a legenda de mapa no mapa, útil quando o mapa tem muitas camadas e símbolos.",
 				mapCfgInvite: "Utilize estes controlos para configurar o seu mapa",
 				lblLocationAlt: "Herdado do primeiro mapa",

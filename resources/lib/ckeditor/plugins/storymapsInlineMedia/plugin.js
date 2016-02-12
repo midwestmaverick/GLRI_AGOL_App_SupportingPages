@@ -177,7 +177,9 @@ CKEDITOR.plugins.add('storymapsInlineMedia', {
 							node.remove();
 						}
 						
-						editor.setData(editor.getData());
+						// TODO must be a better way to refresh the editor
+						// Something like that seems needed for the resize plugin to detect the new image
+						CKEDITOR.instances.addEditRTE.setData(CKEDITOR.instances.addEditRTE.getData());
 					}
 				});
 			});

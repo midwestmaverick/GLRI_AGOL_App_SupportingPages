@@ -94,19 +94,19 @@
 			},
 			settingsHeader: {
 				title: "Kopfzeile",
-				logoEsri: "Esri logo",
-				logoNone: "No logo",
-				logoCustom: "Custom logo",
-				logoCustomPlaceholder: "URL (max 250x50 pixels)",
-				logoCustomTargetPlaceholder: "Click-through link",
-				logoSocialExplain: "Customize the header link.",
+				logoEsri: "Esri Logo",
+				logoNone: "Kein Logo",
+				logoCustom: "Benutzerdefiniertes Logo",
+				logoCustomPlaceholder: "URL (max. 250 x 50 Pixel)",
+				logoCustomTargetPlaceholder: "Ziel-URL",
+				logoSocialExplain: "Passen Sie den Kopfzeilen-Link an.",
 				logoSocialText: "Text",
 				logoSocialLink: "Link",
-				lblSmallHeader: "Use compact header (no subtitle)"
+				lblSmallHeader: "Kompakte Überschrift verwenden (keinen Untertitel)"
 			},
 			header: {
-				title: "Edit the title of your %TPL_NAME%",
-				subtitle: "Edit the subtitle of your %TPL_NAME%"
+				title: "Den Titel für %TPL_NAME% bearbeiten",
+				subtitle: "Den Untertitel für %TPL_NAME% bearbeiten"
 			}
 		}
 	})

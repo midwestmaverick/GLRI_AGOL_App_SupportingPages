@@ -94,7 +94,7 @@
 				lblPosition2: "Fyld",
 				lblPosition3: "Tilpas",
 				lblPosition4: "Stræk",
-				lblPosition5: "Tilpas",
+				lblPosition5: "Tilpasset",
 				tooltipDimension: "Værdien kan angives i \'px\' eller \'%\'",
 				tooltipDimension2: "Værdien skal angives i \"px\"",
 				lblPosition2Explain: "(kan beskæres)",

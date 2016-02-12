@@ -31,8 +31,8 @@
 				buttonSettings: "Instellingen",
 				buttonHelp: "Help",
 				buttonPreview: "Live weergeven",
-				tooltipFirstSave: "Dit is niet beschikbaar tot u opslaat",
-				tooltipNotShared: "Dit is niet beschikbaar tot u deelt.",
+				tooltipFirstSave: "Dit is niet beschikbaar totdat u opslaat.",
+				tooltipNotShared: "Dit is niet beschikbaar totdat u deelt.",
 				noPendingChange: "Geen wijziging in behandeling",
 				unSavedChangePlural: "Wijzigingen in behandeling",
 				closeWithPendingChange: "Weet u zeker dat u deze actie wilt bevestigen? Uw wijzigingen gaan verloren.",
@@ -102,10 +102,10 @@
 				logoSocialExplain: "Pas de koppeling voor de koptekst aan.",
 				logoSocialText: "Tekst",
 				logoSocialLink: "Koppeling",
-				lblSmallHeader: "Compacte header gebruiken (geen subtitel)"
+				lblSmallHeader: "Compact header gebruiken (geen subtitel)"
 			},
 			header: {
-				title: "De titel van uw %TPL_NAME% bewerken",
+				title: "Bewerk de titel van uw %TPL_NAME%",
 				subtitle: "Bewerk de subtitel van uw %TPL_NAME%"
 			}
 		}

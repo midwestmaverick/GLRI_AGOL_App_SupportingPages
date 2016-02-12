@@ -8,7 +8,7 @@
 				lblImage: "Image",
 				lblVideo: "Vidéo",
 				lblExternal: "Page Web",
-				disabled: "Cette fonction a été désactivée par l\'administrateur",
+				disabled: "Cette entité a été désactivée par l\'administrateur",
 				url: "Pour entrer manuellement l\'adresse Web d\'une image",
 				userLookup: "Charger des albums",
 				notImplemented: "Fonction pas encore implémentée.",

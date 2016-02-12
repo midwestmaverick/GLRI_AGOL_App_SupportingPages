@@ -5,7 +5,11 @@
 				close: "Zamknij"
 			},
 			loading: {
-				long: "Trwa inicjowanie narracji",
+				step1: "Trwa wczytywanie narracji",
+				step2: "Wczytywanie danych",
+				step3: "Inicjowanie",
+				loadBuilder: "Przełączanie do trybu kreatora",
+				long: "Inicjalizacja Dziennika mapy",
 				long2: "Dziękujemy za cierpliwość",
 				failButton: "Wczytaj ponownie narrację"
 			},
@@ -32,19 +36,24 @@
 				mapLoadingFail: "Wystąpił pewien problem, nie wczytano mapy prawidłowo.",
 				signOut: "Wyloguj się"
 			},
-			mobileInfo: {
-				legend: "Legenda",
-				description: "Opis",
-				lblLegendMobileError: "Przepraszamy, legenda jest niedostępna. Wczytaj ponownie narrację.",
-				lblLegendMobileErrorExplain: "Legenda nie jest dostępna, gdy po wczytaniu narracji urządzenie zostanie obrócone do orientacji pionowej."
+			mobileView: {
+				tapForDetails: "Wskaż, aby uzyskać szczegółowe informacje",
+				clickForDetails: "Dowiedz się więcej",
+				swipeToExplore: "Przesuń, aby przejrzeć",
+				tapForMap: "Wskaż, aby powrócić do mapy",
+				clickForMap: "POWRÓT DO MAPY"
 			},
-			mobileFooter: {
-				swipeInvite: "Zwiń, aby poruszać się po scenariuszu",
-				lblNext: "Dalej",
-				lblEnd: "Znajdujesz się na końcu scenariusza"
+			floatLayout: {
+				scroll: "Przewiń"
+			},
+			sideLayout: {
+				scroll: "Przewiń w dół, aby uzyskać więcej informacji!"
+			},
+			mainStage: {
+				back: "Wstecz"
 			},
 			headerFromCommon: {
-				storymapsText: "mapa narracji (Story Map)",
+				storymapsText: "Mapa narracji (Story Map)",
 				builderButton: "Edytuj",
 				facebookTooltip: "Udostępnij na Facebooku",
 				twitterTooltip: "Udostępnij na Twitterze",
@@ -66,12 +75,9 @@
 				copy: "Kopiuj",
 				copied: "Skopiowane",
 				open: "Otwórz",
-				embed: "Osadzono na stronie internetowej",
-				embedExplain: "Aby umieścić narrację w witrynie internetowej, skorzystaj z poniższego kodu HTML.",
+				embed: "Osadzanie na stronie internetowej",
+				embedExplain: "Aby umieścić Dziennik na stronie internetowej, skorzystaj z poniższego kodu HTML.",
 				size: "Rozmiar (szerokość/wysokość):"
-			},
-			locatorFromCommon: {
-				error: "Lokalizacja niedostępna"
 			}
         }
     })

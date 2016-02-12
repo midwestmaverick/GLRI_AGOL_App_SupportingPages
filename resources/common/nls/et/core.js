@@ -13,10 +13,10 @@
 				open: "Ava",
 				start: "Algus",
 				loading: "Laen",
-				disabledAdmin: "Administraator on selle võimaluse keelanud",
+				disabledAdmin: "See funktsioon on administraatori poolt välja lülitatud",
 				width: "Laius",
 				height: "Kõrgus",
-				create: "Loo",
+				create: "Koosta",
 				yes: "Jah",
 				no: "Ei"
 			},
@@ -49,7 +49,7 @@
 			saveError: {
 				title: "Loo salvestamisel ilmnes tõrge",
 				err1Div1: "Lugu ei saa salvestada, sest teil on juba sama nimega üksus.",
-				err1Div2: "Muutke loo pealkirja ja seejärel salvestage see.",
+				err1Div2: "Muutke loo pealkirja ning seejärel salvestage see.",
 				btnOk: "Redigeerige loo pealkirja"
 			},
 			share: {
@@ -58,7 +58,7 @@
 				viewlive: "Kuva reaalajas",
 				btnPrivate: "Privaatne",
 				btnPrivateTooltip: "Lugu on nähtav ainult teile",
-				btnOrg: "Ettevõte",
+				btnOrg: "Organisatsioon",
 				btnOrgTooltip: "Lugu on nähtav ainult teie ettevõtte liikmetele",
 				btnPublic: "Avalik",
 				btnPublicTooltip: "Lugu on nähtav kõigile",
@@ -75,7 +75,7 @@
 				notavailable3: "Saate seda lugu jagada %LINK% kaudu.",
 				notavailable4: "Minu lood",
 				notavailable5: "selle sisuüksuse leht",
-				notavailable6: "Kahjuks pole antud funktsioon arendusrežiimis täielikult toetatud. Sõltuvalt teie juurutamise stsenaariumist võib see funktsioon pärast juurutamist olla toetatud.",
+				notavailable6: "Kahjuks pole see funktsioon arendusrežiimis täielikult toetatud. Sõltuvalt teie juurutamise stsenaariumist võib see funktsioon pärast juurutamist olla toetatud.",
 				notavailable7: "Külastage kindlasti %MYCONTENT% teie loos olevate kaartide ja kihtide jagamise kinnitamiseks.",
 				notavailable8: "Minu sisu"
 			},

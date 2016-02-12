@@ -5,7 +5,11 @@
 				close: "סגור"
 			},
 			loading: {
-				long: "הסיפור מבצע אתחול",
+				step1: "טוען סיפור",
+				step2: "טעינת נתונים",
+				step3: "מאתחל",
+				loadBuilder: "עבור למצב בנייה",
+				long: "חוברת המפות שלך מבצעת אתחול",
 				long2: "תודה על ההמתנה",
 				failButton: "טען מחדש את הסיפור"
 			},
@@ -21,35 +25,40 @@
 				unspecifiedConfigOwner: "לא הוגדר בעלים מורשה.",
 				invalidConfigOwner: "הבעלים של הסיפור אינו מורשה.",
 				createMap: "לא ניתן ליצור מפה",
-				invalidApp: "%TPL_NAME% אינו קיים או אינו נגיש.",
-				appLoadingFail: "משהו השתבש, %TPL_NAME% לא נטען באופן תקין.",
+				invalidApp: "ה-%TPL_NAME% לא קיים או שאינו נגיש.",
+				appLoadingFail: "משהו השתבש, ה-%TPL_NAME% לא נטען באופן תקין.",
 				notConfiguredDesktop: "הסיפור עדיין אינו מוגדר.",
 				notConfiguredMobile: "אשף הבנייה של %TPL_NAME% אינו נתמך בגודל תצוגה זה.",
 				notAuthorized: "אין לך הרשאה לגשת לסיפור זה",
-				noBuilderIE: "אשף הבנייה אינו נתמך ב-Internet Explorer לפני גרסה %VERSION%‏. %UPGRADE%",
+				noBuilderIE: "כלי הבניה לא נתמך ב-Internet Explorer בגרסה הקודמת לגרסה %VERSION%‏. %UPGRADE%",
 				noViewerIE: "סיפור זה אינו נתמך ב- Internet Explorer לפני גירסה %VERSION%‏.‏ %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>עדכן את הדפדפן שלך</a>.",
 				mapLoadingFail: "משהו השתבש, המפה לא נטענה באופן תקין.",
 				signOut: "התנתק"
 			},
-			mobileInfo: {
-				legend: "מקרא",
-				description: "תיאור",
-				lblLegendMobileError: "מצטערים, המקרא אינו זמין. טען מחדש את הסיפור.",
-				lblLegendMobileErrorExplain: "המקרא אינו זמין כשמסובבים את המכשיר למצב תצוגה לאורך לאחר שהסיפור נטען."
+			mobileView: {
+				tapForDetails: "הקש לקבלת פרטים",
+				clickForDetails: "מידע נוסף",
+				swipeToExplore: "Swipe כדי לחקור",
+				tapForMap: "הקש כדי לחזור למפה",
+				clickForMap: "חזור למפה"
 			},
-			mobileFooter: {
-				swipeInvite: "החלק כדי לנווט בסיפור",
-				lblNext: "הבא",
-				lblEnd: "הגעת לסוף הסיפור"
+			floatLayout: {
+				scroll: "גלול"
+			},
+			sideLayout: {
+				scroll: "גלול למטה כדי לצפות בעוד!‏"
+			},
+			mainStage: {
+				back: "חזור"
 			},
 			headerFromCommon: {
 				storymapsText: "מפת סיפור",
-				builderButton: "ערוך",
+				builderButton: "עריכה",
 				facebookTooltip: "שתף בפייסבוק",
 				twitterTooltip: "שתף בטוויטר",
 				bitlyTooltip: "קבל קישור קצר",
-				templateTitle: "קבע כותרת לתבנית",
+				templateTitle: "קבע כותרת תבנית",
 				templateSubtitle: "קבע כותרת משנה לתבנית",
 				share: "שתף",
 				checking: "בודק את תוכן הסיפור שלך",
@@ -66,12 +75,9 @@
 				copy: "העתק",
 				copied: "הועתק",
 				open: "פתח",
-				embed: "הטמע בדף אינטרנט",
-				embedExplain: "השתמש בקוד ה- HTML הבא כדי להטמיע את הסיפור בדף אינטרנט.",
+				embed: "הטמע בדף האינטרנט",
+				embedExplain: "השתמש בקוד ה-HTML הבא כדי להטמיע את ה-Journal בדף אינטרנט.",
 				size: "גודל (רוחב/גובה):"
-			},
-			locatorFromCommon: {
-				error: "מיקום לא זמין"
 			}
         }
     })

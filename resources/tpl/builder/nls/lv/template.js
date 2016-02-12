@@ -2,113 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				tabTitle: "Ar cilnēm",
-				tabDescr: "Prezentējiet kartes un citu saturu, izmantojot cilnes ar neobligātu paneli aprakstošajam tekstam.",
-				tabItem: "Cilne",
-				tabItems: "Cilnes",
-				sideTitle: "Sānu cilnes",
-				sideDescr: "Prezentējiet kartes un citu saturu, izmantojot izvēršamu vadīklu, kas ietver aprakstošu tekstu.",
-				sideItem: "Ieraksts",
-				sideItems: "Ieraksti",
-				bulletTitle: "Ar aizzīmēm",
-				bulletDescr: "Prezentējiet kartes un citu saturu, izmantojot aizzīmes ar neobligātu paneli aprakstošajam tekstam.",
-				bulletItem: "Aizzīme",
-				bulletItems: "Aizzīmes"
+				mainStage: "Galvenais posms",
+				sideTitle: "Sānu panelis",
+				sideDescr: "Izkārtojums ar tekstu bagātinātam stāstam, kurā skaidrā un precīzā ziņojumā ir profesionāli kombinēti fotoattēli, video un kartes.",
+				floatTitle: "Peldošais panelis",
+				floatDescr: "Izkārtojums, kas pievērš uzmanību jūsu kartogrāfijai, vienlaikus stāsta pavēstīšanai piedāvājot caurspīdīgu īsa formāta teksta paneli."
 			},
 			common: {
 				lblStatus1: "Publicēts",
+				lblStatus2: "Skice",
 				lblStatus3: "Paslēpts"
 			},
 			settingsLayoutOptions: {
 				title: "Izkārtojuma opcijas",
-				lblDescription: "Apraksts",
-				lblLegend: "Apzīmējumu novietojums",
-				tooltipLegend: "Izvēlieties, kur parādīt kartes apzīmējumus. Apzīmējumus varat ieslēgt jebkurai kartei, kad to pievienojat vai konfigurējat.",
-				lblDropdown: "Nolaižamais",
-				lblBelowDesc: "Zem apraksta",
-				lblOnPanel: "Kā panelis",
-				lblPanelDescAndLegend: "Apraksta un apzīmējumu panelis",
-				lblPanelDescAndOrLegend: "Apraksta un/vai apzīmējumu panelis",
-				lblPanelDesc: "Apraksta panelis",
-				lblPanelLegend: "Leģendu panelis",
-				lblPanelAccordion: "Sānu ciļņu panelis",
 				cfgLeft: "Pa kreisi",
 				cfgRight: "Pa labi",
 				cfgSmall: "Mazs",
 				cfgMedium: "Vidējs",
 				cfgLarge: "Liels",
-				lblNumbering: "Displeja numuri",
-				lblReverse: "Apgriezta numerācija",
-				canOverlapMap: "var daļēji apklāt kartes izvietojumu"
+				socialLinksLabel: "Katras sadaļas apakšā parādīt koplietošanas saites",
+				socialLinksDescr: "Tas sniedz lasītājiem iespēju veidot atsauces uz jūsu %TPL_NAME%, kā arī reklamēt konkrētas šī vienuma sadaļas. Piemēram, ja izmantosiet sadaļu koplietošanas ikonu, lasītāji nokļūs šajā konkrētajā %TPL_NAME% sadaļā, nevis jūsu stāsta sākumā. Jūsu lasītāji var izmantot virsraksta sadaļā esošo sociālās multivides saiti, lai reklamētu visu jūsu %TPL_NAME% (galvenes cilne), kā arī varat veicināt viņu nokļūšanu %TPL_NAME% sākumā."
 			},
-			settingsMapOptions: {
-				title: "Kartes opcijas",
-				lblOverview: "Kartes pārskatīšana",
-				tooltipOverview: "Attēlot mazu pārskata karti blakus galvenajai kartei.",
-				lblLocate: "Atrašanas poga",
-				tooltipLocate: "Šī funkcionalitāte ir atbalstīta vairumā mobilo ierīču un datoru pārlūku (Internet Explorer 9).",
-				lblGeocoder: "Adrešu vai vietu meklētājs",
-				tooltipGeocoder: "Ļaujiet lietotājiem atrast adreses un vietas jūsu kartēs.",
-				lblSync: "Sinhronizēt kartes izvietojumus",
-				tooltipSync: "Ja šī funkcija ir aktivizēta, sākotnējais izvietojums sērijas pirmajā kartē tiks lietots visām kartēm un lietotāju navigēšana jebkurā kartē atspoguļosies visās kartēs. Deaktivizējiet, lai katras kartes izvietojums paliktu neatkarīgs."
+			settingsLayoutFonts: {
+				title: "Fonti",
+				defaultLbl: "Noklusējums",
+				sectionTitleLbl: "Sadaļas virsraksts",
+				sectionContentLbl: "Sadaļas saturs"
 			},
 			initPopup: {
 				title: "Laipni lūdzam"
 			},
 			addEditPopup: {
-				lblAdd: "Pievienot",
-				lblEdit: "Rediģēt",
-				disabled: "Pievienošana ir deaktivizēta, jo ir sasniegts maksimālais atļauto %LBL_LAYOUT% skaits.",
-				titleAdd: "Pievienot",
-				titleEdit: "Rediģēt",
-				stepMainStageNextTooltip: "Ievadiet %LBL_LAYOUT% nosaukumu un saturu",
-				titlePlaceholder: "%LBL_LAYOUT% nosaukums..."
+				disabled: "Pievienot sadaļu ir atspējots, jo ir sasniegs maksimālais atļauto sadaļu skaits.",
+				titleAdd: "Pievienot sadaļu",
+				titleAddHome: "Sadaļas Mājas pievienošana",
+				titleEdit: "Sadaļas rediģēšana",
+				step: "Solis",
+				stepMainStageExplain: "Galvenā posma saturs",
+				stepPanelExplain: "Saturs",
+				stepMainStageNextTooltip: "Ievadiet sadaļas virsrakstu un izvēlieties galvenā posma saturu",
+				stepMainStageNextTooltip2: "Atlasiet galvenā posma saturu",
+				step2NextTooltip: "Ievadiet sadaļas virsrakstu un %LAYOUT-TYPE% saturu",
+				stepNextTooltipNext: "lai pārietu uz nākamo soli",
+				stepNextTooltipAdd: "lai pievienotu sadaļu",
+				firstAddExplain: "Pirmā sadaļa ir sadaļa Mājas. Uztveriet to kā sava stāsta vāka lapu. Tikko norādītais virsraksts tiks attēlots lielā fontā.",
+				firstAddLeanMore: "Uzzināt vairāk",
+				titlePlaceholder: "Sadaļas virsraksts..."
 			},
-			textEditor: {
-				placeholder1: "Šeit pievienojiet tekstu, saites un maza izmēra grafikas.",
-				placeholder2: "Ja tas tiks atstāts tukšs, panelis tiks paslēpts."
+			addEditViewText: {
+				editorPlaceholder: "Šeit pievienojiet tekstu, saites un maza izmēra grafikas.",
+				editorActionsTitle: "Galvenā posma darbības",
+				editorActionsHelpDescr: "Izmantojiet šīs vadīklas, lai izveidotu saites, kas tiks mainītas galvenajā posmā. Piemēram, kad lietotājs noklikšķinās uz saites, iespējams, vēlēsieties mērogmainīt karti līdz konkrētam izvietojumam, parādīt citu web karti vai attēlu.",
+				mainStageDisabled: "Galvenā posma darbības ir atspējotas, ja redaktors ir maksimizēts"
 			},
 			organizePopup: {
 				title: "Organizē",
-				lblHeader: "Velciet un nometiet %LBL_LAYOUT%, lai sakārtotu savu stāstu.",
-				lblColTitle: "Nosaukums",
+				lblHeader: "Velciet un nometiet sadaļas, lai sakārtotu savu stāstu.",
+				lblColTitle: "Virsraksts",
+				lblColPubDate: "Publicēšanas datums",
 				lblColStatus: "Statuss",
-				btnApplyWarning: "Apstipriniet %NB% %LBL_LAYOUT% izdzēšanu",
+				checkDisplayReverse: "Parādīt sadaļas apgrieztā secībā",
+				btnApplyWarning: "Apstipriniet %NB% sadaļu dzēšanu",
 				deleteTooltip: "Dzēst",
-				firstSectionExplain: "(Sākuma sadaļu nevar pārvietot)"
+				firstSectionExplain: "(Sākuma sadaļu nevar pārvietot)",
+				exportMainStage: "Galvenā posma saturs",
+				exportPanel: "Paneļa saturs",
+				exportActions: "Galvenā posma darbības"
+			},
+			exportData: {
+				btn: "Eksportēt saturu",
+				tooltip: "Satura eksportēšana ļauj skatīt un izveidot sava žurnāla rezerves kopiju gadījumam, ja žurnālu nejauši izdzēšat. Vienkārši nokopējiet lapas saturu un ielīmējiet jebkurā teksta redaktorā."
 			},
 			help: {
 				lblHelp: "Palīdzība",
-				lblAdd: "Pievienot",
+				lblAdd: "Pievienot sadaļu",
 				lblSettings: "Iestatījumi",
-				lblOrga: "Organizē",
+				lblOrga: "Organizēt saturu",
 				lblEdit: "Rediģējumi",
-				lblPublish: "Kopīgot",
+				lblPublish: "Koplietošana",
 				lblTips: "Padomi",
 				lblMore: "Vai vēlaties uzzināt vairāk?",
 				lblLink: "Apmeklējiet Esri Story Maps web vietni.",
-				content1Div1: "Lai izveidotu savu %TPL_NAME%, izmantojiet pogu Pievienot, lai izvietojumā pievienotu katru karti vai citu saturu. Šajā saturā var ietilpt attēli, video vai iegultas tīmekļa vietnes vai kods. Piemēram, jūs, iespējams, vēlēsieties, lai lasītāji pirms karšu pārlūkošanas redzētu ievadattēlu vai video, pirmoreiz palaižot %TPL_NAME%.",
-				content1Div2: "Noklikšķinot uz pogas Pievienot, tiek parādīts dialogs, kas ļauj izvēlēties un konfigurēt karti vai citu pievienojamo saturu. Piemēram, varat norādīt kartē rādāmo izvietojumu, aktivizēt tās apzīmējumus utt.",
-				content2Div1: "Dialogā Iestatījumi varat mainīt savas %TPL_NAME% izskatu. Varat mainīt izkārtojumu, izvēlēties citu krāsu shēmu, izvēlēties kartes apzīmējumus, novietojumu utt.",
-				content2Div2: "Varat arī aizvietot Esri logotipu savas %TPL_NAME% galvenē ar savu logotipu, lai demonstrētu savu zīmolu. Varat arī norādīt tīmekļa vietni, kas jāpalaiž, ja lasītāji noklikšķina uz logotipa, lai tie varētu saņemt papildinformāciju.",
-				content3Div1: "Dialogs Kārtot ļauj pārvaldīt savu %TPL_NAME%. Šajā dialogā varat mainīt sēriju kārtību, tās velkot un nometot.",
-				content3Div2: "Varat arī izdzēst saturu vai to paslēpt. Paslēpšana ir noderīga, ja gatavojat jaunu saturu, kas vēl nav gatavs iekļaušanai stāsta kartē.",
+				content1Div1: "Veidojot stāstījumu, varat integrēt dažādus stilus. <strong>%LAYOUT_TITLE%</strong> parasti ir ietverts teksts, attēli un video, bet kartes parasti ir izvietotas <strong>galvenajā posmā</strong>. Tomēr %TPL_NAME% ļauj jums rādīt attēlus, diagrammas un video arī galvenajā posmā.",
+				content1Div2: "Sadaļu pievienošana ļauj precīzi pielāgot stāstījuma iespējas. Kad lasītāji ritina jūsu tekstu %LAYOUT_TITLE%, karte galvenajā posmā var panoramēt vai tālummainīt līdz galvenajiem punktiem, vai jaunas kartes un attēlus var pārslēgt automātiski, lai atbalstītu jūsu ziņojumu.",
+				content2Div1: "Dialogā Iestatījumi varat mainīt sava %TPL_NAME% izskatu. Varat mainīt izkārtojumu, izvēlēties citu krāsu shēmu, mainīt teksta fontu utt.",
+				content2Div2: "Varat aizstāt Esri logotipu ar savu logotipu, lai darītu redzamu savu zīmolu. Varat arī norādīt tīmekļa vietni, kas jāpalaiž, ja lasītāji noklikšķina uz jūsu logotipa, lai saņemtu papildinformāciju.",
+				content3Div1: "Jūsu izveidotais saturs ir sakārtots sadaļās. Varat izveidot tik sadaļu, cik vēlaties (iedomājieties, ka tās ir nelielas nodaļas). Šo nodaļu plūsma ir svarīga, tāpēc, izmantojot kārtošanas funkciju, sadaļas varat pēc vajadzības pārkārtot vai dzēst.",
 				content4Div1: "Atradāt kļūdu vai vēlaties mainīt savus materiālus? Tas ir viegli paveicams! Lai saturā veiktu izmaiņas, aplikācijā atrodiet rediģēšanas ikonu. Izstrādājot %TPL_NAME%, rediģēšanas funkciju nāksies bieži izmantot.",
 				content5Div1: "Kad saglabājat savu %TPL_NAME%, tas sākotnēji ir konfidenciāls. Lai kopīgotu to ar citiem, izmantojiet pogu Kopīgot. Savu %TPL_NAME% varat kopīgot publiski, lai tam varētu piekļūt ikviens.",
 				content5Div2: "Atkarībā no jūsu konta, jums var būt pieejama opcija kopīgot savu %TPL_NAME% tikai ar personām jūsu organizācijā, lai tam nevarētu piekļūt citas personas.",
-				content6Div1: "Kartes sērijā pēc noklusējuma ir sinhronizētas, lai rādītu vienu un to pašu izvietojumu. Tas nozīmē, ka pirmajā kartē rādītais izvietojums tiks automātiski lietots visām pārējām kartēm un, ja lietotājs mainīs mērogu vai pārbīdīs uz citu izvietojumu pašreiz aplūkotajā kartē, tas arī attieksies uz pārējām kartēm.",
-				content6Div2: "Piemēram, ja jūsu sērijā ir parādīti atšķirīgi pilsētas tematiskie dati, lasītājs var pietuvināt savu apkaimi un pēc tam vienkārši pārslēgties starp cilnēm, lai skatītu šīs zonas karti.",
-				content6Div3: "Lai deaktivizētu izvietojuma sinhronizāciju, atveriet dialogu Iestatījumi un noņemiet atzīmi no šī iestatījuma cilnē Kartes opcijas.",
-				content6AltDiv1: "Karšu izvietojums pēc noklusējuma ir sinhronizēts. Sinhronizācijas deaktivēšana ļauj katrā kartē parādīt atšķirīgu izvietojumu.",
-				content6AltDiv2: "Sinhronizācija IESLĒGTA",
-				content6AltDiv3: "Sinhronizācija IZSLĒGTA",
-				content6AltDiv4: "Lai deaktivizētu sinhronizāciju, atveriet Iestatījumi > Kartes opcijas un noņemiet atzīmi no \"Sinhronizēt karšu izvietojumus\"."
+				content6Div1: "Sadaļas Mājas virsraksts ir arī jūsu žurnāla virsraksts. Uztveriet sadaļu Mājas kā sava stāsta vāka lapu. Sadaļas Mājas virsraksts būs redzams arī tad, kad lietotāji pārvietosies žurnālā.",
+				content6Div2: "%LAYOUT_TITLE% nav jābūt tikai tekstam, apsveriet iespēju iekļaut foto un video, lai stāstu padarītu dzīvāku un sadalītu sīkāk garas teksta sadaļas."
 			},
 			landing: {
-				lblAdd: "Kādu nosaukumu vēlaties piešķirt savai %LAYOUT_TITLE% karšu sērijai?",
+				lblAdd: "Kā vēlaties nosaukt savu karšu žurnālu?",
 				phAdd: "Ievadiet nosaukumu...",
 				lblOR: "Vai",
 				lblHelp: "Iepazīties"
+			},
+			firstAddSplash: {
+				thisis: "Šis ir",
+				lblMain: "Šis ir %BR% galvenais posms"
 			}
         }
     })

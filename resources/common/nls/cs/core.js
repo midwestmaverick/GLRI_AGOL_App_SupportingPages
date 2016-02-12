@@ -3,7 +3,7 @@
 		commonCore: {
 			common: {
 				add: "Přidat",
-				edit: "Upravit",
+				edit: "Editovat",
 				save: "Uložit",
 				next: "Další",
 				cancel: "Storno",
@@ -13,7 +13,7 @@
 				open: "Otevřít",
 				start: "Spustit",
 				loading: "Načítání",
-				disabledAdmin: "Tato funkce byla zakázána administrátorem.",
+				disabledAdmin: "Tato funkce byla zakázána administrátorem",
 				width: "Šířka",
 				height: "Výška",
 				create: "Vytvořit",
@@ -56,7 +56,7 @@
 				shareTitle: "Sdílejte svůj příběh",
 				preview: "Náhled",
 				viewlive: "Živý náhled",
-				btnPrivate: "Soukromý",
+				btnPrivate: "Soukromé",
 				btnPrivateTooltip: "Příběh můžete vidět pouze vy",
 				btnOrg: "Organizace",
 				btnOrgTooltip: "Příběh mohou vidět pouze členové vaší organizace",
@@ -84,7 +84,7 @@
 				tabError: "Zkontrolujte prosím, nejsou-li v záložkách chyby."
 			},
 			settingsLayout: {
-				title: "Rozvržení",
+				title: "Rozvržení stránky",
 				explain: "Jaké rozvržení chcete použít?",
 				explainInit: "Rozvržení můžete kdykoli změnit v dialogu nastavení.",
 				viewExample: "Zobrazit živý příklad"

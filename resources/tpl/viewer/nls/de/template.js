@@ -5,7 +5,11 @@
 				close: "Schließen"
 			},
 			loading: {
-				long: "Story wird initialisiert",
+				step1: "Story wird geladen",
+				step2: "Daten werden geladen",
+				step3: "Wird initialisiert",
+				loadBuilder: "Es wird zum Builder gewechselt",
+				long: "Map Journal wird initialisiert",
 				long2: "Vielen Dank für Ihre Geduld.",
 				failButton: "Story erneut laden"
 			},
@@ -32,16 +36,21 @@
 				mapLoadingFail: "Ein Fehler ist aufgetreten. Die Karte wurde nicht korrekt geladen.",
 				signOut: "Abmelden"
 			},
-			mobileInfo: {
-				legend: "Legende",
-				description: "Beschreibung",
-				lblLegendMobileError: "Die Legende ist nicht verfügbar. Laden Sie die Story erneut.",
-				lblLegendMobileErrorExplain: "Die Legende ist nicht verfügbar, wenn das Gerät nach dem Laden der Story ins Querformat gedreht wird."
+			mobileView: {
+				tapForDetails: "Zum Anzeigen von Details tippen",
+				clickForDetails: "Weitere Informationen",
+				swipeToExplore: "Zum Erkunden streichen",
+				tapForMap: "Zum Zurückkehren zur Karte tippen",
+				clickForMap: "ZURÜCK ZUR KARTE"
 			},
-			mobileFooter: {
-				swipeInvite: "Zum Navigieren in der Story streichen",
-				lblNext: "Weiter",
-				lblEnd: "Sie haben das Ende der Story erreicht"
+			floatLayout: {
+				scroll: "Bildlauf durchführen"
+			},
+			sideLayout: {
+				scroll: "Führen Sie den Bildlauf nach unten durch, um weitere Informationen zu erhalten!"
+			},
+			mainStage: {
+				back: "Zurück"
 			},
 			headerFromCommon: {
 				storymapsText: "Eine Story Map",
@@ -67,11 +76,8 @@
 				copied: "Kopiert",
 				open: "Öffnen",
 				embed: "In Webseite einbetten",
-				embedExplain: "Verwenden Sie den folgenden HTML-Code, um die Story in eine Webseite einzubetten.",
+				embedExplain: "Verwenden Sie den folgenden HTML-Code, um das Journal in eine Webseite einzubetten.",
 				size: "Größe (Breite/Höhe):"
-			},
-			locatorFromCommon: {
-				error: "Position ist nicht verfügbar"
 			}
         }
     })

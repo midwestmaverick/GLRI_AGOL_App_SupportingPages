@@ -50,7 +50,7 @@
 				other: "Jiné"
 			},
 			videoSelectorYoutube: {
-				url: "Adresa URL videa ke službě YouTube",
+				url: "Adresa URL videa ve službě YouTube",
 				pageInputLbl: "Uživatelské jméno",
 				lookupMsgError: "Uživatel nenalezen",
 				howToFind: "Jak najít uživatelské jméno YouTube",
@@ -61,11 +61,11 @@
 				checkFailedAPI: "Kontrola na YouTube se nezdařila, zkontrolujte klíč YouTube API."
 			},
 			videoSelectorVimeo: {
-				url: "Adresa URL videa ke službě Vimeo"
+				url: "Adresa URL videa ve službě Vimeo"
 			},
 			videoSelectorOther: {
 				explain1: "Příběh nedokáže přehrávat videa v původním formátu (tj. avi, mpeg), ale dokáže přehrávat hostované videosoubory s vestavěným přehrávačem (tj. YouTube nebo Vimeo).",
-				explain2: "Tuto funkci nabízí většina online služeb pro hostování videa. Musíte najít volbu pro vložení videa, zkopírovat uvedený kód a použít %WEBPAGE%.",
+				explain2: "Tuto funkci nabízí většina online služeb pro hostování videa. Musíte najít možnost pro vložení videa, zkopírovat uvedený kód a použít %WEBPAGE%.",
 				explain3: "Video také můžete hostovat sami. Stačí vytvořit HTML stránku, která používá videopřehrávač, jako je například %EXAMPLE%, hostovat danou stránku a také použít %WEBPAGE%.",
 				webpage: "Prvek webové stránky"
 			},
@@ -78,7 +78,7 @@
 				configure: "Konfigurovat"
 			},
 			mediaConfigure: {
-				lblURL: "Adresa URL",
+				lblURL: "URL",
 				lblURLPH: "Adresa URL obrázku by měla začínat řetězcem http:// a končit .jpg nebo .png.",
 				lblURLError: "Zdá se, že obrázek je neplatný. Zadejte prosím přímý odkaz na obrazový soubor (taková adresa URL obvykle končí příponou .jpg nebo .png). Odkazy na webové stránky obsahující obrázek nebudou fungovat.",
 				lblURLCheck: "Probíhá kontrola obrázku…",

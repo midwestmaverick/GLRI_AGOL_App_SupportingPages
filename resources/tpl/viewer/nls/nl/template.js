@@ -5,7 +5,11 @@
 				close: "Sluiten"
 			},
 			loading: {
-				long: "Verhaal wordt gestart",
+				step1: "Verhaal wordt geladen",
+				step2: "Gegevens laden",
+				step3: "Initialiseren",
+				loadBuilder: "Overschakelen naar builder",
+				long: "Kaartjournaal wordt geïnitialiseerd",
 				long2: "Bedankt voor uw geduld",
 				failButton: "Het verhaal opnieuw laden"
 			},
@@ -20,7 +24,7 @@
 				invalidConfigNoApp: "Webmapapplicatie-ID niet opgegeven in index.html.",
 				unspecifiedConfigOwner: "De gemachtigde eigenaar is niet geconfigureerd.",
 				invalidConfigOwner: "De eigenaar van het verhaal is niet gemachtigd.",
-				createMap: "Kan geen kaart creëren",
+				createMap: "Kan kaart niet maken",
 				invalidApp: "De %TPL_NAME% bestaat niet of is niet toegankelijk.",
 				appLoadingFail: "Er is een probleem opgetreden. De %TPL_NAME% is niet correct geladen.",
 				notConfiguredDesktop: "Het verhaal is nog niet geconfigureerd.",
@@ -32,16 +36,21 @@
 				mapLoadingFail: "Er is een probleem opgetreden. De kaart is niet correct geladen.",
 				signOut: "Afmelden"
 			},
-			mobileInfo: {
-				legend: "Legenda",
-				description: "Beschrijving",
-				lblLegendMobileError: "Sorry, de legenda is niet beschikbaar. Laad het verhaal opnieuw.",
-				lblLegendMobileErrorExplain: "De legenda is niet beschikbaar als het apparaat gedraaid is naar portretstand nadat het verhaal geladen is."
+			mobileView: {
+				tapForDetails: "Tik voor details",
+				clickForDetails: "Meer weten",
+				swipeToExplore: "Veeg om te verkennen",
+				tapForMap: "Tik om terug te gaan naar de kaart",
+				clickForMap: "TERUG NAAR KAART"
 			},
-			mobileFooter: {
-				swipeInvite: "Vegen om het verhaal te navigeren",
-				lblNext: "Volgende",
-				lblEnd: "U heeft het eind van het verhaal bereikt"
+			floatLayout: {
+				scroll: "Scrollen"
+			},
+			sideLayout: {
+				scroll: "Scrol naar beneden als u meer wilt zien."
+			},
+			mainStage: {
+				back: "Vorige"
 			},
 			headerFromCommon: {
 				storymapsText: "Een kaartverhaal",
@@ -67,11 +76,8 @@
 				copied: "Gekopieerd",
 				open: "Openen",
 				embed: "Inbedden in webpagina",
-				embedExplain: "Gebruik de volgende HTML-code om het verhaal in een webpagina in te sluiten.",
+				embedExplain: "Gebruik de volgende HTML-code om het journaal in een webpagina in te bedden.",
 				size: "Grootte (breedte/hoogte):"
-			},
-			locatorFromCommon: {
-				error: "Locatie niet beschikbaar"
 			}
         }
     })

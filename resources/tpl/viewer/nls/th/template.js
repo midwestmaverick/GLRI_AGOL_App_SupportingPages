@@ -5,7 +5,11 @@
 				close: "ปิด"
 			},
 			loading: {
-				long: "เริ่มต้นดำเนินเรื่องราว",
+				step1: "กำลังโหลดเรื่องราว",
+				step2: "กำลังโหลดข้อมูล",
+				step3: "กำลังดำเนินการ",
+				loadBuilder: "ปรับเปลี่ยนการสร้าง",
+				long: "แมพเจอร์นัลกำลังเริ่ม",
 				long2: "ขอบคุณที่รอ",
 				failButton: "โหลดเรื่องราวอีกครั้ง"
 			},
@@ -16,32 +20,37 @@
 			},
 			errors: {
 				boxTitle: "เกิดข้อผิดพลาด",
-				invalidConfig: "การกำหนดค่าไม่ถูกต้อง",
+				invalidConfig: "ข้อผิดพลาดร้ายแรง: การตั้งค่าที่ไม่ถูกต้อง",
 				invalidConfigNoApp: "ข้อผิดพลาดร้ายแรง: เว็บแผนที่ระบุการใช้งานไม่ได้ระบุใน index.html",
 				unspecifiedConfigOwner: "ไม่มีการกำหนดอำนาจในการปรับแต่ง",
 				invalidConfigOwner: "เจ้าของเรื่องราวไม่ได้รับอนุญาต",
-				createMap: "ไม่สามารถสร้างแผนที่ได้",
+				createMap: "ไม่สามารถสร้างแผนที่",
 				invalidApp: "ข้อผิดพลาดร้ายแรง: โปรแกรมไม่สามารถโหลด",
-				appLoadingFail: "มีางอย่างผิดปกติ, %TPL_NAME% โหลดไม่สมบูรณ์",
+				appLoadingFail: "มีบางอย่างผิดพลาด   %TPL_NAME% ไม่ถูกโหลดอย่างถูกต้อง",
 				notConfiguredDesktop: "เรื่องราวนี้ยังไม่ได้รับการปรับแต่ง",
 				notConfiguredMobile: "บิวเดอร์นี้ %TPL_NAME% ไม่ได้รับการสนัสนุนในขนาดการแสดงผลนี้",
 				notAuthorized: "คุณไม่ได้รับสิทธิ์ในการใช้งานเรื่องราว",
 				noBuilderIE: "ตัวสร้างที่ไม่ได้รับการสนับสนุนบน Internet Explorer ก่อนรุ่น %VERSION%  %UPGRADE%",
 				noViewerIE: "เรื่องนี้ไม่ได้รับการสนับสนุนใน Internet Explorer รุ่นก่อน %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>กรุณาอัพเดทเบราว์เซอร์ของคุณ</a>.",
-				mapLoadingFail: "เกิดข้อผิดพลาดบางอย่างขึ้น ทำให้แผนที่ไม่สามารถเปิดขึ้นได้ถูกต้อง",
+				mapLoadingFail: "มีข้อผิดพลาดบางประการ ไม่สามารถโหลดแผนที่ได้",
 				signOut: "ลงชื่อออก"
 			},
-			mobileInfo: {
-				legend: "คำอธิบาย",
-				description: "คำบรรยาย",
-				lblLegendMobileError: "ขอโทษ ไม่มีสัญลักษณ์ปรากฏอยู่ กรุณาโหลดเรื่องราวอีกครั้ง",
-				lblLegendMobileErrorExplain: "สัญลักษณ์ไม่สามารถใช้ได้เมื่ออุปกรณ์ถูกนำไปโหมดแนวตั้งหลังจากที่เรื่องราวถูกโหลด"
+			mobileView: {
+				tapForDetails: "เลือกสำหรับรายละเอียด",
+				clickForDetails: "ศึกษาเพิ่มเติม",
+				swipeToExplore: "เลื่อนเพื่อดุรายละเอียด",
+				tapForMap: "แตะเพื่อกลับเข้าสู่แผนที่",
+				clickForMap: "กลับไปสู่แผนที่"
 			},
-			mobileFooter: {
-				swipeInvite: "เลื่อนเพื่อเริ่มเรื่อง",
-				lblNext: "ต่อไป",
-				lblEnd: "คุณอ่านมาถึงตอนจบของเรื่องแล้ว"
+			floatLayout: {
+				scroll: "เลื่อน"
+			},
+			sideLayout: {
+				scroll: "เลื่อนลงเพิ่มเติม"
+			},
+			mainStage: {
+				back: "กลับ"
 			},
 			headerFromCommon: {
 				storymapsText: "A story map",
@@ -51,7 +60,7 @@
 				bitlyTooltip: "รับเป็นลิงค์สั้นๆ",
 				templateTitle: "ตั้งค่าหัวเรื่องเทมเพลต",
 				templateSubtitle: "ตั้งค่าชื่อรองของเทมเพลต",
-				share: "แชร์",
+				share: "แบ่งปัน",
 				checking: "กำหลังตรวจสอบสาระในเรื่องราวของคุณ",
 				fix: "ปรับปรุงประเด็นในเรื่องราวของคุณ",
 				noerrors: "ไม่มีประเด็นที่ตรวจพบ"
@@ -60,18 +69,15 @@
 				title: "ภาพรวมของแผนที่"
 			},
 			legendFromCommon: {
-				title: "คำอธิบาย"
+				title: "สัญลักษณ์"
 			},
 			shareFromCommon: {
 				copy: "คัดลอก",
 				copied: "คัดลอก",
 				open: "เปิด",
 				embed: "ฝังลงในเว็บไซต์",
-				embedExplain: "ใช้ HTML โค้ดตามด้านล่างนี้เพื่อฝังเรื่องราวในหน้าเว็บ",
+				embedExplain: "ใช้รหัส HTML ต่อไปนี้ ในการฝังลงในเว็บไซต์การเดินทาง",
 				size: "ขนาด (กว้าง/สูง):"
-			},
-			locatorFromCommon: {
-				error: "ที่ตั้งไม่สามารถใช้งานได้"
 			}
         }
     })

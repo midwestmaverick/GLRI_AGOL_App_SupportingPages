@@ -5,7 +5,11 @@
 				close: "Zavřít"
 			},
 			loading: {
-				long: "Příběh se inicializuje",
+				step1: "Načítání příběhu",
+				step2: "Nahrávání dat",
+				step3: "Inicializace",
+				loadBuilder: "Přepínání na nástroj pro tvorbu",
+				long: "Mapový deník se inicializuje",
 				long2: "Děkujeme za strpení",
 				failButton: "Znovu načíst příběh"
 			},
@@ -28,30 +32,35 @@
 				notAuthorized: "Nejste oprávněni přistupovat k tomuto příběhu",
 				noBuilderIE: "Nástroj pro tvorbu není podporován v aplikaci Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
 				noViewerIE: "Tento příběh není podporován v prohlížeči Internet Explorer ve verzi nižší než %VERSION%. %UPGRADE%",
-				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Aktualizujte prohlížeč</a>.",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Prosím, aktualizujte prohlížeč</a>.",
 				mapLoadingFail: "Něco se pokazilo, mapa se nenahrála správně.",
 				signOut: "Odhlásit"
 			},
-			mobileInfo: {
-				legend: "Legenda",
-				description: "Popis",
-				lblLegendMobileError: "Legenda bohužel není k dispozici. Načtěte příběh znovu.",
-				lblLegendMobileErrorExplain: "Legenda nebude k dispozici v případě, že je po načtení příběhu zařízení v režimu na výšku."
+			mobileView: {
+				tapForDetails: "Klepnutím zobrazíte podrobnosti.",
+				clickForDetails: "Zjistit více",
+				swipeToExplore: "Přejeďte prstem, chcete-li zahájit prohlížení.",
+				tapForMap: "Klepnutím se vrátíte na mapu.",
+				clickForMap: "ZPĚT DO MAPY"
 			},
-			mobileFooter: {
-				swipeInvite: "Procházejte příběhem potáhnutím prstem",
-				lblNext: "Další",
-				lblEnd: "Dosáhli jste konce příběhu"
+			floatLayout: {
+				scroll: "Posunout"
+			},
+			sideLayout: {
+				scroll: "Chcete-li pokračovat, posuňte zobrazení dolů!"
+			},
+			mainStage: {
+				back: "Zpět"
 			},
 			headerFromCommon: {
 				storymapsText: "Mapa s příběhem",
-				builderButton: "Upravit",
+				builderButton: "Editovat",
 				facebookTooltip: "Sdílet na Facebooku",
 				twitterTooltip: "Sdílet na Twitteru",
 				bitlyTooltip: "Získat krátký odkaz",
-				templateTitle: "Zadejte název šablony",
-				templateSubtitle: "Zadejte podnadpis šablony",
-				share: "Sdílení",
+				templateTitle: "Nastavit název šablony",
+				templateSubtitle: "Nastavit podnadpis šablony",
+				share: "Sdílet",
 				checking: "Probíhá kontrola obsahu vašeho příběhu",
 				fix: "Opravte problémy ve svém příběhu",
 				noerrors: "Nebyly nalezeny žádné problémy"
@@ -67,11 +76,8 @@
 				copied: "Zkopírováno",
 				open: "Otevřít",
 				embed: "Vložit do webové stránky",
-				embedExplain: "Chcete-li příběh vložit do webové stránky, použijte následující kód HTML.",
+				embedExplain: "Chcete-li deník vložit do webové stránky, použijte následující kód HTML.",
 				size: "Velikost (šířka/výška):"
-			},
-			locatorFromCommon: {
-				error: "Umístění není k dispozici"
 			}
         }
     })

@@ -15,8 +15,8 @@
 				section: "Část",
 				sections: "Části",
 				and: "a",
-				action: "Akce v sekci",
-				actions: "Akce v sekcích",
+				action: "Akce v části",
+				actions: "Akce v částech",
 				originalWebmap: "Mapa použitá při publikaci %TPL_NAME%",
 				browseMaps: "Vybrat mapu",
 				createMap: "Vytvořit mapu",
@@ -48,7 +48,7 @@
 				popupTitle: "Vyskakovací okno mapy",
 				popupExplain: "Kliknutím na prvek otevřete vyskakovací okno, s informacemi, které chcete o prvku zobrazit.",
 				popupSave: "Uložit konfiguraci vyskakovacího okna",
-				hintNavigation: "Navigace v mapě je vypnuta."
+				hintNavigation: "Navigace mapy je vypnuta."
 			},
 			editor: {
 				loading: "Počkejte, dokud se nenahraje editor mapy",

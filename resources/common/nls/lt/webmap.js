@@ -77,7 +77,7 @@
 		configure: {
 			mapdlg:{
 				items:{
-					organizationLabel: "Organizacija",
+					organizationLabel: "Mano organizacija",
 					onlineLabel: "ArcGIS Online",
 					contentLabel: "Turinys",
 					favoritesLabel: "Mėgstamiausi"

@@ -1,5 +1,18 @@
 <!DOCTYPE html>
 <html>
+	<!-- 
+	1: D:
+	2: cd D:\Libraries\Documents\GitHub\forestdisturbance
+	3: python -m SimpleHTTPServer 8080 &.
+	4: http://199.131.112.233:8080/
+	http://timemachine.cmucreatelab.org/wiki/EarthEngineTourEditor#presentation=EJDkDAG5PpDJkOwP_Great%20Lakes%20Overview_DkDANxVq1V2NjX_North%20Woods_DkDAwaop0eGO1f_National%20Mine_DkDAn_EpmmCOkc_Green%20Bay_DkDAZLMoqquOlgB_Toledo_DkDAKvzorZtOkc_Saginaw%20Bay_DkDAjAEpQIpOojB_Mack%20Lake_DkDAKRDpxltOsiB_Huron%20National%20Fores_DkDAYB0o4_VPic_Toronto_Untitled_B
+	
+	<iframe width="1152" height="751" src="http://timemachine.cmucreatelab.org/viewer/20150822/public/landsat_editor_wiki.html#presentation=EIDkDAG5PpDJkOwP_Great%20Lakes%20Overview_DkDANxVq1V2NjX_North%20Woods_DkDAwaop0eGO1f_Upper%20Peninsula_DkDAn_EpmmCOkc_Green%20Bay_DkDAZLMoqquOlgB_Toledo_DkDAKRDpxltOsiB_Huron%20National%20Fores_DkDAKvzorZtOkc_Saginaw%20Bay_BkDAYB0o4_VPic_Toronto_Untitled_B" frameborder="0"></iframe>
+	
+	http://arcg.is/1PYa9nf
+	-->
+	
+	
 	<head>
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -13,22 +26,22 @@
 		<link type="image/ico" rel="icon"  href="resources/tpl/viewer/icons/favicon.ico">
 		
 		<!-- 
-			To correctly reference your Map Series in search engine:
+			To correctly reference your Map Journal in search engine:
 			 - create and fill out extensively an ArcGIS Online item that link to your final application
 			 - edit the following four tags as well as the title tag above on line 4
 		-->
-		<meta name="description" content="This story map was created with the Story Map Series application in ArcGIS Online.">
+		<meta name="description" content="This story map was created with the Story Map Journal application in ArcGIS Online.">
 		
 		<!-- Facebook sharing -->
 		<meta property="og:type" content="article"/>
-		<meta property="og:title" content="Story Map Series"/>
-		<meta property="og:description" content="This story map was created with the Story Map Series application in ArcGIS Online."/>
-		<meta property="og:image" content="http://www.arcgis.com/apps/MapSeries/resources/common/icons/esri-globe.png"/>
+		<meta property="og:title" content="Story Map Journal"/>
+		<meta property="og:description" content="This story map was created with the Story Map Journal application in ArcGIS Online."/>
+		<meta property="og:image" content="http://www.arcgis.com/apps/MapJournal/resources/common/icons/esri-globe.png"/>
 		
 		<!-- 
 			This application is released under the Apache License V2.0 by Esri http://www.esri.com/
 			Checkout the project repository on GitHub to access source code, latest revision, developer documentation, FAQ and tips
-			https://github.com/Esri/map-series-storytelling-template-js
+			https://github.com/Esri/map-journal-storytelling-template-js
 		-->
 		
 		<script type="text/javascript">
@@ -36,22 +49,22 @@
 			//     Application configuration (ignored on ArcGIS Online, Portal and during development)
 			//-------------------------------------------------------------------------------------------
 			var configOptions = {
-				// Enter an application ID created through the Map Series builder 
-				appid: "ea5ef2ebe7cc4571a0275cdee918b8b9",
-				// Optionally to secure Series's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
+				// Enter an application ID created through the Map Journal builder 
+				appid: "327eb829e0ea4e6cb9e9c550240faf9a",
+				// Optionally to secure Journal's access, use an OAuth application ID (example: 6gyOg377fLUhUk6f)
 				// User will need to sign-in to access the viewer even if your application is public
 				oAuthAppId: "",
 				// Optionally to be able to use the appid URL parameter, configure here the list of application author 
-				//  whose application are allowed to be viewed by this Map Series deployment
-				// This is the Portal username of the Series owner (e.g. ["user1"], ["user1", "user2"])
+				//  whose application are allowed to be viewed by this Map Journal deployment
+				// This is the Portal username of the Journal owner (e.g. ["user1"], ["user1", "user2"])
 				// To authorize all users you can use ["*"]
 				authorizedOwners: [""]
 			};
 			// Optionally sharing and proxy URLs can be configured in app/config.js. This is only required  
-			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapSeries/ or /apps/MapSeries/. 
+			//  when the webmap is not hosted on ArcGIS Online or a Portal for ArcGIS instance and the application isn't deployed as /home/MapJournal/ or /apps/MapJournal/. 
 			// Optionally Bing Maps key, Geometry and Geocode service's URLs can be configured in app/commonConfig.js. This is only required 
 			//  if the Organization or Portal for ArcGIS instance default configuration has to be overwritten. If the application is deployed 
-			//  on Portal for ArcGIS as /home/MapSeries/ or /apps/MapSeries/, that configuration is available in ../commonConfig.js
+			//  on Portal for ArcGIS as /home/MapJournal/ or /apps/MapJournal/, that configuration is available in ../commonConfig.js
 		</script>
 		
 		<!--
@@ -62,7 +75,7 @@
 		
 		<script type="text/javascript">
 			var app = {
-				version: '1.4.1',
+				version: '1.6.1',
 				pathJSAPI: '//js.arcgis.com/3.15/'
 			};
 		</script>
@@ -70,132 +83,188 @@
 	<body class="claro">
 		<style>
 			/* CUSTOM CSS RULES */
+			appTitle {
+				height:0px;
+				overflow:hidden;
+			}
+			
 		</style>
 		
 		<!-- Builder top panel is injected here -->
 		<div id="builderPanel" class="hide mainViewAboveMap"></div>
 		
-		<!-- Header -->
-		<div id="header" class="mainViewAboveMap">
-			<!-- Mobile header -->
-			<div id="headerMobile" class="headerMobile mobileView">
-				<div class="header">
-					<div class="titleArea">
-						<span class="glyphicon glyphicon-th-list menu-btn"></span>
-						<div class="title"></div>
-					</div>
-					<div class="rightArea">
-						<span class="glyphicon glyphicon-share share-btn share-all"></span>
-					</div>
-				</div>
-				<div class="menu"></div>
-			</div>
-			<!-- Desktop header -->
-			<div id="headerDesktop" aria-hidden="true">
-				<div class="rightArea">
-					<div class="linkSocialContainer">
-						<span class="error-status">
-							<button class="btn btn-xs btn-warning check-story"></button>
-						</span>
-						<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
-						<span class="linkContainer"></span>
-						<span class="shareBtns">
-							<i class="shareIcon blackHover share_facebook icon-facebook-squared"></i>
-							<i class="shareIcon blackHover share_twitter icon-twitter"></i>
-							<i class="shareIcon blackHover share_bitly icon-link"></i>
-						</span>
-					</div>
-					<div class="logoContainer">
-						<table class="logoContainerInner">
-							<tr>
-								<td class="logoWrapper">
-									<a class="logoLink" target="_blank" tabindex="-1">
-										<img class="logoImg"/>
-									</a>
-								</td>
-							</tr>
-						</table>
-					</div>
-				</div>
-				<div class="textArea">
-					<h1 class="title" tabindex="0"></h1>
-					<h2 class="subtitle" tabindex="0"></h2>
-				</div>
-				<div class="builder-mask"></div>
-			</div>
-		</div>
-		
-		<!-- Tab/bullet navigation bar -->
-		<div id="nav-bar" class="mainViewAboveMap"></div>
-		
 		<!-- Content -->
 		<div id="contentPanel" class="mobileView">
 			<table class="containerPanelInner">
 				<tr>
-					<!-- Side Accordion panel -->
-					<td id="accordionPanel" class="accordionPanel">
-						<div class="content textEditorContent"></div>
-						<div class="builder builder-content-panel">
-							<div class="builder-content-panel-group builder-add">
-								<div class="builder-btn"></div>
-								<div class="builder-lbl"></div>
+					<!-- Text panel of the Side Panel layout -->
+					<td id="sidePanel">
+						<div id="sidePanelInner" class="mainViewSideMap sidePanel sectionPanel">
+							<div class="navDots vertical">
+								<!-- navigation dots -->
 							</div>
-							<div class="builder-content-panel-group builder-organize">
-								<div class="builder-btn"></div>
-								<div class="builder-lbl"></div>
+							<div class="header" aria-hidden="true">
+								<div class="linkSocialContainer">
+									<span class="linkContainer"></span>
+									<span class="shareBtns">
+										<i class="shareIcon blackHover share_facebook icon-facebook-squared" tabindex="-1"></i>
+										<i class="shareIcon blackHover share_twitter icon-twitter" tabindex="-1"></i>
+										<i class="shareIcon blackHover share_bitly icon-link" tabindex="-1"></i>
+										<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
+									</span>
+								</div>
+								<table class="logoContainer">
+									<tr>
+										<td class="logoWrapper">
+											<a class="logoLink" target="_blank" tabindex="-1">
+												<img class="logoImg"/>
+											</a>
+										</td>
+									</tr>
+								</table>
 							</div>
+							<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
+							<span class="error-status">
+								<button class="btn btn-xs btn-warning check-story"></button>
+							</span>
+							<div class="separator"></div>
+							<div class="sectionsWrapper">
+								<div class="panelEditBtn">
+									<div class="panelEditBtnInner"></div>
+								</div>
+								<div class="sections">
+									<!-- sections injected here -->
+								</div>
+							</div>
+							<div class="builder builder-content-panel">
+								<div class="builder-content-panel-group builder-add">
+									<div class="builder-btn"></div>
+									<div class="builder-lbl"></div>
+								</div>
+								<div class="builder-content-panel-group builder-organize">
+									<div class="builder-btn"></div>
+									<div class="builder-lbl"></div>
+								</div>
+							</div>
+							<!-- <div class="resizer"></div> -->
+							<div class="scroll">
+								<div class="scrollInner" data-toggle="tooltip"></div>
+							</div>
+							<div class="builder-mask"></div>
+							<div class="firstAddExplain"></div>
 						</div>
-						<div class="builder-mask"></div>
 					</td>
-					<!-- Main Stage -->
+					<!-- Map -->
 					<td id="mainStagePanel">
 						<div id="mainStagePanelInner">
-							<div id="slideshow" style="min-height: 100%; min-width: 100%;">
-							<img src="ForestDisturbance/Images/Bull_Moose.jpg" id="tr"><!--moose-->
-							<img src="ForestDisturbance/Images/Fire-Forest.jpg" id="br"><!--forest fire-->
-							<img src="ForestDisturbance/Images/kirtlandsWarbler.jpg" id="tr"><!--kw-->
-							<img src="ForestDisturbance/Images/6588358285_293d1b406e_o.jpg" id="br"><!--logging-->
-							<img src="ForestDisturbance/Images/17105744418_4d08a7f54a_o.jpg" id="tr"><!--woodcock-->
-							<img src="ForestDisturbance/Images/538810505_1d4ca999bf_o.jpg" id="bl"><!--burnt stream-->
-							<img src="ForestDisturbance/Images/DSK250-58.jpg" id="tl"><!--tree planting-->
-							<img src="ForestDisturbance/Images/15488643468_4fa48b4cb8_o.jpg" id="tr"><!--cottontail-->
-							<img src="ForestDisturbance/Images/5927054645_de59f8af5d_o.jpg" id="br"><!--cottontail hab-->
-							<img src="ForestDisturbance/Images/8551122735_5535c74455_o.jpg" id="bl"><!--fish-->
-							<img src="ForestDisturbance/Images/16785196115_8e97b620e1_o.jpg" id="tl"><!--sunrise-->
-							<img src="ForestDisturbance/Images/DSK161-26.jpg" id="bl"><!--regrowth-->
-							<img src="ForestDisturbance/Images/3447982213_c4c7414f2c_o.jpg" id="tl"><!--grouse-->
+							<div class="medias">
+								<!-- Maps and media injected here -->
 							</div>
-							<div class="medias"></div>
-							<!-- Loading -->
 							<div id="mainStageLoadingIndicator" class="loadingIndicator">
 								<img src="resources/tpl/viewer/icons/loading-light.gif" />
 							</div>
-							<!-- Mobile info button -->
-							<div id="mobileInfoBtn" class="mobileInfoBtn"></div>
-							<!-- Builder -->
-							<div id="builderQuotes"></div>
-							<div id="builderLanding"></div>
-							<div id="builderHelp" class="centerAlignOnFloat"></div>
-						</div>
-						
-						<!-- Description and legend floating panel -->
-						<div id="descLegendPanel" class="descLegendPanel" tabindex="0">
-							<div class="descLegendPanelInner">
-								<div class="backdrop"></div>
-								<div class="descriptions textEditorContent"></div>
-								<div class="legends" aria-hidden="true"></div>
-								<div class="builder-mask"></div>
+							<!-- Back button -->
+							<div class="mediaBackContainer">
+								<div class="backButton">
+									<div class="backArrow"></div>
+									<span class="backLbl"></span>
+								</div>
 							</div>
+							<!-- Builder -->
+							<div id="builderQuotes" class="centerAlignOnFloat"></div>
+							<div id="builderLanding" class="centerAlignOnFloat"></div>
+							<div id="builderHelp" class="centerAlignOnFloat"></div>
+							<div class="firstAddExplain"></div>
 						</div>
 					</td>
 				</tr>
 			</table>
 		</div>
-
-		<!-- Mobile footer -->
-		<div id="footerMobile" class="footerMobile mobileView mainViewBelowMap">
-			<!-- Mobile view footer is injected here -->
-		</div>		
+		<!-- /Content -->
+		
+		<div id="floatingPanel" class="floatingPanel sectionPanel">
+			<div class="backdrop"></div>
+			<div class="header" aria-hidden="true">
+				<div class="linkSocialContainer">
+					<span class="linkContainer"></span>
+					<span class="shareBtns">
+						<i class="shareIcon blackHover share_facebook icon-facebook-squared" title="Share on Facebook" tabindex="-1"></i>
+						<i class="shareIcon blackHover share_twitter icon-twitter" title="Share on Twitter" tabindex="-1"></i>
+						<i class="shareIcon blackHover share_bitly icon-link" title="Share a short link" tabindex="-1"></i>
+						<button type="button" class="switchBuilder btn btn-xs btn-primary" tabindex="-1"></button>
+					</span>
+				</div>
+				<table class="logoContainer">
+					<tr>
+						<td class="logoWrapper">
+							<a class="logoLink" target="_blank" tabindex="-1">
+								<img class="logoImg"/>
+							</a>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="appTitle" tabindex="-1" aria-hidden="true"></div>
+			<span class="error-status">
+				<button class="btn btn-xs btn-warning check-story"></button>
+			</span>
+			<div class="separator"></div>
+			<div class="panelEditBtn">
+				<div class="panelEditBtnInner"></div>
+			</div>
+			<div class="sections">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<!-- sections injected here -->
+					</div>
+				</div>
+			</div>
+			<div class="builder builder-content-panel">
+				<div class="builder-content-panel-group builder-add">
+					<div class="builder-btn"></div>
+					<div class="builder-lbl"></div>
+				</div>
+				<div class="builder-content-panel-group builder-organize">
+					<div class="builder-btn"></div>
+					<div class="builder-lbl"></div>
+				</div>
+			</div>
+			<div class="navDots vertical">
+				<!-- navigation dots -->
+			</div>
+			<div class="scroll">
+				<div class="scrollInner" data-toggle="tooltip"></div>
+			</div>
+			<div class="builder-mask"></div>
+			<div class="firstAddExplain"></div>
+		</div>
+		
+		<!-- Mobile -->
+		<div id="mobileView" class="floatingSwiper">
+			<div class="swiper-container">
+				<div class="backdrop"></div>
+				<div class="embed-btn-container embed-btn-left">
+					<div class="embed-btn"></div>
+				</div>
+				<div class="swiper-wrapper">
+					<!-- sections injected here -->
+				</div>
+				<div class="embed-btn-container embed-btn-right">
+					<div class="embed-btn"></div>
+				</div>
+			</div>
+			<div class="header">
+				<div class="backdrop"></div>
+				<div class="linkSocialContainer">
+					<span class="linkContainer"></span>
+					<span class="shareBtns">
+						<i class="shareIcon share_facebook icon-facebook-squared"></i>
+						<i class="shareIcon share_twitter icon-twitter"></i>
+						<i class="shareIcon share_bitly icon-link"></i>
+					</span>
+				</div>
+			</div>
+		</div>
 		
 		<!-- Loading -->
 		<style>
@@ -286,6 +355,17 @@
 					/*
 					 * Custom Javascript to be executed when the application is ready goes here
 					 */
+					 var title = document.getElementsByClassName("appTitle");
+					 console.log(title[0].innerHTML);
+					 title[0].innerHTML = "";
+					 console.log(title[0].innerHTML);
+					 title[0].style.setAttribute("style","height:0px");
+					 
+					 var secTitle = document.getElementsByClassName("title");
+					 console.log(secTitle[0].innerHTML);
+					 secTitle[0].innerHTML="";
+					 secTitle[0].style.setAttribute("style","height:0px");
+					 console.log(secTitle[0].innerHTML);
 				});
 			});
 		</script>

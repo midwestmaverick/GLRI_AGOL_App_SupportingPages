@@ -5,7 +5,11 @@
 				close: "Închidere"
 			},
 			loading: {
-				long: "Povestea se iniţializează",
+				step1: "Se încarcă povestea",
+				step2: "Se încarcă date",
+				step3: "În curs de iniţializare",
+				loadBuilder: "În curs de comutare la builder",
+				long: "Jurnalul hărţii este în curs de iniţializare",
 				long2: "Vă mulţumim pentru aşteptare",
 				failButton: "Reîncărcare poveste"
 			},
@@ -32,16 +36,21 @@
 				mapLoadingFail: "Ceva nu a mers bine şi harta nu a fost încărcată corect.",
 				signOut: "Ieşire"
 			},
-			mobileInfo: {
-				legend: "Legendă",
-				description: "Descriere",
-				lblLegendMobileError: "Ne pare rău, legenda nu este disponibilă. Reîncărcaţi povestea.",
-				lblLegendMobileErrorExplain: "Legenda nu este disponibilă atunci când dispozitivul este rotit în modul portret după încărcarea poveştii."
+			mobileView: {
+				tapForDetails: "Atingeţi pentru detalii",
+				clickForDetails: "Învăţaţi mai mult",
+				swipeToExplore: "Glisaţi pentru a explora",
+				tapForMap: "Atingeţi pentru a reveni la hartă",
+				clickForMap: "ÎNAPOI LA HARTĂ"
 			},
-			mobileFooter: {
-				swipeInvite: "Glisaţi pentru a naviga printre informaţii",
-				lblNext: "Următor",
-				lblEnd: "Aţi ajuns la finalul informaţiilor"
+			floatLayout: {
+				scroll: "Derulare"
+			},
+			sideLayout: {
+				scroll: "Derulare în jos pentru mai multe!"
+			},
+			mainStage: {
+				back: "Înapoi"
 			},
 			headerFromCommon: {
 				storymapsText: "O hartă informativă",
@@ -67,11 +76,8 @@
 				copied: "Copiat",
 				open: "Deschidere",
 				embed: "Încorporare în pagină web",
-				embedExplain: "Utilizaţi următorul cod HTML pentru a încorpora povestea într-o pagină web.",
+				embedExplain: "Utilizaţi următorul cod HTML pentru a încorpora jurnalul într-o pagină web.",
 				size: "Dimensiune (lăţime/înălţime):"
-			},
-			locatorFromCommon: {
-				error: "Locaţia nu este disponibilă"
 			}
         }
     })

@@ -5,7 +5,11 @@
 				close: "Luk"
 			},
 			loading: {
-				long: "Historien starter",
+				step1: "Indlæser historie",
+				step2: "Indlæser data",
+				step3: "Initialiserer",
+				loadBuilder: "Skifter til builder-programmet",
+				long: "Kortjournal starter",
 				long2: "Tak, fordi du venter",
 				failButton: "Genindlæs historie"
 			},
@@ -32,16 +36,21 @@
 				mapLoadingFail: "Noget gik galt, kortet blev ikke indlæst korrekt.",
 				signOut: "Log ud"
 			},
-			mobileInfo: {
-				legend: "Signaturforklaring",
-				description: "Beskrivelse",
-				lblLegendMobileError: "Beklager, signaturforklaringen er utilgængelig. Indlæs historien igen.",
-				lblLegendMobileErrorExplain: "Signaturforklaringen er ikke tilgængelig, når enheden roteres til stående tilstand, efter at historien er blevet indlæst."
+			mobileView: {
+				tapForDetails: "Tryk for at få oplysninger",
+				clickForDetails: "Find ud af mere",
+				swipeToExplore: "Stryg med fingeren for at udforske",
+				tapForMap: "Tryk for at vende tilbage til kortet",
+				clickForMap: "TILBAGE TIL KORT"
 			},
-			mobileFooter: {
-				swipeInvite: "Stryg med fingeren for at navigere historien",
-				lblNext: "Næste",
-				lblEnd: "Du er nået til slutningen af historien"
+			floatLayout: {
+				scroll: "Rul"
+			},
+			sideLayout: {
+				scroll: "Rul ned for at se mere!"
+			},
+			mainStage: {
+				back: "Tilbage"
 			},
 			headerFromCommon: {
 				storymapsText: "Et historiekort",
@@ -67,11 +76,8 @@
 				copied: "Kopieret",
 				open: "Åbn",
 				embed: "Indlejr i webside",
-				embedExplain: "Brug følgende HTML-kode til at indlejre historien i en webside.",
+				embedExplain: "Brug følgende HTML-kode til at indlejre journalen i en webside.",
 				size: "Størrelse (bredde/højde):"
-			},
-			locatorFromCommon: {
-				error: "Placering er ikke tilgængelig"
 			}
         }
     })

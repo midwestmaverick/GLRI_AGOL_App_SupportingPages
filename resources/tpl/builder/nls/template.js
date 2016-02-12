@@ -2,113 +2,107 @@ define({
 	root: ({
 		builder: {
 			layouts: {
-				tabTitle: "Tabbed",
-				tabDescr: "Present maps and other content using tabs with an optional panel for descriptive text.",
-				tabItem: "Tab",
-				tabItems: "Tabs",
-				sideTitle: "Side Accordion",
-				sideDescr: "Present maps and other content using an expandable control that includes descriptive text.",
-				sideItem: "Entry",
-				sideItems: "Entries",
-				bulletTitle: "Bulleted",
-				bulletDescr: "Present maps and other content using bullets with an optional panel for descriptive text.",
-				bulletItem: "Bullet",
-				bulletItems: "Bullets"
+				mainStage: "Main Stage",
+				sideTitle: "Side Panel",
+				sideDescr: "A layout for a text intensive story that excels at combining your photos, videos, and maps in a clear focused message.",
+				floatTitle: "Floating Panel",
+				floatDescr: "A layout that puts your cartography in focus while allowing a transparent short form text panel to help tell the story."
 			},
 			common: {
 				lblStatus1: "Published",
+				lblStatus2: "Draft",
 				lblStatus3: "Hidden"
 			},
 			settingsLayoutOptions: {
 				title: "Layout options",
-				lblDescription: "Description",
-				lblLegend: "Legend placement",
-				tooltipLegend: "Choose where you want the map legend to be displayed. You can turn the legend on for any map when you add or configure it.",
-				lblDropdown: "Dropdown",
-				lblBelowDesc: "Below the description",
-				lblOnPanel: "As a panel",
-				lblPanelDescAndLegend: "Description and legend panel",
-				lblPanelDescAndOrLegend: "Description and/or legend panel",
-				lblPanelDesc: "Description panel",
-				lblPanelLegend: "Legend panel",
-				lblPanelAccordion: "Accordion panel",
 				cfgLeft: "Left",
 				cfgRight: "Right",
 				cfgSmall: "Small",
 				cfgMedium: "Medium",
 				cfgLarge: "Large",
-				lblNumbering: "Display numbers",
-				lblReverse: "Reverse numbering",
-				canOverlapMap: "can overlap map location"
+				socialLinksLabel: "Display sharing links at the bottom of each section",
+				socialLinksDescr: "This enables readers to reference and promote specific sections of your %TPL_NAME%. For instance, if you use a sections share icon, readers will land at that specific %TPL_NAME% section rather than the beginning of your story. Your readers can use the social media link in the title section to promote your entire %TPL_NAME% (header tab) and have them land at the start of the %TPL_NAME%."
 			},
-			settingsMapOptions: {
-				title: "Map options",
-				lblOverview: "Overview Map",
-				tooltipOverview: "Display a small overview map along with the main map.",
-				lblLocate: "Locate button",
-				tooltipLocate: "This functionality is supported on most mobile device and desktop browsers (Internet Explorer 9).",
-				lblGeocoder: "Address or Place Finder",
-				tooltipGeocoder: "Allow your users to find addresses and places on your maps.",
-				lblSync: "Synchronize map locations",
-				tooltipSync: "When enabled, the initial location of the first map in your series will be applied to all the maps, and navigation by users in any map will be reflected in all maps. Disable for each map's location to remain independent."
+			settingsLayoutFonts: {
+				title: "Fonts",
+				defaultLbl: "Default",
+				sectionTitleLbl: "Section title",
+				sectionContentLbl: "Section content"
 			},
 			initPopup: {
 				title: "Welcome to"
 			},
 			addEditPopup: {
-				lblAdd: "Add",
-				lblEdit: "Edit",
-				disabled: "Add is disabled because the maximum number of allowed %LBL_LAYOUT% has been reached.",
-				titleAdd: "Add",
-				titleEdit: "Edit",
-				stepMainStageNextTooltip: "Enter the %LBL_LAYOUT% title and content",
-				titlePlaceholder: "%LBL_LAYOUT% title..."
+				disabled: "Add Section is disabled because the maximum number of allowed sections has been reached.",
+				titleAdd: "Add Section",
+				titleAddHome: "Add Home Section",
+				titleEdit: "Edit Section",
+				step: "Step",
+				stepMainStageExplain: "Main Stage Content",
+				stepPanelExplain: "Content",
+				stepMainStageNextTooltip: "Enter the section title and select the Main Stage content",
+				stepMainStageNextTooltip2: "Select the Main Stage content",
+				step2NextTooltip: "Enter the section title and %LAYOUT-TYPE% content",
+				stepNextTooltipNext: "to go to the next step",
+				stepNextTooltipAdd: "to add the section",
+				firstAddExplain: "This first section is your Home Section, think of it as the 'cover page' to your story. The title you just defined will be displayed with large fonts.",
+				firstAddLeanMore: "Learn More",
+				titlePlaceholder: "Section title..."
 			},
-			textEditor: {
-				placeholder1: "Add text, links, and small graphics here.",
-				placeholder2: "If left blank the panel will be hidden."
+			addEditViewText: {
+				editorPlaceholder: "Add text, links, and small graphics here.",
+				editorActionsTitle: "Main Stage Actions",
+				editorActionsHelpDescr: "Use these controls to create links that will change the main stage. For example, when the reader clicks a link, you may want to zoom the map to a specific location, display another web map or display an image.",
+				mainStageDisabled: "Main Stage Actions are disabled when the editor is maximized"
 			},
 			organizePopup: {
 				title: "Organize",
-				lblHeader: "Drag and drop %LBL_LAYOUT% to organize your story.",
+				lblHeader: "Drag and drop sections to organize your story.",
 				lblColTitle: "Title",
+				lblColPubDate: "Publication date",
 				lblColStatus: "Status",
-				btnApplyWarning: "Confirm deletion of %NB% %LBL_LAYOUT%",
+				checkDisplayReverse: "Display sections in reverse order",
+				btnApplyWarning: "Confirm deletion of %NB% section(s)",
 				deleteTooltip: "Delete",
-				firstSectionExplain: "(The home section cannot be moved)"
+				firstSectionExplain: "(The home section cannot be moved)",
+				exportMainStage: "Main Stage content",
+				exportPanel: "Panel content",
+				exportActions: "Main Stage actions"
+			},
+			exportData: {
+				btn: "Export content",
+				tooltip: "Exporting your content allows you to view and create a back-up of your content should you accidentally delete it. Simply copy and paste the content from the page into any word processor."
 			},
 			help: {
 				lblHelp: "Help",
-				lblAdd: "Add",
+				lblAdd: "Add Section",
 				lblSettings: "Settings",
-				lblOrga: "Organize",
+				lblOrga: "Organize content",
 				lblEdit: "Edits",
 				lblPublish: "Share",
 				lblTips: "Tips",
 				lblMore: "Want more?",
 				lblLink: "Visit the Esri Story Maps website.",
-				content1Div1: "To create your %TPL_NAME%, use the Add button to add each map or other content into the layout. The other content can include images, videos or embedded web pages or code. For example you might want your readers to see an introductory image or video when they first launch your  %TPL_NAME%, before they move on to explore your maps.",
-				content1Div2: "When you click the Add button a dialog will appear that lets you choose and configure the map or other content you want to add. For example you can specify the location you want the map to show, enable its legend, etc.",
-				content2Div1: "The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, choose where the map legend will appear, etc.",
-				content2Div2: "You can also replace the Esri logo in the header of your %TPL_NAME% with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information.",
-				content3Div1: "The Organize dialog lets you manage your %TPL_NAME%. In this dialog you can change the order of the series by dragging and dropping.",
-				content3Div2: "You can also delete content or hide it. Hiding is useful if you are preparing new content that isn't ready to be included in your story map yet.",
+				content1Div1: "You can integrate a variety of styles when building your story. The <strong>%LAYOUT_TITLE%</strong> typically holds your text, images, and video while your maps tend go on the <strong>Main Stage</strong>. However, the %TPL_NAME% allows you to feature images, charts, and video within the main stage as well.",
+				content1Div2: "Adding sections allows you to truly customize your storytelling experience. As readers scroll through your %LAYOUT_TITLE% text, a map on the Main Stage can pan or zoom to key points, or new maps and images can automatically toggle to support your message.",
+				content2Div1: "The Settings dialog is where you can change the appearance of your %TPL_NAME%. You change the layout, choose a different color scheme, change the text font, etc.",
+				content2Div2: "You can also replace the Esri logo with your own logo to reflect your brand. You can also specify the website that will be launched if readers click your logo, so they can get more information.",
+				content3Div1: "Your content is organized into sections. You can have as many sections as you like (think of them like mini chapters). The flow of those chapters is important; within Organize you can reorder or delete sections as you wish.",
 				content4Div1: "Found a mistake or want to change your material? No worries. Look for the edit icon throughout the app to make changes to your content. You’ll use the edit functions many times as you develop your %TPL_NAME%!",
 				content5Div1: "When you save your %TPL_NAME% it is private initially. Use the Share button to share it with others. You can share your %TPL_NAME% publicly so anyone can access it.",
 				content5Div2: "Depending on your account, you may also have the option to share your %TPL_NAME% just to people within your organization, so others can't access it.",
-				content6Div1: "By default the maps in a series are synchronized to show the same location. This means that the location shown in the first map will be automatically applied to all the other maps, and that if a reader zooms or pans to a different location in the map they are currently looking at, this will also be applied to the other maps.",
-				content6Div2: "For example if your series shows different thematic data for a city, a reader can zoom to their neighborhood and then simply switch between the tabs to see the maps for that area.",
-				content6Div3: "To disable location synchronization, go to the Settings dialog and uncheck that setting in the Map Options tab.",
-				content6AltDiv1: "By default the maps location are synchronized. Disabling synchronization allows each map to display a different location.",
-				content6AltDiv2: "Synchronization ON",
-				content6AltDiv3: "Synchronization OFF",
-				content6AltDiv4: "To disable synchronization, go to Settings > Map Options and uncheck \"Synchronize map locations\"."
+				content6Div1: "The title of your Home section is also the title of your journal; think of your the Home section as  the 'cover page' to your story. The Home Section title will remain visible when your readers will navigate the Journal.",
+				content6Div2: "Your %LAYOUT_TITLE% doesn't have to be just text, consider including photos and videos to help bring the story alive, and to break-up long sections of text!"
 			},
 			landing: {
-				lblAdd: "What do you want to call your %LAYOUT_TITLE% Map Series?",
+				lblAdd: "What do you want to call your Map Journal?",
 				phAdd: "Enter your title...",
 				lblOR: "Or",
 				lblHelp: "Take a Tour"
+			},
+			firstAddSplash: {
+				thisis: "This is the",
+				lblMain: "This is the %BR% Main Stage"
 			}
         }
     }),

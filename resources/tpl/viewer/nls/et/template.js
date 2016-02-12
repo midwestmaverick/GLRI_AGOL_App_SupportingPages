@@ -5,7 +5,11 @@
 				close: "Sulge"
 			},
 			loading: {
-				long: "Lugu käivitub",
+				step1: "Loo laadimine",
+				step2: "Andmete laadimine",
+				step3: "Lähtestamine",
+				loadBuilder: "Koostajale lülitamine",
+				long: "Kaardiajakirja lähtestamine",
 				long2: "Täname ootamast",
 				failButton: "Laadi lugu uuesti"
 			},
@@ -32,16 +36,21 @@
 				mapLoadingFail: "Midagi läks valesti ning kaarti ei laaditud õigesti.",
 				signOut: "Logi välja"
 			},
-			mobileInfo: {
-				legend: "Legend",
-				description: "Kirjeldus",
-				lblLegendMobileError: "Legend pole kahjuks saadaval. Laadige lugu uuesti.",
-				lblLegendMobileErrorExplain: "Legend pole saadaval, kui seade pööratakse pärast rakenduse laadimist vertikaalasendisse."
+			mobileView: {
+				tapForDetails: "Üksikasjade kuvamiseks puudutage",
+				clickForDetails: "Loe lähemalt",
+				swipeToExplore: "Uurimiseks svaipige",
+				tapForMap: "Kaardile naasmiseks puudutage",
+				clickForMap: "TAGASI KAARDI JUURDE"
 			},
-			mobileFooter: {
-				swipeInvite: "Nipsake loos liikumiseks",
-				lblNext: "Järgmine",
-				lblEnd: "Jõudsite loo lõppu"
+			floatLayout: {
+				scroll: "Keri"
+			},
+			sideLayout: {
+				scroll: "Kerige allapoole, et näha veel teavet!"
+			},
+			mainStage: {
+				back: "Tagasi"
 			},
 			headerFromCommon: {
 				storymapsText: "Kaardilugu",
@@ -67,11 +76,8 @@
 				copied: "Kopeeritud",
 				open: "Ava",
 				embed: "Lisa veebilehele",
-				embedExplain: "Kasutage loo veebilehele lisamiseks järgmist HTML-koodi.",
+				embedExplain: "Kasutage ajakirja veebilehele lisamiseks järgmist HTML-koodi.",
 				size: "Suurus (laius/kõrgus):"
-			},
-			locatorFromCommon: {
-				error: "Asukoht pole kättesaadav"
 			}
         }
     })

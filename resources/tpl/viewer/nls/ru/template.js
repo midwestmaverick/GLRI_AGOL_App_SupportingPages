@@ -5,54 +5,63 @@
 				close: "Закрыть"
 			},
 			loading: {
-				long: "История инициализируется.",
+				step1: "Загрузка истории",
+				step2: "Загрузка данных",
+				step3: "Инициализация",
+				loadBuilder: "Открытие конструктора",
+				long: "Журнал карт активирован",
 				long2: "Спасибо за ожидание",
 				failButton: "Перезагрузить историю"
 			},
 			signin: {
-				title: "Необходима авторизация",
+				title: "Требуется аутентификация",
 				explainViewer: "Выполните вход под учетной записью на %PORTAL_LINK%, чтобы получить доступ к истории.",
 				explainBuilder: "Выполните вход под учетной записью на %PORTAL_LINK%, чтобы настроить историю."
 			},
 			errors: {
 				boxTitle: "Произошла ошибка",
-				invalidConfig: "Некорректная настройка",
-				invalidConfigNoApp: "Идентификатор картографического веб-приложения не указан в index.html.",
-				unspecifiedConfigOwner: "Авторизованный владелец не настроен.",
+				invalidConfig: "Некорректная конфигурация",
+				invalidConfigNoApp: "В index.html не указан идентификатор Картографического веб-приложения",
+				unspecifiedConfigOwner: "Невозможно настроить авторизованного владельца.",
 				invalidConfigOwner: "Владелец истории не авторизован.",
 				createMap: "Не удалось создать карту",
-				invalidApp: "%TPL_NAME% не существует или недоступен.",
-				appLoadingFail: "Произошла ошибка, %TPL_NAME% загружено некорректно.",
+				invalidApp: "%TPL_NAME% не существует или не доступен.",
+				appLoadingFail: "Что-то пошло не так, % TPLNAME % не был загружен правильно.",
 				notConfiguredDesktop: "История пока не настроена.",
 				notConfiguredMobile: "Конструктор %TPL_NAME% не поддерживается при таком размере экрана.",
 				notAuthorized: "Вы не авторизованы для доступа к истории.",
-				noBuilderIE: "Конструктор не поддерживается в Internet Explorer версии до %VERSION%. %UPGRADE%",
+				noBuilderIE: "Конструктор не поддерживается в браузере Internet Explorer версий %VERSION%. %UPGRADE%",
 				noViewerIE: "Эта история не поддерживается в Internet Explorer версии до %VERSION%. %UPGRADE%",
-				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Пожалуйста, обновите браузер</a>.",
-				mapLoadingFail: "Произошла ошибка, карта загрузилась некорректно.",
+				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Обновите ваш браузер</a>.",
+				mapLoadingFail: "Что-то пошло не так, карта не может быть загружена корректно.",
 				signOut: "Выйти"
 			},
-			mobileInfo: {
-				legend: "Легенда",
-				description: "Описание",
-				lblLegendMobileError: "Легенда недоступна. Перезагрузите историю.",
-				lblLegendMobileErrorExplain: "Легенда недоступна, если устройство было повернуто в положение Книжной страницы после того, как история была загружена."
+			mobileView: {
+				tapForDetails: "Коснитесь для подробной информации",
+				clickForDetails: "Подробнее",
+				swipeToExplore: "Передвиньте для изучения",
+				tapForMap: "Коснитесь, чтобы вернуться к карте",
+				clickForMap: "НАЗАД К КАРТЕ"
 			},
-			mobileFooter: {
-				swipeInvite: "Перелистните, чтобы просмотреть историю",
-				lblNext: "Следующий",
-				lblEnd: "Вы дошли до конца истории"
+			floatLayout: {
+				scroll: "Прокрутите"
+			},
+			sideLayout: {
+				scroll: "Прокрутите вниз, чтобы увидеть больше!"
+			},
+			mainStage: {
+				back: "Назад"
 			},
 			headerFromCommon: {
-				storymapsText: "История на карте",
+				storymapsText: "Карта истории",
 				builderButton: "Редактировать",
 				facebookTooltip: "Разместить в Facebook",
 				twitterTooltip: "Разместить в Twitter",
 				bitlyTooltip: "Получить краткую ссылку",
-				templateTitle: "Настроить заголовок шаблона",
-				templateSubtitle: "Настроить подзаголовок шаблона",
+				templateTitle: "Ввести заголовок шаблона",
+				templateSubtitle: "Ввести подзаголовок шаблона",
 				share: "Общий доступ",
-				checking: "Проверка ресурсов истории",
+				checking: "Проверка ресурсов истории на наличие ошибок",
 				fix: "Исправить ошибки в истории",
 				noerrors: "Ошибок не обнаружено"
 			},
@@ -63,15 +72,12 @@
 				title: "Легенда"
 			},
 			shareFromCommon: {
-				copy: "Скопировать",
+				copy: "Копировать",
 				copied: "Скопировано",
 				open: "Открыть",
-				embed: "Встроить в веб-страницу",
-				embedExplain: "Используйте следующий HTML-код для встраивания истории на веб-страницу.",
+				embed: "Встроить на веб-страницу",
+				embedExplain: "Используйте следующий HTML-код для встраивания журнала на веб-страницу.",
 				size: "Размер (ширина/высота):"
-			},
-			locatorFromCommon: {
-				error: "Местоположение недоступно"
 			}
         }
     })

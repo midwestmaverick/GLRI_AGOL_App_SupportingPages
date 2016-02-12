@@ -13,7 +13,7 @@
 				open: "Avaa",
 				start: "Aloitus",
 				loading: "Ladataan",
-				disabledAdmin: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä",
+				disabledAdmin: "Pääkäyttäjä on poistanut tämän toiminnon käytöstä.",
 				width: "Leveys",
 				height: "Korkeus",
 				create: "Luo",

@@ -83,10 +83,10 @@
 					favoritesLabel: "המועדפים שלי"
 				},
 				title: "בחר מפה",
-				searchTitle: "חפש",
+				searchTitle: "חיפוש",
 				ok: "אישור",
 				cancel: "ביטול",
-				placeholder: "הזן מונח חיפוש או מספר זיהוי של web map..."
+				placeholder: "הזן מונח חיפוש או מספר זיהוי של מפת אינטרנט..."
 			}
 		}
 	})

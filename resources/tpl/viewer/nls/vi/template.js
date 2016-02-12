@@ -5,7 +5,11 @@
 				close: "Đóng"
 			},
 			loading: {
-				long: "Câu chuyện đang khởi chạy",
+				step1: "Đang tải câu chuyện",
+				step2: "Đang tải dữ liệu",
+				step3: "Đang khởi tạo",
+				loadBuilder: "Chuyển sang chế độ bộ thiết lập",
+				long: "Map Journal đang khởi tạo",
 				long2: "Cảm ơn bạn đã đợi",
 				failButton: "Tải lại câu chuyện"
 			},
@@ -29,19 +33,24 @@
 				noBuilderIE: "Bộ thiết lập không được hỗ trợ trên Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
 				noViewerIE: "Câu chuyện này không được hỗ trợ trong Internet Explorer trước phiên bản %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Vui lòng cập nhật trình duyệt của bạn</a>.",
-				mapLoadingFail: "Đã xảy ra lỗi, bản đồ không tải đúng.",
+				mapLoadingFail: "Đã xảy ra lỗi, Bản đồ không tải đúng.",
 				signOut: "Đăng xuất"
 			},
-			mobileInfo: {
-				legend: "Chú giải",
-				description: "Mô tả",
-				lblLegendMobileError: "Rất tiếc, không có chú giải. Vui lòng tải lại câu chuyện.",
-				lblLegendMobileErrorExplain: "Không có chú giải khi thiết bị xoay sang chế độ dọc sau khi câu chuyện được tải."
+			mobileView: {
+				tapForDetails: "Chạm nhẹ vào để biết chi tiết",
+				clickForDetails: "Tìm hiểu thêm",
+				swipeToExplore: "Vuốt để khám phá",
+				tapForMap: "Chạm nhẹ để quay lại Bản đồ",
+				clickForMap: "QUAY LẠI BẢN ĐỒ"
 			},
-			mobileFooter: {
-				swipeInvite: "Trượt nhanh để điều hướng câu chuyện",
-				lblNext: "Tiếp theo",
-				lblEnd: "Bạn đã đến phần kết của câu chuyện"
+			floatLayout: {
+				scroll: "Cuộn"
+			},
+			sideLayout: {
+				scroll: "Cuộn xuống để xem thêm!"
+			},
+			mainStage: {
+				back: "Quay lại"
 			},
 			headerFromCommon: {
 				storymapsText: "Story map",
@@ -67,11 +76,8 @@
 				copied: "Đã sao chép",
 				open: "Mở",
 				embed: "Nhúng vào trang web",
-				embedExplain: "Sử dụng mã HTML sau để nhúng câu chuyện vào trang web.",
+				embedExplain: "Sử dụng mã HTML sau để nhúng bài viết vào một trang web.",
 				size: "Kích thước (chiều rộng/chiều cao):"
-			},
-			locatorFromCommon: {
-				error: "Vị trí không khả dụng"
 			}
         }
     })

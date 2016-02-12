@@ -5,9 +5,9 @@
 				add: "Adicionar",
 				edit: "Editar",
 				save: "Guardar",
-				next: "Seguinte",
+				next: "Próximo",
 				cancel: "Cancelar",
-				back: "Anterior",
+				back: "Retroceder",
 				apply: "Aplicar",
 				close: "Fechar",
 				open: "Abrir",
@@ -24,7 +24,7 @@
 				editMe: "Edite-me!"
 			},
 			builderPanel: {
-				panelHeader: "Builder de %TPL_NAME%",
+				panelHeader: "Builder %TPL_NAME%",
 				buttonSaving: "Guardar",
 				buttonSaved: "Guardado",
 				buttonShare: "Partilhar",

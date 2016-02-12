@@ -54,9 +54,9 @@ function defineDojoConfig()
 			},
 			{
 				name: "templateConfig",
-				// If the application is deployed on a Portal (apps path contains /apps/MapSeries/ or /home/MapSeries/)
+				// If the application is deployed on a Portal (apps path contains /apps/MapJournal/ or /home/MapJournal/)
 				// commonConfig.js is loaded from the parent folder, otherwise it's loaded from the app folder
-				location: (/(\/)([a-zA-Z0-9]+(\/))*(apps\/|home\/)([a-zA-Z0-9]+\/)/).test(document.location.pathname) ? path2.substr(0,path2.lastIndexOf('/MapSeries')) : path2.replace(/\/+$/, '') + '/app'
+				location: (/(\/)([a-zA-Z0-9]+(\/))*(apps\/|home\/)([a-zA-Z0-9]+\/)/).test(document.location.pathname) ? path2.substr(0,path2.lastIndexOf('/MapJournal')) : path2.replace(/\/+$/, '') + '/app'
 			},
 			{
 				name: 'lib-app',

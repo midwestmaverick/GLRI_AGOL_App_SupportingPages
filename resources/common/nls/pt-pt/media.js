@@ -47,7 +47,7 @@
 				select: "Selecionar este vídeo"
 			},
 			videoSelectorHome: {
-				other: "Outro"
+				other: "Outros"
 			},
 			videoSelectorYoutube: {
 				url: "URL de um vídeo do Youtube",

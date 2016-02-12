@@ -5,7 +5,11 @@
 				close: "Lukk"
 			},
 			loading: {
-				long: "Historien initialiseres",
+				step1: "Laster inn historien",
+				step2: "Laster inn data",
+				step3: "Initialiserer",
+				loadBuilder: "Går over til byggeverktøyet",
+				long: "Karthistorie initialiseres",
 				long2: "Takk for at du venter",
 				failButton: "Last inn historien på nytt"
 			},
@@ -32,19 +36,24 @@
 				mapLoadingFail: "Noe gikk galt, og kartet ble ikke lastet inn på riktig måte.",
 				signOut: "Logg ut"
 			},
-			mobileInfo: {
-				legend: "Tegnforklaring",
-				description: "Beskrivelse",
-				lblLegendMobileError: "Beklager, tegnforklaringen er ikke tilgjengelig. Last inn historien på nytt.",
-				lblLegendMobileErrorExplain: "Tegnforklaringen er ikke tilgjengelig når enheten er rotert til stående modus etter at historien er lastet inn."
+			mobileView: {
+				tapForDetails: "Trykk for å se detaljer",
+				clickForDetails: "Få mer informasjon",
+				swipeToExplore: "Sveip for å utforske",
+				tapForMap: "Trykk for å gå tilbake til kartet",
+				clickForMap: "TILBAKE TIL KARTET"
 			},
-			mobileFooter: {
-				swipeInvite: "Sveip for å navigere i tegnforklaringen",
-				lblNext: "Neste",
-				lblEnd: "Du er kommet til slutten av fortellingen"
+			floatLayout: {
+				scroll: "Rull"
+			},
+			sideLayout: {
+				scroll: "Rull nedover for å se mer!"
+			},
+			mainStage: {
+				back: "Tilbake"
 			},
 			headerFromCommon: {
-				storymapsText: "Et fortellingskart",
+				storymapsText: "En story map",
 				builderButton: "Rediger",
 				facebookTooltip: "Del på Facebook",
 				twitterTooltip: "Del på Twitter",
@@ -69,9 +78,6 @@
 				embed: "Bygg inn på webside",
 				embedExplain: "Bruk følgende HTML-kode for å bygge inn historien på en webside.",
 				size: "Størrelse (bredde/høyde):"
-			},
-			locatorFromCommon: {
-				error: "Lokasjon ikke tilgjengelig"
 			}
         }
     })

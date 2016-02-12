@@ -85,7 +85,7 @@
 				lblLabel: "Bildtext",
 				lblLabel1: "Bildtext",
 				lblLabel2: "Hovringstext",
-				lblLabel3: "Ingen",
+				lblLabel3: "Inga",
 				lblLabelPH: "Ange text ...",
 				lblMaximize: "Ta med knappen Maximera i hörnet av bilden",
 				lblMaximizeHelp: "Rekommenderas endast för bilder av hög kvalitet",

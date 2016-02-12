@@ -8,7 +8,7 @@
 				lblPopup: "القائمة المنبثقة",
 				lblControls: "التطبيقات الإضافية",
 				lblOverview: "خريطة النظرة العامة",
-				lblLegend: "وسيلة الإيضاح",
+				lblLegend: "مفتاح الخريطة",
 				loadingTitle: "تحميل العنوان",
 				entry: "إدخال",
 				entries: "إدخالات",

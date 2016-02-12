@@ -66,7 +66,7 @@
 			videoSelectorOther: {
 				explain1: "Historien kan ikke spille av råvideoer (f.eks. AVI- eller MPEG-filer), men den kan spille av hostede videofiler som har innebygde spillere (f.eks. YouTube eller Vimeo).",
 				explain2: "De fleste nettbaserte videotjenester har denne funksjonen. Du må finne alternativet for å bygge inn videoen, kopiere den oppgitte koden og bruke %WEBPAGE%.",
-				explain3: "Du kan eventuelt være lagre og administrere for videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
+				explain3: "Du kan eventuelt være lagre og administrere videoen selv. Da må du lage en HTML-side som bruker en videospiller som %EXAMPLE%, være vert for den siden og også bruke %WEBPAGE%.",
 				webpage: "Nettsidefunksjon"
 			},
 			webpageSelectorHome: {

@@ -5,7 +5,11 @@
 				close: "Aizvērt"
 			},
 			loading: {
-				long: "Notiek stāsta inicializēšana",
+				step1: "Ielādē stāstu",
+				step2: "Datu ielāde",
+				step3: "Inicializēšana",
+				loadBuilder: "Pārslēgšanās uz veidotāju",
+				long: "Karšu žurnāls tiek inicializēts",
 				long2: "Paldies, ka uzgaidījāt",
 				failButton: "Stāsta atkārtota ielāde"
 			},
@@ -22,26 +26,31 @@
 				invalidConfigOwner: "Stāsta īpašnieks nav autorizēts.",
 				createMap: "Nevar izveidot karti",
 				invalidApp: "%TPL_NAME% nepastāv vai tai nevar piekļūt.",
-				appLoadingFail: "Ir atgadījusies kļūme — %TPL_NAME% netika ielādēta pareizi.",
+				appLoadingFail: "Radās kļūda, %TPL_NAME% netika ielādēta pareizi.",
 				notConfiguredDesktop: "Stāsts vēl nav konfigurēts.",
 				notConfiguredMobile: "%TPL_NAME% veidotājs netiek atbalstīts displejā ar šādiem izmēriem.",
 				notAuthorized: "Jūs neesat pilnvarots piekļūt šim stāstam",
 				noBuilderIE: "Veidotājs netiek atbalstīts Internet Explorer versijās, kas ir jaunākas par %VERSION%. %UPGRADE%",
 				noViewerIE: "Šis stāsts netiek atbalstīts Internet Explorer versijās, kas ir vecākas par %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Lūdzu, atjauniniet savu pārlūku</a>.",
-				mapLoadingFail: "Ir atgadījusies kļūme — karte netika ielādēta pareizi.",
+				mapLoadingFail: "Diemžēl radās kļūda, karte netika ielādēta pareizi.",
 				signOut: "Izrakstīties"
 			},
-			mobileInfo: {
-				legend: "Apzīmējumi",
-				description: "Apraksts",
-				lblLegendMobileError: "Atvainojiet! Leģenda nav pieejama. Ielādējiet stāstu atkārtoti.",
-				lblLegendMobileErrorExplain: "Leģenda nav pieejama, ja ierīce pēc stāsta ielādēšanas tiek pagriezta portreta režīmā."
+			mobileView: {
+				tapForDetails: "Pieskarieties, lai iegūtu detalizētu informāciju",
+				clickForDetails: "Uzziniet vairāk",
+				swipeToExplore: "Pavelciet, lai izpētītu",
+				tapForMap: "Pieskarieties, lai atgrieztos atpakaļ kartē",
+				clickForMap: "ATPAKAĻ UZ KARTI"
 			},
-			mobileFooter: {
-				swipeInvite: "Pārvelciet, lai navigētu stāstā",
-				lblNext: "Tālāk",
-				lblEnd: "Ir sasniegtas stāsta beigas"
+			floatLayout: {
+				scroll: "Ritināt"
+			},
+			sideLayout: {
+				scroll: "Ritiniet uz leju, lai iegūtu vairāk informācijas."
+			},
+			mainStage: {
+				back: "Atpakaļ"
 			},
 			headerFromCommon: {
 				storymapsText: "Stāstu karte",
@@ -51,27 +60,24 @@
 				bitlyTooltip: "Iegūt īso saiti",
 				templateTitle: "Iestatīt šablona virsrakstu",
 				templateSubtitle: "Iestatīt šablona apakšvirsrakstu",
-				share: "Kopīgot",
+				share: "Koplietot",
 				checking: "Pārbauda jūsu stāsta saturu",
 				fix: "Problēmu labošana jūsu stāstā",
 				noerrors: "Nav konstatētas problēmas"
 			},
 			overviewFromCommon: {
-				title: "Kartes pārskatīšana"
+				title: "Pārskata karte"
 			},
 			legendFromCommon: {
-				title: "Apzīmējumi"
+				title: "Leģenda"
 			},
 			shareFromCommon: {
 				copy: "Kopēt",
 				copied: "Kopēts",
 				open: "Atvērt",
 				embed: "Iegult web lapā",
-				embedExplain: "Lai iedarinātu stāstu tīmekļa lapā, izmantojiet šo HTML kodu.",
+				embedExplain: "Izmantojiet šo HTML kodu, lai iegultu žurnālu web lapā.",
 				size: "Izmēri (platums/augstums):"
-			},
-			locatorFromCommon: {
-				error: "Atrašanās vieta nav pieejama"
 			}
         }
     })

@@ -8,7 +8,7 @@
 				lblImage: "Paveikslėlis",
 				lblVideo: "Video",
 				lblExternal: "Tinklalapis",
-				disabled: "Šią funkciją išjungė administratorius",
+				disabled: "Šią funkciją išjungė Administratorius",
 				url: "Jei norite rankiniu būdu įvesti vaizdo adresą internete",
 				userLookup: "Įkelti albumus",
 				notImplemented: "Dar neįdiegta.",
@@ -30,7 +30,7 @@
 			imageSelectorFacebook: {
 				leftHeader: "Facebook vartotojas",
 				rightHeader: "Facebook puslapis",
-				pageExplain: "Facebook puslapis yra viešas žymaus asmens ar prekės/produkto puslapis kaip <b>esrigis</b>. Puslapio pavadinimą galite rasti po pirmo \'/\' puslapio URL.",
+				pageExplain: "Facebook puslapis yra viešas prekės ženklas, produktas ar įžymybė kaip <b>esrigis</b>. Jūs galite pamatyti puslapio pavadinimą po pirmo \'/\' puslapio URL.",
 				pageInputLbl: "Puslapio pavadinimas",
 				lookupMsgError: "Puslapis nerastas"
 			},
@@ -55,7 +55,7 @@
 				lookupMsgError: "Vartotojas nerastas",
 				howToFind: "Kaip rasti YouTube vartotojo vardą",
 				howToFind2: "Vartotojo vardas rodomas po vaizdo įrašo",
-				found: "Surasta",
+				found: "Rasta",
 				noData: "Nerasta viešų vaizdo įrašų",
 				videoNotChecked: "Vaizdo įrašas nebuvo patikrintas „YouTube“, bet jo adresas atrodo tinkamas.",
 				checkFailedAPI: "„YouTube“ patikra nepavyko, patikrinkite „YouTube“ API raktą."

@@ -38,7 +38,7 @@
 				userInputLbl: "E-mail o ID Picasa/Google+",
 				signInMsg2: "Account non trovato",
 				howToFind: "Come trovare l\'ID di un account Picasa o Google+",
-				howToFind2: "Copiare le cifre tra il primo e il secondo \'/\' di una qualsiasi pagina Picasa o G+"
+				howToFind2: "Copiare le cifre tra il primo e il secondo \'/\' di qualsiasi pagina Picasa o G+"
 			},
 			videoSelectorCommon: {
 				check: "Seleziona",

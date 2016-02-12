@@ -2,113 +2,107 @@
 	 ({
 		builder: {
 			layouts: {
-				tabTitle: "Par onglets",
-				tabDescr: "Présentez les cartes et d\'autres contenus dans des onglets avec un volet facultatif destiné à contenir une description.",
-				tabItem: "Onglet",
-				tabItems: "Onglets",
-				sideTitle: "Accordéon latéral",
-				sideDescr: "Présentez les cartes et d\'autres contenus à l\'aide d\'un contrôle développable qui comprend une description.",
-				sideItem: "Entrée",
-				sideItems: "Entrées",
-				bulletTitle: "A puce",
-				bulletDescr: "Présentez les cartes et d\'autres contenus sous forme de puces avec un volet facultatif destiné à contenir une description.",
-				bulletItem: "Puce",
-				bulletItems: "Puces"
+				mainStage: "Grande scène",
+				sideTitle: "Volet latéral",
+				sideDescr: "Mise en page adaptée aux narrations textuelles intensives qui est idéale pour allier vos photos, vidéos et cartes dans un message clair et précis.",
+				floatTitle: "Volet flottant",
+				floatDescr: "Mise en page qui met l\'accent sur votre cartographie tout en laissant la place à un volet de texte bref transparent qui transmet le message."
 			},
 			common: {
-				lblStatus1: "Publié",
+				lblStatus1: "Publiées",
+				lblStatus2: "Brouillon",
 				lblStatus3: "Masqué"
 			},
 			settingsLayoutOptions: {
 				title: "Options de mise en page",
-				lblDescription: "Description",
-				lblLegend: "Position de la légende",
-				tooltipLegend: "Choisissez la position d\'affichage de la légende de la carte. Vous pouvez activer la légende de n\'importe quelle carte lorsque vous l\'ajoutez ou la configurez.",
-				lblDropdown: "Menu déroulant",
-				lblBelowDesc: "Sous la description",
-				lblOnPanel: "En tant que volet",
-				lblPanelDescAndLegend: "Volet de description et de légende",
-				lblPanelDescAndOrLegend: "Volet de description et/ou de légende",
-				lblPanelDesc: "Volet de description",
-				lblPanelLegend: "Volet de légende",
-				lblPanelAccordion: "Volet d\'accordéon",
 				cfgLeft: "Gauche",
 				cfgRight: "Droite",
 				cfgSmall: "Petit",
 				cfgMedium: "Moyen",
 				cfgLarge: "Grand",
-				lblNumbering: "Afficher des numéros",
-				lblReverse: "Numérotation inverse",
-				canOverlapMap: "peut se superposer à l\'emplacement de la carte"
+				socialLinksLabel: "Afficher les liens de partage au bas de chaque section",
+				socialLinksDescr: "Ceci permet aux lecteurs de référencer et de promouvoir des sections spécifiques de votre %TPL_NAME%. Par exemple, si vous utilisez une icône de partage des sections, les lecteurs accéderont directement à cette section de %TPL_NAME% spécifique et non au début de votre narration. Vos lecteurs peuvent utiliser le lien de réseau social dans la section de titre pour promouvoir l\'intégralité de votre %TPL_NAME% (onglet d\'en-tête) et faciliter l\'accès au début de %TPL_NAME%."
 			},
-			settingsMapOptions: {
-				title: "Options de la carte",
-				lblOverview: "Vue générale",
-				tooltipOverview: "Accompagnez la carte principale d\'une petite vue générale.",
-				lblLocate: "Bouton Localiser",
-				tooltipLocate: "Cette fonctionnalité est prise en charge sur la plupart des navigateurs pour appareils mobiles et ordinateurs de bureau (Internet Explorer 9).",
-				lblGeocoder: "Répertoire géographique",
-				tooltipGeocoder: "Autorisez vos utilisateurs à rechercher des adresses et des lieux sur vos cartes.",
-				lblSync: "Synchroniser les emplacements de la carte",
-				tooltipSync: "Lorsque cette fonction est activée, l\'emplacement initial de la première carte de votre série est appliqué à toutes les cartes et la navigation des utilisateurs sur n\'importe quelle carte est reflétée dans toutes les cartes. Désactivez cette fonction pour que l\'emplacement de chaque carte demeure indépendant."
+			settingsLayoutFonts: {
+				title: "Polices",
+				defaultLbl: "Paramètre par défaut",
+				sectionTitleLbl: "Titre de la section",
+				sectionContentLbl: "Contenu de la section"
 			},
 			initPopup: {
 				title: "Bienvenue dans"
 			},
 			addEditPopup: {
-				lblAdd: "Ajouter",
-				lblEdit: "Mettre à jour",
-				disabled: "La fonction d\'ajout est désactivée, car le nombre maximal de %LBL_LAYOUT% autorisées a été atteint.",
-				titleAdd: "Ajouter",
-				titleEdit: "Mettre à jour",
-				stepMainStageNextTooltip: "Entrez le titre de %LBL_LAYOUT% et son contenu",
-				titlePlaceholder: "Titre de %LBL_LAYOUT%..."
+				disabled: "L\'option Ajouter une section est désactivée, car le nombre maximal de sections autorisées a été atteint.",
+				titleAdd: "Ajouter une section",
+				titleAddHome: "Ajouter une section d\'accueil",
+				titleEdit: "Modifier une section",
+				step: "Etape",
+				stepMainStageExplain: "Contenu de la grande scène",
+				stepPanelExplain: "Contenu",
+				stepMainStageNextTooltip: "Entrez le titre de la section et sélectionnez le contenu de la grande scène",
+				stepMainStageNextTooltip2: "Sélectionner le contenu de la grande scène",
+				step2NextTooltip: "Entrez le titre de la section et le contenu %LAYOUT-TYPE%",
+				stepNextTooltipNext: "pour accéder à l\'étape suivante",
+				stepNextTooltipAdd: "pour ajouter la section",
+				firstAddExplain: "La première section est votre section d\'accueil. Considérez-la comme la page de couverture de votre narration. Le titre que vous venez de définir apparaîtra avec des polices de grande taille.",
+				firstAddLeanMore: "En savoir plus",
+				titlePlaceholder: "Titre de la section..."
 			},
-			textEditor: {
-				placeholder1: "Ajoutez du texte, des liens et de petits graphiques ici.",
-				placeholder2: "Si aucune valeur n\'est renseignée, le volet est masqué."
+			addEditViewText: {
+				editorPlaceholder: "Ajoutez du texte, des liens et des graphiques de petite taille ici.",
+				editorActionsTitle: "Actions de la grande scène",
+				editorActionsHelpDescr: "Utilisez ces contrôles pour créer des liens qui modifient la grande scène. Par exemple, lorsque le lecteur clique sur un lien, vous pouvez déclencher un zoom sur un lieu spécifique de la carte, l\'affichage d\'une autre carte Web ou l\'affichage d\'une image.",
+				mainStageDisabled: "Les actions de la grande scène sont désactivées lorsque l\'éditeur est agrandi"
 			},
 			organizePopup: {
 				title: "Organiser",
-				lblHeader: "Faites glisser et déposez %LBL_LAYOUT% pour organiser votre récit.",
+				lblHeader: "Faites glisser et déplacez des sections pour organiser votre récit.",
 				lblColTitle: "Titre",
+				lblColPubDate: "Date de publication",
 				lblColStatus: "Statut",
-				btnApplyWarning: "Confirmez la suppression de %NB% %LBL_LAYOUT%",
+				checkDisplayReverse: "Afficher les sections en ordre inverse",
+				btnApplyWarning: "Confirmer la suppression de %NB% section(s)",
 				deleteTooltip: "Supprimer",
-				firstSectionExplain: "(La section d\'accueil ne peut pas être déplacée)"
+				firstSectionExplain: "(Impossible de déplacer la section d\'accueil)",
+				exportMainStage: "Contenu de la grande scène",
+				exportPanel: "Contenu du volet",
+				exportActions: "Actions de la grande scène"
+			},
+			exportData: {
+				btn: "Exporter le contenu",
+				tooltip: "L\'exportation de votre contenu vous permet d\'afficher et de créer une sauvegarde de votre contenu en cas de suppression accidentelle. Il suffit de copier et de coller le contenu de la page dans un traitement de texte."
 			},
 			help: {
 				lblHelp: "Aide",
-				lblAdd: "Ajouter",
+				lblAdd: "Ajouter une section",
 				lblSettings: "Paramètres",
-				lblOrga: "Organiser",
+				lblOrga: "Organiser le contenu",
 				lblEdit: "Mises à jour",
 				lblPublish: "Partager",
-				lblTips: "Conseils",
+				lblTips: "Astuces",
 				lblMore: "Vous souhaitez plus d\'informations ?",
-				lblLink: "Consultez le site Web Esri Story Maps.",
-				content1Div1: "Pour créer votre %TPL_NAME%, utilisez le bouton Ajouter afin d\'ajouter chaque carte ou d\'autres contenus dans la mise en page. Les autres contenus peuvent inclure des images, des vidéos, ou encore du code ou des pages Web incorporés. Vous pouvez par exemple faire en sorte que vos lecteurs voient une image ou une vidéo d'introduction lorsqu\'ils lancent pour la première fois votre %TPL_NAME%, avant de passer à l\'exploration de vos cartes.",
-				content1Div2: "Lorsque vous cliquez sur le bouton Ajouter, une boîte de dialogue vous permettant de choisir et de configurer la carte ou d\'autres contenus que vous voulez ajouter apparaît. Par exemple, vous pouvez spécifier l\'emplacement que vous voulez afficher sur la carte, activer sa légende, etc.",
-				content2Div1: "La boîte de dialogue Paramètres vous permet de modifier l\'apparence de votre %TPL_NAME%. Vous pouvez modifier la mise en page, choisir une combinaison de couleurs différente, définir l\'emplacement d\'affichage de la légende de la carte, etc.",
-				content2Div2: "Vous pouvez également remplacer le logo Esri dans l\'en-tête de votre %TPL_NAME% par votre propre logo afin de représenter votre marque. Vous pouvez par ailleurs préciser quel site Web sera lancé si les lecteurs cliquent sur votre logo, afin de leur donner plus d\'informations.",
-				content3Div1: "La boîte de dialogue Organiser vous permet de gérer votre %TPL_NAME%. Dans cette boîte de dialogue, vous pouvez modifier l\'ordre des séries en les faisant glisser.",
-				content3Div2: "Vous pouvez également supprimer du contenu ou le masquer. Le masquage est utile si vous préparez un nouveau contenu qui n\'est pas encore prêt à être inclus dans votre Story Map.",
+				lblLink: "Consultez le site Web des Story Maps Esri.",
+				content1Div1: "Vous pouvez intégrer différents styles lorsque vous élaborez votre narration. Le <strong>%LAYOUT_TITLE%</strong> contient généralement votre texte, vos images et vidéos tandis que vos cartes ont tendance à rejoindre la <strong>grande scène</strong>. Cependant, %TPL_NAME% vous permet de proposer des images, diagrammes et vidéos au sein de la grande scène également.",
+				content1Div2: "L\'ajout de sections vous permet de personnaliser réellement votre narration. Lorsque les lecteurs font défiler le texte de votre %LAYOUT_TITLE%, une carte sur la grande scène peut se déplacer et zoomer sur des points essentiels, ou de nouvelles cartes et images peuvent automatiquement apparaître pour appuyer votre point de vue.",
+				content2Div1: "La boîte de dialogue Paramètres vous permet de modifier l\'apparence de votre %TPL_NAME%. Vous pouvez changer la mise en page, choisir une autre combinaison de couleurs, modifier la police, etc.",
+				content2Div2: "Vous pouvez également remplacer le logo Esri par le logo de votre marque. En outre, vous pouvez désigner le site Web qui sera lancé si des lecteurs cliquent sur votre logo, afin qu\'ils puissent obtenir plus d\'informations.",
+				content3Div1: "Votre contenu est organisé en sections. Vous pouvez avoir autant de sections que vous voulez (considérez-les comme des mini chapitres). Le flux de ces chapitres est important. Dans Organiser, vous pouvez agencer ou supprimer les sections comme bon vous semble.",
 				content4Div1: "Vous avez trouvé une erreur ou souhaitez changer vos documents ? Aucun problème. Recherchez l\'icône de mise à jour dans l\'application pour apporter les modifications souhaitées à votre contenu. Vous utiliserez les fonctions de mise à jour à maintes reprises au cours du développement de votre %TPL_NAME% !",
 				content5Div1: "Lorsque vous enregistrez votre %TPL_NAME%, il est privé. Utilisez le bouton Partager pour le partager avec d\'autres personnes. Vous pouvez partager votre %TPL_NAME% publiquement afin que tout le monde puisse y accéder.",
 				content5Div2: "Selon votre compte, vous pouvez également être habilité à partager votre %TPL_NAME% uniquement avec les membres de votre organisation, afin que les autres personnes ne puissent pas y accéder.",
-				content6Div1: "Par défaut, les cartes d\'une série sont synchronisées de façon à afficher le même emplacement. En d\'autres termes, l\'emplacement qui apparaît sur la première carte est automatiquement appliqué à toutes les autres cartes. Si un lecteur effectue un zoom ou un déplacement vers un autre endroit de la carte qu\'il consulte, cette action est également appliquée aux autres cartes.",
-				content6Div2: "Par exemple, si votre série présente différentes données thématiques d\'une ville, un lecteur peut zoomer sur son voisinage, puis simplement passer d\'un onglet à l\'autre pour voir les cartes de cette zone.",
-				content6Div3: "Pour désactiver la synchronisation des emplacements, accédez à la boîte de dialogue Paramètres et décochez ce paramètre dans l\'onglet Options de la carte.",
-				content6AltDiv1: "Par défaut, les emplacements des cartes sont synchronisés. En désactivant la synchronisation, vous permettez à chaque carte d\'afficher un emplacement différent.",
-				content6AltDiv2: "Synchronisation ACTIVEE",
-				content6AltDiv3: "Synchronisation DESACTIVEE",
-				content6AltDiv4: "Pour désactiver la synchronisation, accédez à Paramètres > Options de la carte et décochez \"Synchroniser les emplacements de la carte\"."
+				content6Div1: "Le titre de votre section d\'accueil est également le titre de votre journal. Considérez votre section d\'accueil comme la page de couverture de votre narration. Le titre de la section d\'accueil demeure visible lorsque vos lecteurs parcourent le journal.",
+				content6Div2: "Votre %LAYOUT_TITLE% ne contient pas forcément que du texte. Vous pouvez ajouter des photos et des vidéos pour donner vie à votre narration et pour diviser de longues sections de texte !"
 			},
 			landing: {
-				lblAdd: "Quel nom voulez-vous donner à votre série de cartes %LAYOUT_TITLE% ?",
+				lblAdd: "Quel nom voulez-vous donner à votre journal cartographique ?",
 				phAdd: "Entrez votre titre...",
 				lblOR: "Ou",
-				lblHelp: "Suivre une visite"
+				lblHelp: "Suivre la visite"
+			},
+			firstAddSplash: {
+				thisis: "Il s\'agit du",
+				lblMain: "Il s\'agit de la grande scène %BR%"
 			}
         }
     })

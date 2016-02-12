@@ -5,7 +5,11 @@
 				close: "Kapat"
 			},
 			loading: {
-				long: "Hikaye başlatılıyor",
+				step1: "Hikaye yükleniyor",
+				step2: "Veriler yükleniyor",
+				step3: "Başlatılıyor",
+				loadBuilder: "Oluşturucuya geçiliyor",
+				long: "Harita Bülteni başlatılıyor",
 				long2: "Beklendiğiniz için teşekkürler",
 				failButton: "Hikayeyi yeniden yükle"
 			},
@@ -18,33 +22,38 @@
 				boxTitle: "Bir hata oluştu",
 				invalidConfig: "Geçersiz yapılandırma",
 				invalidConfigNoApp: "Web Mapping Application tanımlayıcısı index.html dosyasında tanımlı değil.",
-				unspecifiedConfigOwner: "Yetkili malik yapılandırılmamış.",
+				unspecifiedConfigOwner: "Yetkili sahip yapılandırılmamış.",
 				invalidConfigOwner: "Hikaye sahibi yetkilendirilmemiş.",
 				createMap: "Harita oluşturulamıyor",
 				invalidApp: "%TPL_NAME% mevcut değil ya da erişilemez.",
-				appLoadingFail: "Hata oluştu, %TPL_NAME% doğru şekilde yüklenmedi.",
+				appLoadingFail: "Bir şeyler yanlış gitti, %TPL_NAME% doğru şekilde yüklenmedi.",
 				notConfiguredDesktop: "Hikaye henüz yapılandırılmadı.",
 				notConfiguredMobile: "%TPL_NAME% oluşturucu bu ekran boyutunda desteklenmiyor.",
 				notAuthorized: "Bu hikayeye erişme yetkiniz yok",
 				noBuilderIE: "Oluşturucu %VERSION% öncesindeki Internet Explorer sürümlerinde desteklenmiyor. %UPGRADE%",
 				noViewerIE: "Bu hikaye %VERSION% öncesindeki Internet Explorer sürümlerinde desteklenmiyor. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Tarayıcınızı güncelleyin</a>.",
-				mapLoadingFail: "Hata oluştu, harita düzgün şekilde yüklenmedi.",
+				mapLoadingFail: "Hata oluştu, Harita düzgün şekilde yüklenmedi.",
 				signOut: "Oturumu Kapat"
 			},
-			mobileInfo: {
-				legend: "Gösterim",
-				description: "Açıklama",
-				lblLegendMobileError: "Üzgünüz, gösterim kullanılamıyor. Hikayeyi yeniden yükleyin.",
-				lblLegendMobileErrorExplain: "Hikaye yüklendikten sonra cihaz dikey moda döndürülürse gösterim kullanılamaz."
+			mobileView: {
+				tapForDetails: "Ayrıntılar için dokunun",
+				clickForDetails: "Daha fazla bilgi",
+				swipeToExplore: "Keşfetmek için kaydırın",
+				tapForMap: "Haritaya geri dönmek için dokun",
+				clickForMap: "HARİTAYA GERİ DÖN"
 			},
-			mobileFooter: {
-				swipeInvite: "Öyküde gezinmek için kaydır",
-				lblNext: "Sonraki",
-				lblEnd: "Öykünün sonuna geldiniz"
+			floatLayout: {
+				scroll: "Kaydır"
+			},
+			sideLayout: {
+				scroll: "Daha fazlası için kaydır!"
+			},
+			mainStage: {
+				back: "Geri"
 			},
 			headerFromCommon: {
-				storymapsText: "Öykü haritası",
+				storymapsText: "Hikaye haritası",
 				builderButton: "Düzenle",
 				facebookTooltip: "Facebook\'ta Paylaş",
 				twitterTooltip: "Twitter\'da Paylaş",
@@ -67,11 +76,8 @@
 				copied: "Kopyalandı",
 				open: "Aç",
 				embed: "Web sayfasının içine yerleştir",
-				embedExplain: "Hikayeyi bir web sayfasının içine yerleştirmek için aşağıdaki HTML kodunu kullanın.",
+				embedExplain: "Bülteni bir web sayfasının içine yerleştirmek için aşağıdaki HTML kodunu kullanın.",
 				size: "Boyut (genişlik/yükseklik):"
-			},
-			locatorFromCommon: {
-				error: "Konum kullanılamıyor"
 			}
         }
     })

@@ -5,12 +5,16 @@
 				close: "Fechar"
 			},
 			loading: {
-				long: "A história está inicializando",
+				step1: "Carregando história",
+				step2: "Carregando dados",
+				step3: "Inicializando",
+				loadBuilder: "Trocando para construtor",
+				long: "O diário do mapa está inicializando",
 				long2: "Obrigado por aguardar",
 				failButton: "Recarregar a história"
 			},
 			signin: {
-				title: "Uma autenticação é exigida",
+				title: "uma autenticação é exigida",
 				explainViewer: "Entre com uma conta no %PORTAL_LINK% para acessar a história.",
 				explainBuilder: "Entre com uma conta no %PORTAL_LINK% para configurar a história."
 			},
@@ -29,19 +33,24 @@
 				noBuilderIE: "O construtor não é suportado no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
 				noViewerIE: "Esta história não é suportada no Internet Explorer antes da versão %VERSION%. %UPGRADE%",
 				upgradeBrowser: "<a href='http://browsehappy.com/' target='_blank'>Atualize seu navegador</a>.",
-				mapLoadingFail: "Algo deu errado, o mapa não carregou corretamente.",
+				mapLoadingFail: "Ocorreu algo errado, o Mapa não carregou corretamente.",
 				signOut: "Sair"
 			},
-			mobileInfo: {
-				legend: "Legenda",
-				description: "Descrição",
-				lblLegendMobileError: "Desculpe, a legenda está indisponível. Recarregue a história.",
-				lblLegendMobileErrorExplain: "A legenda não está disponível quando o dispositivo é rotacionado em modo vertical após a história ser carregada."
+			mobileView: {
+				tapForDetails: "Toque poara detalhes",
+				clickForDetails: "Mais informações",
+				swipeToExplore: "Oscile para explorar",
+				tapForMap: "Toque para voltar ao Mapa",
+				clickForMap: "VOLTAR AO MAPA"
 			},
-			mobileFooter: {
-				swipeInvite: "Trocar para verificar o histórico",
-				lblNext: "Avançar",
-				lblEnd: "Você alcançou o final do histórico"
+			floatLayout: {
+				scroll: "Rolar"
+			},
+			sideLayout: {
+				scroll: "Role para baixo para mais!"
+			},
+			mainStage: {
+				back: "Voltar"
 			},
 			headerFromCommon: {
 				storymapsText: "Um mapa histórico",
@@ -67,11 +76,8 @@
 				copied: "Copiado",
 				open: "Abrir",
 				embed: "Anexar na página da web",
-				embedExplain: "Utilize o código de HTML seguinte para embutir a história em uma página da web.",
+				embedExplain: "Utilize o seguinte código HTML para anexar o diário em uma página da web.",
 				size: "Tamanho (largura/altura):"
-			},
-			locatorFromCommon: {
-				error: "Local não disponível"
 			}
         }
     })

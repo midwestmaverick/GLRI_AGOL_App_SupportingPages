@@ -8,7 +8,7 @@
 				lblPopup: "Uznirstošais logs",
 				lblControls: "Papildu",
 				lblOverview: "Pārskata karte",
-				lblLegend: "Apzīmējumi",
+				lblLegend: "Leģenda",
 				loadingTitle: "Virsraksta ielāde",
 				entry: "Ieraksts",
 				entries: "Ieraksti",
@@ -57,7 +57,7 @@
 				titleLbl: "Nosaukums",
 				titlePh: "Kartes nosaukums...",
 				folderLbl: "Karte tiks izveidota mapē, kurā ir stāsts.",
-				creating: "Izveidot karti",
+				creating: "Izveido karti",
 				saving: "Saglabā karti",
 				success: "Karte ir saglabāta",
 				successCreate: "Karte ir izveidota",
@@ -83,7 +83,7 @@
 					favoritesLabel: "Mani favorīti"
 				},
 				title: "Kartes atlase",
-				searchTitle: "Meklēt",
+				searchTitle: "Meklēšana",
 				ok: "Labi",
 				cancel: "Atcelt",
 				placeholder: "Ievadiet meklējamo vārdu vai tīmekļa kartes ID..."
