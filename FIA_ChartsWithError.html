@@ -5,6 +5,8 @@
 2: cd D:\Libraries\Documents\GitHub\forestdisturbance
 3: python -m SimpleHTTPServer 8080 &.
 4: http://199.131.112.233:8080/
+
+http://midwestmaverick.github.io/forestdisturbance/FIA_ChartsWithError.html
 -->
 <head>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
@@ -44,7 +46,7 @@
 <body>
 <div id="drop_zone">Drop files here</div>
 <output id="list"></output>
-
+<script> src="http://apps.fs.fed.us/Evalidator/batcheval.jsp?reptype=Circle&lat=45.0&lon=-93.0&radius=50&snum=Area of timberland, in acres&sdenom=No denominator - just produce estimate.&wc=272014,552014&pselected=None&rselected=Stand-size class&cselected=Ownership group - Major&ptime=Current&rtime=Current&ctime=Current"
 <script>
   function handleFileSelect(evt) {
     evt.stopPropagation();
@@ -59,7 +61,7 @@
                   f.size, ' bytes, last modified: ',
                   f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
                   '</li>');
-		addChart(f.name);
+		addChart(f.name);	
 	}
     //document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
   }
@@ -237,20 +239,20 @@ var appendSVG = function(data){
 		.data(function(d) {return d.columns;})
 		.enter()
 		.append("line")
-		.attr("x1", function(d) { return x1(d.name)+(x1.rangeBand()*0.4); })
-		.attr("x2", function(d) { return x1(d.name)+(x1.rangeBand()*0.6); })
-		.attr("y1", function(d) { return y(d.value+((d.error*0.01)*d.value)); })
-		.attr("y2", function(d) { return y(d.value+((d.error*0.01)*d.value)); })
+		.attr("x1", function(d) { if(d.value != 0){ return x1(d.name)+(x1.rangeBand()*0.4); }})
+		.attr("x2", function(d) { if(d.value != 0){ return x1(d.name)+(x1.rangeBand()*0.6); }})
+		.attr("y1", function(d) { if(d.value != 0){ return y(d.value+((d.error*0.01)*d.value)); }})
+		.attr("y2", function(d) { if(d.value != 0){ return y(d.value+((d.error*0.01)*d.value)); }})
 		.style("stroke-dasharray","2,1");
 
 	row.selectAll(".row")
 		.data(function(d) {return d.columns;})
 		.enter()
 		.append("line")
-		.attr("x1", function(d) { return x1(d.name)+(x1.rangeBand()*0.4); })
-		.attr("x2", function(d) { return x1(d.name)+(x1.rangeBand()*0.6); })
-		.attr("y1", function(d) { return y(d.value-((d.error*0.01)*d.value)); })
-		.attr("y2", function(d) { return y(d.value-((d.error*0.01)*d.value)); })
+		.attr("x1", function(d) { if(d.value != 0){ return x1(d.name)+(x1.rangeBand()*0.4); }})
+		.attr("x2", function(d) { if(d.value != 0){ return x1(d.name)+(x1.rangeBand()*0.6); }})
+		.attr("y1", function(d) { if(d.value != 0){ return y(d.value-((d.error*0.01)*d.value)); }})
+		.attr("y2", function(d) { if(d.value != 0){ return y(d.value-((d.error*0.01)*d.value)); }})
 		.style("stroke-dasharray","2,1");
 		
 	var legend = svg.selectAll(".legend")
@@ -300,7 +302,7 @@ function addChart(filepath){
 	});
 }
 
-//addChart("SR002.json");
+addChart("http://zlphefido001.phe.fs.fed.us/EvalidatorGRM/batcheval.jsp?reptype=State&lat=%200&lon=%200&radius=%200&snum=Area%20of%20sampled%20and%20nonsampled%20land%20and%20water,%20in%20acres,%20within%20U.S.%20boundary&sdenom=No%20denominator%20-%20just%20produce%20estimate.&wc=342014&pselected=None&rselected=Land%20use&cselected=Land%20Use%20-%20Major&ptime=Current&rtime=Current&ctime=Current&wf=&wnum=&wnumdenom=&schemaName=FS_FIADB.&outputFormat=JSON");
 </script>
 
 
