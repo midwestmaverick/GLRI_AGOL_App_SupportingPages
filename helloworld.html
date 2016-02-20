@@ -30,7 +30,7 @@
 	var mobile = window.mobileAndTabletcheck();
 	if(mobile == true){
 		console.log("mobile");
-		document.getElementsByTagName("div")[0].innerHTML = "<img src=Images/ForestCanopyDisturbanceBaseMap2.jpg />";
+		document.getElementsByTagName("div")[0].innerHTML = "<iframe src='http://usfs-forestatlas.maps.arcgis.com/apps/webappviewer/index.html?id=3398a92701b04de4b14ff98cda5a2eaf' frameborder='0'></iframe>";
 	}else{
 		console.log("desktop");
 		document.getElementsByTagName("div")[0].innerHTML = "<iframe src='http://timemachine.cmucreatelab.org/viewer/20150822/public/landsat_editor_wiki.html#presentation=EJDkDAG5PpDJkOwP_Great%20Lakes%20Overview_DkDANxVq1V2NjX_North%20Woods_DkDAwaop0eGO1f_Upper%20Peninsula_DkDAn_EpmmCOkc_Green%20Bay_DkDAZLMoqquOlgB_Toledo_DkDAKRDpxltOsiB_Huron%20National%20Fores_DkDAZGEpkHpOpiB_Mack%20Lake%20Fire_DkDAKvzorZtOkc_Saginaw%20Bay_BAAYB0o4_VPic_Toronto_Untitled_B' frameborder='0'></iframe>";
