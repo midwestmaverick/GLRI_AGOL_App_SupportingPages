@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+1: D:
+2: cd D:\Libraries\Documents\GitHub\forestdisturbance
+3: python -m SimpleHTTPServer 8080 &.
+4: http://199.131.112.233:8080/tourmap2.html
+-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>NRS Forest Dynamics</title>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.15/esri/css/esri.css">
+    <style>
+      html, body, #map {
+        height: 100%;
+        margin: 0;
+      }
+      #info {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: 10px;
+        background-color: #ddd;
+        font: 14px Segoe UI;
+        width: 200px;
+        text-align: center;
+        border-radius: 0 10px 0 0;
+      }
+	  
+	  esriPopupWrapper {
+		width:800px;
+		height:auto
+	  }
+    </style>
+    <script src="https://js.arcgis.com/3.15/"></script>
+    <script>
+	function sortNumber(a,b) {
+		return a - b;
+	}
+	function sortNumberReverse(a,b) {
+		return b - a;
+	}
+
+	var token = 'WOjaskmAbu9SYpYHX5egL-SjGKUOehNAYX-Pqty_WbQb4Sl4I-Tmextri89OqZx6P8c3GIHYXl_Bk6typGlmzhbskuu6fHytqTT79U87SLYdsTyqAThWaE4CGwLkt2rw0wgXHiPiLAzSsGsSAG3V85-y7Cn8GDfir9tga7a0HHM';
+	
+	
+	var map, layer, low, high;
+	//var hucServiceURL = 'http://199.131.112.82:6080/arcgis/rest/services/jdgarner/NRS_HUC_change_2013/MapServer/0'
+	var hucServiceURL = 'http://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/NRS_HUC_change_2013/FeatureServer/0'
+	hucServiceURL = hucServiceURL + '?token='+token;
+	console.log(hucServiceURL);
+	var layers = [
+		{"title":"HUC Forest Area","featureURL":hucServiceURL,"valField":"FOR13AC","innerBreaks":[10000,100000,500000,1000000],"colors":[[237,248,233],[186,228,179],[116,196,118],[49,163,84],[0,109,44]]},
+		{"title":"HUC Net Change","featureURL":hucServiceURL,"valField":"F13netanac","innerBreaks":[100,500,1000],"colors":[[0,200,0],[255,255,255]]},
+		{"title":"HUC Cutting","featureURL":hucServiceURL,"valField":"CUT13ANAC","innerBreaks":[1000,5000,10000],"colors":[[0,0,200],[255,255,255]]},
+		{"title":"HUC Cut or disturbed","featureURL":hucServiceURL,"valField":"C_DC13ANAC","innerBreaks":[1000,5000,10000],"colors":[[0,0,0],[255,255,255]]}
+	];
+	var transparency = 0.75;
+	layers.map(function(lyr){lyr.colors.forEach(function(col){col.push(transparency)})});
+
+	require([
+        "esri/map", "esri/geometry/Extent", 
+        "esri/layers/FeatureLayer", "esri/InfoTemplate", "esri/dijit/Legend",
+        "esri/renderers/SimpleRenderer", "esri/renderers/ClassBreaksRenderer", "esri/Color", 
+        "esri/symbols/SimpleFillSymbol", "esri/symbols/SimpleLineSymbol", "esri/dijit/LayerSwipe", "esri/tasks/query","esri/tasks/QueryTask","esri/IdentityManager",
+        "dojo/domReady!"
+      ], function(
+        Map, Extent, 
+        FeatureLayer, InfoTemplate, Legend,
+        SimpleRenderer, ClassBreaksRenderer, Color, 
+        SimpleFillSymbol, SimpleLineSymbol, LayerSwipe, Query, QueryTask, esriId
+      ) {
+        map = new Map("map", {
+			basemap: "topo",
+			center: [-85.45, 42.75], // longitude, latitude
+			zoom: 6
+        });
+
+		function buildRenderer(results){
+			var range = results.features[0].attributes;
+			var symbol = new esri.symbol.SimpleFillSymbol();
+			symbol.setColor(new esri.Color(l.colors[0]));
+			var renderer = new esri.renderer.ClassBreaksRenderer(symbol, l.valField)
+			var breaks = l.innerBreaks.slice().sort(sortNumber);
+			breaks.unshift(range.minVal);
+			breaks.push(range.maxVal);
+			var a = breaks[0];
+			var n = 0;
+			console.log(breaks.length);
+			for(i = 0; i < breaks.length-1; i++){
+				var a = breaks[i];
+				var b = breaks[i+1];
+				console.log(a + "-" + b);
+				renderer.addBreak(a, b, new esri.symbol.SimpleFillSymbol().setColor(new esri.Color(l.colors[i])));
+			}
+			renderer.addBreak(a, range.maxVal, new esri.symbol.SimpleFillSymbol().setColor(new esri.Color(l.colors[l.colors.length-1])));
+			return renderer;
+		}		
+		
+		function addLayer(){
+			var maxDef = new esri.tasks.StatisticDefinition();
+			maxDef.statisticType = "max";
+			maxDef.onStatisticField = l.valField;
+			maxDef.outStatisticFieldName = "maxVal";
+			
+			var minDef = new esri.tasks.StatisticDefinition();
+			minDef.statisticType = "min";
+			minDef.onStatisticField = l.valField;
+			minDef.outStatisticFieldName = "minVal";
+
+			var sdDef = new esri.tasks.StatisticDefinition();
+			sdDef.statisticType = "stddev";
+			sdDef.onStatisticField = l.valField;
+			sdDef.outStatisticFieldName = "sdVal";
+			
+			var fieldQuery = new esri.tasks.Query();				
+			fieldQuery.outFields = [l.valField];
+			fieldQuery.outStatistics = [minDef,maxDef,sdDef];
+			
+			lyr.queryFeatures(fieldQuery,function(results){
+				var renderer = buildRenderer(results);
+				lyr.setRenderer(renderer);
+				console.log(renderer);
+				map.addLayer(lyr);
+			});
+		}
+		
+		//layers.map(function(l){
+			var l = layers[0];
+			//l.featureURL = 'http://199.131.112.82:6080/arcgis/rest/services/jdgarner/NRS_HUC_change_2013/MapServer/0';
+			var lyr = new esri.layers.FeatureLayer(l.featureURL,{
+				outFields:["HUC_NAME",l.valField],
+				className:l.title,
+				infoTemplate: new esri.InfoTemplate("<div style='font: 18px Segoe UI'>${HUC_NAME} Average Annual:</div>", "<div style='font: 18px Segoe UI'><strong>Total forest area (ac): ${FOR13AC}.</strong></div>")});
+			//map.addLayer(lyr);
+			lyr.on("load", addLayer);
+		//});
+		
+    });
+ 
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="info"><div id="legend"></div></div>
+  </body>
+</html>  

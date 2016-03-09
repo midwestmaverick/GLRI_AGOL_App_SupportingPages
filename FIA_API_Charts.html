@@ -2,16 +2,26 @@
 <html>
 <!-- 
 1: D:
-2: cd D:\FIA\DataVisulization\ZIPSE
+2: cd D:\Libraries\Documents\GitHub\forestdisturbance
 3: python -m SimpleHTTPServer 8080 &.
 4: http://199.131.112.233:8080/
 -->
 <head>
+	<title> FIA API Charts </title>
 	<script src="jquery-1.12.1.min.js" charset="utf-8"></script>
-	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	<script src="resources/lib/d3/d3.min.js" charset="utf-8"></script>
+	<script src="https://js.arcgis.com/3.15/"></script>
+	<!--<script src="http://fgnass.github.io/spin.js/spin.js" charset="utf-8"></script>-->
+	<script src="FIA_ChartsWithError.js" charset="utf-8"></script>
+	<script src="FIA_API_Charts.js" charset="utf-8"></script>
+	<script src="EvalidatorAPI_tools.js" charset="utf-8"></script>
+	<script src="AGOL_RealTimeSymbols.js" charset="utf-8"></script>
 <style>
-	body {
+	html, body {
 	  font: 10px sans-serif;
+	  width:100%;
+	  height:100%;
+	  margin:0px;
 	}
 
 	.axis path,
@@ -28,323 +38,98 @@
 	.x.axis path {
 	  display: none;
 	}	
-	
-	#drop_zone {
-		width:600px;
-		border: 2px dashed #bbb;
-		-moz-border-radius: 5px;
-		-webkit-border-radius: 5px;
-		border-radius: 5px;
-		padding: 25px;
-		text-align: center;
-		font: 20pt bold 'Vollkorn';
-		color: #bbb;
+		
+	#visWindow {
+		height:50%;
+		width:70%;
+		margin:10px;
 	}
+	
+	#visWindow svg:first-of-type{
+		margin:10px;
+		margin-top:15px;
+	}
+	
+	.selectDiv1, .selectDiv2{
+		display:block;
+		float:left;
+		margin:7px;
+	}
+	
+	#submitButton, #radioSE{
+		float:left;
+		margin-top:80px;
+		margin-left:10px;
+	}
+	
+	.button{
+		font-size:24px;
+	}
+	
+	.selectDiv2 label{
+		font-size:16px;
+	}
+	
+	#radioSE input{
+		float:right;
+	}
+
+	#radioSE label{
+		font-size:18px;
+		text-align:right;
+	}
+	
 </style>
 </head>
 <body>
-<!--<div id="drop_zone">Drop files here</div>
-<output id="list"></output>
-
-<script>
-
-  function handleFileSelect(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
-
-    var files = evt.dataTransfer.files; // FileList object.
-
-    // files is a FileList of File objects. List some properties.
-    var output = [];
-    for (var i = 0, f; f = files[i]; i++) {
-      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                  f.size, ' bytes, last modified: ',
-                  f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
-                  '</li>');
-		addChart(f.name);
-	}
-    //document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-  }
-
-  function handleDragOver(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
-    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
-  }
-
-  // Setup the dnd listeners.
-  var dropZone = document.getElementById('drop_zone');
-  dropZone.addEventListener('dragover', handleDragOver, false);
-  dropZone.addEventListener('drop', handleFileSelect, false);
-
-</script>
--->
-<script>
-function wrap(text, width) {
-  text.each(function() {
-    var text = d3.select(this),
-        words = text.text().split(/\s+/).reverse(),
-        word,
-        line = [],
-        lineNumber = 0,
-        lineHeight = 1.1, // ems
-        y = text.attr("y"),
-        dy = parseFloat(text.attr("dy")),
-        tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
-    while (word = words.pop()) {
-      line.push(word);
-      tspan.text(line.join(" "));
-      if (tspan.node().getComputedTextLength() > width) {
-        line.pop();
-        tspan.text(line.join(" "));
-        line = [word];
-        tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
-      }
-    }
-  });
-}
-
-var range = function(max){
-	var outRange = [];
-	for(i = 0; i < max; i++){
-		outRange.push(i);
-	}
-	return(outRange);
-}
-
-var randomColor = function() {
-	var r = Math.round(Math.random() * 250);
-	var g = Math.round(Math.random() * 250);
-	var b = Math.round(Math.random() * 250);
-	return "rgb("+r+","+g+","+b+")";
-}
-
-var parsePage = function(data){
-	var outObject = [];
-	var pl = data.page;
-	pl.forEach(function(p){
-		var pTab = parseRow(p);
-		outObject.push(pTab);
-	});
-	return outObject;
-}
-
-var parseRow = function(data){
-	var outTab = [];
-	var rl = data.row;
-	rl.forEach(function(r){
-		if(r.content !== "Total"){
-			newRow = {};
-			newRow["row"] = r.content;
-			r.column.forEach(function(c){
-				if(c.content !== "Total"){
-					dataPoint = c.cellValueNumerator;
-					if(isNaN(dataPoint)){dataPoint = 0;}
-					dataError = c.cellSE;
-					if(isNaN(dataError)){dataError = 0;}
-					newRow[c.content] = [dataPoint,dataError];
-				}
-			});
-		outTab.push(newRow);
-		}
-	});	
-	return outTab;
-}
-
-var appendSVG = function(data){
-	var columns = d3.keys(data[0]).filter(function(key) { return key !== "row" && key !== "error"; });
-	data.forEach(function(d) {
-		d.columns = columns.map(function(name) { return {name: name, value: +d[name][0], error: +d[name][1]}; });
-	});
-
-	var dataLength = data.length * (data[0].columns.length+2);
-	
-	var margin = {top: 20, right: 20, bottom: 30, left: 40},
-		width = d3.max([dataLength*12, 960]) - margin.left - margin.right,
-		height = 500 - margin.top - margin.bottom;
-		
-	var svg = d3.select("body")
-		.append("svg")
-		.attr("width", width + margin.left + margin.right)
-		.attr("height", height + margin.top + margin.bottom)
-		.append("g")
-		.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-	var x0 = d3.scale.ordinal().rangeRoundBands([0, width], .1);
-
-	var x1 = d3.scale.ordinal();
-
-	var y = d3.scale.linear().range([height, 0]);
-
-	var color = d3.scale.ordinal().range(['#a6cee3','#1f78b4','#b2df8a','#33a02c','#fb9a99','#e31a1c','#fdbf6f','#ff7f00','#cab2d6','#6a3d9a','#ffff99','#b15928']);
-
-	var xAxis = d3.svg.axis()
-		.scale(x0)
-		.orient("bottom");
-
-	var yAxis = d3.svg.axis()
-		.scale(y)
-		.orient("left")
-		.tickFormat(d3.format(".2s"));
-	
-	var rows = data.map(function(d) { return d.row; });
-	x0.domain(rows);
-	x1.domain(columns).rangeRoundBands([0, x0.rangeBand()]);
-	y.domain([0, d3.max(data, function(d) { return d3.max(d.columns, function(d) { return d.value + (d.value * (0.01 * d.error)); }); })]);
-
-	svg.append("g")
-		.attr("class", "x axis")
-		.attr("transform", "translate(0," + height + ")")
-		.call(xAxis)
-		.selectAll(".tick text")
-		.call(wrap, x0.rangeBand());
-	
-	svg.append("g")
-		.attr("class", "y axis")
-		.call(yAxis)
-		.append("text")
-		.attr("transform", "rotate(-90)")
-		.attr("y", 6)
-		.attr("dy", ".71em")
-		.style("text-anchor", "end")
-		.text(numName);
-
-	var row = svg.selectAll(".row")
-		.data(data)
-		.enter()
-		.append("g")
-		.attr("class", "row")
-		.attr("transform", function(d) { return "translate(" + x0(d.row) + ",0)"; });
-	
-	row.selectAll("rect")
-		.data(function(d) { return d.columns; })
-		.enter()
-		.append("rect")
-		.attr("width", x1.rangeBand())
-		.attr("x", function(d) { return x1(d.name); })
-		.attr("y", function(d) { return y(d.value); })
-		.attr("height", function(d) {return height - y(d.value); })
-		.style("fill", function(d) { return color(d.name); });
-		
-	row.selectAll("line")
-		.data(function(d) {return d.columns;})
-		.enter()
-		.append("line")
-		.attr("x1", function(d) { return x1(d.name)+(x1.rangeBand()*0.5); })
-		.attr("x2", function(d) { return x1(d.name)+(x1.rangeBand()*0.5); })
-		.attr("y1", function(d) { return y(d.value-((d.error*0.01)*d.value)); })
-		.attr("y2", function(d) { return y(d.value+((d.error*0.01)*d.value)); })
-		.style("stroke-dasharray","2,1");
-
-	row.selectAll(".row")
-		.data(function(d) {return d.columns;})
-		.enter()
-		.append("line")
-		.attr("x1", function(d) { return x1(d.name)+(x1.rangeBand()*0.4); })
-		.attr("x2", function(d) { return x1(d.name)+(x1.rangeBand()*0.6); })
-		.attr("y1", function(d) { return y(d.value+((d.error*0.01)*d.value)); })
-		.attr("y2", function(d) { return y(d.value+((d.error*0.01)*d.value)); })
-		.style("stroke-dasharray","2,1");
-
-	row.selectAll(".row")
-		.data(function(d) {return d.columns;})
-		.enter()
-		.append("line")
-		.attr("x1", function(d) { return x1(d.name)+(x1.rangeBand()*0.4); })
-		.attr("x2", function(d) { return x1(d.name)+(x1.rangeBand()*0.6); })
-		.attr("y1", function(d) { return y(d.value-((d.error*0.01)*d.value)); })
-		.attr("y2", function(d) { return y(d.value-((d.error*0.01)*d.value)); })
-		.style("stroke-dasharray","2,1");
-		
-	var legend = svg.selectAll(".legend")
-		.data(columns.slice().reverse())
-		.enter()
-		.append("g")
-		.attr("class", "legend")
-		.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-	legend.append("rect")
-		.attr("x", width - 18)
-		.attr("width", 18)
-		.attr("height", 18)
-		.style("fill", color);
-
-	legend.append("text")
-		.attr("x", width - 24)
-		.attr("y", 9)
-		.attr("dy", ".35em")
-		.style("text-anchor", "end")
-		.text(function(d) { return d; });
-}
-
-
-var output;
-var numName;
-
-function addChart(filepath){
-	d3.json(filepath, function(error, evalOutput) {
-		if (error) throw error;
-
-		var evalData = evalOutput.EVALIDatorOutput;
-		numName = evalData.numeratorName;
-
-		if(evalData.hasOwnProperty("page")){ 
-			var dataSetList = parsePage(evalData);
-			output = dataSetList;
-			dataSetList.forEach(function(data) {
-				appendSVG(data);
-			});
-		}
-		if(evalData.hasOwnProperty("row")){ 
-			var data = parseRow(evalData);
-			output = data;
-			appendSVG(data);
-		}
-
-	});
-}
-</script>
-
-<div id="id01"></div>
-
-<script>
-var url = "http://zlphefido001.phe.fs.fed.us/EvalidatorGRM/batcheval.jsp?reptype=State&lat=%200&lon=%200&radius=%200&snum=Area%20of%20sampled%20and%20nonsampled%20land%20and%20water,%20in%20acres,%20within%20U.S.%20boundary&sdenom=No%20denominator%20-%20just%20produce%20estimate.&wc=342014&pselected=None&rselected=Land%20use&cselected=Land%20Use%20-%20Major&ptime=Current&rtime=Current&ctime=Current&wf=&wnum=&wnumdenom=&schemaName=FS_FIADB.&outputFormat=JSON?callback=handleJSON";
-
-function createCORSRequest(method, url) {
-  var xhr = new XMLHttpRequest();
-  if ("withCredentials" in xhr) {
-
-    // Check if the XMLHttpRequest object has a "withCredentials" property.
-    // "withCredentials" only exists on XMLHTTPRequest2 objects.
-    xhr.open(method, url, true);
-	xhr.responseType = 'json';
-	xhr.send();
-	
-	
-  } else if (typeof XDomainRequest != "undefined") {
-
-    // Otherwise, check if XDomainRequest.
-    // XDomainRequest only exists in IE, and is IE's way of making CORS requests.
-    xhr = new XDomainRequest();
-    xhr.open(method, url);
-
-  } else {
-
-    // Otherwise, CORS is not supported by the browser.
-    xhr = null;
-
-  }
-  return xhr;
-}
-
-var xhr = createCORSRequest('GET', url);
-if (!xhr) {
-  throw new Error('CORS not supported');
-} 
-
-//addChart();
-</script>
-
+<div id="formWindow>
+	<form id="optionsForm">
+		<div class="selectDiv1">
+		<div class="selectDiv2">
+		<label for="stateSelect">Select State</label><br>
+		<select multiple id="stateSelect" size="7" title="Select State or Region"></select>
+		</div>
+		<div class="selectDiv2">
+		<label for="numSelect">Select Estimate Numerator</label><br>
+		<select id="numSelect" size="7" title="Select Estimate" onChange="//limitDims('num')"></select>
+		</div>
+		<div class="selectDiv2">
+		<label for="denSelect">Select Estimate Denominator</label><br>
+		<select id="denSelect" size="7" title="Select Estimate">
+			<option class="denEst" value="No denominator - just produce estimate." selected="selected">None</option>
+		</select>
+		</div>
+		</div>
+		<br>
+		<div class="selectDiv1">
+		<div class="selectDiv2">
+		<label for="pageSelect">Page Variable</label><br>
+		<select id="pageSelect" size="8" title="Page Variable">
+			<option class="dimOpt" value="None" selected="selected">None</option>
+		</select>
+		</div>
+		<div class="selectDiv2">
+		<label for="rowSelect">Row Variable</label><br>
+		<select id="rowSelect" size="8" title="Row Variable"></select>
+		</div>
+		<div class="selectDiv2">
+		<label for="colSelect">Column Variable</label><br>
+		<select id="colSelect" size="8" title="Column Variable"></select>
+		</div>
+		<div id="radioSE">
+			<label for="Include Error Estimate">Include Error Estimate</label>
+			<input type="radio" name="errorEstimate" value="N" checked="checked"></input><br>
+			<label for="No Error Estimate">No Error Estimate</label>
+			<input type="radio" name="errorEstimate" value="Y"></input>
+		</div>
+		<div id="submitButton">
+			<input class="button" type="button" value="Submit" onclick="var output = updateVisWindow()"/>
+		</div>
+		</div>
+	</form>
+</div>
+<div id="visWindow"></div>
+<script>fillSelectors();</script>
 
 </body>
 </html>

@@ -11,9 +11,6 @@ http://midwestmaverick.github.io/forestdisturbance/FIA_ChartsWithError.html
 <head>
 	<title> FIA Charts Without Error </title>
 	<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-	<script src="https://js.arcgis.com/3.15/"></script>
-	<script src="jquery-1.12.1.min.js" charset="utf-8"></script>
-	<script src="AGOL_RealTimeSymbols.js" charset="utf-8"></script>
 <style>
 	body {
 	  font: 10px sans-serif;
@@ -50,7 +47,6 @@ http://midwestmaverick.github.io/forestdisturbance/FIA_ChartsWithError.html
 <body>
 <div id="drop_zone">Drop files here</div>
 <output id="list"></output>
-<script> src="http://apps.fs.fed.us/Evalidator/batcheval.jsp?reptype=Circle&lat=45.0&lon=-93.0&radius=50&snum=Area of timberland, in acres&sdenom=No denominator - just produce estimate.&wc=272014,552014&pselected=None&rselected=Stand-size class&cselected=Ownership group - Major&ptime=Current&rtime=Current&ctime=Current"
 <script>
   function handleFileSelect(evt) {
     evt.stopPropagation();
@@ -143,9 +139,7 @@ var parseRow = function(data){
 				if(c.content !== "Total"){
 					dataPoint = c.cellValueNumerator;
 					if(isNaN(dataPoint)){dataPoint = 0;}
-					dataError = c.cellSE;
-					if(isNaN(dataError)){dataError = 0;}
-					newRow[c.content] = [dataPoint,dataError];
+					newRow[c.content] = [dataPoint];
 				}
 			});
 		outTab.push(newRow);
@@ -157,7 +151,7 @@ var parseRow = function(data){
 var appendSVG = function(data){
 	var columns = d3.keys(data[0]).filter(function(key) { return key !== "row" && key !== "error"; });
 	data.forEach(function(d) {
-		d.columns = columns.map(function(name) { return {name: name, value: +d[name][0], error: +d[name][1]}; });
+		d.columns = columns.map(function(name) { return {name: name, value: +d[name][0]}; });
 	});
 
 	var dataLength = data.length * (data[0].columns.length+2);
@@ -193,7 +187,7 @@ var appendSVG = function(data){
 	var rows = data.map(function(d) { return d.row; });
 	x0.domain(rows);
 	x1.domain(columns).rangeRoundBands([0, x0.rangeBand()]);
-	y.domain([0, d3.max(data, function(d) { return d3.max(d.columns, function(d) { return d.value + (d.value * (0.01 * d.error)); }); })]);
+	y.domain([0, d3.max(data, function(d) { return d3.max(d.columns, function(d) { return d.value + (d.value * 0.01); }); })]);
 
 	svg.append("g")
 		.attr("class", "x axis")
@@ -228,37 +222,7 @@ var appendSVG = function(data){
 		.attr("y", function(d) { return y(d.value); })
 		.attr("height", function(d) {return height - y(d.value); })
 		.style("fill", function(d) { return color(d.name); });
-		
-	row.selectAll("line")
-		.data(function(d) {return d.columns;})
-		.enter()
-		.append("line")
-		.attr("x1", function(d) { return x1(d.name)+(x1.rangeBand()*0.5); })
-		.attr("x2", function(d) { return x1(d.name)+(x1.rangeBand()*0.5); })
-		.attr("y1", function(d) { return y(d.value-((d.error*0.01)*d.value)); })
-		.attr("y2", function(d) { return y(d.value+((d.error*0.01)*d.value)); })
-		.style("stroke-dasharray","2,1");
-
-	row.selectAll(".row")
-		.data(function(d) {return d.columns;})
-		.enter()
-		.append("line")
-		.attr("x1", function(d) { if(d.value != 0){ return x1(d.name)+(x1.rangeBand()*0.4); }})
-		.attr("x2", function(d) { if(d.value != 0){ return x1(d.name)+(x1.rangeBand()*0.6); }})
-		.attr("y1", function(d) { if(d.value != 0){ return y(d.value+((d.error*0.01)*d.value)); }})
-		.attr("y2", function(d) { if(d.value != 0){ return y(d.value+((d.error*0.01)*d.value)); }})
-		.style("stroke-dasharray","2,1");
-
-	row.selectAll(".row")
-		.data(function(d) {return d.columns;})
-		.enter()
-		.append("line")
-		.attr("x1", function(d) { if(d.value != 0){ return x1(d.name)+(x1.rangeBand()*0.4); }})
-		.attr("x2", function(d) { if(d.value != 0){ return x1(d.name)+(x1.rangeBand()*0.6); }})
-		.attr("y1", function(d) { if(d.value != 0){ return y(d.value-((d.error*0.01)*d.value)); }})
-		.attr("y2", function(d) { if(d.value != 0){ return y(d.value-((d.error*0.01)*d.value)); }})
-		.style("stroke-dasharray","2,1");
-		
+			
 	var legend = svg.selectAll(".legend")
 		.data(columns.slice().reverse())
 		.enter()
@@ -306,7 +270,7 @@ function addChart(filepath){
 	});
 }
 
-addChart("http://zlphefido001.phe.fs.fed.us/EvalidatorGRM/batcheval.jsp?reptype=State&lat=%200&lon=%200&radius=%200&snum=Area%20of%20sampled%20and%20nonsampled%20land%20and%20water,%20in%20acres,%20within%20U.S.%20boundary&sdenom=No%20denominator%20-%20just%20produce%20estimate.&wc=342014&pselected=None&rselected=Land%20use&cselected=Land%20Use%20-%20Major&ptime=Current&rtime=Current&ctime=Current&wf=&wnum=&wnumdenom=&schemaName=FS_FIADB.&outputFormat=JSON");
+//addChart("http://zlphefido001.phe.fs.fed.us/EvalidatorGRM/batcheval.jsp?reptype=State&lat=%200&lon=%200&radius=%200&snum=Area%20of%20sampled%20and%20nonsampled%20land%20and%20water,%20in%20acres,%20within%20U.S.%20boundary&sdenom=No%20denominator%20-%20just%20produce%20estimate.&wc=342014&pselected=None&rselected=Land%20use&cselected=Land%20Use%20-%20Major&ptime=Current&rtime=Current&ctime=Current&wf=&wnum=&wnumdenom=&schemaName=FS_FIADB.&outputFormat=JSON");
 </script>
 
 
