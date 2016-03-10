@@ -17,6 +17,15 @@
 	img {
 		display:block;
 	}
+	
+	#title {
+		position:absolute;
+		top:20px;
+		left:100px;
+		color:white;
+		font-family:arial;
+		z-index:20000000;
+	}
   </style>
 </head>
 <body>
@@ -33,7 +42,7 @@
 		document.getElementsByTagName("div")[0].innerHTML = "<iframe src='http://usfs-forestatlas.maps.arcgis.com/apps/webappviewer/index.html?id=3398a92701b04de4b14ff98cda5a2eaf' frameborder='0'></iframe>";
 	}else{
 		console.log("desktop");
-		document.getElementsByTagName("div")[0].innerHTML = "<iframe src='http://timemachine.cmucreatelab.org/viewer/20150822/public/landsat_editor_wiki.html#presentation=EJDkDANxVq1V2NjX_North%20Woods_DkDAwaop0eGO1f_Upper%20Peninsula_DkDAn_EpmmCOkc_Green%20Bay_DkDAZLMoqquOlgB_Toledo_DkDAKRDpxltOsiB_Huron%20National%20Fores_DkDAZGEpkHpOpiB_Mack%20Lake%20Fire_DkDAKvzorZtOkc_Saginaw%20Bay_DkDAYB0o4_VPic_Toronto_DkDAG5PpDJkOwP_Great%20Lakes%20Overview_Untitled_B' frameborder='0'></iframe>";
+		document.getElementsByTagName("div")[0].innerHTML = "<h2 id='title'>28 Years of Land and Water Dynamics in the Great Lakes Basins</h2><iframe src='http://timemachine.cmucreatelab.org/viewer/20150822/public/landsat_editor_wiki.html#presentation=EJDkDANxVq1V2NjX_North%20Woods_DkDAwaop0eGO1f_Upper%20Peninsula_DkDAn_EpmmCOkc_Green%20Bay_DkDAZLMoqquOlgB_Toledo_DkDAKRDpxltOsiB_Huron%20National%20Fores_DkDAZGEpkHpOpiB_Mack%20Lake%20Fire_DkDAKvzorZtOkc_Saginaw%20Bay_DkDAYB0o4_VPic_Toronto_DkDAG5PpDJkOwP_Great%20Lakes%20Overview_Untitled_B' frameborder='0'></iframe>";
 	}
   </script>
 </body>
