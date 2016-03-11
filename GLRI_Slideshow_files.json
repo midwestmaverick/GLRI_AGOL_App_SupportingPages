@@ -1,0 +1,104 @@
+var imgList = [
+  {
+    "name": "Rain on Leaf",
+    "file": "2727828952_b73a572ddd_o.jpg",
+    "author": "pallavi_damera",
+    "url": "https://www.flickr.com/photos/pallavi_damera/2727828952/in/photolist-5a3QvE-cvRvhJ-8XyEeU-ajwr55-9rvV42-5bTcRv-qQJWYk-e4QAxj-23X2ey-cVqCjJ-cqs6Ds-dEJhHZ-ekaNZs-8HDXFe-nDRmYi-rqqdym-q1gihx-qDsCTD-eCTcmA-ajc6AD-bvCSa9-cbjSU1-aPJqS6-r9Mswt-91kxHx-t7Ssu5-cWSzC5-nxab3K-9oqsJt-8fnRNC-bLr2K6-buhoq3-qsjpnf-mMGcfP-eJatBM-7w8sMF-qhFthf-9dPMZ7-nMHY9v-5WMivf-sh1bjb-zD5UXJ-dNRYzY-q6HkAU-oQKnsW-b4j2Yz-nL4WcE-bfu8qK-91kxT4-dqHjxJ"
+  },
+  {
+    "name": "Chicago River",
+    "file": "6106279117_fa779e14a1_o.jpg",
+    "author": "Jim Larrison",
+    "url": "https://www.flickr.com/photos/larrison/6106279117/in/photolist-bA4sRm-8Naghh-aiAh3r-re4yjF-bA4UDL-diRw1z-nxnouF-eF3bk-hckhN-ozmu53-dwuadA-bnPkw2-dYL9ik-azBwW5-dZnE1H-debDyi-azySJ4-oRahai-a4tYwS-bkkxuw-cv7EQW-oRNgNo-dCu48z-bAZ6ep-gRSAeR-bNJ8k2-bzYTuh-5ZHqF-aCxRgo-nYAhfZ-eHVV1F-doC56h-831J4h-guan-spY6K9-eH5wbz-aAhtNJ-8Z4uQE-dCu8qD-dhDKM1-9ZHDBP-fnnRkv-d9W8hE-DVDBLd-eJ4ooY-gvyqSa-ew7Bxm-qQcVEm-gvyoMi-66EXKV/"
+  },
+  {
+    "name": "Milwaukee Waterfront",
+    "file": "15264014469_84be7ecf83_o.jpg",
+    "author": "Jamie K Johnson",
+    "url": "https://www.flickr.com/photos/amateurjewelry/15264014469/in/photolist-pfQ4Hg-b1MtwH-awETSZ-6DkLNs-obCQyp-ak4KyG-AsTa1z-dgPbVJ-aun1gc-amwQ5x-a2c333-4eNZAS-8vFBHR-6fUPXV-dhBKkV-dZtunq-obDKSX-23YquV-4ynfhc-7tJ6nd-5afHVE-6fZ1G7-dhBKEd-a24aeA-7ZRkBa-ceh12u-6DArVF-d8jr3C-7YLS7c-8EerJa-5hYuEt-4NB2K4-7YHELk-6MNU35-awHwcf-4D6KAr-7sx3EV-8R12fD-iRagcG-7hD15t-34hENj-8R48YJ-6HMcDx-er86WD-4kQMzL-8V1yNs-er88AM-9NFLTw-ajD6sj-6JdNLq"
+  },
+  {
+    "name": "Erie Canal Tug",
+    "file": "7805647952_11c467dbab_o.jpg",
+    "author": "Keith Ewing",
+    "url": "https://www.flickr.com/photos/kewing/7805647952/in/photolist-cTKZc7-595H5X-8QVaiD-7SXhUH-8kFTNq-sC1HZD-8kFTG7-8kCGGV-8U6RMc-4CGgbD-rzjean-7QewPi-9VUetd-ymX2G-7HiAMm-9VUipU-7QhSGC-4dftxy-qA9sGt-aeZwxx-4C8we6-8WKS7w-oocUU4-nNdyDe-752isH-7QewVn-d7BADy-6qF6YS-rgaBQP-7Qeye2-rzjjLx-6NZKeL-BBoT5B-7AG77z-7Qex4X-595NDR-rzcVSj-rJ6wXf-qtMu5t-rzbyz9-e3YLjp-qGaYK4-rxrYf6-98msSk-nDBfpw-qUYxdi-dcMHN9-doCabf-bJvGqe-pafJ8c"
+  },
+  {
+    "name": "Lockport Locks, Erie Canal",
+    "file": "7805647952_11c467dbab_o.jpg",
+    "author": "James G. Milles",
+    "url": "https://www.flickr.com/photos/jmilles/2864447750/in/photolist-5n83wb-5n3Jpc-5n3HcB-5n3Tnp-rRFPP6-5n86Pd-5n3Kza-5n85d7-5n3S5M-5SSkfG-d7BKkL-3NkjVY-4h8HFq-oWq7cQ-8PGF9V-rRDUvL-qrcgrM-8PGERz-6L3gju-qjKK58-31zxT6-qUM2Uw-pEbaDG-qyTAJQ-oGsb8j-6KYfyk-pEpta6-rzcLfo-qB6UXo-7QhRBC-c5cq5N-gxo6Q1-599X63-7v3RQa-x6dsdS-599Ycf-4gNyDK-599XN7-595GA6-7QhTJw-cZrdPs-599Xu3-599SuN-3LX5jm-5eEyTU-7QhQzA-qtBtZ4-rxrMBc-pwN8Yo-8Pzzcj"
+  },
+  {
+    "name": "Erie Canal",
+    "file": "2864447750_303474f571_o.jpg",
+    "author": "James Bates",
+    "url": "https://www.flickr.com/photos/batesjamese/7267417678/in/photolist-c5cq5N-gxo6Q1-599X63-7v3RQa-x6dsdS-599Ycf-4gNyDK-599XN7-595GA6-7QhTJw-cZrdPs-599Xu3-599SuN-3LX5jm-5eEyTU-7QhQzA-qtBtZ4-rxrMBc-pwN8Yo-8Pzzcj-kZKDYv-qCtGG1-2ZTAWM-yhQkCm-rxvDat-rRLCxT-4h8vSQ-7QhUy1-sBNvAK-595FCV-qRbDbD-7Qewy4-9twzFL-av3pnr-rMS6sx-599S3A-4sy7Vb-rRLNmv-d7BGEf-599Smh-7Qev2k-8PvKQx-6hcxjb-qtBAU6-d7BBr5-3NhASB-7QhUmY-aeZw2B-rzcSYU-599RMq"
+  },
+  {
+    "name": "Duluth Ship Canal",
+    "file": "11515820746_d25703d694_o.jpg",
+    "author": "Randen Pederson",
+    "url": "https://www.flickr.com/photos/chefranden/11515820746/"
+  },
+  {
+    "name": "Duluth Ships",
+    "file": "17803926091_94d203164c_o.jpg",
+    "author": "Pete Markham",
+    "url": "https://www.flickr.com/photos/pmarkham/17803926091/"
+  },
+  {
+    "name": "Great Lakes Splash",
+    "file": "2877591900_96d07958a0_o.jpg",
+    "author": "Randen Pederson",
+    "url": "https://www.flickr.com/photos/chefranden/2877591900/"
+  },
+  {
+    "name": "Fishing",
+    "file": "6544769567_e7e622d7cd_o.jpg",
+    "author": "Wisconsin Department of Natural Resources",
+    "url": "https://www.flickr.com/photos/widnr/6544769567/"
+  },
+  {
+    "name": "Sunset Over The Port Of Duluth",
+    "file": "6320860353_e2625ff7b2_o.jpg",
+    "author": "Randen Pederson",
+    "url": "https://www.flickr.com/photos/chefranden/6320860353/in/album-72157594224618407/"
+  },
+  {
+    "name": "Morning Light, Silver Bay, MN",
+    "file": "4506327875_c299f49f47_o.jpg",
+    "author": "Randen Pederson",
+    "url": "https://www.flickr.com/photos/chefranden/4506327875/in/album-72157594224618407/"
+  },
+  {
+    "name": "High Bridge, Duluth, MN",
+    "file": "61697935_d3fea39e54_o.jpg",
+    "author": "Randen Pederson",
+    "url": "https://www.flickr.com/photos/chefranden/61697935/in/album-72157594185136946/"
+  },
+  {
+    "name": "The Boat Landing",
+    "file": "1449970921_86c40f887f_o.jpg",
+    "author": "Randen Pederson",
+    "url": "https://www.flickr.com/photos/chefranden/1449970921/in/album-72157594185136946/"
+  },
+  {
+    "name": "Lake Huron flowers",
+    "file": "3861593869_21d77f651b_o.jpg",
+    "author": "Josh Delp",
+    "url": "https://www.flickr.com/photos/repoman/3861593869/"
+  },
+  {
+    "name": "Toronto Skyline",
+    "file": "3450268808_3a674d8283_o.jpg",
+    "author": "Abi K",
+    "url": "https://www.flickr.com/photos/choudhrysaab/3450268808/in/photolist-6fTwHf-8icS-nuXh3J-oFnhFJ-8wyADj-4xUwZ-5gvfxo-6Jaz4t-rTM4Pq-rUqBPd-o4CFqt-k3KPaB-nNf2Xy-9rNWWS-dbRSLr-2YXcS-2Xr4y-2YXxe-6p8dbx-afsih5-efBRqU-dw4HGb-q4Yyby-or73TF-6eDkm5-oQPuyi-7Y2Vwd-5bFSST-27NDEp-5bFSGi-2YXjU-oyVyhg-dbCuos-5AJcmz-2YXFk-5bL9S3-amhQMn-6zzLsw-brCkU4-CNzjN-cnJgTE-5bFSta-7Kppyx-wARTLb-2YXhX-eTuSU4-aPtUS2-q4Yypj-paYF7P-ouAyNp"
+  },
+  {
+    "name": "Family dog",
+    "file": "3861640903_f37afd9460_o.jpg",
+    "author": "Josh Delp",
+    "url": "https://www.flickr.com/photos/repoman/3861640903/"
+  }
+]

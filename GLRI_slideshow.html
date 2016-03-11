@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="app/jquery-1.12.1.js"></script>
+<script src="app/jquery.transit.min.js"></script>
+<script src="app/jquery.slideshowify.min.js"></script>
+<script>
+
+</script>
+<style>
+	#credit {
+		position:absolute;
+		bottom:5px;
+		right:25px;
+	}
+	
+	a {
+		color:azure;
+	}
+</style>
+</head>
+<body>
+
+<p id="credit"></p>
+<script src="GLRI_Slideshow_files.json"></script>
+<script>
+	imgList.forEach(function(img){
+		var imgDiv = document.createElement('img');
+		imgDiv.src = "images/GLRI/"+img.file;
+		imgDiv.setAttribute("data-author",img.author);
+		imgDiv.setAttribute("data-url",img.url);
+		imgDiv.setAttribute("data-name",img.name);
+		document.body.appendChild(imgDiv);
+	});
+</script>
+<script type="text/javascript"> 
+	$("img").slideshowify({
+		aniSpeedMin: 10000,
+		aniSpeedMax: 15000,
+		randomize: true
+	}); 
+	$(document).bind('afterFadeIn', function(e, img){
+		document.getElementById("credit").innerHTML = "<a href=" + img.url + " target='_blank'>" + img.name + " by " + img.author + "</a>";
+	});
+</script>
+</body>
+</html>
