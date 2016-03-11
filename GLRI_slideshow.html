@@ -9,6 +9,7 @@
 </script>
 <style>
 	#credit {
+		color:azure;
 		position:absolute;
 		bottom:5px;
 		right:25px;
@@ -29,7 +30,7 @@
 		imgDiv.src = "Images/GLRI/"+img.file;
 		imgDiv.setAttribute("data-author",img.author);
 		imgDiv.setAttribute("data-name",img.name);
-		if(!(img.url == "")){imgDiv.setAttribute("data-url",img.url);}
+		imgDiv.setAttribute("data-url",img.url);
 		document.body.appendChild(imgDiv);
 	});
 </script>
@@ -40,7 +41,11 @@
 		randomize: true
 	}); 
 	$(document).bind('afterFadeIn', function(e, img){
-		document.getElementById("credit").innerHTML = "<a href=" + img.url + " target='_blank'>" + img.name + " by " + img.author + "</a>";
+		if(!img.url == ""){
+			document.getElementById("credit").innerHTML = "<a href=" + img.url + " target='_blank'>" + img.name + " by " + img.author + "</a>";
+		}else{
+			document.getElementById("credit").innerHTML = img.name + " by " + img.author;
+		}
 	});
 </script>
 </body>
