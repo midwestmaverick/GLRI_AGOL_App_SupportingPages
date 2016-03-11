@@ -28,8 +28,8 @@
 		var imgDiv = document.createElement('img');
 		imgDiv.src = "Images/GLRI/"+img.file;
 		imgDiv.setAttribute("data-author",img.author);
-		imgDiv.setAttribute("data-url",img.url);
 		imgDiv.setAttribute("data-name",img.name);
+		if(!(img.url == "")){imgDiv.setAttribute("data-url",img.url);}
 		document.body.appendChild(imgDiv);
 	});
 </script>
