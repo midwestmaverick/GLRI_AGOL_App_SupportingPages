@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<!-- 
+1: D:
+2: cd D:\WebProjects\ForestDynamicsApp_v3.0
+3: python -m SimpleHTTPServer 8080 &.
+4: http://199.131.112.233:8080/NRS_Forest_Dynamics.html
+-->
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+    <title>NRS Forest Dynamics</title>
+
+	<link rel="stylesheet" type="text/css" href="css/NRS_Forest_Dynamics.css" />
+	<link type="image/ico" rel="icon" href="http://www.fs.fed.us/sites/all/themes/fs/css/images/fs-favicon.ico">
+	<!--<link rel="stylesheet" href="css/odometer-theme-minimal.css" />-->
+
+	<script src="js/d3.js"></script>
+  <!--<script src="../arcgis_js_v316_api/arcgis_js_api/library/3.16/3.16/init.js"></script>-->
+	<script src="https://js.arcgis.com/3.16/"></script>
+	<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+	<script src="js/jquery-1.12.1.min.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.ui.touch-punch.min.js"></script>
+	<!--<script src="js/odometer.min.js"></script>-->
+	
+  </head>
+  <body>
+	<table id="pageTable">
+		<tr>
+			<td id="mapInfo">
+					<h2>Land Area Comparison</h2>
+					<div id="areaSymbolContainer"></div>
+					<table id="counters"></table>
+					</br>
+					<h2>Map Layer Value Plot</h2>
+					<div id="chartContainer"></div>
+			</td>
+			<td id="mapData">
+				<div id="mapContainer">
+					<img id="shield" src="https://upload.wikimedia.org/wikipedia/commons/9/98/Forestservice-shield.svg"/>
+					<div id="map">
+					</div>
+					<div class="info" id="layer1info">
+						<div id="dd0" class="wrapper-dropdown-3" tabindex="1">
+							<span id="lX" class="layerPicker" ></span>
+							<ul class="dropdown">
+							</ul>
+						</div>
+					</div>
+					<div class="info" id="layer2info">
+						<div id="dd1" class="wrapper-dropdown-3" tabindex="1">
+							<span id="lY" class="layerPicker" ></span>
+							<ul class="dropdown">
+							</ul>
+						</div>
+					</div>
+					<div id="swipeBar">
+						<div id="swipeHandle">
+							<div id="swipeZone">
+								<div id="swipeLine"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</td>
+	</tr>
+	</table>
+	
+
+
+    <!--<div id="info"><div id="legend"></div></div>-->
+
+	<script src="js/layerDefs.js"></script>
+	<script src="js/NRS_Forest_Dynamics_beta_2.js"></script>
+	<script src="js/NRS_ForestDynamicsScatterPlot_beta.js"></script>
+	<script type="text/javascript" src="js/dropdown.js"></script>
+
+  </body>
+</html>  
