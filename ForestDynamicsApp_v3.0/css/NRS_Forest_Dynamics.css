@@ -8,9 +8,27 @@ html, body, #map {
 	height: 100%;
 	margin: 0;
 }
-html, body, #map, #mapContainer{
+
+html, #map, #mapContainer{
 	background-color:#D0CFD4;
 	border-color:#D0CFD4;
+}
+
+body::after {
+	content:' ';
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	opacity:0.2;
+	z-index:-1;
+	background: url('../images/P1370831.JPG') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 #shield {
@@ -63,13 +81,19 @@ h2 {
 }
 
 #counters {
-	height:180px;
+	height:250px;
 	width:400px;
 	margin:10px;
+	background-color: rgba(255,255,255,0.95);
+	border-radius: 7px;
 }
 
 #counters tr{
 	height:auto;
+}
+
+#counters td{
+	padding: 5px 3px 5px 3px;
 }
 
 /*scatterplot*/

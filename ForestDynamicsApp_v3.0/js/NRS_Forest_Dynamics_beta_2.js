@@ -130,17 +130,17 @@ function initCounters(){
 	lds = getLyrs();
 	counterRow("fcTitle","Forested Acres:");
 	counterData("forestCounter","0000");
-	d3.select("#counters").append("tr").style("height","6px");
+	d3.select("#counters").append("tr").style("height","10px");
 	counterRow("xCTitle",lds.X.title+":");
 	counterData("xCounter","0000");	
 	counterRow("xCPerTitle","(% of Forest:)");
 	counterData("xPer","(0.000%)");
-	d3.select("#counters").append("tr").style("height","6px");
+	d3.select("#counters").append("tr").style("height","10px");
 	counterRow("yCTitle",lds.Y.title+":");
 	counterData("yCounter","0000");
 	counterRow("xCPerTitle","(% of Forest:)");
 	counterData("yPer","(0.000%)");	
-	d3.select("#counters").append("tr").style("height","6px");
+	d3.select("#counters").append("tr").style("height","10px");
 	counterRow("pTitle","FIA Plot count:");
 	counterData("pCounter","0000");	
 }
@@ -150,7 +150,7 @@ function updateIntCounter(counterId,newVal){
 	d3.select(counterId).transition().duration(1000).tween("text",function(d){
 		var i = d3.interpolate(oldVal,newVal);
 		return function(t) {
-			d3.select(this).text(parseInt(i(t)));
+			d3.select(this).text(parseInt(i(t))+"ac");
 		};
 	});
 }
@@ -207,9 +207,9 @@ function updateAllCounters(){
 	}
 	updatePerCounter("#xPer",vx);
 	updatePerCounter("#yPer",vy);
-	updateAreaCircle("#forestCircle",vSum.f);
-	updateAreaCircle("#xCircle",vSum.vx);
-	updateAreaCircle("#yCircle",vSum.vy);
+	//updateAreaCircle("#forestCircle",vSum.f);
+	//updateAreaCircle("#xCircle",vSum.vx);
+	//updateAreaCircle("#yCircle",vSum.vy);
 	if(vSum.vx > vSum.vy){
 		$("#xCircle").attr("class","circle2");
 		$("#yCircle").attr("class","circle1");
@@ -354,7 +354,7 @@ function initLayers(data){
 		return featureData;
 	});
 	initChart(chartData);
-	initAreaSymbols();
+	//initAreaSymbols();
 	initCounters();
 }	
 	
@@ -564,6 +564,9 @@ require([
 		getData();
 		initExtent = map.extent;
 		addHomeSlider();
+		
+		
+		
 	});
 	/*
 	//add home button to map
@@ -581,6 +584,7 @@ require([
 		customLegend($("#lY"),layerDefs[sL[1]].legendOrder);
 		//var totFor = map.getLayer(layerDefs[sL[0]].valField);	
 		initSwipe();
+		initMapHighlight();
 		map.on("extent-change",function(){
 			swipeTransform();
 			scaleLegend();
@@ -600,3 +604,6 @@ require([
 	
 });
 
+$(window).resize(function(){	$("#mapContainer").outerWidth($(window).width() - 426);
+	$("#mapContainer").outerHeight($(window).height());
+	$("#swipeZone").outerHeight($("#mapContainer").innerHeight());});
