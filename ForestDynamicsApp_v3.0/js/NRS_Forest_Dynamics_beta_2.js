@@ -519,7 +519,7 @@ function updateAreaCircle(id,newVal){
 
 
 function getData(){
-		$.getJSON("../ForestDynamicsApp_v3.0/json/conus_emap_hexes.json", function(data){
+		$.getJSON("ForestDynamicsApp_v3.0/json/conus_emap_hexes.json", function(data){
 			data.features = data.features.filter(function(d) {return ((d.attributes.ForPlots13 >= minPlots) || (d.attributes.ForPlots08 >= minPlots))});
 			initLayers(data);
 		});
