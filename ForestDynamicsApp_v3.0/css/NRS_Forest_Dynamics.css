@@ -2,11 +2,12 @@
 @import url('https://js.arcgis.com/3.16/esri/css/esri.css');
 
 /*general*/
-html, body, #map {
+html, body {
 	top:0px;
 	left:0px;
 	height: 100%;
 	margin: 0;
+	overflow:hidden;
 }
 
 html, #map, #mapContainer{
