@@ -10,149 +10,59 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
     <title>NRS Forest Dynamics</title>
-    <link rel="stylesheet" href="https://js.arcgis.com/3.15/esri/css/esri.css">
-	<link type="image/ico" rel="icon" href="https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/US_Forest_Service_Shield.svg/229px-US_Forest_Service_Shield.svg.png">
-    <style>
-      html, body, #map {
-        height: 100%;
-        margin: 0;
-      }
-      #info {
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        padding: 10px;
-        background-color: #ddd;
-        font: 14px Segoe UI;
-        width: 200px;
-        text-align: center;
-        border-radius: 0 10px 0 0;
-      }
-	  
-	  esriPopupWrapper {
-		width:800px;
-		height:auto
-	  }
-    </style>
-    <script src="https://js.arcgis.com/3.15/"></script>
-    <script>
-	function sortNumber(a,b) {
-		return a - b;
-	}
-	function sortNumberReverse(a,b) {
-		return b - a;
-	}
 
-	var map, layer, low, high;
-	var hucServiceURL = 'http://services1.arcgis.com/gGHDlz6USftL5Pau/arcgis/rest/services/NRS_HUC_change_2013/FeatureServer/0'
+	<link rel="stylesheet" type="text/css" href="css/NRS_Forest_Dynamics.css" />
+		<link type="image/ico" rel="icon" href="images/US_Forest_Service_Shield.svg.png">
 
-	var layers = [
-		{"title":"forest area","featureURL":hucServiceURL,"valField":"FOR13AC","innerBreaks":[10000,100000,500000,1000000],"colors":[[237,248,233],[186,228,179],[116,196,118],[49,163,84],[0,109,44]]},
-		{"title":"forest area change","featureURL":hucServiceURL,"valField":"F13netanac","innerBreaks":[-2000,-500,500,2000],"colors":['rgb(166,97,26)','rgb(223,194,125)','rgb(245,245,245)','rgb(128,205,193)','rgb(1,133,113)']},
-		{"title":"cutting","featureURL":hucServiceURL,"valField":"CUT13ANAC","innerBreaks":[1000,5000,10000],"colors":[[0,0,200],[255,255,255]]},
-		{"title":"cut or disturbed","featureURL":hucServiceURL,"valField":"C_DC13ANAC","innerBreaks":[1000,5000,10000],"colors":[[0,0,0],[255,255,255]]}
-	];
+	<script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="https://js.arcgis.com/3.16/"></script>
+	<!--<link rel="stylesheet" href="https://js.arcgis.com/4.0beta3/esri/css/main.css">
+	<script src="https://js.arcgis.com/4.0beta3/"></script>-->
+	<script type="text/javascript" src="js/modernizr.custom.79639.js"></script>
+	<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>-->
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	
-	var colAlpha = 0.75;
-	//layers.map(function(lyr){lyr.colors.forEach(function(col){col.alpha = colAlpha})});
-
-	require([
-        "esri/map", "esri/geometry/Extent", 
-        "esri/layers/FeatureLayer", "esri/InfoTemplate", "esri/dijit/Legend",
-        "esri/renderers/SimpleRenderer", "esri/renderers/ClassBreaksRenderer", "esri/Color", 
-        "esri/symbols/SimpleFillSymbol", "esri/symbols/SimpleLineSymbol", "esri/dijit/LayerSwipe", "esri/tasks/query","esri/tasks/QueryTask","esri/arcgis/OAuthInfo", "esri/IdentityManager",
-        "dojo/domReady!"
-      ], function(
-        Map, Extent, 
-        FeatureLayer, InfoTemplate, Legend,
-        SimpleRenderer, ClassBreaksRenderer, Color, 
-        SimpleFillSymbol, SimpleLineSymbol, LayerSwipe, Query, QueryTask, OAuthInfo, esriId
-      ) {
-	  
-		var info = new OAuthInfo({
-			appId: "Fz7q4qQ1mbCeEYYF"
-		});
-		esriId.registerOAuthInfos([info]);
-	  
-        map = new Map("map", {
-			basemap: "topo",
-			center: [-85.45, 42.75], // longitude, latitude
-			zoom: 6
-        });
-
-		function buildRenderer(results){
-			var range = results.features[0].attributes;
-			var symbol = new esri.symbol.SimpleFillSymbol();
-			symbol.setColor(new esri.Color(l.colors[0]));
-			var renderer = new esri.renderer.ClassBreaksRenderer(symbol, l.valField)
-			renderer.isMaxInclusive = false;
-			var breaks = l.innerBreaks.slice().sort(sortNumber);
-			breaks.unshift(range.minVal);
-			breaks.push(range.maxVal);
-			for(i = 0; i < breaks.length-1; i++){
-				var a = breaks[i];
-				var b = breaks[i+1];
-				//console.log(i + "=" + a + "-" + b);
-				var col = new esri.Color(l.colors[i]);
-				col.a = colAlpha;
-				renderer.addBreak(a, b, new esri.symbol.SimpleFillSymbol().setColor(col));
-			}
-			//console.log(renderer.infos);
-			return renderer;
-		}		
-		
-		function addLayer(){
-			var maxDef = new esri.tasks.StatisticDefinition();
-			maxDef.statisticType = "max";
-			maxDef.onStatisticField = l.valField;
-			maxDef.outStatisticFieldName = "maxVal";
-			
-			var minDef = new esri.tasks.StatisticDefinition();
-			minDef.statisticType = "min";
-			minDef.onStatisticField = l.valField;
-			minDef.outStatisticFieldName = "minVal";
-
-			var sdDef = new esri.tasks.StatisticDefinition();
-			sdDef.statisticType = "stddev";
-			sdDef.onStatisticField = l.valField;
-			sdDef.outStatisticFieldName = "sdVal";
-			
-			var fieldQuery = new esri.tasks.Query();				
-			fieldQuery.outFields = [l.valField];
-			fieldQuery.outStatistics = [minDef,maxDef,sdDef];
-			
-			lyr.queryFeatures(fieldQuery,function(results){
-				var renderer = buildRenderer(results);
-				lyr.setRenderer(renderer);
-				map.addLayer(lyr);
-				console.log(renderer);
-				console.log(legend);
-				legend.startup();
-			});
-		}
-		
-		//layers.map(function(l){
-		//for(i = 0; i < 1; i++){
-			var l = layers[1];
-			var lyr = new esri.layers.FeatureLayer(l.featureURL,{
-				outFields:["HUC_NAME",l.valField],
-				className:l.title,
-				infoTemplate: new esri.InfoTemplate("<div style='font: 18px Segoe UI'>${HUC_NAME} Average Annual:</div>", "<div style='font: 18px Segoe UI'><strong>Total forest area (ac): ${FOR13AC}.</strong></div>")});
-			var legend = new Legend({
-				map: map,
-				layerInfos: [{ title: "Average annual " + l.title + " by 8 digit hydrologic unit", layer: lyr }],
-				autoUpdate:true
-			}, "legend");
-			//map.addLayer(lyr);
-			lyr.on("load", addLayer);
-		//}//});
-		
-    });
- 
-    </script>
   </head>
   <body>
-    <div id="map"></div>
-    <div id="info"><div id="legend"></div></div>
+	<div id="mapContainer">
+		<div id="map">
+		<div id="HomeButton"></div>
+		</div>
+	</div>
+	<div id="swipeBar">
+		<div id="swipeHandle">
+			<div id="swipeZone">
+				<div id="swipeLine"></div>
+			</div>
+		</div>
+	</div>
+    <!--<div id="info"><div id="legend"></div></div>-->
+	<div id="mapInfo">
+		<div class="info" id="layer1info">
+			<div id="dd1" class="wrapper-dropdown-3" tabindex="1">
+				<span id="layer1" class="layerPicker" onchange="selectLayers()"></span>
+				<ul class="dropdown">
+				</ul>
+			</div>
+		</div>
+		<div id="chartContainer">
+			<table id="gaugeTab">
+				<tr>
+				</tr>
+			</table>
+		</div>
+		
+		<div class="info" id="layer2info">
+			<div id="dd2" class="wrapper-dropdown-3" tabindex="1">
+				<span id="layer2" class="layerPicker" onchange="selectLayers()"></span>
+				<ul class="dropdown">
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script src="js/NRS_ForestDynamicsGauges.js"></script>
+	<script src="js/NRS_ForestDynamicsMap.js"></script>
+	<script type="text/javascript" src="js/dropdown.js"></script>
   </body>
 </html>  

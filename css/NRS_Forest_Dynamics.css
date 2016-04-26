@@ -1,0 +1,194 @@
+@import url('style.css');
+@import url('https://js.arcgis.com/3.16/esri/css/esri.css');
+
+html, body, #map {
+	top:0px;
+	left:0px;
+	height: 100%;
+	margin: 0;
+	min-width:1050px;
+	background-color:black;
+}
+
+#mapContainer {
+	height:73.5%;
+	border:2px solid black;
+	min-height:500px;
+	overflow:hidden;
+	border-radius:10px;
+	background-color:black;
+}
+
+#swipeBar {
+	position:relative;
+	height:1.5%;
+	min-height:16px;
+	width:100%;
+	background-color:black;
+	z-index:51;
+	border-width:3px 0 0 0;
+	border-color:black;
+	border-style:solid;
+}
+
+#swipeHandle {
+	position:relative;
+	height:100%;
+	padding-top:1px;
+	width:70px;
+	left:75%;
+	background-color:#8AA8BD;
+	border-radius:5px;
+	z-index:60;
+}
+
+#swipeLine{
+	position:absolute;
+	left:50%;
+	width:1px;
+	background-color:black;
+	height:100%;
+	z-index:59;
+}
+
+#swipeZone{
+	position:absolute;
+	width:14px;
+	left:27px;
+	bottom:0px;
+	z-index:51;
+}
+
+#swipeHandle:hover, #swipeLine:hover {
+	cursor:pointer;
+}
+
+esriPopupWrapper {
+	width:800px;
+	height:auto
+}
+
+#HomeButton {
+	position: absolute;
+	top: 95px;
+	left: 20px;
+	z-index: 52;
+}
+
+#mapInfo{
+	position:relative;
+	height:25%;
+	width:100%;
+	min-height:200px;
+	z-index:52;
+	background: black
+}
+
+.info{
+	/* Size and position */
+	height:95%;
+	width:200px;
+	position:relative;
+	min-height:260px;
+	top:3px;
+	/* Styles */
+	background: #fff;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+	outline: none;
+	opacity:1;
+	/* Font settings */
+	font-weight: bold;
+  color: #8AA8BD;
+}
+
+#chartContainer {
+	/* Size and position */
+	position:relative;
+	display:inline;
+	float:left;
+	top:3px;
+	margin-left:15px;
+	margin-right:15px;
+	height:95%;
+	min-height:260px;	
+	
+	/* Styles */
+	background: #fff;
+    border-radius: 7px;
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow: 0 1px 1px rgba(50,50,50,0.1);
+	outline: none;
+	opacity:1;
+	overflow:hidden;
+}
+
+#layer1info {
+	display:inline;
+	float:left;
+	left:10px;
+}
+
+#layer2info {
+	display:inline;
+	float:right;
+	right:10px;
+}
+
+.legend{
+	display:block;
+	float:left;
+}
+
+.legendPatch {
+	height:25px;
+	width:25px;
+	border:2px groove black;
+	border-radius:50%;
+	margin-left:15px;
+}
+
+.legend td{
+	padding:8px 3px 0px 0px;
+}
+
+.legendTitle{
+	padding:8px 0px 0px 15px;
+}
+
+.esriControlsBR{
+	display:none !important;
+}
+
+#gaugeTab{
+	width:100%;
+	height:100%;
+	margin:0px;
+}
+
+.gauge{
+	/* Size and position */
+	text-align:center;
+	min-height:inherit;
+	min-width:240px;
+	padding-top:8px;
+	/* Styles */
+	background: #fff;
+	outline: none;
+	opacity:1;
+}
+
+.needle, .needle-center {
+	fill: #8AA8BD;
+}
+
+svg text{
+	fill: #8AA8BD;
+	font-weight:bold;
+	font-size:16px;
+}
+
+.readout {
+	font-size:24px;
+}
