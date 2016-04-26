@@ -604,6 +604,8 @@ require([
 	
 });
 
-$(window).resize(function(){	$("#mapContainer").outerWidth($(window).width() - 426);
-	$("#mapContainer").outerHeight($(window).height());
-	$("#swipeZone").outerHeight($("#mapContainer").innerHeight());});
+$(window).resize(function(){	
+	$("#mapContainer").outerWidth($(window).width() - 436);
+	$("#mapContainer").outerHeight($(window).height()-10);
+	$("#swipeZone").outerHeight($("#mapContainer").innerHeight());
+});
