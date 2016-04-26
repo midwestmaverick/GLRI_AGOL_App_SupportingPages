@@ -126,31 +126,40 @@ function counterData(id,txt){
 		.text(txt);
 }
 
+function addUnits(id,unit){
+	d3.select(id).select(function(){return this.parentNode}).append("text").text(unit);
+}
+
 function initCounters(){
 	lds = getLyrs();
 	counterRow("fcTitle","Forested Acres:");
-	counterData("forestCounter","0000");
+	counterData("forestCounter","0,000");
 	d3.select("#counters").append("tr").style("height","10px");
 	counterRow("xCTitle",lds.X.title+":");
-	counterData("xCounter","0000");	
+	counterData("xCounter","0,000");	
 	counterRow("xCPerTitle","(% of Forest:)");
 	counterData("xPer","(0.000%)");
 	d3.select("#counters").append("tr").style("height","10px");
 	counterRow("yCTitle",lds.Y.title+":");
-	counterData("yCounter","0000");
+	counterData("yCounter","0,000");
 	counterRow("xCPerTitle","(% of Forest:)");
 	counterData("yPer","(0.000%)");	
 	d3.select("#counters").append("tr").style("height","10px");
 	counterRow("pTitle","FIA Plot count:");
-	counterData("pCounter","0000");	
+	counterData("pCounter","0,000");	
+	
+	addUnits("#forestCounter","ac");
+	addUnits("#xCounter","ac");
+	addUnits("#yCounter","ac");
 }
 
 function updateIntCounter(counterId,newVal){
+	var f = d3.format("0,000");
 	var oldVal = parseInt($(counterId).text());
 	d3.select(counterId).transition().duration(1000).tween("text",function(d){
 		var i = d3.interpolate(oldVal,newVal);
 		return function(t) {
-			d3.select(this).text(parseInt(i(t))+"ac");
+			d3.select(this).text(f(parseInt(i(t))));
 		};
 	});
 }
@@ -249,6 +258,7 @@ function selectLayers(d){
 	d3.select("#xCTitle").text(lds.X.title+":");
 	d3.select("#yCTitle").text(lds.Y.title+":");
 	updateAllCounters();
+	scaleLegend();
 	renderMapBasedOnChart();
 }
 
@@ -394,7 +404,7 @@ function customLegend(l,d){
 		.attr("class","lgndPt")
 		.attr("r",function(d){return d.size * 0.5})
 		.attr("cx",xLeft + 10)
-		.attr("cy",function(d,i){return 3 + (i+1)* 40})
+		.attr("cy",function(d,i){return 8 + (i+1)* 41})
 		.attr("fill",function(d){return d.color})
 		.style('opacity',colAlpha);
 		
@@ -403,8 +413,8 @@ function customLegend(l,d){
 		.enter()
 		.append("text")
 		.attr("class","lgndTxt")
-		.attr("x",xLeft + 30)
-		.attr("y",function(d,i){return 3 + (i+1) * 40})
+		.attr("x",xLeft + 40)
+		.attr("y",function(d,i){return 8 + (i+1) * 41})
 		.attr("dy","0.35em")
 		.text(function(d){return d.value});
 		

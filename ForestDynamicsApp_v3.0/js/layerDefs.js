@@ -85,7 +85,7 @@ var layerDefs = [
 		minMax:[-1,31]
 	},
 	{
-		title:"Annual Forest Cutting + Disturbance",
+		title:"Annual Forest Cutting or Disturbance",
 		valField:"PctACaCD",
 		colField:"PctACaCD",
 		sumField:"ACaCD",

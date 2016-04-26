@@ -33,7 +33,7 @@ function initChart(data){
 	yf = lds.Y.valField;
 	
 	var xCat = lds.X.title,
-			yCat = lds.Y.title + ' (1000 acres)',
+			yCat = lds.Y.title,
 			rCat = "PctFor2008";
 			
   var xMax = d3.max(data, function(d) { return d[xf]; }) * 1.05,
