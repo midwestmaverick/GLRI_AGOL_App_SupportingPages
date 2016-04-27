@@ -474,16 +474,17 @@ function renderMapBasedOnChart(){
 				if(inRange(g.attributes[vX],x.domain()) && inRange(g.attributes[vY],y.domain())){
 					var r = parseInt(scaleSymbSize(lds[l].sizeScale(g.attributes[lds[l].valField])));
 					g.getNode().setAttribute('r',r);
-					g.getNode().onmouseenter = function(){
+					/*g.getNode().onmouseenter = function(){
 						highlightPoints(g.attributes[featureId]);
 					};
-					g.getNode().onmouseleave = unhighlightPoints;
+					g.getNode().onmouseleave = unhighlightPoints;*/
 				}else{
 					g.getNode().setAttribute('r',0);
 				}
 			}
 		});
 	});
+	initMapHighlight();
 }
 
 function initMapSymbols(lyrs){
