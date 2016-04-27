@@ -62,11 +62,11 @@ var layerDefs = [
 			[255,0,0,colAlpha]			
 		],
 		legendDef:"Percent",
-		stops:[0,30],
+		stops:[0,20],
 		symbolSizes:[sr.min,sr.max],
 		scalingFactor: 1,
 		legendOrder:"normal",
-		minMax:[-1,31]
+		minMax:[-1,20]
 	},
 	{
 		title:"Annual Percent Forest Canopy Disturbance",
@@ -78,11 +78,11 @@ var layerDefs = [
 			[255,0,0,colAlpha]			
 		],
 		legendDef:"Percent",
-		stops:[0,30],
+		stops:[0,20],
 		symbolSizes:[sr.min,sr.max],
 		scalingFactor: 1,
 		legendOrder:"normal",
-		minMax:[-1,31]
+		minMax:[-1,20]
 	},
 	{
 		title:"Annual Forest Cutting or Disturbance",
@@ -94,10 +94,10 @@ var layerDefs = [
 			[255,0,0,colAlpha]			
 		],
 		legendDef:"Percent",
-		stops:[0,30],
+		stops:[0,20],
 		symbolSizes:[sr.min,sr.max],
 		scalingFactor: 1,
 		legendOrder:"normal",
-		minMax:[-1,31]
+		minMax:[-1,20]
 	}
 ];

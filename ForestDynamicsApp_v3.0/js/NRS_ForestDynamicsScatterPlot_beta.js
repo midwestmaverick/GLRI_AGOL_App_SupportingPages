@@ -150,7 +150,8 @@ function initChart(data){
 		d3.select(".x.axis").call(xAxis);
 		d3.select(".y.axis").call(yAxis);
 		var lds = getLyrs();
-		d3.selectAll(".dot").attr("transform", function(d) {return transform(d[lds.X.valField],d[lds.Y.valField])});	
+		d3.selectAll(".dot").attr("transform", function(d) {return transform(d[lds.X.valField],d[lds.Y.valField])});
+		unhighlightPoints();		
 	}
 
 	
