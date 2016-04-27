@@ -62,11 +62,11 @@ var layerDefs = [
 			[255,0,0,colAlpha]			
 		],
 		legendDef:"Percent",
-		stops:[0,25],
+		stops:[0,30],
 		symbolSizes:[sr.min,sr.max],
 		scalingFactor: 1,
 		legendOrder:"normal",
-		minMax:[-1,26]
+		minMax:[-1,31]
 	},
 	{
 		title:"Annual Percent Forest Canopy Disturbance",

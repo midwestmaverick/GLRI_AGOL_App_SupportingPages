@@ -108,6 +108,8 @@ function highlightPoints(id){
 	d3.select("#forestCounter").text(intF(cs.For2008));
 	d3.select("#xCounter").text(intF(cs[lds.X.sumField]));
 	d3.select("#yCounter").text(intF(cs[lds.Y.sumField]));
+	d3.select("#xPer").text(perF(cs[lds.X.sumField]/cs.For2008));
+	d3.select("#yPer").text(perF(cs[lds.Y.sumField]/cs.For2008));
 	d3.select("#pCounter").text(numF(cs.Tot_plots));
 }
 function unhighlightPoints(){
@@ -116,6 +118,8 @@ function unhighlightPoints(){
 	d3.select("#forestCounter").text(intF(sumVals.f));
 	d3.select("#xCounter").text(intF(sumVals.vx));
 	d3.select("#yCounter").text(intF(sumVals.vy));
+	d3.select("#xPer").text(perF(sumVals.vx/sumVals.f));
+	d3.select("#yPer").text(perF(sumVals.vy/sumVals.f));
 	d3.select("#pCounter").text(numF(sumVals.p));	
 }	
 
@@ -145,12 +149,13 @@ function counterData(id,txt){
 		.attr("width","20%")
 		.append("text")
 		.attr("id",id)
+		.attr("class","counterData")
 		.style({"font-size":"110%"})
 		.text(txt);
 }
 
 function addUnits(id,unit){
-	d3.select(id).select(function(){return this.parentNode}).append("text").text(unit);
+	d3.select(id).select(function(){return this.parentNode}).append("text").attr("class","counterUnits").text(unit);
 }
 
 function initCounters(){
@@ -465,13 +470,16 @@ function renderMapBasedOnChart(){
 				if(inRange(g.attributes[vX],x.domain()) && inRange(g.attributes[vY],y.domain())){
 					var r = parseInt(scaleSymbSize(lds[l].sizeScale(g.attributes[lds[l].valField])));
 					g.getNode().setAttribute('r',r);
+					g.getNode().onmouseenter = function(){
+						highlightPoints(g.attributes[featureId]);
+					};
+					g.getNode().onmouseleave = unhighlightPoints;
 				}else{
 					g.getNode().setAttribute('r',0);
 				}
 			}
 		});
 	});
-	initMapHighlight();
 }
 
 function initMapSymbols(lyrs){
@@ -626,7 +634,6 @@ require([
 			updateAllCounters(sumVar());
 		});		
 		initMapSymbols(lyrs.layers.map(function(l){return l.layer}));
-		initMapHighlight();
 	});
 
 	map.on("pan",function(){		
