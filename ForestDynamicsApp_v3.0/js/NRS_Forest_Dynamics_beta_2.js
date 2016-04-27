@@ -146,10 +146,10 @@ function counterData(id,txt){
 		.selectAll("tr")
 		.last()
 		.append("td")
+		.attr("class","counterData")
 		.attr("width","20%")
 		.append("text")
 		.attr("id",id)
-		.attr("class","counterData")
 		.style({"font-size":"110%"})
 		.text(txt);
 }

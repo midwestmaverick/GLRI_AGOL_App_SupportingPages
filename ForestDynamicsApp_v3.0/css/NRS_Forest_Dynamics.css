@@ -97,6 +97,10 @@ h2 {
 	padding: 5px 3px 5px 3px;
 }
 
+.counterData {
+	text-align:right;
+}
+
 /*scatterplot*/
 #scatterRect {
   fill: transparent;
