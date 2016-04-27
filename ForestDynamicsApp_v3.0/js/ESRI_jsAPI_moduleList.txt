@@ -1,5 +1,0 @@
-	"esri/map", "esri/basemaps", "esri/geometry/Extent", 
-	"esri/dijit/HomeButton","esri/layers/FeatureLayer",
-	"esri/renderers/SimpleRenderer", "esri/symbols/SimpleMarkerSymbol", "esri/renderers/ScaleDependentRenderer", "esri/Color", 
-	"esri/tasks/query",	"esri/tasks/QueryTask", "esri/urlUtils",
-	"dojo/domReady!"
