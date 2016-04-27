@@ -205,6 +205,10 @@ function sumVar(){
 	var start = new Date().getTime();
 	var ext = map.extent;
 	var lds = getLyrs()
+	sumVals.f = 0;
+	sumVals.vx = 0;
+	sumVals.vy = 0;
+	sumVals.p = 0;
 	map.getLayer("lyrX").graphics.filter(function(g){
 		return (inRange(g.geometry.x,[ext.xmin,ext.xmax])
 						&& inRange(g.geometry.y,[ext.ymin,ext.ymax])
