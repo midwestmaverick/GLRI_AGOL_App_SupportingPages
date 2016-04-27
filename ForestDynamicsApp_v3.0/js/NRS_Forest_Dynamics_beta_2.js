@@ -480,6 +480,10 @@ function initMapSymbols(lyrs){
 		var id = l.id.slice(-1);
 		l.on("graphic-node-add",function(g){
 			g.node.setAttribute('r',parseInt(scaleSymbSize(lds[id].sizeScale(g.graphic.attributes[lds[id].valField]))));
+			g.node.onmouseenter = function(){
+				highlightPoints(g.graphic.attributes[featureId]);
+			};
+			g.node.onmouseleave = unhighlightPoints;
 		});
 	});
 }
@@ -622,7 +626,7 @@ require([
 			updateAllCounters(sumVar());
 		});		
 		initMapSymbols(lyrs.layers.map(function(l){return l.layer}));
-		initMapHighlight(lyrs);
+		initMapHighlight();
 	});
 
 	map.on("pan",function(){		
