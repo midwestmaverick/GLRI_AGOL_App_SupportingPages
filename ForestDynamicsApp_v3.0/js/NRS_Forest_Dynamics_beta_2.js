@@ -8,6 +8,14 @@ var zoomRange = {min:5,max:10};
 var f08 = "For2008";
 var f13 = "For2013";
 var aScale = d3.scale.linear();
+var sumVals = {
+	f:0,
+	vx:0,
+	vy:0,
+	p:0
+};
+var numF = d3.format("0,000");
+var perF = d3.format("0.3%");
 
 //startupLayers
 var sL = [5,2];
@@ -19,6 +27,10 @@ function sV(obj,ld){
 }
 
 //General utilities
+function intF(n){
+	return numF(parseInt(n));
+}
+
 function componentToHex(c) {
     var hex = c.toString(16);
     return hex.length == 1 ? "0" + hex : hex;
@@ -90,12 +102,23 @@ function highlightPoints(id){
 		}
 	}).attr("id","mapHighlight");
 	var cs = d3.selectAll(".dot").filter(function(d){return d[featureId] == id}).datum();
+
 	d3.select(".objects").append("circle").attr("id","chartHighlight").attr('r',r(cs.PctFor2008)).attr("transform", transform(cs[lds.X.valField],cs[lds.Y.valField]));
+	
+	d3.select("#forestCounter").text(intF(cs.For2008));
+	d3.select("#xCounter").text(intF(cs[lds.X.sumField]));
+	d3.select("#yCounter").text(intF(cs[lds.Y.sumField]));
+	d3.select("#pCounter").text(numF(cs.Tot_plots));
 }
 function unhighlightPoints(){
 	d3.select("#map_layers").selectAll("circle").attr("id","");
 	d3.select("#chartHighlight").remove();
+	d3.select("#forestCounter").text(intF(sumVals.f));
+	d3.select("#xCounter").text(intF(sumVals.vx));
+	d3.select("#yCounter").text(intF(sumVals.vy));
+	d3.select("#pCounter").text(numF(sumVals.p));	
 }	
+
 function initMapHighlight(){
 	$("circle", $("#map_layers")).mouseover(function(){
 		highlightPoints(this.getAttribute("data-"+featureId));
@@ -133,20 +156,20 @@ function addUnits(id,unit){
 function initCounters(){
 	lds = getLyrs();
 	counterRow("fcTitle","Forested Acres:");
-	counterData("forestCounter","0,000");
+	counterData("forestCounter",intF(sumVals.f));
 	d3.select("#counters").append("tr").style("height","10px");
 	counterRow("xCTitle",lds.X.title+":");
-	counterData("xCounter","0,000");	
+	counterData("xCounter",intF(sumVals.vx));	
 	counterRow("xCPerTitle","(% of Forest:)");
-	counterData("xPer","(0.000%)");
+	counterData("xPer",perF(sumVals.vx/sumVals.f));
 	d3.select("#counters").append("tr").style("height","10px");
 	counterRow("yCTitle",lds.Y.title+":");
-	counterData("yCounter","0,000");
+	counterData("yCounter",intF(sumVals.vy));
 	counterRow("xCPerTitle","(% of Forest:)");
-	counterData("yPer","(0.000%)");	
+	counterData("yPer",perF(sumVals.vy/sumVals.f));	
 	d3.select("#counters").append("tr").style("height","10px");
 	counterRow("pTitle","FIA Plot count:");
-	counterData("pCounter","0,000");	
+	counterData("pCounter",sumVals.p);	
 	
 	addUnits("#forestCounter","ac");
 	addUnits("#xCounter","ac");
@@ -154,23 +177,21 @@ function initCounters(){
 }
 
 function updateIntCounter(counterId,newVal){
-	var f = d3.format("0,000");
-	var oldVal = parseInt($(counterId).text());
+	var oldVal = parseInt($(counterId).text().replace(/,/g,""));
 	d3.select(counterId).transition().duration(1000).tween("text",function(d){
 		var i = d3.interpolate(oldVal,newVal);
 		return function(t) {
-			d3.select(this).text(f(parseInt(i(t))));
+			d3.select(this).text(intF(i(t)));
 		};
 	});
 }
 
 function updatePerCounter(counterId,newVal){
-	var fp = d3.format(".3%")
-	oldVal = parseFloat($(counterId).text().replace("(","").replace(")","")) * 0.01;
+	oldVal = parseFloat($(counterId).text().replace("(","").replace(")","").replace(/,/g,"")) * 0.01;
 	d3.select(counterId).transition().duration(1000).tween("text",function(d){
 		var i = d3.interpolate(oldVal,newVal);
 		return function(t) {
-			d3.select(this).text("("+fp(i(t))+")");
+			d3.select(this).text("("+perF(i(t))+")");
 		};
 	});
 }
@@ -179,53 +200,45 @@ function sumVar(){
 	var start = new Date().getTime();
 	var ext = map.extent;
 	var lds = getLyrs()
-	var vSum = {
-		f:0,
-		vx:0,
-		vy:0,
-		p:0
-	}
 	map.getLayer("lyrX").graphics.filter(function(g){
 		return (inRange(g.geometry.x,[ext.xmin,ext.xmax])
 						&& inRange(g.geometry.y,[ext.ymin,ext.ymax])
 						&& inRange(g.attributes[lds.X.valField],x.domain())
 						&& inRange(g.attributes[lds.Y.valField],y.domain()))
 	}).map(function(c){
-		vSum.f += parseFloat(c.attributes.For2008);
-		vSum.vx += parseFloat(c.attributes[lds.X.sumField]);
-		vSum.vy += parseFloat(c.attributes[lds.Y.sumField]);
-		vSum.p += parseInt(c.attributes.Tot_plots);
+		sumVals.f += parseFloat(c.attributes.For2008);
+		sumVals.vx += parseFloat(c.attributes[lds.X.sumField]);
+		sumVals.vy += parseFloat(c.attributes[lds.Y.sumField]);
+		sumVals.p += parseInt(c.attributes.Tot_plots);
 	});
 	console.log("filterChart time:" + parseInt(new Date().getTime() - start));
-	return vSum;
+	return sumVals;
 }
 
-function updateAllCounters(){
-	var lds = getLyrs()
-	var vSum = sumVar();
-	updateIntCounter("#forestCounter",parseInt(vSum.f));
-	updateIntCounter("#xCounter",parseInt(vSum.vx));
-	updateIntCounter("#yCounter",parseInt(vSum.vy));
-	updateIntCounter("#pCounter",parseInt(vSum.p));
-	if(vSum.f == 0){
+function updateAllCounters(vals){
+	updateIntCounter("#forestCounter",parseInt(vals.f));
+	updateIntCounter("#xCounter",parseInt(vals.vx));
+	updateIntCounter("#yCounter",parseInt(vals.vy));
+	updateIntCounter("#pCounter",parseInt(vals.p));
+	if(vals.f == 0){
 		vx = 0;
 		vy = 0;
 	}else{
-		vx = vSum.vx/vSum.f;
-		vy = vSum.vy/vSum.f;
+		vx = vals.vx/vals.f;
+		vy = vals.vy/vals.f;
 	}
 	updatePerCounter("#xPer",vx);
 	updatePerCounter("#yPer",vy);
-	//updateAreaCircle("#forestCircle",vSum.f);
-	//updateAreaCircle("#xCircle",vSum.vx);
-	//updateAreaCircle("#yCircle",vSum.vy);
-	if(vSum.vx > vSum.vy){
+	/*updateAreaCircle("#forestCircle",vals.f);
+	updateAreaCircle("#xCircle",vals.vx);
+	updateAreaCircle("#yCircle",vals.vy);
+	if(vals.vx > vals.vy){
 		$("#xCircle").attr("class","circle2");
 		$("#yCircle").attr("class","circle1");
 	}else{
 		$("#xCircle").attr("class","circle1");
 		$("#yCircle").attr("class","circle2");
-	}
+	}*/
 }
 
 //Map functions
@@ -257,7 +270,7 @@ function selectLayers(d){
 	zoomBeh.y(y);
 	d3.select("#xCTitle").text(lds.X.title+":");
 	d3.select("#yCTitle").text(lds.Y.title+":");
-	updateAllCounters();
+	updateAllCounters(sumVar());
 	scaleLegend();
 	renderMapBasedOnChart();
 }
@@ -319,7 +332,6 @@ function initSwipe(){
 function layerMaker(data,id){
 	var fs = new esri.tasks.FeatureSet(data);
 	outData = fs;
-
 	var fc = {
           layerDefinition: {
             "geometryType": "esriGeometryPoint",
@@ -328,9 +340,7 @@ function layerMaker(data,id){
           featureSet: fs
         };
 	var f = new esri.layers.FeatureLayer(fc,{
-			//outFields:layerDefs.map(function(d){return d.valField}),
 			id:id,
-			//styling:false,
 			dataAttributes:["FID"]
 	});	
 	return f;
@@ -343,16 +353,18 @@ function initLayers(data){
 	var markerSym = new esri.symbol.SimpleMarkerSymbol();
 	markerSym.outline.setWidth(0);
 	markerSym.setSize(0);
+	lx = layerDefs[sL[0]];
+	ly = layerDefs[sL[1]];
 	var r1 = new esri.renderer.SimpleRenderer(markerSym);   
 	r1.setColorInfo({
-		field:layerDefs[sL[0]].colField,
-		stops:setColStops(layerDefs[sL[0]])
+		field:lx.colField,
+		stops:setColStops(lx)
 	});
 	f1.setRenderer(r1);
 	var r2 = new esri.renderer.SimpleRenderer(markerSym);   
 	r2.setColorInfo({
-		field:layerDefs[sL[1]].colField,
-		stops:setColStops(layerDefs[sL[1]])
+		field:ly.colField,
+		stops:setColStops(ly)
 	});
 	f1.setRenderer(r1);	
 	f2.setRenderer(r2);	
@@ -361,6 +373,10 @@ function initLayers(data){
 		var featureData = d.attributes;
 		featureData.mx = d.geometry.x;
 		featureData.my = d.geometry.y;
+		sumVals.f += d.attributes.For2008;
+		sumVals.vx += d.attributes[lx.sumField];
+		sumVals.vy += d.attributes[ly.sumField];
+		sumVals.p += d.attributes.Tot_plots;		
 		return featureData;
 	});
 	initChart(chartData);
@@ -434,6 +450,7 @@ function filterChartBasedOnMap(){
 			return 0;
 		}
 	});	
+	initMapHighlight();
 }
 
 function renderMapBasedOnChart(){
@@ -454,7 +471,19 @@ function renderMapBasedOnChart(){
 			}
 		});
 	});
+	initMapHighlight();
 }
+
+function initMapSymbols(lyrs){
+	var lds = getLyrs();
+	lyrs.map(function(l,i){
+		var id = l.id.slice(-1);
+		l.on("graphic-node-add",function(g){
+			g.node.setAttribute('r',parseInt(scaleSymbSize(lds[id].sizeScale(g.graphic.attributes[lds[id].valField]))));
+		});
+	});
+}
+
 
 function a2r(a){
 	return Math.sqrt(a/Math.PI)
@@ -574,17 +603,8 @@ require([
 		getData();
 		initExtent = map.extent;
 		addHomeSlider();
-		
-		
-		
 	});
-	/*
-	//add home button to map
-	var home = new HomeButton({
-		map: map
-	}, "HomeButton");
-	home.startup();
-	*/
+
 	//do stuff after layers are added
 	map.on("layers-add-result",function(lyrs){
 		//console.log(map.graphicsLayerIds);
@@ -594,28 +614,25 @@ require([
 		customLegend($("#lY"),layerDefs[sL[1]].legendOrder);
 		//var totFor = map.getLayer(layerDefs[sL[0]].valField);	
 		initSwipe();
-		initMapHighlight();
 		map.on("extent-change",function(){
 			swipeTransform();
 			scaleLegend();
 			renderMapBasedOnChart();
 			filterChartBasedOnMap();
-			updateAllCounters();
-		});
-				
+			updateAllCounters(sumVar());
+		});		
+		initMapSymbols(lyrs.layers.map(function(l){return l.layer}));
 	});
 
 	map.on("pan",function(){		
 		swipeTransform();
 	});
-	
-	
-	
-	
+
 });
 
 $(window).resize(function(){	
 	$("#mapContainer").outerWidth($(window).width() - 436);
 	$("#mapContainer").outerHeight($(window).height()-10);
 	$("#swipeZone").outerHeight($("#mapContainer").innerHeight());
+	$("#swipeZone").offset({"top":$("#mapContainer").offset().top});
 });

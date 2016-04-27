@@ -191,8 +191,3 @@ function initChart(data){
 
 */
 }
-
-
-function updateChart(){
-	
-};
