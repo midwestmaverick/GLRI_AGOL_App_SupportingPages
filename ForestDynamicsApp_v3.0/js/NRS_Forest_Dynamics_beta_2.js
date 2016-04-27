@@ -123,7 +123,7 @@ function initMapHighlight(){
 	$("circle", $("#map_layers")).mouseover(function(){
 		highlightPoints(this.getAttribute("data-"+featureId));
 	});
-	$("circle", $("#map_layers")).mouseout(function(){unhighlightPoints();});
+	$("circle", $("#map_layers")).mouseleave(function(){unhighlightPoints();});
 }
 
 function counterRow(id,txt){
