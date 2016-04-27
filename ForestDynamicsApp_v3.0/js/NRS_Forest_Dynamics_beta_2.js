@@ -103,7 +103,7 @@ function highlightPoints(id){
 	}).attr("id","mapHighlight");
 	var cs = d3.selectAll(".dot").filter(function(d){return d[featureId] == id}).datum();
 
-	d3.select(".objects").append("circle").attr("id","chartHighlight").attr('r',r(cs.PctFor2008)).attr("transform", transform(cs[lds.X.valField],cs[lds.Y.valField]));
+	d3.select(".objects").append("circle").attr("id","chartHighlight").attr('r',r(cs.PctFor2008)).attr("transform", transform(cs[lds.X.valField],cs[lds.Y.valField])).on("mouseout",unhighlightPoints);
 	
 	d3.select("#forestCounter").text(intF(cs.For2008));
 	d3.select("#xCounter").text(intF(cs[lds.X.sumField]));
@@ -112,7 +112,7 @@ function highlightPoints(id){
 }
 function unhighlightPoints(){
 	d3.select("#map_layers").selectAll("circle").attr("id","");
-	d3.select("#chartHighlight").remove();
+	d3.selectAll("#chartHighlight").remove();
 	d3.select("#forestCounter").text(intF(sumVals.f));
 	d3.select("#xCounter").text(intF(sumVals.vx));
 	d3.select("#yCounter").text(intF(sumVals.vy));
@@ -123,7 +123,7 @@ function initMapHighlight(){
 	$("circle", $("#map_layers")).mouseover(function(){
 		highlightPoints(this.getAttribute("data-"+featureId));
 	});
-	$("circle", $("#map_layers")).mouseleave(function(){unhighlightPoints();});
+	$("circle", $("#map_layers")).mouseout(function(){unhighlightPoints();});
 }
 
 function counterRow(id,txt){
@@ -622,6 +622,7 @@ require([
 			updateAllCounters(sumVar());
 		});		
 		initMapSymbols(lyrs.layers.map(function(l){return l.layer}));
+		initMapHighlight(lyrs);
 	});
 
 	map.on("pan",function(){		

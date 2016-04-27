@@ -141,10 +141,8 @@ function initChart(data){
       .attr("transform", function(d) {return transform(d[xf],d[yf])})
       .style("fill", "#006d2c")
       .on("mouseover", function(d){
-				highlightPoints(d[featureId]);
-			})
-      .on("mouseout", function(d){
 				unhighlightPoints();
+				highlightPoints(d[featureId]);
 			});
 			
 		
