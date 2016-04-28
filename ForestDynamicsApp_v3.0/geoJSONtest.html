@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7,IE=9">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="http://serverapi.arcgisonline.com/jsapi/arcgis/3.4/js/esri/css/esri.css">
+    <style>
+      html, body, #map {
+        height: 100%; width: 100%; margin: 0; padding: 0; 
+      }
+    </style>
+
+    <script src="http://serverapi.arcgisonline.com/jsapi/arcgis/3.4/"></script>
+    <!-- defines a global variable named greenline -->
+    <script src="http://ibikekrakow.com/wp-content/themes/bike/js/green.js"></script>
+    <!-- geo json to esri json converter directly from github, defines geoJsonConverter -->
+    <script src="http://esri.github.io/geojson-utils/src/jsonConverters.js"></script>
+    <script>
+      var map;
+    
+      require([
+        "esri/map", "esri/layers/GraphicsLayer", "esri/layers/FeatureLayer", "esri/graphic", 
+        "esri/geometry/Polyline", "esri/renderers/SimpleRenderer", "esri/symbols/SimpleLineSymbol", 
+        "dojo/_base/array", "dojo/_base/Color", "dojo/domReady!"
+      ], function(Map, GraphicsLayer, FeatureLayer, Graphic, Polyline, SimpleRenderer, SimpleLineSymbol, arrayUtils, Color) {
+          map = new Map("map", {
+            basemap: "gray",
+            center: [19.943, 50.047],
+            zoom: 11 
+          });
+
+          // create a geoJson -> esriJson converter
+          // geoJsonConverter is defined in jsonConverters.js
+          var jsonConverter = geoJsonConverter();
+          // convert...
+          var esriJson = jsonConverter.toEsri(greenline);
+          // array of graphics used to create a feature layer
+          var featureArray = arrayUtils.map(esriJson.features, function(f, idx) {
+            // add an object id to each feature
+            f.attributes.objectid = idx;
+            // results from geoJson converter adds unnecessary type property
+            // delete it
+            delete f.geometry.type;
+            var polyline = new Polyline(f.geometry);
+            var graphic = new Graphic(polyline, sym, f.attributes); 
+            return graphic;
+          });
+          var featureCollection = {
+            "layerDefinition": null,
+            "featureSet": {
+              "features": featureArray,  
+              "geometryType": "esriGeometryPolyline"
+            }
+          };
+          featureCollection.layerDefinition = {
+            "geometryType": "esriGeometryPolyline",
+            "objectIdField": "objectid",
+            "fields": [{
+              "name": "objectid",
+              "alias": "ObjectID",
+              "type": "esriFieldTypeOID"
+            },{
+              "name": "Description",
+              "alias": "Description",
+              "type": "esriFieldTypeString"
+            },{
+              "name": "Name",
+              "alias": "Name",
+              "type": "esriFieldTypeString"
+            }]
+          };
+          var fl = new FeatureLayer(featureCollection);
+          // a symbol for the lines
+          var sym = new SimpleLineSymbol("solid", new Color("green"), 1);
+          // create a renderer for the feature layer
+          var renderer = new SimpleRenderer(sym);
+          // alternatively, could use featureCollection.layerDefinition.drawingInfo 
+          // to specify a renderer
+          // see http://developers.arcgis.com/en/javascript/jssamples/fl_featurecollection.html
+          fl.setRenderer(renderer);
+          map.addLayer(fl);
+        }
+      );
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
