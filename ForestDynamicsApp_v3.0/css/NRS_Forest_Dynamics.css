@@ -82,7 +82,9 @@ h2 {
 }
 
 #counters {
-	height:257px;
+	table-layout:fixed;
+	white-space:nowrap;
+	height:180px;
 	width:390px;
 	margin:10px;
 	background-color: rgba(255,255,255,0.95);
@@ -94,7 +96,7 @@ h2 {
 }
 
 #counters td{
-	padding: 5px 3px 5px 3px;
+	padding: 2px 3px 2px 3px;
 }
 
 .counterData {
@@ -129,8 +131,12 @@ h2 {
 
 #mapContainer {
 	display:block;
-	position:relative;
+	position:fixed;
 	min-height:706px;
+	top:10px;
+	bottom:10px;
+	left:415px;
+	right:10px;
 	/*
 	height: -moz-calc(100% - 20px);
 	height: -webkit-calc(100% - 20px);
@@ -140,7 +146,7 @@ h2 {
 	border-style:solid;
 	overflow:hidden;
 	border-radius:10px;
-	margin:10px 0px 10px 0px;
+	/*margin:10px 10px 10px 0px;*/
 }
 
 .esriSimpleSliderHomeButton {

@@ -8,6 +8,10 @@ var zoomRange = {min:5,max:10};
 var f08 = "For2008";
 var f13 = "For2013";
 var aScale = d3.scale.linear();
+var gScale = d3.scale.linear().range([0,100]);
+var xScale = d3.scale.linear();
+var yScale = d3.scale.linear();
+
 var sumVals = {
 	f:0,
 	vx:0,
@@ -30,7 +34,8 @@ function Timer(arg){
 	this.msg = arg.callee.name;
 	this.count = 1;
 	this.start = function(){this.startTime = new Date().getTime();};
-	this.stop = function(){console.log(this.msg + " stop " + this.count + ": " + parseInt(new Date().getTime() - this.startTime) + "ms");this.count++;};
+	//this.stop = function(){console.log(this.msg + " stop " + this.count + ": " + parseInt(new Date().getTime() - this.startTime) + "ms");this.count++;};
+	this.stop = function(){};
 }
 
 function intF(n){
@@ -149,10 +154,10 @@ function counterRow(id,txt){
 	d3.select("#counters")
 		.append("tr")
 		.append("td")
-		.attr("width","70%")
+		.attr("width","282px")
 		.append("text")
 		.attr("id",id)
-		.style({"font-size":"110%","text-align":"left"})
+		.style({"font-size":"100%","text-align":"left"})
 		.text(txt);
 }
 
@@ -162,10 +167,10 @@ function counterData(id,txt){
 		.last()
 		.append("td")
 		.attr("class","counterData")
-		.attr("width","20%")
+		.attr("width","100px")
 		.append("text")
 		.attr("id",id)
-		.style({"font-size":"110%"})
+		.style({"font-size":"100%"})
 		.text(txt);
 }
 
@@ -179,17 +184,17 @@ function initCounters(){
 	lds = getLyrs();
 	counterRow("fcTitle","Forested Acres:");
 	counterData("forestCounter",intF(sumVals.f));
-	d3.select("#counters").append("tr").style("height","10px");
+	d3.select("#counters").append("tr").style("height","3px");
 	counterRow("xCTitle",lds.X.title+":");
 	counterData("xCounter",intF(sumVals.vx));	
 	counterRow("xCPerTitle","(% of Forest:)");
 	counterData("xPer",perF(sumVals.vx/sumVals.f));
-	d3.select("#counters").append("tr").style("height","10px");
+	d3.select("#counters").append("tr").style("height","3px");
 	counterRow("yCTitle",lds.Y.title+":");
 	counterData("yCounter",intF(sumVals.vy));
 	counterRow("xCPerTitle","(% of Forest:)");
 	counterData("yPer",perF(sumVals.vy/sumVals.f));	
-	d3.select("#counters").append("tr").style("height","10px");
+	d3.select("#counters").append("tr").style("height","3px");
 	counterRow("pTitle","FIA Plot count:");
 	counterData("pCounter",sumVals.p);	
 	
@@ -408,6 +413,51 @@ function layerMaker(data){
 	return lyrs;
 }
 
+/*
+function initLayers(data){
+	lx = layerDefs[sL[0]];
+	ly = layerDefs[sL[1]];
+	var chartData = [];
+
+	var gr1 = [];
+	var gr2 = [];
+	data.features.map(function(d){
+		var geom = new esri.geometry.Point(d.geometry);
+		var symb1 = new esri.symbol.SimpleMarkerSymbol()
+								.setColor(new esri.Color(lx.colScale(d.attributes[lx.colField])))
+								//.setSize(lx.sizeScale(d.attributes[lx.valField]))
+								.setSize(1)
+								.setOutline(null);
+		var symb2 = new esri.symbol.SimpleMarkerSymbol()
+								.setColor(new esri.Color(ly.colScale(d.attributes[ly.colField])))
+								//.setSize(ly.sizeScale(d.attributes[ly.valField]))
+								.setSize(1)
+								.setOutline(null);
+		var att = d.attributes;
+		g10 = new esri.Graphic(geom,symb1,att)
+		g20 = new esri.Graphic(geom,symb2,att)
+		gr1.push(g10);
+		gr2.push(g20);
+
+		var featureData = d.attributes;
+		featureData.mx = d.geometry.x;
+		featureData.my = d.geometry.y;		
+		chartData.push(featureData);
+
+		sumVals.f += d.attributes.For2008;
+		sumVals.vx += d.attributes[lx.sumField];
+		sumVals.vy += d.attributes[ly.sumField];
+		sumVals.p += d.attributes.Tot_plots;		
+		
+	});
+	var g1 = new esri.layers.GraphicsLayer({styling:false,id:"lyrX",graphics:g10});
+	var g2 = new esri.layers.GraphicsLayer({styling:false,id:"lyrY",graphics:g20});
+	map.addLayers([g1,g2]);
+	//popDomData();
+	initChart(chartData);
+}
+*/
+
 function initLayers(data){
 	var timer = new Timer(arguments);
 	timer.start();
@@ -428,15 +478,15 @@ function initLayers(data){
 		stops:setColStops(lx)
 	});
 	f1.setRenderer(r1);
-	
+
 	var r2 = new esri.renderer.SimpleRenderer(markerSym);   
 	r2.setColorInfo({
 		field:ly.colField,
 		stops:setColStops(ly)
 	});
 	f2.setRenderer(r2);	
-	
 	map.addLayers([f1,f2]);
+
 	
 	var chartData = data.features.map(function(d){
 		var featureData = d.attributes;
@@ -448,14 +498,13 @@ function initLayers(data){
 		sumVals.p += d.attributes.Tot_plots;		
 		return featureData;
 	});
-
+	
 	initChart(chartData);
-
 	//initAreaSymbols();
 	initCounters();
 	timer.stop();
 }	
-	
+
 function customLegend(l,d){
 	var timer = new Timer(arguments);
 	timer.start();
@@ -572,79 +621,8 @@ function initMapSymbols(lyrs){
 			g.node.onmouseout(function(){unhighlightPoints();});
 		});
 	});
+	gScale.domain([map.extent.xmin,map.extent.xmax]);
 	timer.stop()
-}
-
-
-function a2r(a){
-	return Math.sqrt(a/Math.PI)
-}
-
-function initAreaSymbols(){
-	landArea = 1053356477;
-	hexArea = 160300;
-	bigR = 190;
-	var ox = 200;
-	var oy = 205;
-	
-	var data = sumVar();
-	aScale.domain([0,a2r(data.f)])
-	aScale.range([0,bigR]);
-
-	var svg = d3.select("#areaSymbolContainer")
-						.append("svg")
-						.attr("id","areaCircleSvg")
-						.attr("height","400px")
-						.attr("width","400px")
-						.style("margin","5px");
-
-	function drawCircle(r,fillCol,id){
-		svg.append("circle")
-			.attr("id",id)
-			.attr("r",r)
-			.attr("cx",ox)
-			.attr("cy",(oy + bigR) - r)
-			.style("fill",fillCol);		
-	}
-		 
-	var lar = aScale(a2r(landArea))
-	svg.append("circle")
-		 .attr("r",lar)
-		 .attr("cx",ox)
-		 .attr("cy",(oy - bigR) + lar)
-		 .style("stroke","white")
-		 .style("stroke-width",2)
-		 .style("fill","none");
-
-	var fr = aScale(a2r(data.f));
-	var xr = aScale(a2r(data.vx));
-	var yr = aScale(a2r(data.vy));
-	drawCircle(fr,"green","forestCircle");
-	drawCircle(xr,"#f7fcb9","xCircle");
-	drawCircle(yr,"#31a354","yCircle");
-	if(xr > yr){
-		$("#xCircle").attr("class","circle2");
-		$("#yCircle").attr("class","circle1");
-	}
-	
-	svg.append("text")
-	 .attr("x","1")
-	 .attr("y","13")
-	 .style("fill","white")
-	 .style("text-size","1.5em")
-	 .text("Total Land Area: " + landArea + " acres");
-}
-
-function updateAreaCircle(id,newVal){
-	var c = d3.select(id);
-	var oldVal = parseInt(c.attr("r"));
-	d3.select(id).transition().duration(2000).tween("r",function(d){
-		var i = d3.interpolate(oldVal,parseInt(aScale(a2r(Math.abs(newVal)))));
-		return function(t) {
-			c.attr("r",i(t));
-			c.attr("cy",(200 + 195)-i(t));
-		};
-	});
 }
 
 
@@ -679,6 +657,15 @@ require([
 		HomeButton, FeatureLayer, urlUtils
   ) {
 		
+	spRef = new esri.SpatialReference(3857);
+	initExtent = new esri.geometry.Extent({
+		xmax:-7177476.3635130115,
+		xmin:-11981390.71717849,
+		ymax:6689090.2124040015,
+		ymin:2506456.0246402696,
+		spatialReference:spRef
+	});	
+	
 	//define basemap *no reference layer!*
 	esriBasemaps.lightGray = {
 		baseMapLayers: [{url:"http://services.arcgisonline.com/arcgis/rest/services/Canvas/World_Light_Gray_Base/MapServer"}],
@@ -691,15 +678,13 @@ require([
 
 	//initiate map
 	map = new Map("map", {
-		basemap: "dark-gray",
-		center: [-82.45, 47.75], // longitude, latitude
-		zoom: 5,
+		basemap: "lightGray",
+		extent: initExtent,
 		minZoom:zoomRange.min,
 		maxZoom:zoomRange.max
 	});
 	map.on("load",function(){
 		getData();
-		initExtent = map.extent;
 		addHomeSlider();
 		$(window).trigger("resize");
 	});
@@ -721,6 +706,7 @@ require([
 			updateAllCounters(sumVar());
 		});		
 		initMapSymbols(lyrs.layers.map(function(l){return l.layer}));
+		map.setExtent(initExtent); 
 	});
 
 	map.on("pan",function(){		
@@ -732,8 +718,6 @@ require([
 
 $(window).resize(function(){	
 	var ht = $(window).height()-20;
-	$("#mapContainer").outerWidth($(window).width() - 426);
-	$("#mapContainer").outerHeight(ht);
 	$("#swipeZone").outerHeight(ht);
 	$("#swipeZone").offset({"top":$("#mapContainer").offset().top});
 });
