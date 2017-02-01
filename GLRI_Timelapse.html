@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<!--
+	Instructions: go to google timelapse and build a tour
+	copy the 'share embeded' url and open in new window 
+		note, don't copy the iframe and associated tags
+	in the developer tools, use the following function to list keyframe image urls:
+		$.map($('.snaplapse_keyframe_list_item_thumbnail'),function(d){return window.open(d.src,'_blank')})
+		NOTE - Make sure popups are not blocked
+	Save each image to a local file named 'thumbs' in the same directory as this page
+	Adjust the thumbnailUrlList variable below accordingly
+	From the copied url, copy the address from '#presentation=...' on
+	open this page in browser
+	paste the copied presentation variable at the end of the url for this page
+	
+-->
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://www.gstatic.com/external_hosted/timemachine/css/main_css-bundle.css" rel="stylesheet" type="text/css">
+    <script src="https://www.gstatic.com/external_hosted/timemachine/js/main_js.js" type="text/javascript"></script>
+    <style>
+        #timeMachine {
+            position: absolute;
+            width: 100%;	
+						height:100%
+        }
+        /* CSS Overrides */
+        
+        #timeMachine .snaplapse_keyframe_container {
+            border: none;
+        }
+				.snaplapse_keyframe_list_item{
+					padding:1px 1px 0 1px;
+				}
+				
+        /* Put the search box in the upper left. */
+        
+        #addressLookupContainer {
+            left: 93px !important;
+            margin-left: 0 !important;
+        }
+        #addressLookup {
+            width: 250px !important;
+        }
+				.snaplapse_keyframe_list_item_title{
+					font-size:1.14em;
+					background-color:rgba(0, 0, 0, 0.25);
+				}
+    </style>
+    <script type="text/javascript">
+        jQuery.support.cors = true;
+
+        // This date used here points to the most recent data for timelapse.
+        // It may be updated in future releases.
+        var url = 'https://earthengine.google.com/timelapse/data/20161025/';
+
+        function init() {
+            var queryData = '';
+            var autoModeEnabled = false;
+
+            var settings = {
+                apiKeys: {
+                    'googleMaps': 'AIzaSyDS6cwI-FLuqhKkh93pU0wWlKg3nleOwHQ'
+                },
+                newHomeView: {
+                    'x': 558175.475268922,
+                    'y': 667574.8328324915,
+                    'scale': 0.009772095960958233
+                },
+                url: url,
+                enablePresentationSlider: true,
+                presentationSliderSettings: {
+                    doAutoMode: autoModeEnabled,
+                    screenIdleTime: 30 * 1000, // Time in ms.
+                    waypointDelayTime: 15 * 1000 // Time in ms.
+                },
+                datasetType: 'landsat',
+                mediaType: ".mp4",
+                onTimeMachinePlayerReady: function(viewerDivId) {
+                    setupPostMessageHandlers();
+                    timelapse.getSnaplapseForPresentationSlider().getSnaplapseViewer().addEventListener(
+                        'slide-changed',
+                        function(slideTitle) {
+                            post('from-timemachine-slide-changed', slideTitle);
+                        });
+
+                },
+                scaleBarOptions: {
+                    scaleBarDiv: 'scaleBar1'
+                },
+                contextMapOptions: {
+                    contextMapDiv: 'contextMap1'
+                },
+                showHomeBtn: false,
+                thumbnailUrlList: [
+                    './thumbs/thumb1.jpg',
+                    './thumbs/thumb2.jpg',
+                    './thumbs/thumb3.jpg',
+                    './thumbs/thumb4.jpg',
+                    './thumbs/thumb5.jpg',
+                    './thumbs/thumb6.jpg',
+                    './thumbs/thumb7.jpg',
+                    './thumbs/thumb8.jpg'
+                ],
+                playOnLoad: true,
+                playbackSpeed: 0.2
+            };
+
+            // This var is directly accessed by timelapse code internals running within the iframe.
+            timelapse = new org.gigapan.timelapse.Timelapse('timeMachine', settings, "presentation");
+
+
+
+        }
+
+        $(init);
+    </script>
+</head>
+
+<body>
+    <div id="timeMachine"></div>
+</body>
+
+</html>
